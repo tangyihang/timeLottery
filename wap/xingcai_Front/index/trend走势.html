@@ -1,0 +1,127 @@
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<base id="base_path" href="https://m.cp89001.com/">
+	
+	<meta http-equiv=Content-Type content="text/html;charset=utf-8">
+    <meta content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0" name="viewport" />
+    <meta name=format-detection content="telphone=no" />
+    <meta name=apple-mobile-web-app-capable content=yes />
+    
+    <title>彩38</title>
+    
+    <link rel="apple-touch-icon-precomposed" sizes="57x57" href="uploadimg/wapicon/icon-57.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="uploadimg/wapicon/icon-72.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="uploadimg/wapicon/icon-114.png">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="uploadimg/wapicon/icon-144.png">
+    
+    <link rel="stylesheet" href="assets/statics/css/style.css" type="text/css">
+    <link rel="stylesheet" href="assets/statics/css/global.css" type="text/css">
+    
+    <script type="text/javascript">
+    	if(('standalone' in window.navigator)&&window.navigator.standalone){
+	        var noddy,remotes=false;
+	        document.addEventListener('click',function(event){
+	                noddy=event.target;
+	                while(noddy.nodeName!=='A'&&noddy.nodeName!=='HTML') noddy=noddy.parentNode;
+	                if('href' in noddy&&noddy.href.indexOf('http')!==-1&&(noddy.href.indexOf(document.location.host)!==-1||remotes)){
+	                        event.preventDefault();
+	                        document.location.href=noddy.href;
+	                }
+	        },false);
+		}
+    </script>
+</head>
+
+<body class="login-bg">
+    <div class="header">
+        <div class="headerTop">
+            <div class="ui-toolbar-left">
+                <button id="reveal-left2" onclick="location.href='index'">reveal</button>
+            </div>
+            <h1 class="ui-betting-title">
+	            <div class="bett-top-box">
+                    <div class="bett-play">玩法</div>
+                    <div class="bett-tit"><span id="msg_type">基本走势</span></div>
+	            </div>
+        	</h1>
+            <div class="ui-bett-right trend-icon">
+                <a class="bett-heads" href="javascript:;"></a>
+            </div>
+        </div>
+    </div>
+    
+    <div id="wrapper_1" class="scorllmain-content scorllmain-Beet top_bar nobottom_bar">
+        <div class="sub_ScorllCont">
+            <div id="trend_pos" class="trend-tit">
+                <span data-pos="1" class="on">百</span>
+                <span data-pos="2">十</span>
+                <span data-pos="3">个</span>
+            </div>
+            <div id="chartsDiv" class="trend-content">
+                <table id="trend_table" cellpadding="0" cellspacing="0">
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="trend-foot">
+        <div class="trend-foot-txt">
+            <span id="game_name" style="align: center;">福彩3D</span>
+        </div>
+        <button class="trend-add">去投一注</button>
+    </div>
+    
+    <div class="beet-tips" hidden="">
+        <div class="clear"></div>
+        <ul>
+            <li><a class="beet-active" href="javascript:;">走势图</a></li>
+        </ul>
+    </div>
+    
+    <div class="trend-tips" hidden="">
+        <div class="trtip-tit"><i class="tr-icon"></i>选择彩种</div>
+        <ul>
+        	
+        	<li class="game_li_51" data-gid="51" data-enable="0">三分时时彩</li>
+        	
+        	<li class="game_li_5" data-gid="5" data-enable="0">重庆时时彩</li>
+        	
+        	<li class="game_li_9" data-gid="9" data-enable="0">北京赛车(PK10)</li>
+        	
+        	<li class="game_li_34" data-gid="34" data-enable="0">幸运飞艇</li>
+        	
+        	<li class="game_li_3" data-gid="3" data-enable="0">上海时时乐</li>
+        	
+        	<li class="game_li_4" data-gid="4" data-enable="0">天津时时彩</li>
+        	
+        	<li class="game_li_7" data-gid="7" data-enable="0">新疆时时彩</li>
+        	
+        	<li class="game_li_12" data-gid="12" data-enable="0">山东11选5</li>
+        	
+        	<li class="game_li_13" data-gid="13" data-enable="0">上海11选5</li>
+        	
+        	<li class="game_li_14" data-gid="14" data-enable="0">江西11选5</li>
+        	
+        	<li class="game_li_15" data-gid="15" data-enable="0">广东11选5</li>
+        	
+        	<li class="game_li_1" data-gid="1" data-enable="0">福彩3D</li>
+        	
+        	<li class="game_li_2" data-gid="2" data-enable="0">排列三</li>
+        	
+        </ul>
+    </div>
+    <div class="tips-bg" hidden=""></div>
+    
+    <script type="text/javascript">
+    	var trendGid = 1;
+    </script>
+    <script src="assets/js/require.js" data-main="assets/js/application/trend"></script>
+    <script src="assets/js/require.config.js?v=2.9"></script>
+</body>
+
+</html>
