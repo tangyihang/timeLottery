@@ -1,0 +1,76 @@
+@CHARSET "UTF-8";
+.clear {clear:both}
+.wrap-bg{padding-top:25px; padding-bottom: 25px;}
+.main {width:1000px; margin:0px auto; border:1px solid #ececec;}
+ .menu_right {float:right;line-height:25px;width:380px;margin-top:7px}
+.main .kj_box { background-color:#fff;/*min-height:400px;*/ color:#000;}
+.main .kj_box_bottom {background:url(../images/lhc_allbg.gif) 0 -389px no-repeat;height:6px;overflow:hidden}
+.main .kj_box h1 {clear:both; font-size:18px;padding:15px 0 6px 10px; font-weight: normal;}
+.main .kj_box h2 {font-size:12px}
+.ball_red{background-color:#E41B1B!important;}
+.ball_grey{background-color:#999!important;}
+.ball_blue{background-color:#2A74DD!important;}
+.ball_green{background-color:#1ca01c!important;}
+.top_title{ line-height:42px;background-color:#f5f5f5; font-size:14px; overflow: hidden;}
+.top_title>label,.top_title>div,.top_title>span{float:left;}
+.top_title>label,.top_title>div{padding:1px 4px 0 15px;}
+.top_title span{padding:0 5px;}
+.top_title label{color:#e4393c; font-size: 18px; line-height: 38px;}
+.top_title>label{font-weight: bold;}
+.top_title div label{ font-size: 14px; }
+.lotterylist{ float: left; width: 720px; }
+.lotterylist li { float: left; }
+.lotterylist>li a{ padding: 0px 10px;  font-size:14px; }
+.kj_box .kj_tab {border-top:4px solid #e4393c;background:#556069; font-family: ""}
+.kj_box .kj_tab .title {background:#f5f5f5;text-align:center; color:#555; height: 40px;}
+.kj_box .kj_tab td {border-bottom:1px solid #f5f5f5;text-align:center; padding:8px; font-size: 12px; color: #666;}
+.kj_box .kj_tab .czbgcolor {background:#fff}
+.kj_box .kj_tab .czbgcolor td {text-align:left}
+.kj_box .kj_tab .czbgcolor .fc {background:url(../images/lottery_logo_bg.gif) 0 0 no-repeat;height:22px;padding-left:32px;color:#e20a16}
+.kj_box .kj_tab .czbgcolor .fc h2 {font-size:12px;font-weight:normal}
+.kj_box .kj_tab .czbgcolor .tc {background:url(../images/lottery_logo_bg.gif) 0 -100px no-repeat;height:23px;padding-left:32px;color:#e20a16}
+.kj_box .kj_tab .bgcolor {background:#fff}
+.kj_box .kj_tab .bgcolor_a {background:#f5f5f5}
+.kj_box .kj_tab .ballbg {text-align:left;margin:0 8px}
+.kj_box .kj_tab .ballbg span {width:20px;height:21px;line-height:21px;text-align:center;color:#fff;display:inline-block}
+.kj_box .kj_tab .ballbg span{background:#e4393c; border-radius: 50%; width:27px; height: 27px; font:14px/27px Microsoft Yahei; text-align: center; margin-right: 5px;}
+/*.kj_box .kj_tab .ballbg span.ball_2 {background:url(../images/openprize_ball_bg.gif) -21px 0 no-repeat}
+.kj_box .kj_tab .ballbg span.ball_3 {background:url(../images/openprize_ball_bg.gif) -42px 0 no-repeat;width:16px;height:19px;line-height:19px;color:#700505}*/
+.kj_box  .ball_liuhecai p{display:inline-block;}
+.kj_box  .ball_liuhecai p .font{display:block;text-align:center;}
+.kj_box .name{color:#e4393c;font-weight:600; font-size:12px;}
+.kj_box .kj_tab .ballbg b { padding: 1px 5px 1px 0px; }
+.kj_box .kj_tab .extra {float:left;line-height:21px;margin-left:8px;display:inline;color:#890000;width:26px}
+.kj_box .kj_tab .extra .fpball {background:url(../images/openprize_ball_bg.gif) -82px 0 no-repeat;width:22px;height:22px;line-height:22px;color:#890000;text-align:center;display:block;margin:0 auto}
+.kj_box .prize-lottery {padding-left:25px}
+.kj_box .draw-lottery-btn {display:inline-block;width:80px;height:26px;line-height:26px;text-align:center;color:#fff;background:#397de4; font-size:14px;}
+.draw-calendar-select {border:1px solid #ff9d08;padding:2px;margin-top:10px;color:#121212;background:#f1f1f1}
+.dcs-head {font-weight:bold;height:40px;line-height:40px;background:url(../images/calendar.gif) repeat-x left top;border:1px solid #c6c6c6}
+.dsc-head-words {font-size:16px;margin-left:10px;float:left;display:inline}
+.dsc-head-op1 {width:72px;height:23px;line-height:23px;margin:0 5px;padding:3px 3px 3px 8px}
+.dsc-head-op2 {width:55px;height:23px;line-height:23px;margin:0 5px;padding:3px 3px 3px 8px}
+.dcs-head-select {float:left;margin-left:300px;_margin-top:10px;display:inline}
+.dcs-view {padding:10px}
+.dcs-view-table{border-left:1px solid #c6c6c6;border-top:1px solid #c6c6c6}
+.dcs-view-table td {cursor:pointer;background:url(../images/calendar.gif repeat-x) left -68px;font-weight:bold;text-align:center;height:30px;width:86px;border:1px solid #c6c6c6;border-left:none;border-top:0}
+.dcs-view-table td:hover {background:url(../images/calendar.gif) repeat-x left -38px}
+.dcs-view-table .select-day {background:url(../images/calendar.gif) repeat-x left -99px}
+
+/*--six lottery¨¦¡é?¨¨¡ë2??????--*/
+.ball_liuhecai { font-size:14px; font-weight: 700; }
+.ball_liuhecai p { margin-right: 3px; }
+.col-01,.col-02,.col-07,.col-08,.col-12,.col-13,.col-18,.col-19,.col-23,.col-24,.col-29,.col-30,.col-34,.col-35,.col-40,.col-45,.col-46 { 
+	background:url(six-red.png); border-radius: 50%; width: 30px; height: 30px; text-align: center; line-height: 26px; color: #666; display: inline-block; margin-right: 4px;  }
+.col-03,.col-04,.col-09,.col-10,.col-14,.col-15,.col-20,.col-25,.col-26,.col-31,.col-36,.col-37,.col-41,.col-42,.col-47,.col-48 {
+	background:url(six-blue.png); border-radius: 50%; width: 30px; height: 30px; text-align: center; line-height: 26px; color:#666; display: inline-block; margin-right: 4px; 
+}
+.col-05,.col-06,.col-11,.col-16,.col-17,.col-21,.col-22,.col-27,.col-28,.col-32,.col-33,.col-38,.col-39,.col-43,.col-44,.col-49 {
+	background:url(six-green.png); border-radius: 50%; width: 30px; height: 30px; text-align: center; line-height: 26px; color:#666; display: inline-block; margin-right: 4px; }
+
+/* -- ?????¡ë -- */
+.ks_ball_1,.ks_ball_2,.ks_ball_3,.ks_ball_4,.ks_ball_5,.ks_ball_6 { background: url(ks_ball_1.png) no-repeat; width:25px; height: 25px; float: left; text-indent: -9999em; margin-right: 5px; }
+.ks_ball_2 { background: url(ks_ball_2.png) no-repeat;}
+.ks_ball_3 { background: url(ks_ball_3.png) no-repeat;}
+.ks_ball_4 { background: url(ks_ball_4.png) no-repeat;}
+.ks_ball_5 { background: url(ks_ball_5.png) no-repeat;}
+.ks_ball_6 { background: url(ks_ball_6.png) no-repeat;}

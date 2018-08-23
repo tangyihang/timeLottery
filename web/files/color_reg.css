@@ -1,0 +1,18 @@
+.wrap-bg {padding: 1px 0 1px 0; background: #f5f5f5;}
+.reg { background: #fff; border:1px solid #ececec;margin-top: 30px; margin-bottom: 20px;}
+.reg-tit h3 { border-bottom: 1px solid #ececec;}
+.reg-info .red { color: #e4393c; }
+.reg-info ul li input[type=checkbox]{background-color:rgb(210,210,21);}
+.reg-int{border:1px solid #ddd;}
+.reg-int,.codes-int{background-color:#fff;color:#333;}
+.reg_need_captcha .top_click{color:#fff;background-color:#8a9bac;}
+.reg_need_captcha .yanzhengma img.login_img{background-color:#636169;}
+.submit{background: #e4393c;color: #fff;width: 257px; height: 41px; line-height: 41px }
+.submit:hover { background: #c52135 }
+.reg-passwd-strength span{background:#999;color:#fff; }
+.reg-passwd-strength .onsel { background: #a7081b; }
+.top_click{background-color:#fff;color:#B1B1B1;}
+a.orange{color: #02339a;}
+.suggest{color:#FF4B11;padding:0 1px 0 2px;}
+.info-codes{border:1px solid #ddd; position: relative;}
+.top_click{border:2px solid rgba(255,255,255,0);border-radius:6px;box-sizing: border-box;}

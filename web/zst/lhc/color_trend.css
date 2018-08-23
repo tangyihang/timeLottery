@@ -1,0 +1,18 @@
+/**下面代码主要是重写旧的颜色，使它适合于 彩33的黑色的背景**/
+.page-info,.page_info_bg,.ele-game-wrap{background-color:rgba(40,40,40,0);}
+body{color:#999;}
+.page-info table td,.page-info table table{border-color:#999;}
+.page-info td.td0{background-color:rgba(225,225,200,0.0);border-color:#666;}
+.ball13, .ball14 {color:#666;}
+.page-info td.td0{color: #666;}
+/*六合彩*/
+.lot-six-bg , .lot-six-bg  .drawDate , .lot-six-bg  .table { background-color:rgba(50,50,50,0)!important;}
+.table_ball .name {width: 38px; background: rgba(234,227,221,0.5);}
+#drawTable .GDX_X, #drawTable .GWDX_X, #drawTable .GDS_D, #drawTable .GLH_H, #drawTable .GLHT_H, #drawTable .GZIH_H,
+#drawTable .GTS_1, #drawTable .GZDS_S, #drawTable .GZDX_X, #drawTable .GHDS_S, #drawTable .GHDX_X, #drawTable .GWX_1,
+#drawTable .GQHH_H, #drawTable .GDSH_D {
+}
+.list .hover {
+    background-color:#fff !important;
+}
+#drawTable , .drawDate{ max-width:1004px!important;}

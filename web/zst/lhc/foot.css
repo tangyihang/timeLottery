@@ -1,0 +1,20 @@
+.footer {position: relative;text-align: center;}
+.footer a {text-decoration: none;}
+.footer .wrapper {width: 1010px;margin: 0 auto;}
+.footer-box1 {float: left;color: #6b6b6b;margin: 8px 45px 20px 0}
+.footer-box1 span {position: relative;top: 3px;color: #ea721a;margin-right: 10px}
+.footer-box1 a {color: #c7c7c7}
+.footer-box1 a:hover{color: #ea721a}
+.footer-box1 ul {float: left;padding-right: 10px;}
+.footer-box1 li {line-height: 2.2em;}
+.footer-box2{float: left;margin: 8px 15px 20px 35px}
+.footer-box2 ul {width: 220px;}
+.footer-box2 li {width: 60px;float: left;text-align: left;margin-right: 10px;}
+.footer-box1 h2 {margin-top: 16px;margin-left: 0!important;line-height: 4.3em;text-align: left;color: #f6f6f6;font-weight: normal}
+.footer-bt {margin:53px 0 18px 0;float: right;padding: 6px 45px;color: #fff;border: 1px #fff solid;border-radius: 5px;transition: all .3s ease-in-out;-moz-transition: all .3s ease-in-out;-webkit-transition: all .3s ease-in-out;-o-transition: all .3s ease-in-out;-ms-transition: all .3s ease-in-out}
+.footer-bt:hover {background: #ea721a;color: #fff;border: 1px #ea721a solid;}
+.footer-bt:active {color: #763a0d;background: #d06517;box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.20) inset}
+.footer-bt-style {position: relative;top: -5px;font: 18px 'Microsoft Yahei';}
+.footer-bt-style:active {color: #763a0d;text-shadow: 0 1px #f59854;}
+.footnotice {width: 30%;line-height:20px;color: #c7c7c7;float: right;text-align: right;}
+.cancel {background: #E4E3E3;}

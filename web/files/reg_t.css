@@ -1,0 +1,29 @@
+.reg{margin-bottom: 10px; }
+.reg-tit{height:47px; line-height: 47px; padding:0 15px;}
+.reg-tit h3{font-size: 18px; font-weight: normal; }
+.reg-info{width:850px; margin:50px auto;}
+.reg-info ul{overflow: hidden; }
+.reg-info ul li{height: 40px; line-height:36px; margin-bottom:16px; position: relative; }
+.reg-info ul li:first-of-type .info-txt{ line-height:19px;padding-top:7px;}
+.reg-info ul li input[type=checkbox]{width:18px;height:18px;margin-right:5px;display:inline-block;}
+.info-left{float: left; width:100px; text-align: right; padding-right: 10px; font-size: 14px;}
+.info-right{width:250px; float: left;white-space:nowrap;}
+.reg-int,.codes-int{width:260px; line-height:20px; padding:6px 10px; border-radius:2px;box-sizing: border-box; }
+.codes-int{height:38px; }.reg-int{height:40px;}.top_click{height:38px;}
+.codes-int{width:160px;float:left; margin-right:-20px; }
+.info-txt{position: absolute; width: 330px; left: 380px; }
+.reg_need_captcha{float:right;position:relative;margin-right:5px;box-sizing: border-box;margin-left:-10px;}
+.reg_need_captcha *{box-sizing: border-box;}
+.reg_need_captcha .top_click{padding-left:10px;position:absolute;width:100%;height:100%;z-index:4;line-height:38px;text-align:left;cursor:pointer;border-radius:2px;}
+.reg_need_captcha .yanzhengma{z-index:3;position:relative;min-width:90px;}
+.reg_need_captcha .yanzhengma img.login_img{width:62px;height:35px;margin-right:5px;cursor:pointer; }
+.reg_need_captcha .top_click:hover{text-decoration: underline;}
+.codes-img{float: left; margin:0px 6px 0 0;width:61px;height:36px; }
+body a[onclick],body a[id],button{cursor:pointer;}
+.submit{cursor:pointer;width:205px;height:46px;line-height:47px; text-align: center;  font-size:15px;border-radius:2px; }
+.reg-passwd-strength span{ width:45px; height: 18px; line-height: 18px; text-align: center;display:block; margin-right: 1px; float: left; margin-top: 10px;}
+.info-codes{width:259px;border-radius:2px; }
+.top_click{width:256px;border-radius:2px;position:absolute;z-index:5; }
+.suggest{cursor:pointer;}
+.reg-refresh-verify-code{display:inline-block;width:35px;height:35px;background:url(../images/bg.gif) no-repeat -341px -315px!important;position:absolute;top:0;left:214px}
+[name=yzm_img_div]{float:right;margin-right:3px;}

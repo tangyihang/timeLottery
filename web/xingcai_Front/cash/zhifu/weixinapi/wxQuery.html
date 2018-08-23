@@ -1,0 +1,50 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>Query</title>
+	</head>
+	<body>
+			商 家 号（Merchant CODE）：<input type="text" id="merchant_code"  value="1111110166" />*<br>
+
+			接口版本（Interface Version）：<input type="text" id="interface_version"  value="V3.0" />*<br>
+
+			签名类型（Sign Type）：<input type="text" id="sign_type"  value="RSA-S" />*<br>
+
+			服务类型（Service Type）：<input type="text" id="service_type"  value="single_trade_query" />*<br>
+
+			商家订单号（Order NO.）：<input type="text" id="order_no"  value="" />*<br>
+
+			智付订单号（Trade NO.）：<input type="text" id="trade_no"  value="" /><br>
+
+			<button id="submit">查询</button>
+			
+			<h4>查询结果如下所示：</h4>
+			
+			<p id="queryresult"></p>
+	
+	<script>
+		document.getElementById("submit").onclick = function() { 
+		var request = new XMLHttpRequest();
+		request.open("POST", "wxQuery.php");
+		var data = "merchant_code=" + document.getElementById("merchant_code").value 
+	                  + "&sign_type=" + document.getElementById("sign_type").value 
+	                  + "&service_type=" + document.getElementById("service_type").value
+					  + "&order_no=" + document.getElementById("order_no").value
+					  + "&trade_no=" + document.getElementById("trade_no").value
+					  + "&interface_version=" + document.getElementById("interface_version").value ;
+		request.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+		request.send(data);
+		request.onreadystatechange = function() {
+		if (request.readyState===4) {
+			if (request.status===200) { 
+				document.getElementById("queryresult").innerHTML = request.responseText;
+			} else {
+				alert("发生错误：" + request.status);
+			}
+		} 
+	}
+}
+	</script>
+	</body>
+</html>

@@ -1,0 +1,116 @@
+.pay-top_1>a{cursor:pointer;float:left;width:150px;height:41px;line-height:42px;color:#fff;text-align:center;background-color:#248ce6;border-right:1px solid #fff;}
+.pay-top_1>a.current{background-color:#ff9835!important;}
+.pay-top_1 .current{cursor:auto!important;}
+.pay-form1{display:block;margin:0 10px 0 10px;padding:18px 0 20px 0;border-bottom:1px solid rgb(210,210,210);}
+.pay-form1 .row{height:52px;position:relative;padding-left:130px;}
+.pay-form1 .row>label{position:absolute;padding-right:5px;text-align:right;width:135px;top:0;left:0;height:55px;line-height:56px;margin-top:0!important;}
+.pay-form1 .row>*{float:left;margin-top:12px;height:32px;position:relative;width:485px;}
+.pay-form1 .row>div>input{height:33px;line-height:36px;padding:0px 6px;border:1px solid rgb(210,210,210);border-radius:3px;text-align:left;}
+.pay-form1 .row>div>select{height:33px;line-height:36px;padding:0 0 0 6px;border:1px solid rgb(210,210,210);width:60px;border-radius:3px;margin-right:9px;text-align:center;}
+.pay-form1 .row>div>*{float:left;height:33px;line-height:36px;}
+.btn{width:82px;border-radius:3px;height:32px;text-align:center;line-height:32px;color:#fff;background-color:#ff9835;cursor:pointer;}
+.tip_input_blue{height:35px;line-height:35px;color:#248ce6;margin-right:18px;font-size:16px;}
+.tips>p{margin-bottom:7px;}
+.details-right .head{position:relative;padding:5px 10px 5px 85px;height:80px;}
+.details-right .head>strong{display:block;color:#ff9835;font-size:18px;padding-top:8px;}
+.details-right .head>p{display:block;color:#248ce6;padding-top:8px;}
+.details-right .head i{background:url(/common/statics/img/userCenter/ics.png) no-repeat -113px -54px;width:55px;height:55px;top:12px;left:25px;background-size:250px;position:absolute;}
+.checkList>div{padding-right:15px;}
+.checkList>span{padding:1px 20px 8px 20px;text-align:center;}
+.details-right .head1>strong{display:block;color:#248ce6;font-size:20px;padding-top:15px;}
+.details-right .head1>p{display:block;color:#ff9835;}
+.details-right .head1 i{background:url(/common/statics/img/userCenter/ics.png) no-repeat -120px -190px;width:55px;height:55px;top:12px;left:30px;position:absolute;}
+.details-right .table_div{margin:5px 0px;min-height:94px;}
+.details-right .table_div>div:last-of-type{margin-right:-10px;}
+.details-right .table_div>div{border-top:1px solid #e9ecee;float:left;min-height:35px;border-right:1px solid #e9ecee;min-width:70px;margin-bottom:25px;margin-left:-1px;border-left:1px solid #e9ecee;}
+.details-right .table_div>div:first-of-type{border-left:1px solid #e9ecee;}
+.details-right .table_div>div>div{width:100%;text-align:center;height:35px;line-height:36px;border-bottom:1px solid #e9ecee;padding:0 6px;font-size:12px;}
+.details-right .table_div .head{color:#fff;background-color:#248ce6;}
+.play-wrap{margin-top:8px;}
+.play-wrap:after{clear:both;}
+.pay-select select{width:210px !important;}
+.pay-int{width:210px;color:#666;}
+.pay-info-tit{padding:30px;font-family:"宋体"}
+.pay-info-tit .tips{line-height:22px }
+/*-- 在线存款 --*/
+.deposit-info{float:left;width:620px;background:#fff;margin-left:11px;min-height:643px;}
+.pay-button{width:200px;margin-left:130px;margin-top:10px;}
+.details-right {float:left;background-color:#f8fbfe;margin-right:-10px;width:175px;border:1px solid  #e9ecee;min-height:645px;}
+.details-right:after{clear:both;}
+.pay-online-btn{border:2px solid #6eabec;border-radius:4px;line-height:41px;height:41px;width:140px;margin:10px 0 0 18px;position:relative;text-align:center;color:#6eabec;display:block;cursor:pointer;}
+.pay-dian{background:url(/img/pay_dian.png) no-repeat 0 0px;width:10px;height:13px;display:inline-block;}
+.pay-two img{width:170px;height:170px;border-radius:7px;background-color:#F8F8F8;}
+/*-- 银行卡入款 --*/
+.bank-wrap{background:#fff;border:1px solid #e9ecee;margin:20px;font-family:"宋体";font-size:12px;}
+.bank-top{padding:30px;line-height:30px;}
+.bank-top h3{font-family:Microsoft Yahei;}
+ .copy_outer{position:relative;display:inline-block;padding:9px 8px 6px 8px;cursor:pointer;min-height:30px;margin:-9px 1px;}
+.zclip embed{position:absolute;left:0;top:0;width:100%;height:100%;}
+.bank-tit ul li{background:#248ce6;float:left;width:25%;border-right:1px solid #fff;height:40px;line-height:40px;text-align:center;color:#fff;}
+.bank-tit ul li.active{background:#ff9835;}
+._bank_button  button{border:none;background-color:#ff9835;color:#fff;border-radius:3px;text-align:center;min-width:90px;height:28px;padding:2px  10px;}
+._bank_button  button:hover{background-color:#E48730;}
+.bank-mess { float: left; }
+.bank-info{padding:0 0 0 40px;line-height:30px;overflow:hidden;border-bottom:1px solid #e9ecee }
+.bank-info div.row{margin:20px 0;overflow:hidden;width:100%;min-height:100px;}
+.bank-info input{float:left;margin:50px 30px 0 30px;}
+.bank-btn{text-align:center;margin:10px 0;}
+.bank-btn .btn-blue,.bank-btn .btn-orange{margin-right:10px;border-radius:3px;background:#248ce6;width:82px;height:30px;line-height:30px;color:#fff;display:inline-block;cursor:pointer;}
+.bank-btn .btn-orange{background:#ff9736 }
+.copy-btn{background:#f8f8f8;border:1px solid #d4d4d4;width:74px;height:25px;box-shadow:1px 3px 5px #f8f8f8;background:linear-gradient(#f9f9f9, #e2e2e2);display:inline-block;text-align:center;line-height:25px;}
+/*.bank-order-info .bt_time{cursor:pointer;background:#FFF url(/common/statics/img/userCenter/time.png) no-repeat scroll right center;padding:0px 5px 0px 5px;}*/
+.bank-order-info .bt_time{cursor:pointer;padding:0px 5px 0px 5px;}
+.bank-order-info{padding:0 0 0 40px;line-height:22px;overflow:hidden;}
+.bank-table{text-align:center;width:90%;margin-bottom:10px;}
+.bank-table tr td{background:#fff;line-height:50px;height:50px;}
+.bank-order{padding:20px;border:1px solid #ddd;width:80%;margin-top:20px;overflow:hidden;}
+.bank-order ul li{clear:both;height:45px;line-height:45px;}
+.bank-order-l{float:left;font-weight:bold;width:92px;text-align:right;padding-right:5px;}
+.bank-order-r .int{border:1px solid #ddd;width:183px;height:30px;line-height:30px;text-align:center;padding:0 5px;font-family:"宋体";color:#666;border-radius:3px;float:left;margin-top:7px;}
+.int-bg{background:#f4f4f4 }
+.bank-order-int{float:left;width:80%;}
+.bank-order label{float:left;width:110px;overflow:hidden;height:30px;}
+.order-radio{float:left;margin:15px 5px 0 0px;}
+.bank-order-time{float:left;margin:5px 0 0 10px;}
+.bank-order-time select{float:left;margin:3px 0px 0 10px;height:30px;border-radius:2px;line-height:30px;border:1px solid #e5e5e5;color:#666;}
+.pay-maintain img{float:left;margin-right:10px;}
+/**/
+.title_tip{line-height:35px;text-align:center;font-size:16px;padding-top:10px;font-weight:500;}
+/* 微信支付 */
+.text-center{text-align:center;line-height:24px;}
+.wechat-top{min-height:120px;margin-bottom:8px;background:#E5E5E5;border-radius:4px;}
+.wechat-one{min-height:120px;font-size:12px;margin:0px 20px;}
+.wechat-tit{color:#E84E05;font-size:15px;padding-top:10px;font-weight:600;}
+.wechat-recharge{margin:15px 0 0 50px;float:left;width:350px;}.wechat-recharge>span{padding:1px 9px;}
+.wechat-one .btn{height:30px;width:82px;line-height:30px;}
+.we-or-left{background:url(/common/statics/img/userCenter/wechat-orders.png) no-repeat;width:51px;height:42px;float:left;margin:34px 0 0 80px;}
+.we-or-tit{float:left;margin:30px 0 0 10px;}
+.we-or-tit h3{font-size:22px;color:#3da300;}
+.we-or-tit p{line-height:30px;}
+.we-blue{color:#248ce6}
+.wechat-order{border-bottom:1px solid #e9ecee;margin-bottom:15px;padding-bottom:15px;overflow:hidden;}
+.wechat-order .wechat-img{margin:60px 0 0 0px;clear:both;}
+.wechat-order .btn{margin:15px 0 0 150px;}
+.pay-info-left,.pay-info-right{border:1px solid #c5c5c5;width:300px;float:left;margin:10px 0 0 22px;padding-bottom:10px;height:330px;overflow:hidden;}
+.pay-info-right{width:270px;margin-left:15px;}
+.pay-tit{height:48px;line-height:48px;color:#3c2929;border-bottom:1px solid #c5c5c5;font-size:16px;}
+.pay-info-right .pay-tit{text-align:center;}
+.pay-tit i{background:url(/common/statics/img/userCenter/wei-icon.png);width:30px;height:27px;float:left;margin:10px 10px 0 15px;}
+.pay-copy{padding-left:18px;border-bottom:1px solid #c5c5c5;line-height:20px;}
+.pay-copy p{overflow:hidden;width:270px;}
+.pay-copy .pay-a{float:right;}
+.red{color:#f00}
+.pay-a{color:#248ce6;}
+.pay-box{padding-left:18px;}
+.pay-box .row{height:30px;margin-top:12px;line-height:30px;}
+.pay-box .row label{float:left;width:70px;}
+.pay-box .pay-int,.wechat-int{width:190px;border:1px solid #ddd;height:33px;padding-left:5px;}
+.wechat-int{width:150px;border-radius:3px;}
+.wechat-three .btn{margin:5px 0 0 150px;}
+.pay-wei-btn{background:#248ce6;color:#fff;width:196px;font:14px/32px Microsoft Yahei;border:0}
+.wechat-img{margin:50px 0 0 0px;width:100%;}
+.wechat-img p{line-height:24px;padding-left:15px;}
+.pay-time select,.pay-time input{float:left;border:1px solid #ddd;height:30px;line-height:30px;margin-right:3px;}
+.pay-time .pay-time-icon{background:url(/common/statics/img/userCenter/pay-time-icon.png);width:16px;height:17px;float:left;margin:8px 5px 0;}
+/*在线支付*/
+img[name="pay_code_img"]{display:block;margin:0 auto;min-width:76px;}

@@ -1,0 +1,151 @@
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,p,blockquote,th,td
+{margin:0;padding:0;}
+h1,h2,h3,h4,h5,h6
+{font-size:100%}
+ol,ul
+{list-style:none;}
+address,caption,cite,code,dfn,em,strong,th,var
+{font-style:normal; font-weight:normal;}
+table
+{border-collapse:collapse;border-spacing:0;}
+fieldset,img
+{border:0;}
+caption,th
+{text-align:left;}
+q:before,q:after
+{content:'';}
+ .clearfix:after { content:""; display:table;}
+.clearfix:before{display:none;}
+.clearfix:after { clear:both;}
+.clearfix { *zoom:1;}
+a {
+    outline: none; 
+    behavior:expression(this.onFocus=this.blur());  
+}
+html{width:100%;height:100%;}
+body{width:100%;font-size:12px;font-family: STHeiti,"Microsoft YaHei", "微软雅黑", "SimSun", "宋体",arial;height:auto;}/*body 的高度 必须是auto的 不可以是100% ，否则会影响iframe的高度计算*//*overflow:hidden;*/
+/*解决 body设置的font-size不起作用，禁止浏览器内置对table的设置font-size:medium;*/
+a{text-decoration:none;}
+body a[onclick],body a[id],button{cursor:pointer;}
+.showhide-wrap {height:100%;position: relative;display: none;z-index: 1;}
+.lot-fore  .tip{display:block;padding:3px 50px 0px 2px;font-size:12px;text-align:center;}
+.ele-game-wrap{clear:both;margin:0 auto;width:1000px;}
+.ele-live-wrap{margin:0 auto;min-height:340px;padding-right:3px;}
+.ele-live-layout{border-radius:4px;position:relative;float:left;margin:0 5px 9px 5px;width: 316px;height: 190px;}
+/*画面小於375MENU **/
+@media screen and (max-width: 390px){
+    .ele-live-layout{width:290px; overflow: hidden; }
+    .show-gd1 li{width:20px !important; height:20px !important; line-height: 20px !important; margin-top: 2px !important }
+    .lott-bot a{width: 32.93% !important }
+    .lot-wrap{width: 275px !important; background-size: 275px 175px !important; }
+}
+/*画面小於320MENU*/
+@media screen and (max-width: 360px){
+    .ele-live-layout{width:240px; overflow: hidden; }
+    .show-gd1 li{width:15px !important; height:15px !important; line-height: 15px !important; margin-top: 6px !important }
+    .lott-bot a{width: 74px !important }
+    .lot-wrap{width: 225px !important; background-size: 230px 175px !important; }
+}
+/*-- 购彩大厅 --*/
+.wrap-lot { padding:10px 0 5px; }
+.lot-wrap { background: url(../images/lottery/lott_bg.jpg) no-repeat; width: 300px; height: 175px; margin:5px 7px 6px 6px; border-radius:3px; }
+.lott-top { margin:10px; height:115px; }
+.lott-name { overflow: hidden; }
+.lott-imgbox { width:84px; height: 84px; float: left; }
+.lott-imgbox img { max-width: 100%; height: auto; }
+.lott-name-righ{float: left; margin:0 0 0 17px;  }
+.lott-name-righ h3 {  font-size: 18px; font-weight: normal; }
+.lott-name-righ p {  line-height: 30px; height: 30px; font-size: 14px; }
+.gct_time {border-radius: 3px;  font-size: 16px; padding:0 10px; height: 25px; line-height: 25px;display:inline-block; }
+.lot-fore { margin-top: 8px; }
+.lot-fore .fl {float: left; line-height: 24px; margin-right:3px; }
+.show-gd1 ul:after{clear:both;}
+.show-gd1 ul{display:inline-block}
+.show-gd1 { float: left;width:234px;margin-right:-15px;text-align:center; }
+.show-gd1 li {border-radius: 50%; float: left; width:19px; height:19px;text-align:center; line-height:19px; margin:0 1px!important; }
+.show-gd1 .big_ball li{ width:22px!important;height:22px!important; line-height:22px!important;margin-right:2px!important;font-size:13px;: }
+.pk10 li { margin:0; }
+.tabulousclear {display: block;clear: both}
+.show-gd1 li.six-add { background:none;width:15px; font-size: 16px }
+.lott-bot { height:40px;  }
+.lott-bot a{ width:99px;float: left; display: block; line-height: 40px; text-align: center; margin: 0 1px 1px 0;font-size:14px;cursor:pointer;  }
+.lott-bot a.lot-btn { margin-right:-5px;width:100px;}
+.lott-bot a:hover{ text-decoration: underline; }
+/* 下面是首页公告，的弹窗 */
+.JS_blockPage{display:none;border-radius:5px;z-index:1001;width:520px;min-height:250px;margin-left:-250px;margin-top:-170px;position:fixed;padding:0px;top:50%;left:50%;text-align:center;background-color:#f3f3f3;  }
+.detail_dialog{padding:17px;font-size:12px;line-height:18px;position:relative}
+.JS_blockPage.big{animation:0.3s key_sb ease-out;-webkit-animation:0.3s key_sb ease-out;-ms-animation:0.3s key_sb ease-out;transform-origin:center;-webkit-transform-origin:center;-ms-transform-origin:center;}
+@-webkit-keyframes key_sb{    0% {-webkit-transform:scale(0.5);opacity:0.8;} 100% {-webkit-transform:scale(1);}}
+@-moz-keyframes key_sb{0% {-moz-transform:scale(0.5);;opacity:0.8;} 100% {-moz-transform:scale(1);}}
+@keyframes key_sb{    0% {transform:scale(0.5);opacity:0.8;}     100% {transform:scale(1);} }
+@-ms-keyframes key_sb{   0% {-ms-transform:scale(0.5);opacity:0.8;}    100% {-ms-transform:scale(1);}}
+.JS_blockPage .shortWidth{width:80px;text-align:right;padding-right:5px;}
+.detail_dialog>h3{display:block;position:relative;font-size:16px;padding:5px 5px 15px 0;font-weight:normal;z-index:2;}
+#block_close{width:18px;height:18px;display:block;z-index:3;position:absolute;top:17px;right:18px;cursor:pointer;background:url(../images/mdl-icon.png) no-repeat -11px -80px;transition:all .2s ease-in-out;-moz-transition:all .2s ease-in-out;-webkit-transition:all .2s ease-in-out;-o-transition:all .2s ease-in-out;-ms-transition:all .2s ease-in-out}
+#block_close:hover{transform:rotate(180deg);-moz-transform:rotate(180deg);-webkit-transform:rotate(180deg);-o-transform:rotate(180deg);-ms-transform:rotate(180deg)}
+.data{margin-top:20px;background:#fff;font-size:12px;line-height:20px;text-align:left;height:140px;overflow:auto;border-radius:5px;padding:2px 10px;}
+.JS_blockPage .c1{cursor:pointer;}
+.JS_blockPage  .one{padding:6px 5px 6px 5px;margin:0 10px;}
+.JS_blockPage  .one:first-of-type{border-top:none;}
+.JS_blockPage  .one>strong{display:block;text-align:left;padding:3px 0;font-size:14px;}
+.JS_blockPage  .one>p{display:block;text-align:left;line-height:1.42;}
+.detail_dialog h4{display:block;position:relative;font-size:12px;line-height:33px;font-weight:normal;padding-top:6px;}
+.zdinfo td{line-height:20px;padding-bottom:3px}
+.detail_dialog .title{margin-top:15px;height:35px;line-height:35px;text-align:left;padding-bottom:5px;position:relative}
+.data-order{margin-top:12px;min-height:160px;max-height:270px;}
+.show-gd1 li , .lot-fore ,.lott-bot a.lot-btn, .gct_time ,.lott-name-righ h3  {color: #fff;}
+.detail_dialog>h3{ color:#EA721A; }
+/*.data {color:#555;}
+.data {border:1px solid #F4F4F4;}*/
+/*pcdd*/
+.ball_red{background-color:#E41B1B!important;}
+.ball_grey{background-color:#999!important;}
+.ball_blue{background-color:#2A74DD!important;}
+.ball_green{background-color:#1ca01c!important;}
+.ball_other{background-color:#ff2929!important;}
+.JS_blockPage  .one>strong {color:#EA721A;}
+.detail_dialog h4{color:#999;}
+.JS_blockPage{border:1px #E1E1E1 solid; }
+.detail_dialog>h3 { border-bottom:1px #ea721a solid; }
+.JS_blockPage .one { border-top:1px dotted #D6DFD0;}
+.zdinfo td , .detail_dialog .title  {border-bottom:1px #d5d5d5 dashed;}.JS_blockPage{display:none;border-radius:5px;z-index:1001;width:520px;min-height:250px;margin-left:-250px;margin-top:-170px;position:fixed;padding:0px;top:50%;left:50%;text-align:center;background-color:#f3f3f3;  }
+.detail_dialog{padding:17px;font-size:12px;line-height:18px;position:relative}
+.JS_blockPage.big{animation:0.3s key_sb ease-out;-webkit-animation:0.3s key_sb ease-out;-ms-animation:0.3s key_sb ease-out;transform-origin:center;-webkit-transform-origin:center;-ms-transform-origin:center;}
+@-webkit-keyframes key_sb{    0% {-webkit-transform:scale(0.5);opacity:0.8;} 100% {-webkit-transform:scale(1);}}
+@-moz-keyframes key_sb{0% {-moz-transform:scale(0.5);;opacity:0.8;} 100% {-moz-transform:scale(1);}}
+@keyframes key_sb{    0% {transform:scale(0.5);opacity:0.8;}     100% {transform:scale(1);} }
+@-ms-keyframes key_sb{   0% {-ms-transform:scale(0.5);opacity:0.8;}    100% {-ms-transform:scale(1);}}
+.JS_blockPage .shortWidth{width:80px;text-align:right;padding-right:5px;}
+.detail_dialog>h3{display:block;position:relative;font-size:16px;padding:5px 5px 15px 0;font-weight:normal;z-index:2;}
+#block_close{width:18px;height:18px;display:block;z-index:3;position:absolute;top:17px;right:18px;cursor:pointer;background:url(../images/mdl-icon.png) no-repeat -11px -80px;transition:all .2s ease-in-out;-moz-transition:all .2s ease-in-out;-webkit-transition:all .2s ease-in-out;-o-transition:all .2s ease-in-out;-ms-transition:all .2s ease-in-out}
+#block_close:hover{transform:rotate(180deg);-moz-transform:rotate(180deg);-webkit-transform:rotate(180deg);-o-transform:rotate(180deg);-ms-transform:rotate(180deg)}
+.data{margin-top:20px;background:#fff;font-size:12px;line-height:20px;text-align:left;height:140px;overflow:auto;border-radius:5px;padding:2px 10px;}
+.JS_blockPage .c1{cursor:pointer;}
+.JS_blockPage  .one{padding:6px 5px 6px 5px;margin:0 10px;}
+.JS_blockPage  .one:first-of-type{border-top:none;}
+.JS_blockPage  .one>strong{display:block;text-align:left;padding:3px 0;font-size:14px;}
+.JS_blockPage  .one>p{display:block;text-align:left;line-height:1.42;}
+.detail_dialog h4{display:block;position:relative;font-size:12px;line-height:33px;font-weight:normal;padding-top:6px;}
+.zdinfo td{line-height:20px;padding-bottom:3px}
+.detail_dialog .title{margin-top:15px;height:35px;line-height:35px;text-align:left;padding-bottom:5px;position:relative}
+.data-order{margin-top:12px;min-height:160px;max-height:270px;}
+.show-gd1 li , .lot-fore ,.lott-bot a.lot-btn, .gct_time ,.lott-name-righ h3  {color: #fff;}
+.showhide-wrap {background-color:#f3f3f3;}
+.lot-fore  .tip{color:#999;}
+.ele-live-layout{background-color:#ccc; border-radius: 0}
+.lott-name-righ p { color: #c5352f;}
+.show-gd1 li { background-color:#ff2929;}
+.show-gd1 li.seven-7 { background: #217dcd }
+.show-gd1 li.six-red { background: #ff2929 }
+.show-gd1 li.six-blue { background: #217dcd }
+.show-gd1 li.six-green { background: #1cac65 }
+.show-gd1 li.east-blue { background: #4A4AFF }
+.lott-bot a{background-color:#e9e9e9; color: #333;}
+.lott-bot a.lot-btn{background-color:#d32036;}
+.lot-wrap { border:1px solid #bababa; background:#FFFBF4; box-shadow: 1px 5px 15px  #ebe9e9 inset}
+.lott-name-righ h3,.lot-fore { color:#666;}
+.gct_time { background: #e1e1e1;  color:#666;}
+.top-login-bg  input:-webkit-autofill {-webkit-box-shadow:0 0 0 1000px #FFFBF4 inset; -webkit-text-fill-color:#999}
+
+
+

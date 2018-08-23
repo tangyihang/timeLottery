@@ -1,0 +1,217 @@
+///* 该文件包括 主页的部分功能 ：1 主页中左边的彩票menu列表； 2 头部html; 3 定义全局刷新余额的方法： window.refreshAmount */
+// from  
+// _common 是 当前文件的命名空间
+window._home_menu = {
+    //@ parem  domSelector  : 一个dom选择器，  获得游戏列表(主页等彩票列表)
+    getGameList: function (domSelector) {
+        var static_value = {
+            topNum: 6   //热门彩种，选前6个作为热门彩种
+        };
+     
+
+    },
+   
+    //ajax获取跑马灯数据
+    getMqData: function (domSelector) {
+        if( $(domSelector).length == 0 ){
+            return;
+        }
+      /*   $.ajax({
+            'url': '/index/getMqData.html',
+            'dataType': 'json',
+            'type': 'post',
+            'success': function (data) {
+            	$("#sys_tip_outer").append("<marquee id=\"sys_tip\" behavior=\"scroll\"></marquee>");
+            	///* marquee标签必须由后来添加，和innerHTML同时存在，不可先于内容存在  
+                $("#header_plus .header-toptray-plus").show();
+        		var html = data.html?data.html.replace(/<br\s*\/?>/gi, "&nbsp;&nbsp;"):"";
+        		var marqueeDom = $("#sys_tip")
+            	marqueeDom.html(html);
+                marqueeDom.bind("mouseover",function()
+                {
+                    $(this).get(0).stop();
+                }).bind("mouseout",function()
+                {
+                    $(this).get(0).start();
+                });
+            }
+        }); */
+    },   
+        
+    /*
+     检查是否登陆
+     未登录 则隐藏用于余额，显示登录输入框。登录，反之。
+     已登录需要弹出系统公告，还需要显示 余额和用户名
+     * */
+    checkLogin: function () {
+
+    }
+};
+try{
+    //下面是静态资源url的前缀
+    if( typeof(_prefixURL)!="object" )
+    {
+        window._prefixURL = {
+            statics:"/sscp/statics",
+            common:"/common/statics"
+        };
+    }
+}catch (e) {
+    console.log(e);
+}
+
+
+
+
+$(function(){
+    try{
+        //下面是 加入收藏
+        $("#shoucang").on('click',function(){
+            AddFavorite(location.herf,'彩票33');
+            function AddFavorite(sURL, sTitle)
+            {
+                try
+                {
+                    window.external.addFavorite(sURL, sTitle);
+                }
+                catch (e)
+                {
+                    try
+                    {
+                        window.sidebar.addPanel(sTitle, sURL, "");
+                    }
+                    catch (e)
+                    {
+                        alert("请使用Ctrl+D进行添加");
+                    }
+                }
+            }
+        });
+    }catch (e){console.log(e);}
+    try{
+        //首页点击 logo 跳转主页,如果是主页则不绑定该方法
+        if( location.href.length > document.domain.length + 2 )
+        {
+            $("#liansai .sprite-logo").bind("click",function(){
+           //document.domain
+                __openWin("home","/");
+            });
+        }
+    }catch(e){console.log(e);}
+
+    //显示或隐藏代理注册
+    (function agentSet(){
+        try
+        {
+   /*          $.ajax({
+                url: '/index/agentSet.html',
+                type: 'post',
+                dataType: 'json'
+                // data: {stu: '1'},
+            }).done(function (data) {
+                try
+                {
+                    if ( session_timeout(data) === false )
+                    {
+                        return false;
+                    }
+                } catch(e){ console.log(e);}
+                if (data['status'] === 1) {
+                    $("#agent_reg_url").show();
+                }else{
+                    $('#agent_reg_url').css('display', 'none');//去掉代理登入
+                }
+            }); */
+        }
+        catch(e){ colsole.log(e); }
+    })();
+
+});
+
+//下面是解决 placeholder 兼容性问题：
+function _bug_placeholder( parent_selector_str )
+{
+    try
+    {
+        var selector_str = parent_selector_str+" input[placeholder]";
+        if( !$(selector_str) && $(selector_str).length==0 )
+        {
+            return;
+        }
+        if( !('placeholder' in document.createElement('input')) )
+        {
+            $(selector_str).each(function(){
+                var that = $(this),
+                    text= that.attr('placeholder');
+                var isFlag = false;
+                if( that.attr("name")=="passwd" || that.attr("name")=="passward" || that.attr("name")=="pwd" || that.attr("type")=="password" )
+                {
+                    isFlag = true;
+                }
+                else
+                {
+                    isFlag = false;
+                }
+                if(that.val()==="")
+                {
+                    that.val(text).addClass('_bug_placeholder');
+                    if(isFlag)
+                    {
+                        that.removeAttr("type");
+                    }
+                }
+                that.bind("focus",function(){
+                    if( $(this).val()===text){
+                        $(this).val("").removeClass('_bug_placeholder');
+                        if(isFlag)
+                        {
+                            that.attr("type","password");
+                        }
+                    }
+                }).bind("blur",function(){
+                    if($(this).val()===""){
+                        $(this).val(text).addClass('_bug_placeholder');
+                        if(isFlag)
+                        {
+                            that.removeAttr("type");
+                        }
+                    }
+                    else if(isFlag)
+                    {
+                        that.attr("type","password");
+                    }
+                });
+            });
+        }
+    }catch(e){
+        console.log(e);
+    }
+}
+$(function()
+{
+	//玩法规则左边高亮加class
+	function menuLeftUI()
+	{
+			var ar = $("#left .list li a"),flag=false;	
+			for(var i=0;i<ar.length;i++)
+			{
+				if(location.href.indexOf($(ar[i]).attr("href"))>0)
+				{
+					$(ar[i]).parent().addClass("current");
+					flag = true;
+					break;
+				}
+			}
+			if(!flag)
+			{
+				$(ar[0]).parent().addClass("current");
+			}
+	}
+	try
+	{
+		if($("#left .list li a").length>0)
+		{
+			menuLeftUI();
+		}
+	}catch(e){}
+}); 

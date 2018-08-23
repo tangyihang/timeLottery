@@ -1,0 +1,247 @@
+//var pri_lotteryid = parseInt(5, 10);
+var pri_isdynamic = 1;
+var pri_showhistoryrecord = 1;
+var pri_ajaxurl = '/game/gameAction.html';
+var sliderWidth = 150;
+var isownlottery = 0;
+
+function refreshSwatch() {
+    point = $("#mySlider").slider("value");
+    turePoint = point;//test
+    perPoint = (myPrize[1] - myPrize[0]) / (myPoint[0] - myPoint[1]) / 100;
+    perPx = (myPoint[0] - myPoint[1]) / sliderWidth;
+    point = (point) * perPx * 100;
+    point = point.toFixed(10);
+    //tmpPrize = myPrize[0] + perPoint * perPx * (sliderWidth - point);
+    pointStr = point + '';
+    pointStr = pointStr.substring(0, pointStr.indexOf(".") + 2);
+    tmpPrize = myPrize[1] - perPoint * pointStr;
+    tmpPrize = tmpPrize.toFixed(3);
+    tmpPrize = tmpPrize + '';
+    if (myPrize[0] == myPrize[1]) {
+        $('#sliderSpanStart').html(pointStr + '%');
+        $('#sliderSpanEnd').html(myPrize[1].toFixed(3));
+        $('#B_sliderSpanEnd').html(decimal(myPrize[1] * 2));
+        if (playId == 92 || playId == 58) {
+            //三星直选组合
+            $('#sliderSpanEnd2').html(' | ' + allGamePrize[38]['prizeMin']); //取二星直选复式的赔率
+             $('#B_sliderSpanEnd2').html(' | ' + allGamePrize[38]['prizeMin'] * 2); //取二星直选复式的赔率
+            $('#sliderSpanEnd1').html(' | ' + allGamePrize[37]['prizeMin']);//取定位胆的赔率
+             $('#B_sliderSpanEnd1').html(' | ' + decimal(2 * allGamePrize[37]['prizeMin']));//取定位胆的赔率
+        } else if (playId == 95 || playId == 97 || playId == 99 || playId == 61 || playId == 63 || playId == 65) {
+            //所有需要考虑组三组六的情况
+            $('#sliderSpanEnd2').html(' | ' + allGamePrize[62]['prizeMin']); //取组6的赔率
+            $('#B_sliderSpanEnd2').html(' | ' + allGamePrize[62]['prizeMin'] * 2); //取组6的赔率
+            $('#sliderSpanEnd1').html('');
+            $('#B_sliderSpanEnd1').html('');
+        } else if (playId == 102 || playId == 68) {
+            $('#sliderSpanEnd2').html(' | ' + allGamePrize[69]['prizeMin']);
+            $('#B_sliderSpanEnd2').html(' | ' + decimal(allGamePrize[69]['prizeMin'] * 2));
+            $('#sliderSpanEnd1').html(' | ' + allGamePrize[70]['prizeMin']);
+            $('#B_sliderSpanEnd1').html(' | ' + decimal(2 * allGamePrize[70]['prizeMin']));
+        } else if (playId == 135) {//任三混合组选
+            $('#sliderSpanEnd2').html(' | ' + allGamePrize[136]['prizeMin']);
+             $('#B_sliderSpanEnd2').html(' | ' + decimal(allGamePrize[136]['prizeMin'] * 2));
+        } else if (playId == 137) {//任三组选和值
+            $('#sliderSpanEnd2').html(' | ' + allGamePrize[138]['prizeMin']);
+             $('#B_sliderSpanEnd2').html(' | ' + decimal(allGamePrize[138]['prizeMin'] * 2));
+        } else {
+            $('#sliderSpanEnd2').html('');
+             $('#B_sliderSpanEnd2').html('');
+            $('#sliderSpanEnd1').html('');
+            $('#B_sliderSpanEnd1').html('');
+        }
+    } else {
+        $('#sliderSpanStart').html(pointStr + '%');
+        $('#sliderSpanEnd').html(tmpPrize.substring(0, tmpPrize.indexOf(".") + 4));
+        var tmpPrize2 =decimal(tmpPrize * 2);
+        $('#B_sliderSpanEnd').html(tmpPrize2);
+        if (playId == 92 || playId == 58) {
+            //三星直选组合
+            //计算二星直选复式的赔率
+            twoStartPrize = allGamePrize[38]['prizeMax'] - pointStr * (allGamePrize[38]['prizeMax'] - allGamePrize[38]['prizeMin']) / (allGamePrize[38]['point']);
+            twoStartPrize = twoStartPrize.toFixed(3);
+            twoStartPrize = twoStartPrize + '';
+            twoStartPrize = twoStartPrize.substring(0, twoStartPrize.indexOf(".") + 4)
+            $('#sliderSpanEnd2').html(' | ' + twoStartPrize);
+             $('#B_sliderSpanEnd2').html(' | ' + decimal(twoStartPrize * 2));
+            //计算定位胆的赔率
+            oneStartPrize = allGamePrize[37]['prizeMax'] - pointStr * (allGamePrize[37]['prizeMax'] - allGamePrize[37]['prizeMin']) / (allGamePrize[37]['point']);
+            oneStartPrize = oneStartPrize.toFixed(3);
+            oneStartPrize = oneStartPrize + '';
+            oneStartPrize = oneStartPrize.substring(0, oneStartPrize.indexOf(".") + 4)
+            $('#sliderSpanEnd1').html(' | ' + oneStartPrize);
+            $('#B_sliderSpanEnd1').html(' | ' + decimal(oneStartPrize * 2));
+        } else if (playId == 95 || playId == 97 || playId == 99 || playId == 61 || playId == 63 || playId == 65) {
+            //所有需要考虑组三组六的情况
+            //计算组6的赔率
+            zuLiuPrize = allGamePrize[62]['prizeMax'] - pointStr * (allGamePrize[62]['prizeMax'] - allGamePrize[62]['prizeMin']) / (allGamePrize[62]['point']);
+            zuLiuPrize = zuLiuPrize.toFixed(3);
+            zuLiuPrize = zuLiuPrize + '';
+            zuLiuPrize = zuLiuPrize.substring(0, zuLiuPrize.indexOf(".") + 4)
+            $('#sliderSpanEnd2').html(' | ' + zuLiuPrize);
+            $('#B_sliderSpanEnd2').html(' | ' + decimal(zuLiuPrize * 2));
+            $('#sliderSpanEnd1').html('');
+            $('#B_sliderSpanEnd1').html('');
+        } else if (playId == 102 || playId == 68) {
+            //特殊号
+            //计算顺子赔率
+            shunPrize = allGamePrize[69]['prizeMax'] - pointStr * (allGamePrize[69]['prizeMax'] - allGamePrize[69]['prizeMin']) / (allGamePrize[69]['point']);
+            //计算对子赔率
+            duiPrize = allGamePrize[70]['prizeMax'] - pointStr * (allGamePrize[70]['prizeMax'] - allGamePrize[70]['prizeMin']) / (allGamePrize[70]['point']);
+            shunPrize = shunPrize.toFixed(3);
+            shunPrize = shunPrize + '';
+            shunPrize = shunPrize.substring(0, shunPrize.indexOf(".") + 4)
+            duiPrize = duiPrize.toFixed(3);
+            duiPrize = duiPrize + '';
+            duiPrize = duiPrize.substring(0, duiPrize.indexOf(".") + 4)
+            $('#sliderSpanEnd2').html(' | ' + shunPrize);
+            $('#B_sliderSpanEnd2').html(' | ' + decimal(shunPrize * 2));
+            $('#sliderSpanEnd1').html(' | ' + duiPrize);
+             $('#B_sliderSpanEnd1').html(' | ' + decimal(duiPrize * 2));
+
+        } else if (playId == 135 || playId == 136) {//任三组选混合组选
+            zuLiuPrize = allGamePrize[136]['prizeMax'] - pointStr * (allGamePrize[136]['prizeMax'] - allGamePrize[136]['prizeMin']) / (allGamePrize[136]['point']);
+            zuLiuPrize = zuLiuPrize.toFixed(3);
+            zuLiuPrize = zuLiuPrize + '';
+            zuLiuPrize = zuLiuPrize.substring(0, zuLiuPrize.indexOf(".") + 4)
+            $('#sliderSpanEnd2').html(' | ' + zuLiuPrize);
+            $('#B_sliderSpanEnd2').html(' | ' + decimal(zuLiuPrize * 2));
+
+        } else if (playId == 137 || playId == 138) {//任三组选和值
+            zuLiuPrize = allGamePrize[138]['prizeMax'] - pointStr * (allGamePrize[138]['prizeMax'] - allGamePrize[138]['prizeMin']) / (allGamePrize[138]['point']);
+            zuLiuPrize = zuLiuPrize.toFixed(3);
+            zuLiuPrize = zuLiuPrize + '';
+            zuLiuPrize = zuLiuPrize.substring(0, zuLiuPrize.indexOf(".") + 4)
+            $('#sliderSpanEnd2').html(' | ' + zuLiuPrize);
+            $('#B_sliderSpanEnd2').html(' | ' + decimal(zuLiuPrize * 2));
+
+        } else {
+            $('#sliderSpanEnd2').html('');
+            $('#B_sliderSpanEnd2').html('');
+            $('#sliderSpanEnd1').html('');
+            $('#B_sliderSpanEnd1').html('');
+        }
+    }
+}
+function decimal(v){
+    if(isInteger(v)){
+        return v + '.000';
+    }
+   var a = v.toString().indexOf('.'); //length;       
+   var vs = v.toString().substr(0,a+1);
+   var i=1;
+   for(;i <= 3;i++){
+       if(v.toString().substr(a+i,1)!=''){
+           vs += v.toString().substr(a+i,1);
+       }else{
+           vs += '0';
+       }
+
+    }
+    return vs;
+}
+function isInteger(obj) {
+ return obj%1 === 0;
+}
+function initSlider(sliderValue) {
+    sliderValue = 0;//默认最高赔率最低返点
+    //sliderValue = sliderWidth - sliderValue;
+    if (myPrize[0] == myPrize[1]) {
+        var min = 150;
+    } else {
+        var min = 0;
+    }
+    $("#mySlider").slider({
+        orientation: "horizontal",
+        range: "min",
+        max: 150,
+        value: 0,
+        min: min,
+        slide: refreshSwatch,
+        change: refreshSwatch
+    });
+    $("#mySlider").slider("value", sliderValue);
+}
+
+function ResumeError() {
+    //return true;
+}
+window.onerror = ResumeError;
+
+var isModeReady = false;
+var prizeChangeBind = function () {
+//                // 奖级
+//                $('#lt_sel_dyprize').addClass('cs-select cs-skin-border');
+//                [].slice.call(document.querySelectorAll('#lt_sel_dyprize')).forEach(function (el) {
+//                    new SelectFx(el);
+//                });
+//                length = $('#lt_sel_prize .cs-select .cs-options ul li').length;
+//                selectVal = $('#lt_sel_dyprize').val();
+//                for (var i = 0; i < length; i++) {
+//                    val = $($('#lt_sel_prize .cs-select .cs-options ul li')[i]).attr('data-value');
+//                    if (val == selectVal) {
+//                        $($('#lt_sel_prize .cs-select .cs-options ul li')[i]).addClass('cs-selected');
+//                        break;
+//                    }
+//                }
+    modeChangeBind();
+}
+var modeChangeBind = function () {
+
+    // 模式
+    var val = $('#lt_sel_modes').val();
+    switch (val) {
+        case '1':
+            val = '元';
+            break;
+        case '2':
+            val = '角';
+            break;
+        case '3':
+            val = '分';
+            break;
+        case '4':
+            val = '厘';
+            break;
+    }
+    ;
+    modeReady();
+    $('.choose-money li').map(function (i, item) {
+        if ($(item).html() === val) {
+            $(item).addClass('on');
+        }
+    });
+}
+var modeReady = function () {
+    if (isModeReady)
+        return;
+    isModeReady = true;
+    $('#lt_sel_modes').hide();
+    $(document).on('click', '.choose-money li', function (e) {
+        $('.choose-money li').removeClass('on');
+        $(e.target).addClass('on');
+        var val = $(e.target).html();
+        switch (val) {
+            case '元':
+                val = 1;
+                break;
+            case '角':
+                val = 2;
+                break;
+            case '分':
+                val = 3;
+                break;
+            case '厘':
+                val = 4;
+                break;
+        }
+        ;
+        $('#lt_sel_modes').val(val).change();
+    });
+};
+$(document).ready(function () {
+    if (!isModeReady) {
+        modeReady();
+    }
+});

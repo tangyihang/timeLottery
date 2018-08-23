@@ -1,0 +1,104 @@
+@CHARSET "UTF-8";
+.clear {clear:both}
+.reg_main {width:1000px; margin:10px auto 0; background: #f0f0f0;}
+.mar { padding:0 0 20px 30px;  line-height: 24px;}
+.logo-reg {margin-top:20px;margin-bottom:30px}
+.reg-tit { font-size: 14px; padding:20px 0 0 40px; font-weight: normal; }
+.logo-reg-login-welcome {width:100px;height:28px;float:left;margin-top:15px;margin-left:20px;background:url(../images/user/bg.gif) no-repeat -890px -302px}
+.reg_user {border-bottom:1px #e5e5e5 solid}
+.reg_userinfo {float:left;padding-left:25px;font-size:14px;height:75px;line-height:75px}
+.reg_userinfo span.user {font-weight:bold;color:#eb6100}
+.reg_userinfo span.money {color:#eb6100}
+.reg_charger {float:left;height:75px;margin-left:30px;display:inline}
+.reg_charger a {background:url(../images/button_bg.gif) 0 -43px no-repeat;margin-top:18px;width:130px;height:35px;display:block}
+.reg_charger a:hover {text-decoration:none}
+.reg_process {margin-top:15px;height:58px;background:#f7f7f7;background:url(../images/user/bg.gif) no-repeat}
+.reg_process2 {background-position:0 -90px}
+.reg_success {background:url(../images/user/login_icon.gif) 0 -203px no-repeat;height:25px;padding-left:40px;margin-top:25px;margin-left:50px;line-height:25px;font-size:14px}
+.reg_success span.user {font-size:14px;color:#eb6100;font-weight:bold}
+.reg_desc {font-size:14px;padding-left:90px;margin-top:20px;font-weight:bold}
+.reg_desc span {font-size:12px;color:#959595;font-weight:normal}
+.reg_main .reg_left {width:715px;padding-bottom:30px}
+.reg_main .reg_right {float:right;width:260px}
+.reg_main .reg_right .reg_info {background:url(../images/user/register_bg.gif) no-repeat;padding:20px 0 40px 25px;line-height:26px;color:#ffb346}
+.reg_main .reg_right .reg_info h6 {font-size:16px;margin-bottom:12px;color:#ff9600}
+.reg_main .reg_right .reg_info ul {padding-left:25px}
+.reg_main .reg_right .reg_info .user_number {color:#f00;font-size:16px}
+.reg_main .reg_right .pt12 {margin-top:12px}
+.reg_main .reg_right .t1 {background:url(../images/user/member_bg.gif) 0 -82px no-repeat;padding-left:23px}
+.reg_main .reg_right .t2 {background:url(../images/user/member_bg.gif) 0 -128px no-repeat;padding-left:23px}
+.reg_main .reg_right .openapi_login_border {width:240px;background:#f9f9f9;margin-top:10px;padding:10px}
+.reg_main .reg_right .openapi_login_border .openapi_login_box {border:1px #ccc solid;background:#fff;padding:10px;border-radius:5px}
+.reg_main .reg_right .openapi_login_border .openapi_login_box .tip_box {border-bottom:1px dashed #ccc;line-height:30px}
+.reg_main .reg_right .openapi_login_border .openapi_login_box .tip_box h1 {color:#b2b2b2;font-size:16px}
+.reg_main .reg_right .openapi_login_border .openapi_login_box .tip_box h1 a {color:#ff9600}
+.reg_main .reg_right .openapi_login_border .openapi_login_box .other_login {text-align:left;line-height:24px;margin-top:10px;position:relative;width:218px}
+.reg_main .reg_right .openapi_login_border .openapi_login_box .other_login .other_box {line-height:24px;width:92px;position:absolute;right:5px;top:0;padding:1px;text-align:center}
+.reg_main .reg_right .openapi_login_border .openapi_login_box .other_login .other_box_on {border:1px #b8b8b8 solid;background:#fff;padding:0}
+.reg_main .reg_right .openapi_login_border .openapi_login_box .other_login .other_box .other_text {background:url(../images/user/tri.gif) 78px 10px no-repeat;padding-right:12px;text-decoration:none;display:block}
+.reg_main .reg_right .openapi_login_border .openapi_login_box .other_login .other_box .other_text_on {background:url(../images/user/tri.gif) 78px -77px no-repeat}
+.reg_main .reg_right .openapi_login_border .openapi_login_box .other_login .other_box .other_list li {text-align:left;line-height:22px;height:22px}
+.reg_main .reg_right .openapi_login_border .openapi_login_box .other_login .other_box .other_list li a {text-decoration:none;display:block}
+.reg_main .reg_right .openapi_login_border .openapi_login_box .other_login .other_box .other_list li a:hover {background-color:#dfdfdf;color:#fe6b1d}
+.reg_main .reg_right .openapi_login_border .openapi_login_box .other_login .icon {background:url(../images/user/login_icons.gif) no-repeat;padding-left:28px;display:block}
+.reg_main .reg_right .openapi_login_border .openapi_login_box .other_login .baidu {background-position:0 -111px;margin-left:10px;padding-left:20px;width:75px}
+.reg_main .reg_right .openapi_login_border .openapi_login_box .other_login .baidu:hover {color:#fe6b1d;text-decoration:none}
+.reg_main .reg_right .openapi_login_border .openapi_login_box .other_login .sinaweibo {background-position:5px -44px}
+.reg_main .reg_right .openapi_login_border .openapi_login_box .other_login .alipay {background-position:5px 3px}
+.reg_main .reg_right .openapi_login_border .openapi_login_box .other_login .qqlogin {background-position:5px -19px}
+.reg_main .reg_right .openapi_login_border .openapi_login_box .other_login .goyoo {background-position:5px -135px}
+.reg_main .reg_table {margin-top:20px;font-size:14px}
+.reg_table td.t {height:65px;width:120px;text-align:right;line-height:65px;}
+.reg_table td p {font-size:12px;color:red;margin-left:10px;padding-left:20px;display:block;width:auto}
+.reg_table td span {font-size:12px; margin-left:10px}
+.reg_table td span a {text-decoration:underline}
+.reg_table td span a:hover {text-decoration:none}
+.reg-notice-info {clear:both; font-size:12px;text-align:left}
+.reg-notice-del {color:#d20d00}
+.reg-notice-del .reg-notice-icon {margin-right:10px;float:left;background:url("../images/user/reg_icon.png") no-repeat 0 -198px;height:18px;width:20px}
+.reg-notice-ok .reg-notice-icon {margin-right:10px;float:left;background:url("../images/user/reg_icon.png") no-repeat 0 -232px;height:18px;width:20px}
+.reg-passwd-strength {position:absolute;right:18px;top:36px}
+.reg_table .reg-passwd-strength span {background:#ffc97c;color:#FFF;margin-left:1px;width:40px;height:13px;text-align:center;line-height:13px;display:inline-block}
+.reg_table .reg-passwd-strength .onsel {background:#ff9500}
+.reg_table .text {width:220px;height:30px;line-height:30px;border:1px #bcbcbc solid; font-size:14px;}
+.reg_table .imgcode {width:70px;margin-right:10px;background:url(../images/user/bg.gif) no-repeat 0 -315px;padding-left:30px}
+.reg_table .phoneverify {width:110px}
+.reg_table .get-phone-verify {text-align:center;width:100px;color:#fff;cursor:pointer;display:inline-block;background:#ff9500;border-radius:2px;height:27px;line-height:27px}
+.reg_table .get-phone-verify:hover {background:#fa3}
+.reg_table .timeout-reget {background:#ddd;color:#666;display:none}
+.reg_table .timeout-reget:hover {background:#ddd}
+.reg_table .submit {width:221px;height:38px;background:#ff0000;border:0; color:#fff; cursor:pointer;}
+.reg_table .submit:hover {background:#EA721A}
+.reg_table .submiting {width:251px;height:38px;background:#ddd;border:0 none;color:#fff;font-weight:bold;letter-spacing:1px;cursor:pointer}
+.reg_table .save_btn {background:url(../images/button_bg.gif) -135px 0 no-repeat;width:130px;height:35px;border:0;cursor:pointer}
+.reg_table .save_btn {background-position:-270px 0}
+.reg-refresh-verify-code {display:inline-block;width:16px;height:16px;background:url(../images/user/refresh_1.png) no-repeat !important;position:absolute;top:10px;left:184px}
+.reg_table .reg1-username {padding-left:30px}
+.reg_table .reg1-pwd {padding-left:30px}
+.reg_table input { outline:none;}
+.reg1-icon-username {display:block;width:30px;height:23px;top:1px;_top:3px;left:1px;position:absolute;background:url("../images/user/reg_icon.png") 0 -260px}
+.reg1-icon-pwd {display:block;width:30px;height:23px;top:1px;_top:3px;left:1px;position:absolute;background:url("../images/user/reg_icon.png") 0 -287px}
+.reg1-icon-qq {background:url("../images/user/reg_icon.png") no-repeat 0 -348px;width:30px;height:23px;float:left;	top:6px;left:1px;position:absolute;}
+.reg1-icon-email {background:url("../images/user/reg_icon.png") no-repeat 0 -376px;width:30px;height:23px;float:left;top:8px;left:1px;position:absolute;}
+.reg1-icon-tel {background:url("../images/user/reg_icon.png") no-repeat 0 -401px;width:30px;height:23px;float:left;top:5px;left:1px;position:absolute;}
+.reg_table .fl-reg-error-input {border:1px solid #e51937}
+.czmain_title {height:30px;line-height:30px;padding-left:20px;font-size:14px;margin-top:10px}
+.czmain_title span {background:url(../images/lhc_allbg.gif) -161px -244px no-repeat;width:88px;height:30px;display:block;line-height:25px;text-align:center;font-weight:bold;color:#fff}
+.czmain {margin-top:10px}
+.czmain .czright {float:right;margin-top:50px;background:url(../images/tiao.gif) no-repeat;padding-left:20px;color:#006eb3;font-size:14px;line-height:30px;width:280px}
+.czmain .czright span {font-weight:bold}
+.czmain .czleft {margin-left:25px;width:600px;float:left}
+.czleft .left_title {border-bottom:1px #e5e5e5 solid;height:28px;padding-left:12px}
+.left_title .tit {background:url(../images/cz_title.gif) no-repeat;height:28px;width:64px;text-align:center;line-height:28px;color:#f00;font-weight:bold}
+.czleft ul {margin-top:15px}
+.czleft li {float:left;height:130px;width:120px;line-height:35px;text-align:center}
+.czleft li img {border:1px #e5e5e5 solid}#fcontent {background:url("../images/fudong.png") repeat scroll 0 0 transparent;display:none;height:79px;line-height:20px;padding:5px;position:absolute;width:113px}
+.reg-2 .userinfo_box {margin-left:190px;margin-top:90px;float:left;display:inline}
+.reg-2 .reg-success-rightbox {width:270px;height:370px;float:right;margin-top:40px}
+.reg-2 .reg-success-rightbox a {display:block}
+.alert_main .alert_content h2 {font-size:20px}
+.reg-2 .reg-success-jump {clear:both;display:block;width:100px;height:36px;line-height:36px;text-align:center;font-size:16px;text-decoration:none;color:#fff;background:#ff9500;margin-top:25px;font-weight:bold;border-radius:4px}
+.reg-2 .reg-success-jump:link, .reg-2 .reg-success-jump:visited {color:#fff}
+.r-s-a-1 {margin-top:44px;margin-left:78px}
+.r-s-a-2 {margin-top:20px;margin-left:70px}
+.r-s-a-2 a {margin:0 8px}

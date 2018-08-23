@@ -1,0 +1,232 @@
+$(function (e){
+	//撤单操作
+         document.onkeydown = function () {
+            if (window.event && window.event.keyCode == 13) {
+                window.event.returnValue = false;
+                return false;
+            }
+        }
+	$("#ched").click(
+          function () {
+             var text = "";
+             var amount = 0;
+             $("#projectlist input[name=sKey]").each(function () {
+                if ($(this).prop("checked") && $(this).attr('disabled') != 'disabled') {
+                    text += ',' + $(this).val();
+                    var a = $(this).parent().parent().find(".amount").text();
+                    amount += parseInt(a);
+                }
+             });
+             var gameId = $("#lotteryid").val();
+             if ( !text) {
+                $.alert('请选择需要撤销的注单号！');
+                return false;
+             }else {
+                $.confirm('确定要撤销投注单号吗？', function () {
+                    ajaxTimeout = $.ajax({
+                        type: 'POST',
+                        url: '/userCenter/ajaxBetRevoke.html',
+                        data: 'skey=' + text + '&amount=' + amount + '&lotteryid=' + gameId,
+                        dataType: 'json',
+                        timeout: '30000',
+                        success: function (data) {//成功
+                     //      bet_con();
+                            $.alert(data.msg);
+                            //刷新余额
+                            parent._user_.refreshMoney("#balance");//_user_.refreshMoney("#balance");
+                        }
+                    });
+                    return;
+                }, function () {
+                    $.alert('取消成功！');
+                    $("#chedan").trigger('click');
+                    if ($("#chedan").is(':checked')) {
+                        $("#chedan").trigger('click');
+                    }
+                }, '', 350);
+            }
+            return false;
+        });
+	//撤单全选
+	$("#chedan").click(function () {
+	    if ($(this).prop("checked") == true) {
+	        $("#projectlist input:checkbox").prop("checked", true);
+	    } else {
+	        $("#projectlist input:checkbox").prop("checked", false);
+	    }
+	});
+	//隐藏下注情况
+	$("#hidden").click(function () {
+	    $("#lt_bet_box").hide();
+	    return false;
+	});
+	//游戏记录 开奖记录切换
+	$(".def_title").click(function (){
+		$(this).siblings().removeClass("tab-front");
+		$(this).siblings().addClass("tab-back");
+        $(this).removeClass("tab-back");
+		$(this).addClass("tab-front");
+        if($(this).index()==0){
+            // $("#chedan").parent().show();
+            $("#ched").show();
+        }else{
+            // $("#chedan").parent().hide();
+            $("#ched").hide();
+        }
+	//	bet_con();
+	});
+
+     window.onload = function(){
+      // if ( !bet_con(mark=1)) {
+       //   ajaxFlag=true;
+       //   bet_con(); 
+       //}
+    }
+});
+ajaxFlag=false;
+//下注情况信息显示
+function bet_con(mark) {
+    if(!ajaxFlag){
+        return false;
+    }
+    ajaxFlag=false;
+    $(".def_title").each(function (){
+        if($(this).attr("class").indexOf('tab-front')!=-1){
+            stu = $(this).index();
+        }
+    });
+    var perpage = $("#pageRecordCount").val();
+    var Index = $("#pageIndex").val();
+    var gameId = $("#lotteryid").val();
+    if (mark===1) {
+        stu = 1;
+    }
+    var param = 'pageRecordCount=' + perpage + '&pageIndex=' + Index + '&lotteryid=' + gameId + '&status=' + stu;
+    var headlist = '',noDataTitle;
+    if(stu){
+        noDataTitle = '暂无信息！';
+        headlist = '<tr> <th>彩种</th> <th>下注时间</th> <th>期号</th> <th>玩法</th> <th>详情</th> <th>中奖金额</th> <th>单注额</th> <th>下注总额</th> </tr>';
+    }else{
+        noDataTitle = '暂无信息！';
+        headlist = '<tr> <th>彩种</th> <th>下注时间</th> <th>期号</th> <th>玩法</th> <th>详情</th> <th>单注额</th> <th>下注总额</th> <th width="30"><input type="checkbox" id="chedan"></th> </tr>';
+    }
+    $(".yxlist tbody").eq(0).html(headlist);
+   /*  ajaxTimeout=$.ajax({
+        type: 'POST',
+        url: '/game/getUserPeriod.html',
+        dataType: 'json',
+        data: param,
+        success: function (data) {//成功
+            $("#projectlist").html("");
+            if (data.RecordCount > 0) {
+
+                var page = '';
+                $("#pageIndex").html("");
+                for (var j = 1; j <= data.PageCount; j++) {
+                    var sel = (j == data.PageIndex) ? 'Selected' : '';
+                    page += '<option value="' + j + '" ' + sel + '>' + j + '</option>';
+                }
+                $("#pageIndex").append(page);
+
+                var html = "";
+                for (var i = 0; i < data.RecordCount; i++) {
+                    var res = data.Records[i].playid;
+                    if (res== 63 || res==65 || res== 99 || res==97) {
+                        data.Records[i].pname = data.Records[i].pname.substr(0, 6);
+                    }
+
+                    var playSubName = data.Records[i].pname.replace(/单式|复式/g,'单/复式');
+                    if(data.Records[i].gameid != 19){
+                        playSubName = data.Records[i].pname.replace(/豹子|顺子|对子/, "特殊号");
+                    }
+
+                    if (data.Records[i].psubid == 61 ||　data.Records[i].psubid == 62) {
+                        playSubName = '前三组选混合';
+                    } else if (data.Records[i].psubid == 78 || data.Records[i].psubid == 79) {
+                        playSubName = '中三组选混合';
+                    } else if (data.Records[i].psubid == 95 || data.Records[i].psubid == 96) {
+                        playSubName = '后三组选混合';
+                    } else if (data.Records[i].psubid == 135 || data.Records[i].psubid == 136) {
+                        playSubName = '任三组选混合';
+                    } else if (data.Records[i].psubid == 137 || data.Records[i].psubid == 138) {
+                        playSubName = '任三组选和值';
+                    } else if (data.Records[i].psubid == 63 || data.Records[i].psubid == 64) {
+                        playSubName = '前三组选和值';
+                    } else if (data.Records[i].psubid == 80 || data.Records[i].psubid == 81) {
+                        playSubName = '中三组选和值';
+                    } else if (data.Records[i].psubid == 97 || data.Records[i].psubid == 98) {
+                        playSubName = '后三组选和值';
+                    } else if (data.Records[i].psubid == 65 || data.Records[i].psubid == 66) {
+                        playSubName = '前三组选包胆';
+                    } else if (data.Records[i].psubid == 99 || data.Records[i].psubid == 100) {
+                        playSubName = '后三组选包胆';
+                    }
+                    data.Records[i].pname = playSubName;
+
+                    html += '<tr>';
+                    html += '<td height="37" align="center">' + data.Records[i].gname + '</td>'
+                    html += '<td height="37" align="center">' + data.Records[i].cTimeTEXT + '</td>'
+                    html += '<td height="37" align="center">' + data.Records[i].Period + '</td>'
+                    html += '<td height="37" align="center">' + data.Records[i].pname + '</td>'
+                    html += '<td height="37" align="center"><a onclick="showBetDetail(\'' + $.param(data.Records[i]) + '\')" >' + data.Records[i].code.substr(0, 3).replace(/&/g,',') + '...</td>'//详情
+                    if(stu){
+                        html += '<td height="37" align="center">' + moneyFormat(data.Records[i].win) + '</td>';
+                    }
+                    html += '<td height="37" align="center">' + moneyFormat(accDiv(data.Records[i].amount , data.Records[i].count).toFixed(3)) + '</td>';
+                    html += '<td height="37" align="center" class="amount" >' + moneyFormat(data.Records[i].amount.toFixed(3)) + '</td>';
+                    if(data.Records[i].status==0){
+                        html += '<td height="37" align="center"><input type="checkbox" name="sKey" value="' + data.Records[i].bid + '" ></td>'
+                    }
+                    html += '</tr>'
+                }
+                $("#projectlist").append(html);
+                $("#lt_bet_box").show();
+                $("#pageinfo").show();
+                $('#chedan').off('click').on('click',function(){
+                    $('#projectlist').find('input').prop('checked',$(this).prop('checked'));
+                });
+                //去掉前面期数投注记录的checkbox
+                if (stu == 0) {
+                    setHisCheckbox();
+                }
+            } else {
+                ajaxFlag=true;
+                var html = '<tr><td height="37" align="center" colspan="9" >'+noDataTitle+'</td></tr>';
+                $("#projectlist").html(html);
+                $("#projectlist").show();
+                 $("#lt_bet_box").show();
+                $("#pageinfo").hide();
+            }
+            ajaxFlag=true;
+            return false;
+        },
+         error: function(XMLHttpRequest,status) {
+                    ajaxFlag=true;
+                    process_timeout(status);
+                }
+        
+    }); */
+}
+
+//隐去非当前期的投注记录的checkbox
+function setHisCheckbox(period) {
+    var curPeriod = period;
+    if (curPeriod == null || curPeriod == undefined || curPeriod == '') {
+        curPeriod = $('#current_issue').text();
+    }
+    if (curPeriod == null || curPeriod == undefined || curPeriod == '') {
+        return;
+    }
+
+    if (period != null && period != undefined && period != '') {//当前期结束
+        curPeriod = parseInt(curPeriod)+1;//获得实际的当前期
+    }
+    var plist = $('#projectlist').children('tr');
+    for (var i = 0; i < plist.length; i++) {
+        var tmpTds = $(plist[i]).children('td');
+        if ($(tmpTds[2]).text() < curPeriod) {
+            $($(tmpTds[7])).find('input').attr("disabled",true);//checkbox隐去
+            $($(tmpTds[7])).find('input').css('display','none');
+        }
+    }
+}
