@@ -1,0 +1,61 @@
+
+select a.uid,a.username,a.coin,a.parentId,a.type,(select sum(b.amount) from 
+
+Z4r5jk12_member_recharge b where b.`uid`=a.`uid` and b.state in(1,2,9) and b.rechargeTime > 
+
+1509811200) rechargeAmount,(select sum(c.amount) from Z4r5jk12_member_cash c where c.`uid`=a.`uid` and c.state=0 and c.actionTime > 1509811200) cashAmount,(select sum(d.mode * d.beiShu * d.actionNum) from  Z4r5jk12_bets d where d.`uid`=a.`uid` and d.isDelete=0 and d.actionTime > 1509811200 ) betAmount,(select count(*) from  Z4r5jk12_bets d where d.`uid`=a.`uid` and d.isDelete=0 and d.actionTime > 1509811200 ) betCount  from  Z4r5jk12_members a where a.type=1
+
+
+
+
+
+Z4r5jk12_members 会员表
+
+Z4r5jk12_member_recharge  充值表
+
+Z4r5jk12_bets  投注表
+
+Z4r5jk12_member_cash 提现表
+
+Z4r5jk12_coin_log 账变表
+
+
+
+select a.uid,a.username,a.coin,a.parentId,a.type,(select sum(b.amount) from 
+
+Z4r5jk12_member_recharge b where b.`uid`=a.`uid` and b.state in(1,2,9) and b.rechargeTime > 
+
+1509811200) rechargeAmount,(select sum(c.amount) from Z4r5jk12_member_cash c where c.`uid`=a.`uid` and c.state=0 and c.actionTime > 1509811200) cashAmount,(select sum(d.mode * d.beiShu * d.actionNum) from  Z4r5jk12_bets d where d.`uid`=a.`uid` and d.isDelete=0 and d.actionTime > 1509811200 ) betAmount,(select count(*) from  Z4r5jk12_bets d where d.`uid`=a.`uid` and d.isDelete=0 and d.actionTime > 1509811200 ) betCount  from  Z4r5jk12_members a where a.type=1
+
+
+
+
+
+
+
+//获取所有团队的金额总和
+select sum(z.coin) from Z4r5jk12_members z where z.`parentId`=a.`uid` and z.`regTime`>1509811200 or z.`uid` = a.`uid` 
+//获取所有团队的金额总 和  排除代理总账号
+select sum(z.coin) from Z4r5jk12_members z where z.`parentId`=a.`uid` and z.`regTime`>1509811200
+//获取注册人数
+select count(*) from Z4r5jk12_members x where x.`parentId`=a.`uid` and x.`regTime`>1509811200
+//获取充值人数
+select count(*) from Z4r5jk12_member_recharge r where r.`uid` in (select z.uid from Z4r5jk12_members z where z.`parentId`=a.`uid` or z.`uid` = a.`uid` ) and r.`rechargeTime`>1509811200
+//获取充值金额
+select sum(r.amount) from Z4r5jk12_member_recharge r where r.`uid` in (select z.uid from Z4r5jk12_members z where z.`parentId`=a.`uid` or z.`uid` = a.`uid`
+//获取投注人数
+select count(*) from Z4r5jk12_bets t where t.`uid` in (select z.uid from Z4r5jk12_members z where z.`parentId`=a.`uid` or z.`uid` = a.`uid` ) and t.`isDelete`=0  and t.`actionTime`>1509811200
+//获取提现金额
+select sum(g.amount) from Z4r5jk12_members_cash g where g.`uid` in (select z.uid from Z4r5jk12_members z where z.`parentId`=a.`uid` or z.`uid` = a.`uid`) and g.`state`=0 and g.`actionTime`>1509811200
+//获取投注金额
+select sum(t.mode * t.beiShu * t.actionNum) from Z4r5jk12_bets t where t.`uid` in (select z.uid from Z4r5jk12_members z where z.`parentId`=a.`uid` or z.`uid` = a.`uid` ) and t.`isDelete`=0  and t.`actionTime`>1509811200
+//获取中奖金额
+select sum(t.bonus) from Z4r5jk12_bets t where t.`uid` in (select z.uid from Z4r5jk12_members z where z.`parentId`=a.`uid` or z.`uid` = a.`uid` ) and t.`isDelete`=0  and t.`actionTime`>1509811200
+//获取团队佣金
+select sum(l.coin) from Z4r5jk12_coin_log l where l.`uid` in (select z.uid from Z4r5jk12_members z where z.`parentId`=a.`uid` or z.`uid` = a.`uid`)  and l.liqType in(50,51,52,53,56) and l.`actionTime`>1509811200
+
+//获取所有返点
+select sum(l.coin) from Z4r5jk12_coin_log l where l.liqType between 2 and 3 and l.uid in (select z.uid from Z4r5jk12_members z where z.`parentId`=a.`uid` or z.`uid` = a.`uid`)
+
+
+总盈亏  =  总中奖 - 总投注 + 总返点 + 总佣金
