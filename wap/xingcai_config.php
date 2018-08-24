@@ -3,11 +3,11 @@ require_once('xingcai_sqlin.php');
 $conf['debug']['level']=5;
 
 /*		��ݿ�����		*/
-$conf['db']['dsn']='mysql:host=127.0.0.1;dbname=dadicplf;charset=utf8';
-$dbname='dadicplf';
+$conf['db']['dsn']='mysql:host=127.0.0.1;dbname=timelottery;charset=utf8';
+$dbname='timelottery';
 $dbhost='127.0.0.1';
 $conf['db']['user']='root';
-$conf['db']['password']='fire5362';
+$conf['db']['password']='tyh456852';
 $conf['db']['charset']='utf8';
 $conf['db']['prename']='blast_';
 

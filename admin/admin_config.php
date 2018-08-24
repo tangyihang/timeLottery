@@ -3,9 +3,9 @@ require_once('admin_sqlin.php');
 $conf['debug']['level']=5;
 
 /*		数据库配置		*/
-$conf['db']['dsn']='mysql:host=localhost;dbname=vip2018xc';
+$conf['db']['dsn']='mysql:host=localhost;dbname=timelottery';
 $conf['db']['user']='root';
-$conf['db']['password']='3020x63032979';
+$conf['db']['password']='tyh456852';
 $conf['db']['charset']='utf8';
 $conf['db']['prename']='Z4r5jk12_';
 
