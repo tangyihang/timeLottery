@@ -9,7 +9,7 @@ $dbhost='127.0.0.1';
 $conf['db']['user']='root';
 $conf['db']['password']='tyh456852';
 $conf['db']['charset']='utf8';
-$conf['db']['prename']='Z4r5jk12_';
+$conf['db']['prename']='blast_';
 
 $conf['cache']['expire']=0;
 $conf['cache']['dir']='_xingcai_agency_buffer/';
