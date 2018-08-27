@@ -1,0 +1,521 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="6fe42b90-187d-4e20-a9fb-f3bcd12d1ee1" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/admin/ADMIN.Back/admin/About.class.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/admin/ADMIN.Back/admin/Admin.class.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/admin/ADMIN.Back/admin/AdminBase.class.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/admin/ADMIN.Back/admin/Bonus.class.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/admin/ADMIN.Back/admin/Box.class.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/admin/ADMIN.Back/admin/Business.class.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/admin/ADMIN.Back/admin/Card.class.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/admin/ADMIN.Back/admin/Choujiang.class.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/admin/ADMIN.Back/admin/Clear.class.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/admin/ADMIN.Back/admin/Commission.class.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/admin/ADMIN.Back/admin/CountData.class.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/admin/ADMIN.Back/admin/Data.class.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/admin/ADMIN.Back/admin/Data.class.php.bak" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/admin/ADMIN.Back/admin/Database.class.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/admin/ADMIN.Back/admin/Dbqb.class.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/admin/ADMIN.Back/admin/Dzp.class.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/admin/ADMIN.Back/admin/Dzyh.class.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/admin/ADMIN.Back/admin/Event.class.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/admin/ADMIN.Back/admin/Manage.class.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/admin/ADMIN.Back/admin/Member.class.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/admin/ADMIN.Back/admin/Score.class.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/admin/ADMIN.Back/admin/System.class.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/admin/ADMIN.Back/admin/Time.class.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/admin/ADMIN.Back/admin/User.class.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/admin/ADMIN.Back/admin/Vipxf.class.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/admin/ADMIN.Back/admin/Yongjin.class.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/admin/ADMIN.Back/admin/ip.function.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/admin/ADMIN.Back/admin/kjdatas.class.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/admin/ADMIN.Back/admin/lhc.class.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/admin/ADMIN.Back/admin/pays.class.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/admin/ADMIN.Front/admin/About/daili.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/admin/ADMIN.Front/admin/About/daililist.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/admin/ADMIN.Front/admin/Box/all.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/admin/ADMIN.Front/admin/Box/alllist.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/admin/ADMIN.Front/admin/Box/answer.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/admin/ADMIN.Front/admin/Box/box-add.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/admin/ADMIN.Front/admin/Box/midinfo.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/admin/ADMIN.Front/admin/Box/notice.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/admin/ADMIN.Front/admin/Box/receivebox.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/admin/ADMIN.Front/admin/Box/receivelist.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/admin/ADMIN.Front/admin/Box/sendbox.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/admin/ADMIN.Front/admin/Box/sendlist.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/admin/ADMIN.Front/admin/bonus/bonus-list.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/admin/ADMIN.Front/admin/bonus/bonus-log-action.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/admin/ADMIN.Front/admin/bonus/bonus-log.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/admin/ADMIN.Front/admin/bonus/bonus-yj.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/admin/ADMIN.Front/admin/bonus/share-bonus-modal.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/admin/ADMIN.Front/admin/business/bet-info.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/admin/ADMIN.Front/admin/business/bet-log.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/admin/ADMIN.Front/admin/business/cash-action.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/admin/ADMIN.Front/admin/business/cash-info.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/admin/ADMIN.Front/admin/business/cash-log-list.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/admin/ADMIN.Front/admin/business/cash-log.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/admin/ADMIN.Front/admin/business/cash-modal.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/admin/ADMIN.Front/admin/business/cash.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/admin/ADMIN.Front/admin/business/coin-log.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/admin/ADMIN.Front/admin/business/leavl_add.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/admin/ADMIN.Front/admin/business/recharge-info.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/admin/ADMIN.Front/admin/business/recharge-log-list.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/admin/ADMIN.Front/admin/business/recharge-log.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/admin/ADMIN.Front/admin/business/recharge-modal.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/admin/ADMIN.Front/admin/business/rechargeOn-modal.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/admin/ADMIN.Front/admin/business/update-bet-info.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/admin/ADMIN.Front/admin/card/card-modal.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/admin/ADMIN.Front/admin/card/index.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/admin/ADMIN.Front/admin/card/record.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/admin/ADMIN.Front/admin/choujiang/add-leavl.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/admin/ADMIN.Front/admin/choujiang/leavl-update-modal.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/admin/ADMIN.Front/admin/choujiang/leavl.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/admin/ADMIN.Front/admin/choujiang/list-leavl.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/admin/ADMIN.Front/admin/choujiang/list-lucky.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/admin/ADMIN.Front/admin/choujiang/lucky.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/admin/ADMIN.Front/admin/commission/con-list.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/admin/ADMIN.Front/admin/commission/loss-list.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/admin/ADMIN.Front/admin/count/count-img.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/admin/ADMIN.Front/admin/count/date-list.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/admin/ADMIN.Front/admin/count/date.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/admin/ADMIN.Front/admin/count/index.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/admin/ADMIN.Front/admin/data/add-admin.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/admin/ADMIN.Front/admin/data/add-modal.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/admin/ADMIN.Front/admin/data/index.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/admin/ADMIN.Front/admin/data/index2 - 副本.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/admin/ADMIN.Front/admin/data/index2.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/admin/ADMIN.Front/admin/data/modify-modal.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/admin/ADMIN.Front/admin/data/update-modal.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/admin/ADMIN.Front/admin/dbqb/point-list.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/admin/ADMIN.Front/admin/dbqb/settings.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/admin/ADMIN.Front/admin/dzp/point-list.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/admin/ADMIN.Front/admin/dzp/settings.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/admin/ADMIN.Front/admin/dzyh/ckpoint-list.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/admin/ADMIN.Front/admin/dzyh/edit.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/admin/ADMIN.Front/admin/dzyh/settings.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/admin/ADMIN.Front/admin/dzyh/tkpoint-list.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/admin/ADMIN.Front/admin/event/index.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/admin/ADMIN.Front/admin/event/modal.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/admin/ADMIN.Front/admin/event/sign-list.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/admin/ADMIN.Front/admin/inc/page.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/admin/ADMIN.Front/admin/index.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/admin/ADMIN.Front/admin/kjdatas/list.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/admin/ADMIN.Front/admin/lhc/rte-list.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/admin/ADMIN.Front/admin/login.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/admin/ADMIN.Front/admin/logined.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/admin/ADMIN.Front/admin/manage/control-log-list.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/admin/ADMIN.Front/admin/manage/control-log.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/admin/ADMIN.Front/admin/manage/list.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/admin/ADMIN.Front/admin/manage/login-list.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/admin/ADMIN.Front/admin/manage/manager-add-modal.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/admin/ADMIN.Front/admin/manage/manager-pwd-modal.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/admin/ADMIN.Front/admin/member/add.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/admin/ADMIN.Front/admin/member/bank-modal.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/admin/ADMIN.Front/admin/member/bank.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/admin/ADMIN.Front/admin/member/count-setting.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/admin/ADMIN.Front/admin/member/fabuxiaoxi.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/admin/ADMIN.Front/admin/member/level-list.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/admin/ADMIN.Front/admin/member/list-user.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/admin/ADMIN.Front/admin/member/list.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/admin/ADMIN.Front/admin/member/login-list.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/admin/ADMIN.Front/admin/member/update-modal.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/admin/ADMIN.Front/admin/member/user-amount.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/admin/ADMIN.Front/admin/member/userDel-modal.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/admin/ADMIN.Front/admin/pay/list.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/admin/ADMIN.Front/admin/pay/pay-add-modal.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/admin/ADMIN.Front/admin/score/goods-list.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/admin/ADMIN.Front/admin/score/goods-modal.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/admin/ADMIN.Front/admin/score/point-list.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/admin/ADMIN.Front/admin/system/bank-list.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/admin/ADMIN.Front/admin/system/bank-modal.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/admin/ADMIN.Front/admin/system/notice-add.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/admin/ADMIN.Front/admin/system/notice-update.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/admin/ADMIN.Front/admin/system/notice.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/admin/ADMIN.Front/admin/system/played-list.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/admin/ADMIN.Front/admin/system/service-add.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/admin/ADMIN.Front/admin/system/settings.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/admin/ADMIN.Front/admin/system/sysbank-list.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/admin/ADMIN.Front/admin/system/sysbank-modal.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/admin/ADMIN.Front/admin/system/system-service.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/admin/ADMIN.Front/admin/system/type-list.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/admin/ADMIN.Front/admin/system/update-play-info.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/admin/ADMIN.Front/admin/time/add-modal.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/admin/ADMIN.Front/admin/time/index.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/admin/ADMIN.Front/admin/vipxf/vipxiaofei-log.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/admin/ADMIN.Front/admin/vipxf/vipxiaofei.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/admin/ADMIN.Front/admin/yongjin/yongjin-log.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/admin/ADMIN.Front/admin/yongjin/yongjin.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/admin/ErrorFiles/400.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/admin/ErrorFiles/401.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/admin/ErrorFiles/403.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/admin/ErrorFiles/404.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/admin/ErrorFiles/500.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/admin/ErrorFiles/502.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/admin/ErrorFiles/504.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/admin/_Y6f9=jyyB9.c,ER#-u/024e85b80250fd0a538e90dc6211aea3" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/admin/_Y6f9=jyyB9.c,ER#-u/b6c40235671db3399887b742f4a36bf5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/admin/_Y6f9=jyyB9.c,ER#-u/systemSettings" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/admin/admin_config.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/admin/admin_sqlin.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/admin/favicon.ico" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/admin/lib/classes/CImage.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/admin/lib/classes/Xxtea.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/admin/lib/classes/fonts/F2FOCRBczykLTStd-Regular.otf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/admin/lib/classes/fonts/F2FOCRBczykLTStd.otf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/admin/lib/core/DBAccess.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/admin/lib/core/Object.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/admin/robots.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/admin/u.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/admin/upload/bank-icons/bank-cft1.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/admin/upload/bank-icons/bank-cft2.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/admin/upload/bank-icons/bank-cft3.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/admin/upload/bank-icons/bank-wx.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/admin/upload/bank-icons/bank-wx1.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/admin/upload/bank-icons/bank-wx2.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/admin/upload/bank-icons/bank-wx3.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/admin/upload/bank-icons/bank-zfb1.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/admin/upload/bank-icons/bank-zfb2.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/admin/upload/bank-icons/bank-zfb3.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/admin/upload/bank-icons/bank-zfbsmf.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/admin/upload/bank-icons/bank-zfbzwy.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/admin/view.php" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/upload/bank-icons/bank-cft.jpg" afterPath="$PROJECT_DIR$/admin/upload/bank-icons/bank-cft.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/upload/bank-icons/bank-gh.jpg" afterPath="$PROJECT_DIR$/admin/upload/bank-icons/bank-gh.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/upload/bank-icons/bank-jh.jpg" afterPath="$PROJECT_DIR$/admin/upload/bank-icons/bank-jh.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/upload/bank-icons/bank-jt.jpg" afterPath="$PROJECT_DIR$/admin/upload/bank-icons/bank-jt.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/upload/bank-icons/bank-nh.jpg" afterPath="$PROJECT_DIR$/admin/upload/bank-icons/bank-nh.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/upload/bank-icons/bank-zfb.jpg" afterPath="$PROJECT_DIR$/admin/upload/bank-icons/bank-zfb.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/upload/bank-icons/bank-zh.jpg" afterPath="$PROJECT_DIR$/admin/upload/bank-icons/bank-zh.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/upload/bank-icons/logo_unionpay.gif" afterPath="$PROJECT_DIR$/admin/upload/bank-icons/logo_unionpay.gif" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/index.php" afterPath="$PROJECT_DIR$/admin/index.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/skin/admin/function.js" afterPath="$PROJECT_DIR$/admin/skin/admin/function.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/skin/admin/layout.css" afterPath="$PROJECT_DIR$/admin/skin/admin/layout.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/skin/admin/wjevent.js" afterPath="$PROJECT_DIR$/admin/skin/admin/wjevent.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/skin/editor/kindeditor-all-min.js" afterPath="$PROJECT_DIR$/admin/skin/editor/kindeditor-all-min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/skin/editor/kindeditor-min.js" afterPath="$PROJECT_DIR$/admin/skin/editor/kindeditor-min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/skin/js/BigInt.js" afterPath="$PROJECT_DIR$/admin/skin/js/BigInt.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/skin/js/gamecommon.js" afterPath="$PROJECT_DIR$/admin/skin/js/gamecommon.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/skin/js/html5.js" afterPath="$PROJECT_DIR$/admin/skin/js/html5.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/skin/js/jquery-1.7.2.min.js" afterPath="$PROJECT_DIR$/admin/skin/js/jquery-1.7.2.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/skin/js/jquery.cookie.js" afterPath="$PROJECT_DIR$/admin/skin/js/jquery.cookie.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/skin/js/jquery.overlay.min.js" afterPath="$PROJECT_DIR$/admin/skin/js/jquery.overlay.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/skin/js/jquery.simplemodal.min.js" afterPath="$PROJECT_DIR$/admin/skin/js/jquery.simplemodal.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/skin/js/jquery.tablesorter.min.js" afterPath="$PROJECT_DIR$/admin/skin/js/jquery.tablesorter.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/skin/js/jquery.tools.overlay.js" afterPath="$PROJECT_DIR$/admin/skin/js/jquery.tools.overlay.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/skin/js/jquery.tools.tab.js" afterPath="$PROJECT_DIR$/admin/skin/js/jquery.tools.tab.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/skin/js/jqueryui/i18n/jquery-ui-i18n.js" afterPath="$PROJECT_DIR$/admin/skin/js/jqueryui/i18n/jquery-ui-i18n.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/skin/js/jqueryui/i18n/jquery.ui.datepicker-zh-CN.js" afterPath="$PROJECT_DIR$/admin/skin/js/jqueryui/i18n/jquery.ui.datepicker-zh-CN.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/skin/js/jqueryui/jquery-ui-1.8.23.custom.min.js" afterPath="$PROJECT_DIR$/admin/skin/js/jqueryui/jquery-ui-1.8.23.custom.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/skin/js/jqueryui/jquery.ui.core.js" afterPath="$PROJECT_DIR$/admin/skin/js/jqueryui/jquery.ui.core.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/skin/js/jqueryui/jquery.ui.datepicker.js" afterPath="$PROJECT_DIR$/admin/skin/js/jqueryui/jquery.ui.datepicker.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/skin/js/jqueryui/jquery.ui.dialog.js" afterPath="$PROJECT_DIR$/admin/skin/js/jqueryui/jquery.ui.dialog.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/skin/js/jqueryui/jquery.ui.mouse.js" afterPath="$PROJECT_DIR$/admin/skin/js/jqueryui/jquery.ui.mouse.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/skin/js/jqueryui/jquery.ui.position.js" afterPath="$PROJECT_DIR$/admin/skin/js/jqueryui/jquery.ui.position.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/skin/js/jqueryui/jquery.ui.slider.js" afterPath="$PROJECT_DIR$/admin/skin/js/jqueryui/jquery.ui.slider.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/skin/js/jqueryui/jquery.ui.widget.js" afterPath="$PROJECT_DIR$/admin/skin/js/jqueryui/jquery.ui.widget.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/skin/js/jqueryui/skin/smoothness/jquery-ui-1.8.23.custom.css" afterPath="$PROJECT_DIR$/admin/skin/js/jqueryui/skin/smoothness/jquery-ui-1.8.23.custom.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/skin/js/swfobject.js" afterPath="$PROJECT_DIR$/admin/skin/js/swfobject.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dl/_xingcai_agency_buffer/systemSettings" afterPath="$PROJECT_DIR$/dl/_xingcai_agency_buffer/systemSettings" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wap/_xingcai__buffer/systemSettings" afterPath="$PROJECT_DIR$/wap/_xingcai__buffer/systemSettings" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/_xingcai_buffer/systemSettings" afterPath="$PROJECT_DIR$/web/_xingcai_buffer/systemSettings" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>var_dump(111);</find>
+      <find>getRow</find>
+    </findStrings>
+    <dirStrings>
+      <dir>$PROJECT_DIR$</dir>
+      <dir>$PROJECT_DIR$/admin</dir>
+    </dirStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/admin/ADMIN.Back/admin/User.class.php" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
+  <component name="ProjectFrameBounds">
+    <option name="width" value="1440" />
+    <option name="height" value="900" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scratches" />
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="timeLottery" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.jetbrains.php.config.library.PhpExternalLibrariesNodePatcher$PatchedExternalLibrariesNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="timeLottery" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="timeLottery" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="timeLottery" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="timeLottery" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="admin" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="timeLottery" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="timeLottery" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="admin" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="skin" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="FullScreen" value="true" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="6fe42b90-187d-4e20-a9fb-f3bcd12d1ee1" name="Default" comment="" />
+      <created>1535381156457</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1535381156457</updated>
+      <workItem from="1535381158230" duration="749000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="988000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="0" y="0" width="1440" height="900" extended-state="0" />
+    <layout>
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2532189" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32891566" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24964234" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="processedProjectFiles" value="true" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager />
+    <watches-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/admin/ADMIN.Back/admin/User.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/lib/core/Object.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="7" column="22" lean-forward="false" selection-start-line="7" selection-start-column="22" selection-end-line="7" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/lib/core/DBAccess.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="11" column="26" lean-forward="true" selection-start-line="11" selection-start-column="26" selection-end-line="11" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/ADMIN.Back/admin/Clear.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="9" column="36" lean-forward="false" selection-start-line="9" selection-start-column="27" selection-end-line="9" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/ADMIN.Back/admin/Box.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/ADMIN.Back/admin/Card.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/ADMIN.Back/admin/Data.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/ADMIN.Back/admin/Admin.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wap/xingcai_Front/cash/withdraw.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="214">
+          <caret line="30" column="13" lean-forward="false" selection-start-line="30" selection-start-column="13" selection-end-line="30" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/ADMIN.Back/admin/Time.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18">
+          <caret line="1" column="24" lean-forward="false" selection-start-line="1" selection-start-column="24" selection-end-line="1" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/ADMIN.Back/admin/Business.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="304">
+          <caret line="145" column="130" lean-forward="false" selection-start-line="145" selection-start-column="130" selection-end-line="145" selection-end-column="130" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/ADMIN.Back/admin/AdminBase.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="89" column="29" lean-forward="true" selection-start-line="89" selection-start-column="29" selection-end-line="89" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/admin_config.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="5" column="59" lean-forward="false" selection-start-line="5" selection-start-column="48" selection-end-line="5" selection-end-column="59" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/ADMIN.Back/admin/User.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="194">
+          <caret line="128" column="32" lean-forward="false" selection-start-line="128" selection-start-column="32" selection-end-line="128" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

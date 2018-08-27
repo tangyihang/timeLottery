@@ -113,7 +113,7 @@ a:hover{text-decoration:underline;}
 float:left;margin:0;font-family:"Microsoft YaHei","ºÚÌå";font-size:24px;display:block;width:10%;height:55px;font-weight:normal;text-align:left;text-indent:1.8%;line-height:55px;color:#fff;text-shadow:0 -1px 0 #000;}
 
 #header h1.site_title a{color:#fff;text-decoration:none;}
-#header h2.section_title{float:left;margin:0;width:20%;height:55px;background:url(images/header_shadow.png) no-repeat left top;width:81%;}
+#header h2.section_title{float:left;margin:0;width:20%;height:55px;background:url(images/header_shadow.png) no-repeat left top;width:68%;}
 #header h2.section_title a{float:left;margin:8px 0 0 30px;display:block;font-family:"Microsoft YaHei","ºÚÌå";font-size:16px;font-weight:normal;color:#fff;text-align:left;text-indent:1.8%;text-align:center;text-shadow:0 -1px 0 #000;text-indent:4.5%;line-height:39px;width:130px;text-decoration:none;}
 #header h2.section_title a.tjgk{background-position:0 -1173px;}
 #header h2.section_title a.txcl{background-position:0 -1133px;}
@@ -283,15 +283,15 @@ float:left;margin:0;font-family:"Microsoft YaHei","ºÚÌå";font-size:24px;display:
 .module_content{margin:10px 20px;color:#666;height:auto;overflow:auto;}
 
 /* Module Widths */
-.width_full{width:107%;}
+.width_full{width:95%;}
 .width_half{width:46%;margin-right:0;float:left;}
 .width_quarter{width:26%;margin-right:0;float:left;}
 .width_3_quarter{width:66%;margin-right:0;float:left;}
-.width_1_quarter{width:107%;margin-right:0;float:left;}
+.width_1_quarter{width:95%;margin-right:0;float:left;}
 
 /* Stats Module */
 .stats_graph{width:400px;float:left;}
-.stats_overview{background:#F6F6F6;border:1px solid #ccc;float:left;width:99.6%;}
+.stats_overview{background:#F6F6F6;border:1px solid #ccc;float:right;width:30%;}
 .overview_today,.overview_previous{width:50%;float:left;}
 .stats_overview p{margin:0;padding:0;text-align:center;text-transform:uppercase;text-shadow:0 1px 0 #fff;}
 .stats_overview p.overview_day{font-size:12px;font-weight:bold;margin:6px 0;}

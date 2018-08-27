@@ -773,7 +773,21 @@ function lossCommHandle(err, data){
 function sysAddNotice(){
 	load('system/addNotice');
 }
+/**
+ * 添加公告
+ */
+function sysAddNews(){
+    load('system/addNews');
+}
 
+function sysReloadNews(err, data){
+    if(err){
+        error(err);
+    }else{
+        success(data);
+        load('system/news');
+    }
+}
 function sysReloadNotice(err, data){
 	if(err){
 		error(err);
@@ -801,13 +815,56 @@ function beforeUpdateNotice(){
 		$input.attr("checked",true);
 	}*/
 }
-
+function beforeUpdateActive(){
+	if(!this.title.value) throw('请输入活动标题');
+	if(!this.obj.value) throw('请输入活动对象');
+	if(!this.text.value) throw('请输入活动简介');
+	if(!this.content.value) throw('请输入内容');
+/*	var $input=$(this).find("input[name=enable]");
+	if(!$input.attr("checked")){
+		$input.val(0);
+		$input.attr("checked",true);
+	}*/
+}
+function beforeUpdatecode(){
+	if(!this.title.value) throw('请输入标题');
+	//if(!this.content.value) throw('请输入内容');
+/*	var $input=$(this).find("input[name=enable]");
+	if(!$input.attr("checked")){
+		$input.val(0);
+		$input.attr("checked",true);
+	}*/
+}
+function doUpdateNews(err, data){
+    if(err){
+        error(err);
+    }else{
+        if(data) success(data);
+        load('system/news');
+    }
+}
 function doUpdateNotice(err, data){
 	if(err){
 		error(err);
 	}else{
 		if(data) success(data);
 		load('system/notice');
+	}
+}
+function doUpdateActive(err, data){
+	if(err){
+		error(err);
+	}else{
+		if(data) success(data);
+		load('system/actlist');
+	}
+}
+function doUpdatecode(err, data){
+	if(err){
+		error(err);
+	}else{
+		if(data) success(data);
+		load('business/qr_code');
 	}
 }
 

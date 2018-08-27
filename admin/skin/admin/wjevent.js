@@ -5,7 +5,7 @@ $(function(){
 		$.getJSON('/index.php/business/getTip', function(tip){
 			if(tip){
 				// 只处理正确返回的数据
-				playVoice('/skin/sound/backcash.wav', 'cash-voice');
+				//playVoice('/skin/sound/cash.wav', 'cash-voice');
 				if(!tip.flag) return;
 				
 				var buttons=[];
