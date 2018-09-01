@@ -16,7 +16,7 @@ $conf['cache']['dir']='_xingcai_agency_buffer/';
 
 $conf['url_modal']=2;
 
-$conf['action']['template']='_xingcai_agency_Front/';
+$conf['action']['template']='_xingcai_agency_front/';
 $conf['action']['modals']='_xingcai_agency_back/';
 
 $conf['member']['sessionTime']=15*60;	// 用户有效时长
