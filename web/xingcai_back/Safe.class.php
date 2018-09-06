@@ -13,8 +13,8 @@ class Safe extends WebLoginBase{
 		$this->display('safe/tuiguang.php');
 	}
 	//充值
-	public final function C38_CZ(){
-		$this->display('safe/C38_CZ.php');
+	public final function c38_cz(){
+		$this->display('safe/c38_cz.php');
 	}
 	//金额获取	
 	public final function userInfo(){
