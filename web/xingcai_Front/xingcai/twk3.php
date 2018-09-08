@@ -7,7 +7,7 @@ header('Content-type: application/xml');
 echo'<?xml version="1.0" encoding="utf-8"?>';
 echo '<xml><row expect="'.$lastNo['actionNo'].'" opencode="'.$opencode.'" opentime="'.$lastNo['actionTime'].'"/></xml>';
 
-/* Éú³ÉËæ»úÊı */
+/* ç”Ÿæˆéšæœºæ•° */
 function randKeys($len=3){
 	$str='635142';
 	$rand='';

@@ -7,7 +7,7 @@ header('Content-type: application/xml');
 echo'<?xml version="1.0" encoding="utf-8"?>';
 echo '<xml><row expect="'.$lastNo['actionNo'].'" opencode="'.$opencode.'" opentime="'.$lastNo['actionTime'].'"/></xml>';
 
-/* Éú³ÉËæ»úÊı */
+/* ç”Ÿæˆéšæœºæ•° */
 function randKeys($len){
     $array=array("01","02","03","04","05","06","07","08","09","10","11","12","13","14","15","16","17","18","19","20");
 	$charsLen = count($array) - 1; 
@@ -125,7 +125,7 @@ function randKeys($len){
 			$t= $array[mt_rand(0, $charsLen)];
 		}
 		
-       //$output .= $array[mt_rand(0, $charsLen)].",";  ¿Í·şQQ:113438373
+       //$output .= $array[mt_rand(0, $charsLen)].",";  å®¢æœQQ:113438373
   //  }  
 	 return $outpuet=$a.','.$b.','.$c.','.$d.','.$e.','.$f.','.$g.','.$h;
    // return rtrim($output, ',');

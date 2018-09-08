@@ -1,17 +1,17 @@
 <?php
 $lastNo=$this->getGameLastNo(68);
-//»ñÈ¡Ö¸¶¨ÖĞ½±µÄÊı¾İ
+//è·å–æŒ‡å®šä¸­å¥–çš„æ•°æ®
 $zddata = $this->getGameZdData(68,$lastNo['actionNo']);
 $opencode =$zddata?$zddata:randKeys(5);
-//ÅĞ¶Ïµ±Ç°adminÊÇ·ñÖĞ½±£¬´æÔÚ£¬Èç¹û´æÔÚÔò°´Ö¸¶¨µÄÊı×Ö¿ª½±
-//addµÄÊ±ºòÔòÔö¼ÓÂß¼­
+//åˆ¤æ–­å½“å‰adminæ˜¯å¦ä¸­å¥–ï¼Œå­˜åœ¨ï¼Œå¦‚æœå­˜åœ¨åˆ™æŒ‰æŒ‡å®šçš„æ•°å­—å¼€å¥–
+//addçš„æ—¶å€™åˆ™å¢åŠ é€»è¾‘
 
 
 header('Content-type: application/xml');
 echo'<?xml version="1.0" encoding="utf-8"?>';
 echo '<xml><row expect="'.$lastNo['actionNo'].'" opencode="'.$opencode.'" opentime="'.$lastNo['actionTime'].'"/></xml>';
 
-/* Éú³ÉËæ»úÊı */
+/* ç”Ÿæˆéšæœºæ•° */
 function randKeys($len){
     $array=array("01","02","03","04","05","06","07","08","09","10","11");
 	$charsLen = count($array) - 1; 

@@ -1,14 +1,14 @@
 <?php
 $lastNo=$this->getGameLastNo(86);
 
-$zddata = $this->getGameZdData(86,$lastNo['actionNo']);//��ȡָ���ĺ���
+$zddata = $this->getGameZdData(86,$lastNo['actionNo']);//获取指定的号码
 $opencode =$zddata?$zddata:randKeys();
 
 header('Content-type: application/xml');
 echo'<?xml version="1.0" encoding="utf-8"?>';
 echo '<xml><row expect="'.$lastNo['actionNo'].'" opencode="'.$opencode.'" opentime="'.$lastNo['actionTime'].'"/></xml>';
 
-/* �������� */
+/* 生成随机数 */
 function randKeys($len=5){
 	$rand='';
 	for($x=0;$x<$len;$x++){
