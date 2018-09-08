@@ -91,7 +91,6 @@
                      <li>
                         <div class="info-left"><span class="red">* </span>推荐码：</div>
                         <div class="info-right"><input name="xcode" id="xcode_reg"  class="reg-int" type="text"  maxlength="12"></div>
-                        <div class="info-txt">没有可以不填</div>
                     </li>
                     <li>
                         <div class="info-left"><span class="red">* </span>验证码：</div>

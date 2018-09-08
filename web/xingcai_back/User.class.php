@@ -400,7 +400,8 @@ class User extends WebBase{
 		if(strlen($user)<5 || strlen($user)>15) return array('msg'=>'帐号为5-15位,请重新输入','code'=>1);
 		if(!ctype_alnum($user)) return array('msg'=>'帐号包含非法字符','code'=>1);
 		if(strlen($password)<6) return array('msg'=>'密码至少6位','code'=>1);
-		
+		if(strlen(trim($xcode) == 0)) return array('msg'=>'推荐码不能为空','code'=>1);
+
 		if(strtolower($vcode)!=$_SESSION[$this->vcodeSessionName]){
 			return array('msg'=>'验证码不正确。','code'=>1);
 		}
