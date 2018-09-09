@@ -35,39 +35,39 @@ exports.cp = [
 	// 		} //
 	// 	} //
 	// },
-	// { //
-	// 	title: '3分彩时时彩', //
-	// 	source: '杏彩', //
-	// 	name: 'sfssc', //
-	// 	enable: true, //
-	// 	timer: 'sfssc', //
-	// 	option: { //
-	// 		host: myhost, //
-	// 		timeout: 50000, //
-	// 		path: '/index.php/xingcai/xcsfssc', //
-	// 		headers: { //
-	// 			"User-Agent": "Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 6.0) " //
-	// 		} //
-	// 	}, //
-	// 	parse: function(str) { //
-	// 		try { //
-	// 			str = str.substr(0, 200); //
-	// 			var reg = /<row expect="([\d\-]+?)" opencode="([\d\,]+?)" opentime="([\d\:\- ]+?)"/; //
-	// 			var m; //
-	// 			if(m = str.match(reg)) { //
-  //
-	// 				return { //
-	// 					type: 86, //
-	// 					time: m[3], //
-	// 					number: m[1], //
-	// 					data: m[2] //
-	// 				}; //
-	// 			} //
-	// 		} catch(err) { //杏
-	// 			throw('3分彩时时彩解析数据不正确'); //彩
-	// 		} //系
-	// 	} //统
-	// }, //
+	{ //
+		title: '3分彩时时彩', //
+		source: '杏彩', //
+		name: 'sfssc', //
+		enable: true, //
+		timer: 'sfssc', //
+		option: { //
+			host: myhost, //
+			timeout: 50000, //
+			path: '/index.php/xingcai/xcsfssc', //
+			headers: { //
+				"User-Agent": "Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 6.0) " //
+			} //
+		}, //
+		parse: function(str) { //
+			try { //
+				str = str.substr(0, 200); //
+				var reg = /<row expect="([\d\-]+?)" opencode="([\d\,]+?)" opentime="([\d\:\- ]+?)"/; //
+				var m; //
+				if(m = str.match(reg)) { //
+
+					return { //
+						type: 86, //
+						time: m[3], //
+						number: m[1], //
+						data: m[2] //
+					}; //
+				} //
+			} catch(err) { //杏
+				throw('3分彩时时彩解析数据不正确'); //彩
+			} //系
+		} //统
+	}, //
 	// { //
 	// 	title: '北京pk10', //
 	// 	source: '北京福彩网', //
@@ -119,38 +119,38 @@ exports.cp = [
 	// 		} //
 	// 	} //
 	// }, //
-	// { //
-	// 	title: '幸运28', //
-	// 	source: '杏彩', //
-	// 	name: 'xy28', //
-	// 	enable: true, //
-	// 	timer: 'xy28', //
-	// 	option: { //杏
-	// 		host: myhost, //彩
-	// 		timeout: 50000, //系
-	// 		path: '/index.php/xingcai/xy28', //统
-	// 		headers: { //彩
-	// 			"User-Agent": "Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 6.0) " //
-	// 		} //
-	// 	}, //
-	// 	parse: function(str) { //
-	// 		try { //
-	// 			str = str.substr(0, 200); //
-	// 			var reg = /<row expect="([\d\-]+?)" opencode="([\d\,]+?)" opentime="([\d\:\- ]+?)"/; //
-	// 			var m; //
-	// 			if(m = str.match(reg)) { //
-	// 				return { //
-	// 					type: 80, //
-	// 					time: m[3], //
-	// 					number: m[1], //
-	// 					data: m[2] //
-	// 				}; //
-	// 			} //
-	// 		} catch(err) { //
-	// 			throw('幸运28解析数据不正确'); //
-	// 		} //
-	// 	} //
-	// }, //
+	{ //
+		title: '幸运28', //
+		source: '杏彩', //
+		name: 'xy28', //
+		enable: true, //
+		timer: 'xy28', //
+		option: { //杏
+			host: myhost, //彩
+			timeout: 50000, //系
+			path: '/index.php/xingcai/xy28', //统
+			headers: { //彩
+				"User-Agent": "Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 6.0) " //
+			} //
+		}, //
+		parse: function(str) { //
+			try { //
+				str = str.substr(0, 200); //
+				var reg = /<row expect="([\d\-]+?)" opencode="([\d\,]+?)" opentime="([\d\:\- ]+?)"/; //
+				var m; //
+				if(m = str.match(reg)) { //
+					return { //
+						type: 80, //
+						time: m[3], //
+						number: m[1], //
+						data: m[2] //
+					}; //
+				} //
+			} catch(err) { //
+				throw('幸运28解析数据不正确'); //
+			} //
+		} //
+	}, //
 	// { //
 	// 	title: '六合彩', //
 	// 	source: '9800开奖网', //
@@ -179,38 +179,38 @@ exports.cp = [
 	// 	}, //
   //
 	// },
-	// { //
-	// 	title: '三分pk10', //
-	// 	source: '杏彩', //
-	// 	name: 'twpk10', //
-	// 	enable: true, //
-	// 	timer: 'twpk10', //
-	// 	option: { //
-	// 		host: myhost, //
-	// 		timeout: 50000, //
-	// 		path: '/index.php/xingcai/xcsfpk10', //
-	// 		headers: { //
-	// 			"User-Agent": "Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 6.0) " //
-	// 		} //
-	// 	}, //
-	// 	parse: function(str) { //
-	// 		try { //
-	// 			str = str.substr(0, 200); //
-	// 			var reg = /<row expect="([\d\-]+?)" opencode="([\d\,]+?)" opentime="([\d\:\- ]+?)"/; //
-	// 			var m; //杏
-	// 			if(m = str.match(reg)) { //彩
-	// 				return { //系
-	// 					type: 85, //统
-	// 					time: m[3], //彩
-	// 					number: m[1], //
-	// 					data: m[2] //
-	// 				}; //
-	// 			} //
-	// 		} catch(err) { //
-	// 			throw('三分pk10解析数据不正确'); //
-	// 		} //
-	// 	} //
-	// },
+	{ //
+		title: '三分pk10', //
+		source: '杏彩', //
+		name: 'twpk10', //
+		enable: true, //
+		timer: 'twpk10', //
+		option: { //
+			host: myhost, //
+			timeout: 50000, //
+			path: '/index.php/xingcai/xcsfpk10', //
+			headers: { //
+				"User-Agent": "Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 6.0) " //
+			} //
+		}, //
+		parse: function(str) { //
+			try { //
+				str = str.substr(0, 200); //
+				var reg = /<row expect="([\d\-]+?)" opencode="([\d\,]+?)" opentime="([\d\:\- ]+?)"/; //
+				var m; //杏
+				if(m = str.match(reg)) { //彩
+					return { //系
+						type: 85, //统
+						time: m[3], //彩
+						number: m[1], //
+						data: m[2] //
+					}; //
+				} //
+			} catch(err) { //
+				throw('三分pk10解析数据不正确'); //
+			} //
+		} //
+	},
 
 ];
 
