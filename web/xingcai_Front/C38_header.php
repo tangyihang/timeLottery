@@ -117,7 +117,7 @@
 							<li><a class="right-border " href="/index.php/index/mfsw/">免费试玩</a></li>
 							<li><a class="right-border" href="/index.php/index/help?page=default">玩法</a></li>
 							<li id="wdtg"><a class="right-border" onClick="__openWin('user_center','/index.php/safe/tuiguang')" href="javascript:void(0)">推荐好友获收益<img style="margin-left: 2px;margin-bottom: 10px;" src="/assets/statics/images/hot_new.gif"></a></li>
-							<li><a target="_self" onClick="zxkf();">在线客服</a></li>
+							<li><a href="http://wpa.qq.com/msgrd?v=3&uin=1163408818&site=qq&menu=yes" target="_blank">在线客服</a></li>
 						</ul>
 					</div>
 					

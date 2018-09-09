@@ -139,7 +139,7 @@
     </div>
     <div class="foot_box">
         <div class="about_box">
-            <p>2018-2028©<span>喜羊羊彩 | </span> 客服邮箱：cai1688vip@gmail.com<!-- 客服QQ：201716002 | 流量统计 -->
+            <p>2018-2028©<span>喜羊羊彩 | </span> 客服邮箱：1163408818@qq.com 客服QQ：1163408818
             <br><span class="c-grey">喜羊羊彩郑重提示：彩票有风险，投注需谨慎！ 不向未满18周岁的青少年出售彩票</span></p>
             <ul class="foot_info">
                 <li class="foot_wljc"></li>

@@ -13,42 +13,6 @@
 <script type="text/javascript" src="/skin/main/onload.js"></script>
 <script type="text/javascript" src="/newskin/js/function.js"></script>
 <script type="text/javascript" src="/skin/layer/layer.js"></script>
-<script type='text/javascript'>
-function zxkf(){
-	 <?php if($this->settings['kefuStatus']){ ?>
-	layer.open({
-	  type: 2,
-	  area: ['800px', '550px'],
-	  zIndex:1999,
-	  //fixed: false, //不固定
-	  title:'在线客服',
-	  scrollbar: false,//屏蔽滚动条
-	  //maxmin: true,
-	  content:'<?=$this->settings['kefuGG']?>'
-	});
-	<?php }else{?>
-	$.alert("客服系统维护中");
-	<?php }?>
-	return false;
-}
-function qqkf(){
-	<?php if($this->settings['qqkefuStatus']){ ?>
-	layer.open({
-	  type: 2,
-	  area: ['800px', '550px'],
-	  zIndex:1999,
-	  //fixed: false, //不固定
-	  title:'在线客服',
-	  scrollbar: false,//屏蔽滚动条
-	  //maxmin: true,
-	  content:'http://wpa.qq.com/msgrd?uin=<?=$this->settings['qqkefuGG']?>'
-	});
-	<?php }else{?>
-	$.alert("客服系统维护中");
-	<?php }?>
-	return false;
-}
-</script> 
 </head>
     <body class="nsc_background01">
         <div class="header">
@@ -94,7 +58,7 @@ function qqkf(){
                     <a href="javascript:void(0);" onclick="topay();" class="t_btn logins">提款</a>
                 </div>
                
-                <a href="javascript:void(0)" onclick="zxkf();"  title="在线客服" class="t_kefu">
+                <a href="http://wpa.qq.com/msgrd?v=3&uin=1163408818&site=qq&menu=yes" target="_blank" title="在线客服" class="t_kefu">
                     <i class="ic-kefu"></i><span>客服</span></a>
                 <a href="javascript:void(0)" title="更换背景" class="t_skin">
                     <i class="ic-skin"></i><span>背景</span>
@@ -427,50 +391,16 @@ function qqkf(){
 <link rel="stylesheet" href="/css/nsc/foot.css?v=1.17.1.13">
 <script type="text/javascript" src="/images/down/swfobject.js?v=1.17.1.13"></script>
 
-<div class="login_footer">
-	<div class="warp980">
-		<div class="img"></div>
-		<div class="clearfix">
-			<p class="t-left">
-				浏览器建议：首选为Google浏览器，其次为火狐和IE9或IE10浏览器<br>分辨率建议：使用1024×768以上的分辨率
-			</p>
-			<p class="t-right">
-				未满18周岁禁止购买<br>
-				Copyright © SinCai 2010-2016  大地彩票 版权所有
-			</p>
-		</div>
-	</div>
-</div>
-
 <!--侧边栏-->
 <div class="sidebar" id="sidebar">
 	<a href="/index.php" class="sidebar-div home"><i class="ic-home"></i>回到首页</a>
-	<a  href="javascript:void(0)" onclick="zxkf();" class="sidebar-div"><i class="ic-online"></i>在线客服</a>
+	<a href="http://wpa.qq.com/msgrd?v=3&uin=1163408818&site=qq&menu=yes" target="_blank" class="sidebar-div"><i class="ic-online"></i>在线客服</a>
 	<a datatype="json" call="indexSign" target="ajax"  onclick="Xgo(this)" attr-href="/index.php/display/sign" class="sidebar-div"><i class="iconfont">&#xe64d;</i>天天签到</a>
-	<a  href="javascript:void(0);"  onclick="Xgo(this)" attr-href="/index.php/liaotian/chat"  url="/index.php/liaotian/chat" class="sidebar-div chongzhi"><i class="iconfont">&#xe60b;</i>多人聊天</a>
+	<a href="javascript:void(0);"  onclick="Xgo(this)" attr-href="/index.php/liaotian/chat"  url="/index.php/liaotian/chat" class="sidebar-div chongzhi"><i class="iconfont">&#xe60b;</i>多人聊天</a>
 	<a href="javascript:voiceKJ();" class="sidebar-div"><i class="ic-sound soundClickEvent"></i>声音控制</a>
 	<a href="javascript:void(0);" class="sidebar-div" id="sidebarGoTop"><i class="ic-top"></i>返回顶部</a>
 	<!--<div class="sidebar-div down" id="mdown-show">手机下载<i class="link"></i></div>-->
 </div>
-
-<!-- <div class="zr-mobile-down" align="center">
-	<div class="zr-container" align="left">
-		<ul>
-			<li class="log"></li>
-			<li class="text">
-				<p>手机移动端APP 真实娱乐更便捷</p>
-				<p class="t2">扫码下载！随时随地，想玩就玩</p>
-			</li>
-			<li class="QR-code"><img src="/images/nsc/login/login_sj-web_ewmimg.png?v=1.17.1.13" width="98" height="98"/></li>
-			<li>
-				<a href="#" class="down-link-iphone"></a>
-				<a href="#" class="down-link-android"></a>
-			</li>
-		</ul>
-		<button class="close" id="mdown-close"></button>
-	</div>
-	<div id="mdown-show">手机下载<i class="link"></i></div>
-</div> -->
 <link rel="stylesheet" type="text/css" href="/css/nsc/guide.css?v=1.17.1.13">
 
 <div class="guide guide_new">

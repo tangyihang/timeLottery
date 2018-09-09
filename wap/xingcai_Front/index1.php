@@ -229,7 +229,7 @@
 		</div>
 		<section class="wraper-page" style="overflow: visible;">
 		<!-- 客服 -->
-		<a class="customer" href="javascript:void(0)" onclick="zxkf();" target="_blank"></a>
+		<a class="customer" href="http://wpa.qq.com/msgrd?v=3&uin=1163408818&site=qq&menu=yes" target="_blank" target="_blank"></a>
 		<!-- 客服 -->
 		<!-- 轮播 -->
 		<div class="swiper-container">

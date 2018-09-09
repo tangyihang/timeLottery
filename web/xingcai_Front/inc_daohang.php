@@ -52,7 +52,7 @@
                 </a>
                 <a href="javascript:void(0);" onclick="czpay();" class="t_btn">充值</a>
                 <a href="javascript:void(0);" onclick="topay();" class="t_btn">提款</a>
-                <a href="javascript:void(0)" onclick="zxkf();" title="在线客服" class="t_kefu">
+                <a href="http://wpa.qq.com/msgrd?v=3&uin=1163408818&site=qq&menu=yes" target="_blank" title="在线客服" class="t_kefu">
                     <i class="ic-kefu"></i><span>客服</span></a>
                 <a href="javascript:void(0)" title="更换背景" class="t_skin " style="display:none;"><i class="ic-skin"></i><span>背景</span></a>
             </div>
@@ -149,47 +149,3 @@
 	</span>
 </div>
 <script type="text/javascript" src="/js/loginserver.js?v=0.8.5.5"></script>
-
-<script type="text/javascript">
-$(document).ready(function(){
-    //没有开放导航弹窗提示
-    var NoDagin = true;
-    $(".v-NoDagin").click(function(){
-   		if(NoDagin){
-	    	NoDagin = false;
-	    	$("#v-dalog").fadeIn(200,function(){
-	    	}).delay(2000).fadeOut(200,function(){
-	    		NoDagin = true;
-	    	});
-    	}
-    });
-});
-function zxkf(){
-	 <?php if($this->settings['kefuStatus']){ ?>
-	layer.open({
-	  type: 2,
-	  area: ['800px', '550px'],
-	  zIndex:1999,
-	  //fixed: false, //不固定
-	  title:'在线客服',
-	  scrollbar: false,//屏蔽滚动条
-	  //maxmin: true,
-	  content:'<?=$this->settings['kefuGG']?>'
-	});
-	<?php }else{?>
-	$.alert("客服系统维护中");
-	<?php }?>
-	return false;
-}
-			$(document).ready(function() {
-				$('#mylottery').unbind().hover(function() {
-					$(this).addClass('mylottery-on');
-					$('#mylottery_dropdown').show();
-				}, function() {
-					$(this).removeClass('mylottery-on');
-					$('#mylottery_dropdown').hide();
-				});
-				
-			});
-		</script>
-</script>

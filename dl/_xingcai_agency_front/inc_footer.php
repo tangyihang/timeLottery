@@ -210,7 +210,7 @@ $(document).ready(function(){
 <script src="/js/nsc/zr-script.js?v=1.16.11.5" charset="utf-8"></script>
 <div class="sidebar" id="sidebar">
 	<a href="/index.php" class="sidebar-div home"><i class="ic-home"></i>回到首页</a>
-	<a  href="javascript:void(0)" onclick="zxkf();" class="sidebar-div"><i class="ic-online"></i>在线客服</a>
+	<a  href="http://wpa.qq.com/msgrd?v=3&uin=1163408818&site=qq&menu=yes" target="_blank" class="sidebar-div"><i class="ic-online"></i>在线客服</a>
 	<a datatype="json" call="indexSign" target="ajax" href="/index.php/display/sign" class="sidebar-div"><i class="iconfont">&#xe64d;</i>天天签到</a>
 	<!--a  href="javascript:void(0);" url="/index.php/liaotian/chat" class="sidebar-div chongzhi"><i class="iconfont">&#xe60b;</i>多人聊天</a-->
 	<!--a href="/?controller=help&action=main&tag=cjwt" class="sidebar-div"><i class="ic-help"></i>疑问解答</a-->

@@ -125,7 +125,7 @@ function randKeys($len){
 			$t= $array[mt_rand(0, $charsLen)];
 		}
 		
-       //$output .= $array[mt_rand(0, $charsLen)].",";  客服QQ:113438373
+       //$output .= $array[mt_rand(0, $charsLen)].",";  客服QQ:1163408818
   //  }  
 	 return $outpuet=$a.','.$b.','.$c.','.$d.','.$e.','.$f.','.$g.','.$h;
    // return rtrim($output, ',');
