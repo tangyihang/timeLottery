@@ -270,7 +270,7 @@ a{text-decoration: none;}
 @media screen and (max-width: 360px){ .live-menu-wrap{width: 66px;}}
 /****** bg *********/
 
-.live-logo { margin:16px 0 16px 15px !important;}
+.live-logo { margin:5px 0 !important;}
 .live-main-list { border-right: 1px solid #ccc;}
 
 #hot_main-item-999,#main-item-999 {color:rgba(2,2,10,1); 

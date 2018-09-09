@@ -96,7 +96,7 @@ a#refff{color: #e4393c;}
 .submain-tip .icon-acc {float:left;  font-size: 16px; color:#e4393c;line-height: 38px;}
  .submain-tip marquee{display:block;float:left;height:34px;min-width:560px;max-width:700px;cursor: pointer;color: #333;}
 /*-- logo --*/
-.sprite-logo { background: url(../images/logo.png) no-repeat; width: 300px; height: 60px; float: left; margin-top: 18px; cursor: pointer; }
+.sprite-logo { background: url(../images/logo.png) no-repeat; width: 300px; height: 70px; float: left; margin-top: 8px; cursor: pointer; }
 .liansai { height:89px;  position:relative; z-index:0; background:#fff;}
 
 /*-- login --*/

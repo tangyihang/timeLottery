@@ -7,8 +7,8 @@
 	cursor: pointer;
 	margin: 20px 0 23px 15px;
 	background: url(/images/nsc/new.png) center no-repeat;
-	width: 169px;
-	height: 61px;
+	width: 211px;
+	height: 70px;
 }
 
 
