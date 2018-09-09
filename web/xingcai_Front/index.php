@@ -5,7 +5,7 @@
 		<meta name="referrer" content="unsafe-url">
 		<meta name="renderer" content="webkit">
 		
-		<title>彩38</title>
+		<title>喜羊羊彩</title>
 		<!--<link type="image/x-icon" rel="shortcut icon" href="http://www.cy16cp.com/fhcp/statics/images/favicon.ico?20170114" media="screen"/>-->
 		<link type="text/css" rel="stylesheet" href="./files/_home.css">
 		<link type="text/css" rel="stylesheet" href="./files/_tip.css">
@@ -214,7 +214,7 @@ $(document).ready(function() {
 		<div class="header-plus" id="header_plus">
 			<div class="header-toptray-plus">
 				<div class="quick-tpis">
-					<div>您好,欢迎来到彩38!</div>
+					<div>您好,欢迎来到喜羊羊彩!</div>
 					<div class="top_dr_zc">
                         <!--<a class="top_qdr" onClick="__openWin('login','/index.php/user/login?is_login=1')">请登录</a>
                         |
@@ -835,10 +835,6 @@ $(document).ready(function() {
     <div class="footer-cn js-lazy">
         <div class="cnRight">
             <div class="cnTop">
-                <!--logo区-->
-                <div class="cn-list service">
-                    <i class="sprite sprite-end_logo"></i>
-                </div>
                <div class="cn-list">
                     <h3>&nbsp;&nbsp;账户相关</h3>
                     <ul>
@@ -893,7 +889,7 @@ $(document).ready(function() {
     </div>
     <div class="foot_box">
         <div class="about_box">
-            <p>2009-2017©<span>彩38 | </span> 客服邮箱：17131635362@163.com<!-- 客服QQ：201716002 | 流量统计 -->
+            <p>2009-2017©<span>喜羊羊彩 | </span> 客服邮箱：17131635362@163.com<!-- 客服QQ：201716002 | 流量统计 -->
             <br><span class="c-grey">彩88郑重提示：彩票有风险，投注需谨慎！ 不向未满18周岁的青少年出售彩票</span></p>
             <!--<ul class="foot_info">
                 <li class="foot_wljc"></li>

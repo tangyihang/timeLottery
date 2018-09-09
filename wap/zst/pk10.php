@@ -475,7 +475,7 @@ function toggleMiss(){
 
 <div class="m_footer_annotation">
                         未满18周岁禁止购买<br>
-                Copyright © SinCai  彩38 版权所有
+                Copyright © SinCai  喜羊羊彩 版权所有
                 <!-- <a href="#" class="m_f_top"></a> -->
 </div>
 

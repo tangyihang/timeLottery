@@ -5,7 +5,7 @@
     <meta name="referrer" content="unsafe-url">
     <meta name="renderer" content="webkit">
 
-    <title>彩38</title>
+    <title>喜羊羊彩</title>
 
     <link type="text/css" rel="stylesheet" href="/files/_home.css">
     <link type="text/css" rel="stylesheet" href="/files/_tip.css">

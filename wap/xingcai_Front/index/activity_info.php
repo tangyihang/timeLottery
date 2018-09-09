@@ -7,7 +7,7 @@
     <meta name=format-detection content="telphone=no" />
     <meta name=apple-mobile-web-app-capable content=yes />
 
-    <title>彩38</title>
+    <title>喜羊羊彩</title>
 
     <link rel="apple-touch-icon-precomposed" sizes="57x57" href="uploadimg/wapicon/icon-57.png">
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="uploadimg/wapicon/icon-72.png">
@@ -82,24 +82,24 @@
                             </div>
                             <div class="hd_cont_txtarea">
                                 <div>
-                                    <p><span style="font-size:12px;background-color:#E53333;"><span style="color:#FFE500;">●彩38● </span><span style="color:#003399;">易记网址：xyu001.cn </span>●大品牌 <span style="color:#FFFFFF;">值得信赖！</span></span></p>
+                                    <p><span style="font-size:12px;background-color:#E53333;"><span style="color:#FFE500;">●喜羊羊彩● </span><span style="color:#003399;">易记网址：xyu001.cn </span>●大品牌 <span style="color:#FFFFFF;">值得信赖！</span></span></p>
                                     <p>
                                         <br>
                                     </p>
                                     <p>
-                                        <span style="background-color:;">彩38官方网址：www.xyu001.cn</span>
+                                        <span style="background-color:;">喜羊羊彩官方网址：www.xyu001.cn</span>
                                     </p>
                                     <p>
-                                        <span style="background-color:;">彩38是世界彩界著名线上数字娱乐平台之一,专注于彩票事业。 </span>
+                                        <span style="background-color:;">喜羊羊彩是世界彩界著名线上数字娱乐平台之一,专注于彩票事业。 </span>
                                     </p>
                                     <p>
-                                        <span style="background-color:;">彩38获得GEOTRUST国际认证,实力彩票娱乐平台， 彩种丰富玩法多样（如：时时彩,香港彩,北京PK10,快乐十分,快三,五分彩等）。</span>
+                                        <span style="background-color:;">喜羊羊彩获得GEOTRUST国际认证,实力彩票娱乐平台， 彩种丰富玩法多样（如：时时彩,香港彩,北京PK10,快乐十分,快三,五分彩等）。</span>
                                     </p>
                                     <p>
                                         <br>
                                     </p>
                                     <p>
-                                        <span style="font-size:12px;background-color:;">尊敬的会员您好 为方便大家下注并能第一时间进入彩38平台，现已推出手机APP（苹果IOS和安卓系统），请大家及时下载。推广活动中完善资料并充值100元以上，系统将自动赠送18元哦 （如没收到请退出然后重新登入） <span
+                                        <span style="font-size:12px;background-color:;">尊敬的会员您好 为方便大家下注并能第一时间进入喜羊羊彩平台，现已推出手机APP（苹果IOS和安卓系统），请大家及时下载。推广活动中完善资料并充值100元以上，系统将自动赠送18元哦 （如没收到请退出然后重新登入） <span
                                                     style="color:#FFFFFF;"><br></span></span>
                                     </p>
                                     <p>
@@ -126,9 +126,9 @@
                                     <p><span>1、赢到100元即可出款。</span></p>
                                     <p><span>2、完善个人信息，绑定您要提现的银行卡, 派送18元彩金的用户出款不能更换银行信息。</span></p>
                                     <p>
-                                        <span>3、参与本活动需要遵守彩38公司相关规则,如发现任何利用活动或技术漏洞对冲等恶意套利行为，彩38公司将扣除所有违规所得,并且有权冻结其账号。</span>
+                                        <span>3、参与本活动需要遵守喜羊羊彩公司相关规则,如发现任何利用活动或技术漏洞对冲等恶意套利行为，喜羊羊彩公司将扣除所有违规所得,并且有权冻结其账号。</span>
                                     </p>
-                                    <p><span>4、本活动最终解释权和裁决权归彩38公司所有，彩38公司保留修改暂停终止该优惠活动等所有权利。</span></p>
+                                    <p><span>4、本活动最终解释权和裁决权归喜羊羊彩公司所有，喜羊羊彩公司保留修改暂停终止该优惠活动等所有权利。</span></p>
                                     <p>
                                         <br>
                                     </p>
@@ -192,7 +192,7 @@
                         ?>
                         <div class="activity">
                             <div class="list-tit">
-                                <h3>彩38最新热点</h3>
+                                <h3>喜羊羊彩最新热点</h3>
                                 <p>2017-04-02</p>
                             </div>
                             <div class="list-pic">
@@ -203,7 +203,7 @@
                             <div class="hd_cont_txtarea">
                                 <div>
                                     <p><br></p>
-                                    <p><span style="font-size:12px;background-color:#E53333;"><span style="color:#FFE500;">●彩38● </span><span style="color:#003399;">易记网址：xyu001.cn </span>●大品牌 <span style="color:#FFFFFF;">值得信赖！</span></span></p>
+                                    <p><span style="font-size:12px;background-color:#E53333;"><span style="color:#FFE500;">●喜羊羊彩● </span><span style="color:#003399;">易记网址：xyu001.cn </span>●大品牌 <span style="color:#FFFFFF;">值得信赖！</span></span></p>
                                     <p><br></p>
                                     <p>1：点击右上角 免费试玩 马上就可获得一个试玩账号</p>
                                     <p>2：设置密码就可以马上登入。</p>
@@ -227,10 +227,10 @@
                             <div class="hd_cont_txtarea">
                                 <div>
                                     <p><br></p>
-                                    <p><span style="font-size:12px;background-color:#E53333;"><span style="color:#FFE500;">●彩38● </span><span style="color:#003399;">易记网址：xyu001.cn </span>●大品牌 <span style="color:#FFFFFF;">值得信赖！</span></span></p>
+                                    <p><span style="font-size:12px;background-color:#E53333;"><span style="color:#FFE500;">●喜羊羊彩● </span><span style="color:#003399;">易记网址：xyu001.cn </span>●大品牌 <span style="color:#FFFFFF;">值得信赖！</span></span></p>
                                     <p><br></p>
                                     <p>支持支付宝，微信，银行转账，在线支付，入款最低10元起，出款最低100元起。</p>
-                                    <p>彩38提供更全面的支付方式，支付宝、微信支付、银行转账、在线快速支付等渠道多管齐下，360度无死角满足彩民入款需求的同时，要求出款系统3—10分钟的急速出款到客户账上。</p>
+                                    <p>喜羊羊彩提供更全面的支付方式，支付宝、微信支付、银行转账、在线快速支付等渠道多管齐下，360度无死角满足彩民入款需求的同时，要求出款系统3—10分钟的急速出款到客户账上。</p>
                                     <p><span>入款方式：</span></p>
                                     <p><span>微信支付：</span></p>
                                     <p style="color: rgb(229, 51, 51)">手机APP和WAP支付方式：点击存款与提款→充值→选择微信→下一步→立即充值→将为您截屏二维码确认→打开微信→打开扫一扫→相册选择二维码→1.扫一扫支付 2.添加好友进行支付→支付成功后点击我已支付→等待客服审核→完成支付。</p>
@@ -254,27 +254,27 @@
                         ?>
                         <div class="activity">
                             <div class="list-tit">
-                                <h3>彩38欢迎您</h3>
+                                <h3>喜羊羊彩欢迎您</h3>
                                 <p>2017-04-02</p>
                             </div>
                             <div class="list-pic">
                                 <img src="/images/activity/a_6.png">
                                 <p>活动对象：所有新注册会员</p>
-                                <p>活动内容：彩38欢迎您</p>
+                                <p>活动内容：喜羊羊彩欢迎您</p>
                             </div>
                             <div class="hd_cont_txtarea">
                                 <div>
                                     <p>
                                         <br>
                                     </p>
-                                    <p><span style="font-size:12px;background-color:#E53333;"><span style="color:#FFE500;">●彩38● </span><span style="color:#003399;">易记网址：xyu001.cn </span>●大品牌 <span style="color:#FFFFFF;">值得信赖！</span></span></p>
+                                    <p><span style="font-size:12px;background-color:#E53333;"><span style="color:#FFE500;">●喜羊羊彩● </span><span style="color:#003399;">易记网址：xyu001.cn </span>●大品牌 <span style="color:#FFFFFF;">值得信赖！</span></span></p>
                                     <p>
                                         <br>
                                     </p>
 
-                                    <p>彩38官方网址：www.xyu001.cn</p>
-                                    <p>彩38是世界彩界著名线上数字娱乐平台之一，由彩票专家研发高端程序,专注于彩票事业。</p>
-                                    <p> 彩38获得GEOTRUST国际认证,实力彩票娱乐平台，彩种丰富玩法多样（如：时时彩,香港彩,北京PK10,快乐十分,快三,五分彩等）。</p>
+                                    <p>喜羊羊彩官方网址：www.xyu001.cn</p>
+                                    <p>喜羊羊彩是世界彩界著名线上数字娱乐平台之一，由彩票专家研发高端程序,专注于彩票事业。</p>
+                                    <p> 喜羊羊彩获得GEOTRUST国际认证,实力彩票娱乐平台，彩种丰富玩法多样（如：时时彩,香港彩,北京PK10,快乐十分,快三,五分彩等）。</p>
                                     <p><br></p>
                                 </div>
                             </div>

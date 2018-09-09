@@ -133,7 +133,7 @@ function boxSearch(err, data){
                         <h4>信息内容：</h4>
                         <p><?=$args[0]['content']?></p>
                         <!--p class="text-right">
-                           彩38
+                           喜羊羊彩
                         </p-->
                     </div>
                 <div class="clearfix"></div>

@@ -1,7 +1,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" style="font-size: 15.525px;"><head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0,user-scalable=no,maximum-scale=1.0">
-<title>彩38-官方网站</title>
+<title>喜羊羊彩-官方网站</title>
 <meta name="keywords" content="">
 <meta name="format-detection" content="telephone=no">
 <meta name="screen-orientation" content="portrait">

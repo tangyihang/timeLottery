@@ -17,7 +17,7 @@
 		<meta name="referrer" content="always" />
 		<meta name="renderer" content="webkit" />
 		<meta name="referrer" content="unsafe-url" />
-		<title>彩票38 - 彩票APP,彩票开奖查询,重庆时时彩开奖号码,北京pk10开奖记录</title>
+		<title>喜羊羊彩 - 彩票APP,彩票开奖查询,重庆时时彩开奖号码,北京pk10开奖记录</title>
 		<link rel="stylesheet" href="/gcdt/style.css" type="text/css" />
 		<link rel="stylesheet" href="/gcdt/hall.css" type="text/css" />
 		<link type="text/css" rel="stylesheet" href="/gcdt/tip.css" />

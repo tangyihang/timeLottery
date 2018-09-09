@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        <title>彩38-官方网站</title>
+        <title>喜羊羊彩-官方网站</title>
         <link rel="stylesheet" type="text/css" href="/css/nsc/home/reset.css?v=1.16.11.6" />
 
         <script type="text/javascript" src="/js/nsc/jquery-1.7.min.js?v=1.16.11.6"></script>
@@ -77,7 +77,7 @@
                         <div class="activity_detail detal_li">
 								<p>单日的结算时间为03:00到次日的03:00,只计算彩票投注。投注达到流水以后即可以领取对应档次的游戏彩金。</p>                            
 								<p>一天只能领取一次，所以建议用户在当天决定停止游戏的时候领取即可以领取到最高的彩金，领取的彩金无流水要求可以直接提款。</p>                            
-								<p>同一IP、同一绑定提款卡姓名只能领取一次优惠。彩38保留对活动的解释权，有更改取消优惠的权利。</p>
+								<p>同一IP、同一绑定提款卡姓名只能领取一次优惠。喜羊羊彩保留对活动的解释权，有更改取消优惠的权利。</p>
 								<div class="tabstyle">
                         <table width="100%" border="0" cellspacing="0" cellpadding="0">
                             <tbody>

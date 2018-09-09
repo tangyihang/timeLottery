@@ -7,7 +7,7 @@
     <meta name=format-detection content="telphone=no" />
     <meta name=apple-mobile-web-app-capable content=yes />
     
-    <title>彩38</title>
+    <title>喜羊羊彩</title>
     
     <link rel="apple-touch-icon-precomposed" sizes="57x57" href="uploadimg/wapicon/icon-57.png">
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="uploadimg/wapicon/icon-72.png">
@@ -179,7 +179,7 @@ a, button {
 				<div class="statement">
 		            <img class="check" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAABGdBTUEAALGPC/xhBQAABJpJREFUWAnNWVtoFGcU/iaNl4hGQzQ2GEtoFLVesAiKIKX0RmlR6414v1EQfBH0oQ9Vk2hffEghL4XSUkitbVIrEiz12iqKoqWIDxIVDTUqpjVqNK5pTIzjd/7Z8cxsdnZ24+42B2Zz/jPnP+eb8//n/JdY6CPZlRgHC3NhYxZNFHsesdjy4rFwjjoHrEpckxepkpVKB4Iqov4mPgvodFIqffkxl6i/n08Nwd5Jtm9SAO1dGIb/sIVGtxDY0GSNx9WzEKG8Gnmotj7Do7g6HmEoQLvKROtrAhvl6ffyrIVWRnWDVWGiGmgvJ+iNbcMiuG0Eti/t4MSpfDBtiw/xFYQj7gv7Sw5AO2ppYElQx7TKLexFPtZYmzmRYqhXBM3XZBOcAJJA0Ge8SPYCiB3YmrXIeaMlIMV3DPmGOJoQMud88pg+mWtaxvMib+K8ABItJU1USW+2pvo5kt15KHNLkA6x1Llsgpu+Dth4ERhR6v8EweDUXCM3EYyuEBK9lyvCflfBrSlLgYV7gBzGp/Uy8NUUJkqP6jvFvExWHDeCm7IGbuInXCh3O+AE0qiJ8aIogZIlFS7ABdLIOI37EFhcD7ySq64u1AJtTdpWzmCyzK7ExlWVZ4grfRtY8RswIE8dNO4D9pb7h1ffgrVkfA5/5nplGeFLZgPLDvjBXfkV+GVZMDgBQmw5nHuyn8scFc8AVh4EBnnyr+kY8PNi4Fl3Yr/EJnNQNpuZoaKpwKrDwODhar/5FFA3H+h5orJgrjgc4EhmWUFZsImgN4UTgNVHgSGFqnHrT2DPx0B3h8oScyEAx3D0Pz0HrD0ODH01sSnv24LXgTW/s89olbZcAH5gFneF7lG1D0dXIhhM87/j8OQDw8cCSxuAXE8GBvXKp+5qgssfoxp3GoHdHwCdbSpLkhOAcsCJT5F/VF4ykwWWNSvRPkKiLJErKNV+93hW+v49oKNVZclzLYkBNqwHIv+qucncv76zU9tebshIRo7ZWThepQ+aCe5d2giOgSrH5UIAPqSDOi5N3Z3a+63PgWmrtC3c4BHM1iNA0WSVt98Gagnu4Q2Vpc4RoJxbE9Gts0DDOhZUW7XmfQu8NsdpDxzGOneI0/lNfR/hqVIiF38JU70wjtikULPEh9DFOuBEpSrlDgTK9zNi3IUs54pQ4qn1HfeZEO8Ddy+rfl85OfBLX7sSjQQ6KdSObJGmLVe1nqf+hb+z3Ync7b9Up68cD/rcbr0hSSLEcCRBkjQ3zqiid1fS9ZhF+CMgHeAcDwaTC7CGczGingM4WZ4kadqu+xUkiX6aB9w87Zf3teVgqZHuBiBDKXcl1UnZk3r2I5crGU6hp11A/ULg7z+cdnp+q6OYtOqmfGiSLJ6xATj/DdB8Mj2wxErMockkiWu9Px473TloMJrzqIUKF3DW/9K390ws/n0RFIG5fqhCPctOdu5lxKmQ3M9UoNySw7uHfBE0eqLAixzTwaOYUda9PIoBZ/AEOTaRdO5pqgi5V6SD+qUkF0Aypbbji9jIuXZCHUcT53+7wAwFKF/Sr6+A3VAboP31Et0L0uW5wcjKvyGeA9U/XZc7AuNcAAAAAElFTkSuQmCC">
 		            <span>我已年满18周岁，并且同意接受</span><a href="/user/law">《法律声明》</a><br>
-		            <!-- <span style="margin-left: 24px">请牢记彩38官方永久域名: <font color="#ff7f00">www.cp89.com</font></span> -->
+		            <!-- <span style="margin-left: 24px">请牢记喜羊羊彩官方永久域名: <font color="#ff7f00">www.cp89.com</font></span> -->
 	            </div>
                 <input id="tj" type="hidden" value="<?=$_REQUEST['tj']?>">
 	            <div class="row"><div id="<?php if($_REQUEST['tj']){echo 'register_btn_tj';}else{echo 'register_btn';}?>" class="login-btn">立即注册</div></div>

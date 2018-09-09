@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        <title>彩38-官方网站</title>
+        <title>喜羊羊彩-官方网站</title>
         <link rel="stylesheet" type="text/css" href="/css/nsc/home/reset.css?v=1.16.11.6" />
 <link href="/skin/css/dzp.css" rel="stylesheet" type="text/css">
         <script type="text/javascript" src="/js/nsc/jquery-1.7.min.js?v=1.16.11.6"></script>

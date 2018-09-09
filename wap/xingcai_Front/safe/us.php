@@ -7,7 +7,7 @@
     <meta name=format-detection content="telphone=no" />
     <meta name=apple-mobile-web-app-capable content=yes />
     
-    <title>彩38</title>
+    <title>喜羊羊彩</title>
     
     <link rel="apple-touch-icon-precomposed" sizes="57x57" href="uploadimg/wapicon/icon-57.png">
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="uploadimg/wapicon/icon-72.png">
@@ -54,7 +54,7 @@
 			</div>
 			<div style="height: 44px;" class="ipad-top"></div>
 			
-			<div style="text-indent: 2rem; margin: 20px;">	彩38（cp89.com）是一家专注于网络彩票投注和服务的互联网, 作为国内领先的互联网彩票公司,公司始终坚持走“易用、安全、便捷”的道路， 让每个彩民享受到安全、快捷的购彩服务。依托网络、通信和数字电视技术， 通过网络、电话、手机短信、数字电视、电子杂志、电子邮件和平面媒体等多样化服务手段， 为广大彩民提供全国各大联销型彩票及各地地方彩票的代购合买、彩票资讯、 彩票分析彩票软件、彩票社区等全方位、一体化的综合彩票服务，深受广大彩民的欢迎。</div>
+			<div style="text-indent: 2rem; margin: 20px;">	喜羊羊彩（cp89.com）是一家专注于网络彩票投注和服务的互联网, 作为国内领先的互联网彩票公司,公司始终坚持走“易用、安全、便捷”的道路， 让每个彩民享受到安全、快捷的购彩服务。依托网络、通信和数字电视技术， 通过网络、电话、手机短信、数字电视、电子杂志、电子邮件和平面媒体等多样化服务手段， 为广大彩民提供全国各大联销型彩票及各地地方彩票的代购合买、彩票资讯、 彩票分析彩票软件、彩票社区等全方位、一体化的综合彩票服务，深受广大彩民的欢迎。</div>
 		</div>
 	</div>
 </body>

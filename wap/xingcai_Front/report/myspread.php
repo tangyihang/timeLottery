@@ -6,7 +6,7 @@
     <meta name=format-detection content="telphone=no" />
     <meta name=apple-mobile-web-app-capable content=yes />
     
-    <title>彩38</title>
+    <title>喜羊羊彩</title>
     
     <link rel="stylesheet" href="/assets/statics/css/style.css" type="text/css">
     <link rel="stylesheet" href="/assets/statics/css/global.css" type="text/css">

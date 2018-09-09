@@ -60,8 +60,8 @@
     </div>
     <div class="foot_box">
         <div class="about_box">
-            <p>2009-2017?<span>彩38 | </span> 客服邮箱：cai38vip@163.com<!-- 客服QQ：201716002 | 流量统计 -->
-            <br><span class="c-grey">彩38郑重提示：彩票有风险，投注需谨慎！ 不向未满18周岁的青少年出售彩票</span></p>
+            <p>2009-2017?<span>喜羊羊彩 | </span> 客服邮箱：cai38vip@163.com<!-- 客服QQ：201716002 | 流量统计 -->
+            <br><span class="c-grey">喜羊羊彩郑重提示：彩票有风险，投注需谨慎！ 不向未满18周岁的青少年出售彩票</span></p>
             <ul class="foot_info">
                 <li class="foot_wljc"></li>
                 <li class="foot_wangan"></li>

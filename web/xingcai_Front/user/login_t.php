@@ -109,7 +109,7 @@
                     </li>
                     <li>
                         <div class="info-left">&nbsp;</div>
-                        <div class="info-right"><input type="checkbox" name="reg_checkbox" checked="checked"/>我已看过并同意<a class="orange" target="_self" onClick="" width="1000" height="653" border="0">《彩38网络服务协议》</a></div>
+                        <div class="info-right"><input type="checkbox" name="reg_checkbox" checked="checked"/>我已看过并同意<a class="orange" target="_self" onClick="" width="1000" height="653" border="0">《喜羊羊彩网络服务协议》</a></div>
                     </li>
                     <li>
                         <div class="info-left">&nbsp;</div>

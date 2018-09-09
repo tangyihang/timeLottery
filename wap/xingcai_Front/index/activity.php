@@ -7,7 +7,7 @@
     <meta name=format-detection content="telphone=no" />
     <meta name=apple-mobile-web-app-capable content=yes />
 
-    <title>彩38</title>
+    <title>喜羊羊彩</title>
 
     <link rel="apple-touch-icon-precomposed" sizes="57x57" href="uploadimg/wapicon/icon-57.png">
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="uploadimg/wapicon/icon-72.png">
@@ -89,9 +89,9 @@
                 </div>
             </div>
             <div class="app-list-box" style="display:none"><div class="list-tit"><h3>天天签到红包</h3><p>活动对象：所有会员</p></div><div class="list-pic"><a href="/index.php/index/activity_info?id=3"><img src="/images/activity/a_3.jpg"></a><p>活动内容：天天签到红包</p></div><div class="join"><a href="/index.php/index/activity_info?id=3">查看详情<span class="join-icon"></span></a></div></div>
-            <div class="app-list-box"><div class="list-tit"><h3>彩38最新热点</h3><p>活动对象：所有会员</p></div><div class="list-pic"><a href="/index.php/index/activity_info?id=4"><img src="/images/activity/4.png"></a><p>活动内容：2000免费试玩 不能提款</p></div><div class="join"><a href="/index.php/index/activity_info?id=4">查看详情<span class="join-icon"></span></a></div></div>
+            <div class="app-list-box"><div class="list-tit"><h3>喜羊羊彩最新热点</h3><p>活动对象：所有会员</p></div><div class="list-pic"><a href="/index.php/index/activity_info?id=4"><img src="/images/activity/4.png"></a><p>活动内容：2000免费试玩 不能提款</p></div><div class="join"><a href="/index.php/index/activity_info?id=4">查看详情<span class="join-icon"></span></a></div></div>
             <div class="app-list-box"><div class="list-tit"><h3>支付方式</h3><p>活动对象：所有会员</p></div><div class="list-pic"><a href="/index.php/index/activity_info?id=5"><img src="/images/activity/a_5.png"></a><p>活动内容：支持支付宝，微信，银行转账，在线支付</p></div><div class="join"><a href="/index.php/index/activity_info?id=5">查看详情<span class="join-icon"></span></a></div></div>
-            <div class="app-list-box"><div class="list-tit"><h3>彩38欢迎您</h3><p>活动对象：所有会员</p></div><div class="list-pic"><a href="/index.php/index/activity_info?id=6"><img src="/images/activity/a_6.png"></a><p>活动内容：彩38欢迎您</p></div><div class="join"><a href="/index.php/index/activity_info?id=6">查看详情<span class="join-icon"></span></a></div></div>
+            <div class="app-list-box"><div class="list-tit"><h3>喜羊羊彩欢迎您</h3><p>活动对象：所有会员</p></div><div class="list-pic"><a href="/index.php/index/activity_info?id=6"><img src="/images/activity/a_6.png"></a><p>活动内容：喜羊羊彩欢迎您</p></div><div class="join"><a href="/index.php/index/activity_info?id=6">查看详情<span class="join-icon"></span></a></div></div>
         </div>
         <input type="hidden" name="betflag" id="betflag" value="1">
         <input type="hidden" name="isflush" id="isflush" value="1">

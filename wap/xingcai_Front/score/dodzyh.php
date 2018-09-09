@@ -2,7 +2,7 @@
 
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        <title>彩38-官方网站</title>
+        <title>喜羊羊彩-官方网站</title>
         <link rel="stylesheet" type="text/css" href="/css/nsc/home/reset.css?v=1.16.11.6" />
 		<link rel="stylesheet" href="/css/nsc/dzyh.css?v=1.16.11.9" />
 		<link rel="stylesheet" href="/css/nsc/huodong.css?v=1.16.11.6" />

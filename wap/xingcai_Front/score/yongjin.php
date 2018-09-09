@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        <title>彩38-官方网站</title>
+        <title>喜羊羊彩-官方网站</title>
         <link rel="stylesheet" type="text/css" href="/css/nsc/home/reset.css?v=1.16.11.6" />
 
         <script type="text/javascript" src="/js/nsc/jquery-1.7.min.js?v=1.16.11.6"></script>
@@ -97,8 +97,8 @@
 </div></div>
         <h4 class="x-title">注意事项</h4>
         <div class="x-text"><div>1、活动结算时间为每天 00:00:00 至 23:59:59，每日代理需要自行领取前一日下级累计投注到的返利总额，逾期不候。</div>
-<div>2、任何的对冲等刷量行为不计入有效投注，【彩38】保留取消、收回赠送礼金的权利。</div>
-<div>3、【彩38】保留对此次活动作出更改、终止权利，并享有最终解释权。</div></div>
+<div>2、任何的对冲等刷量行为不计入有效投注，【喜羊羊彩】保留取消、收回赠送礼金的权利。</div>
+<div>3、【喜羊羊彩】保留对此次活动作出更改、终止权利，并享有最终解释权。</div></div>
     </div>
 </div>
 ﻿</div>
