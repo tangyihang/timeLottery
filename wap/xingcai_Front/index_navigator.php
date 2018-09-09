@@ -92,6 +92,6 @@
     </a>
 </div>-->
 <h5>下载最新版本APP</h5>
-<p class="tip wap-foot">版权所有：2009-2017©喜羊羊彩</p>
+<p class="tip wap-foot">版权所有：2018-2028©喜羊羊彩</p>
 </body>
 </html>

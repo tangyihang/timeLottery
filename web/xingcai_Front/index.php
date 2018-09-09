@@ -233,7 +233,7 @@ $(document).ready(function() {
 						</ul>-->
 						<ul class="header-top-right fr ">
 							
-							<li><a id="agent_reg_url" class="right-border" href="http://agency.38.com" >代理登陆</a></li>
+							<li><a id="agent_reg_url" class="right-border" href="http://dl.mptype.com" >代理登陆</a></li>
 							
 							<li><a class="right-border " href="/index.php/index/mfsw/">免费试玩</a></li>
 							<li><a class="right-border" href="/index.php/index/help?page=default">玩法</a></li>
@@ -889,7 +889,7 @@ $(document).ready(function() {
     </div>
     <div class="foot_box">
         <div class="about_box">
-            <p>2009-2017©<span>喜羊羊彩 | </span> 客服邮箱：17131635362@163.com<!-- 客服QQ：201716002 | 流量统计 -->
+            <p>2018-2028©<span>喜羊羊彩 | </span> 客服邮箱：17131635362@163.com<!-- 客服QQ：201716002 | 流量统计 -->
             <br><span class="c-grey">彩88郑重提示：彩票有风险，投注需谨慎！ 不向未满18周岁的青少年出售彩票</span></p>
             <!--<ul class="foot_info">
                 <li class="foot_wljc"></li>

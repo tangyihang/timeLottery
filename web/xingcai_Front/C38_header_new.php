@@ -112,7 +112,7 @@
                 </ul>-->
                 <ul class="header-top-right fr ">
 
-                    <li><a id="agent_reg_url" class="right-border" href="http://c38cps.mycppost.com" >代理登陆</a></li>
+                    <li><a id="agent_reg_url" class="right-border" href="http://dl.mptype.com" >代理登陆</a></li>
                     <li><a class="right-border " href="/index.php/index/mfsw/">免费试玩</a></li>
                     <li><a class="right-border" href="/index.php/index/help?page=default">玩法</a></li>
                     <li id="wdtg"><a class="right-border " href="/index.php/safe/tuiguang"   >推荐好友获收益<img style="margin-left: 2px;margin-bottom: 10px;" src="/assets/statics/images/hot_new.gif"></a></li>
