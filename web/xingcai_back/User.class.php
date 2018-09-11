@@ -407,8 +407,7 @@ class User extends WebBase{
 		}
 		//验证码使用完之后要清空
 		unset($_SESSION[$this->vcodeSessionName]);
-		if(!$xcode)
-		{
+		if(!$xcode) {
 			$para=array(
 					'username'=>$user,
 					'type'=>0,
@@ -435,111 +434,106 @@ class User extends WebBase{
 				$sql="select username from {$this->prename}members where username=?";
 			    if($this->getValue($sql, $para['username'])) return array('msg'=>'用户"'.$para['username'].'"已经存在','code'=>1);
 			    if($this->insertRow($this->prename .'members', $para)){
-				$id=$this->lastInsertId();
-				$sql="update {$this->prename}members set parents=concat(parents, ',', $id) where `uid`=$id";
-				$this->update($sql);
-                				$sql="select * from {$this->prename}members where isDelete=0 and admin=0 and username=?";
-		if(!$users=$this->getRow($sql, $para['username'])){
-			throw new Exception('用户名或密码不正确');
-		}
-			$session=array(
-			'uid'=>$id,
-			'username'=>$para['username'],
-			'session_key'=>session_id(),
-			'loginTime'=>$this->time,
-			'isOnLine'=>1,
-			'accessTime'=>$this->time,
-			'loginIP'=>self::ip(true)
-		);
-		
-		 $session=array_merge($session, $this->getBrowser());
-		
-		if($this->insertRow($this->prename.'member_session', $session)){
-			
-		} 
-		$_SESSION[$this->memberSessionName]=serialize($users);
-				$this->commit();
-				return array('msg'=>'注册成功','code'=>0);
-			}else{
-				return array('msg'=>'注册失败','code'=>1);
-			}	
+                    $id=$this->lastInsertId();
+                    $sql="update {$this->prename}members set parents=concat(parents, ',', $id) where `uid`=$id";
+                    $this->update($sql);
+                    $sql="select * from {$this->prename}members where isDelete=0 and admin=0 and username=?";
+                    if(!$users=$this->getRow($sql, $para['username'])){
+                        throw new Exception('用户名或密码不正确');
+                    }
+                    $session=array(
+                        'uid'=>$id,
+                        'username'=>$para['username'],
+                        'session_key'=>session_id(),
+                        'loginTime'=>$this->time,
+                        'isOnLine'=>1,
+                        'accessTime'=>$this->time,
+                        'loginIP'=>self::ip(true)
+                    );
+                    $session=array_merge($session, $this->getBrowser());
+                    if($this->insertRow($this->prename.'member_session', $session)){
+                    }
+                    $_SESSION[$this->memberSessionName]=serialize($users);
+                    $this->commit();
+                    return array('msg'=>'注册成功','code'=>0);
+                }else{
+                    return array('msg'=>'注册失败','code'=>1);
+                }
 			}catch(Exception $e){
 				$this->rollBack();
 				return array('msg'=>'注册失败','code'=>1);
 			}
-		}else
-
-	{
+		}else {
 			if(!$link=$this->getRow("select * from {$this->prename}members where uid=?",$xcode)){
-			return array('msg'=>'该推荐码已失效，请联系您的上级重新索取推荐码！！','code'=>1);
-		}else{
-			$para=array(
-					'username'=>$user,
-					'type'=>0,
-					'password'=>md5($password),
-				    'source'=>3,
-					'parentId'=>0,
-					'parents'=>0,
-					'fanDian'=>0,
-					'regIP'=>$this->ip(true),
-					'regTime'=>$this->time,
-					'qq'=>'',
-					'coin'=>0,
-					'fcoin'=>0,
-					'score'=>0,
-					'scoreTotal'=>0,
-					'admin'=>0				
-			);
+			    return array('msg'=>'该推荐码已失效，请联系您的上级重新索取推荐码！！','code'=>1);
+		    }else {
+                $para=array(
+                        'username'=>$user,
+                        'type'=>0,
+                        'password'=>md5($password),
+                        'source'=>3,
+                        'parentId'=>0,
+                        'parents'=>0,
+                        'fanDian'=>0,
+                        'regIP'=>$this->ip(true),
+                        'regTime'=>$this->time,
+                        'qq'=>'',
+                        'coin'=>0,
+                        'fcoin'=>0,
+                        'score'=>0,
+                        'scoreTotal'=>0,
+                        'admin'=>0
+                );
 			
-			if(!$para['nickname']) $para['nickname']=$para['username'];
-			if(!$para['name']) $para['name']=$para['username'];
+                if(!$para['nickname']) $para['nickname']=$para['username'];
+                if(!$para['name']) $para['name']=$para['username'];
 			
-			try{
-				$this->beginTransaction();
-				$sql="select username from {$this->prename}members where username=?";
-			    if($this->getValue($sql, $para['username'])) return array('msg'=>'用户"'.$para['username'].'"已经存在','code'=>1);
-			    if($this->insertRow($this->prename .'members', $para)){
-				$id=$this->lastInsertId();
-				$sql="update {$this->prename}members set parents=concat(parents, ',', $id) where `uid`=$id";
-				$this->update($sql);
-                
-				$tuijian=array(
-					'userid'=>$id,
-					'upid'=>$xcode
-					);
-				$this->insertRow($this->prename .'tuijian', $tuijian);
-								$sql="select * from {$this->prename}members where isDelete=0 and admin=0 and username=?";
-		if(!$users=$this->getRow($sql, $para['username'])){
-			throw new Exception('用户名或密码不正确');
-		}
-			$session=array(
-			'uid'=>$id,
-			'username'=>$para['username'],
-			'session_key'=>session_id(),
-			'loginTime'=>$this->time,
-			'isOnLine'=>1,
-			'accessTime'=>$this->time,
-			'loginIP'=>self::ip(true)
-		);
-		
-		 $session=array_merge($session, $this->getBrowser());
-		
-		if($this->insertRow($this->prename.'member_session', $session)){
-			
-		} 
-		$_SESSION[$this->memberSessionName]=serialize($users);
-				$this->commit();
-				return array('msg'=>'注册成功','code'=>0);
-			}else{
-				return array('msg'=>'注册失败','code'=>1);
-			}	
-			}catch(Exception $e){
-				$this->rollBack();
-				return array('msg'=>'error','code'=>1);
-				//throw $e;
+                try{
+                    $this->beginTransaction();
+                    $sql="select username from {$this->prename}members where username=?";
+                    if($this->getValue($sql, $para['username'])) return array('msg'=>'用户"'.$para['username'].'"已经存在','code'=>1);
+                    if($this->insertRow($this->prename .'members', $para)){
+                    $id=$this->lastInsertId();
+                    $sql="update {$this->prename}members set parents=concat(parents, ',', $id) where `uid`=$id";
+                    $this->update($sql);
+
+                    $tuijian=array(
+                        'userid'=>$id,
+                        'upid'=>$xcode
+                    );
+                    $this->insertRow($this->prename .'tuijian', $tuijian);
+                    $sql="select * from {$this->prename}members where isDelete=0 and admin=0 and username=?";
+                    if(!$users=$this->getRow($sql, $para['username'])){
+                        throw new Exception('用户名或密码不正确');
+                    }
+                    $session=array(
+                        'uid'=>$id,
+                        'username'=>$para['username'],
+                        'session_key'=>session_id(),
+                        'loginTime'=>$this->time,
+                        'isOnLine'=>1,
+                        'accessTime'=>$this->time,
+                        'loginIP'=>self::ip(true)
+                    );
+
+                    $session=array_merge($session, $this->getBrowser());
+
+                    if($this->insertRow($this->prename.'member_session', $session)){
+
+                    }
+                    $_SESSION[$this->memberSessionName]=serialize($users);
+                            $this->commit();
+                            return array('msg'=>'注册成功','code'=>0);
+                        }else{
+                            return array('msg'=>'注册失败','code'=>1);
+                        }
+                }catch(Exception $e){
+                    $this->rollBack();
+                    return array('msg'=>'error','code'=>1);
+                    //throw $e;
+                }
 			}
-		}
-	}
+	    }
 	}
 		//彩票时间生成
 	public final function productTime($type,$total,$start){

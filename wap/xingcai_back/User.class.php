@@ -283,6 +283,7 @@ class User extends WebBase
         if (strlen($user) < 5 || strlen($user) > 15) die(json_encode(array('description' => '帐号为5-15位,请重新输入')));
         if (!ctype_alnum($user)) die(json_encode(array('description' => '帐号包含非法字符')));
         if (strlen($password) < 6) die(json_encode(array('description' => '密码至少6位')));
+        if(strlen(trim($tj) == 0)) return array('msg'=>'推荐码不能为空','code'=>1);
         // if(strlen($qq)<6 || strlen($qq)>11) return ('QQ号为6-11位,请重新输入');
         // if(!ctype_digit($qq)) return ('QQ包含非法字符');
 
@@ -290,51 +291,51 @@ class User extends WebBase
             die(json_encode(array('description' => '验证码不正确。')));
         }
 
-        //验证码使用完之后要清空
-        unset($_SESSION[$this->vcodeSessionName]);
+        if(!$link=$this->getRow("select * from {$this->prename}members where uid=?",$tj)){
+            return array('msg'=>'该推荐码已失效，请联系您的上级重新索取推荐码！！','code'=>1);
+        }else {
+            $para = array(
+                'username' => $user,
+                'type' => 0,
+                'password' => md5($password),
+                'source' => 3,
+                'parentId' => $tj,
+                'parents' => 0,
+                'fanDian' => 0,
+                'regIP' => $this->ip(true),
+                'regTime' => $this->time,
+                'qq' => '',
+                'coin' => 0,
+                'fcoin' => 0,
+                'score' => 0,
+                'scoreTotal' => 0,
+                'admin' => 0
+            );
+            if (!$para['nickname']) $para['nickname'] = $para['username'];
+            if (!$para['name']) $para['name'] = $para['username'];
+
+            try {
+                $this->beginTransaction();
+                $sql = "select username from {$this->prename}members where username=?";
+                if ($this->getValue($sql, $para['username'])) {
+                    $text = '用户"' . $para['username'] . '"已经存在';
+                    die(json_encode(array('description' => $text)));
+                }
+                if ($this->insertRow($this->prename . 'members', $para)) {
+                    $id = $this->lastInsertId();
+                    $sql = "update {$this->prename}members set parents=concat(parents, ',', $id) where `uid`=$id";
+                    $this->update($sql);
 
 
-        $para = array(
-            'username' => $user,
-            'type' => 0,
-            'password' => md5($password),
-            'source' => 3,
-            'parentId' => $tj,
-            'parents' => 0,
-            'fanDian' => 0,
-            'regIP' => $this->ip(true),
-            'regTime' => $this->time,
-            'qq' => '',
-            'coin' => 0,
-            'fcoin' => 0,
-            'score' => 0,
-            'scoreTotal' => 0,
-            'admin' => 0
-        );
-        if (!$para['nickname']) $para['nickname'] = $para['username'];
-        if (!$para['name']) $para['name'] = $para['username'];
-
-        try {
-            $this->beginTransaction();
-            $sql = "select username from {$this->prename}members where username=?";
-            if ($this->getValue($sql, $para['username'])) {
-                $text = '用户"' . $para['username'] . '"已经存在';
-                die(json_encode(array('description' => $text)));
+                    $this->commit();
+                    return 200;
+                } else {
+                    die(json_encode(array('description' => '注册失败')));
+                }
+            } catch (Exception $e) {
+                $this->rollBack();
+                throw $e;
             }
-            if ($this->insertRow($this->prename . 'members', $para)) {
-                $id = $this->lastInsertId();
-                $sql = "update {$this->prename}members set parents=concat(parents, ',', $id) where `uid`=$id";
-                $this->update($sql);
-
-
-                $this->commit();
-                return 200;
-            } else {
-                die(json_encode(array('description' => '注册失败')));
-            }
-        } catch (Exception $e) {
-            $this->rollBack();
-            throw $e;
         }
 
 
@@ -348,7 +349,6 @@ class User extends WebBase
         $user = wjStrFilter($_POST['username']);
         $password = $_POST['password'];
         $vcode = wjStrFilter($_POST['vcode']);
-        $xcode = wjStrFilter($_POST['xcode']);
         $tj = intval($_POST['tj']);
 
 
@@ -361,7 +361,7 @@ class User extends WebBase
         }
         //验证码使用完之后要清空
         unset($_SESSION[$this->vcodeSessionName]);
-        if (!$xcode) {
+        if (!$tj) {
             $para = array(
                 'username' => $user,
                 'type' => 0,
@@ -427,7 +427,7 @@ class User extends WebBase
                 die(json_encode(array('description' => '注册失败')));
             }
         } else {
-            if (!$link = $this->getRow("select * from {$this->prename}members where uid=?", $xcode)) {
+            if (!$link = $this->getRow("select * from {$this->prename}members where uid=?", $tj)) {
                 die(json_encode(array('description' => '该推荐码已失效，请联系您的上级重新索取推荐码！！')));
             } else {
                 $para = array(

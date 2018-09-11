@@ -30,12 +30,7 @@ class Index extends WebLoginBase
   //平台首页
     public final function main()
     {
-        if($_SESSION['index_navigator']){
             $this->display('index.php');
-        }else{
-            $_SESSION['index_navigator'] = md5('index_navigator');
-            $this->display('index_navigator.php');
-        }
     }
     public final function draw()
     {

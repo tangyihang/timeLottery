@@ -68,7 +68,7 @@ requirejs(["jquery","layer"],function($,layer){
         }
         var index=layer.open({type: 2,shadeClose:false});
         $.ajax({
-            url: '/index.php/user/reg',
+            url: '/index.php/user/memberReg',
             type: 'POST',
             dataType: 'json',
             data: {

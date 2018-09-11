@@ -169,7 +169,7 @@ a, button {
 	            
 				<div class="row"><input id="uid" type="text" placeholder="请输入用户名" value=""></div>
 				<div class="row"><input id="pwd" type="password" placeholder="请输入登录密码" value=""></div>
-				<!-- <div class="row"><input id="tj" type="text" placeholder="请输入推荐人ID，没有可不填" value=""></div> -->
+				 <div class="row"><input id="tj" type="text" placeholder="请输入推荐人ID" value=""></div>
 				<div class="row"></div>
 				<div class="verifyCode">
 					<input id="captcha1" type="text" placeholder="请输入验证码" value="">
