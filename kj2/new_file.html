@@ -1,0 +1,1227 @@
+<!DOCTYPE HTML>
+<html>
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+		<title>北京福彩网-福利彩票开奖,福彩走势图,福彩投注-福彩网首页</title>
+		<link rel="icon" type="image/x-icon" href="/favicon.ico" />
+		<meta name="keywords" content="福彩,福彩网首页,北京福彩网,北京福彩中心,福利彩票开奖,福彩走势图,福彩投注" />
+		<meta name="description" content="北京福彩网是北京市福利彩票发行中心主办的官方网站,提供福彩双色球,PK10,快乐8,3D,七乐彩等福利彩票开奖公告、走势图、预测分析等福彩资讯.服务于社会公众,传播福彩公益和福彩文化,促进福利彩票事业健康发展." />
+		<link rel="stylesheet" href="/css/base.css" />
+		<link rel="stylesheet" href="/css/index.css" />
+		<link rel="stylesheet" href="/css/article.css" />
+		<script src="/js/jquery-1.9.1.min.js"></script>
+		<script src="/js/plugin.js"></script>
+		<script src="/js/util.js"></script>
+		<script src="/js/juicer-min.js"></script>
+		<script src="/js/alert-24.js"></script>
+		<script>
+			var grurl = "";
+			var gsurl = "";
+		</script>
+		<script>
+			juicer.set({
+				'tag::interpolateOpen': '@{'
+			});
+		</script>
+		<style>
+			#banner img {
+				width: 624px;
+				height: 78px;
+				margin-top: 12px;
+			}
+			
+			#topbar {
+				height: 26px;
+				padding-left: 22px;
+				color: #ccc;
+				padding-top: 10px;
+			}
+			
+			.alipay {
+				width: 130px;
+				height: 25px;
+				position: absolute;
+				margin: 5px 0 0 110px;
+			}
+			
+			.acc {
+				width: 150px;
+				position: absolute;
+				margin: 5px 0 0 120px;
+				padding: 0 10px;
+				color: #606060;
+				z-index: 100000;
+			}
+			
+			.rec {
+				width: 200px;
+				position: absolute;
+				margin: 5px 0 0 200px;
+				color: #606060;
+			}
+			
+			.rec td {
+				text-align: center;
+			}
+			
+			.bd {
+				background: #FFF;
+				border: 1px solid #ccc;
+			}
+			
+			.bb {
+				border-bottom: 1px solid #ccc;
+			}
+			
+			.l20 {
+				line-height: 22px;
+				color: #666;
+			}
+			
+			.arr {
+				position: absolute;
+				margin: 9px 0 0 4px;
+				;
+				+margin-top: 5px;
+				border-color: #ccc transparent transparent;
+				border-style: solid dashed;
+				border-width: 7px 5px 0;
+				line-height: 0;
+				-moz-transition: all .1s ease 0s;
+				-webkit-transition: all .1s ease 0s;
+				transition: all .1s ease 0s;
+			}
+			
+			#tab_porder tr {
+				height: 20px;
+				line-height: 20px;
+			}
+			
+			.hlinks a {
+				display: inline;
+				padding: 3px 6px;
+				background: #ececec;
+				color: #333;
+			}
+			
+			.hlinks a:hover {
+				background: #fdd0d1;
+				color: #333;
+			}
+		</style>
+	</head>
+
+	<body>
+		<script>
+			$(function() {
+				var $rec = $('.rec'),
+					$acc = $('.acc'),
+					$alipy = $('.alipay');
+				$('#tz').delay(300).hover(function() {
+					$rec.show();
+					var _box = $('#tab_porder');
+					var tpl = $('#tpl_porder').html();
+					$.getJSON('/my/getLotteryOrders.html?startTime=2012-12-31', function(data) {
+						var html = juicer(tpl, data);
+						_box.html(html);
+						var playType = _box.find('.typeId');
+						for(var i = 0; i < playType.length; i++) { //翻译彩种
+							var typeNum = playType.eq(i).html(),
+								typeText;
+							switch(typeNum) {
+								case '120':
+									typeText = '双色球';
+									break;
+								case '121':
+									typeText = '3D';
+									break;
+								case '119':
+									typeText = '快乐8';
+									break;
+								case '122':
+									typeText = 'PK拾';
+									break;
+								case '123':
+									typeText = '快3';
+									break;
+								case '1000043':
+									typeText = '七乐彩';
+									break;
+							};
+							playType.eq(i).html(typeText);
+						};
+
+						for(var j = 0; j < $('.status').length; j++) {
+							var dcolor = $('.status').eq(j).html().replace(/(^\s+)|(\s+$)/g, ""),
+								type = '';
+							switch(dcolor) {
+								case "投注成功":
+									type = 'rgb(6, 158, 6)';
+									break;
+								case "中奖":
+									type = 'rgb(245, 8, 8)';
+									break;
+								case "未中奖":
+									type = 'rgb(83, 81, 81)';
+									break;
+								case "等待投注":
+									type = 'rgb(241, 123, 14)';
+									break;
+								case "投注失败":
+									type = 'rgb(245, 87, 87)';
+									break;
+							};
+							$('.status').eq(j).css('color', type);
+						}
+					});
+
+				}, function() {
+					$rec.hide();
+				});
+				$('#zh').delay(300).hover(function() {
+					$acc.show();
+					$.getJSON('/my/userBrief.html?t=' + new Date().getTime(), function(data) {
+						$('.abalance').html(changeTwoDecimal(data.balance));
+						$('.balance').html(changeTwoDecimal((parseFloat(data.balance * 100) - parseFloat(data.availbalance * 100)) / 100));
+					});
+				}, function() {
+					$acc.hide();
+				});
+				$('#hz').delay(300).hover(function() {
+					$alipy.show();
+				}, function() {
+					$alipy.hide();
+				});
+
+				Date.prototype.Format = function(fmt) { //格式化时间
+					var o = {
+						"M+": this.getMonth() + 1, //月份 
+						"d+": this.getDate(), //日 
+						"h+": this.getHours(), //小时 
+						"m+": this.getMinutes(), //分 
+						"s+": this.getSeconds(), //秒 
+						"q+": Math.floor((this.getMonth() + 3) / 3), //季度 
+						"S": this.getMilliseconds() //毫秒 
+					};
+					if(/(y+)/.test(fmt)) fmt = fmt.replace(RegExp.$1, (this.getFullYear() + "").substr(4 - RegExp.$1.length));
+					for(var k in o)
+						if(new RegExp("(" + k + ")").test(fmt)) fmt = fmt.replace(RegExp.$1, (RegExp.$1.length == 1) ? (o[k]) : (("00" + o[k]).substr(("" + o[k]).length)));
+					return fmt;
+				};
+				//退出		
+				$('#logout').click(function(e) {
+					var curUri = location.href;
+					$.ajax({
+						url: '/Login.do',
+						data: {
+							'resType': 'json',
+							'action': 'logout'
+						},
+						cache: false
+					}).done(function() {
+						if(curUri.indexOf("/my/") !== -1) {
+							location.href = '/';
+						} else {
+							location.reload();
+						}
+					});
+					e.preventDefault(); //取消了事件的默认行为
+				});
+			});
+		</script>
+		<div id="container">
+			<div id="header" class="sdw">
+				<div id="topbar" class="cf">
+					<div class="l out pr5">
+						<div class="l20">
+							<script>
+								function gotoLogin() {
+									var url = window.location.href;
+									var from = '';
+									if(url && url.length > 0) {
+										from = url;
+									}
+
+									window.location = "/my/login.html" +
+										((from.length > 0) ? "?from=" + encodeURI(from) : "");
+								}
+							</script>
+							<a href="#" onclick="gotoLogin();return false;" class="login br4">登录</a> ｜
+							<a href="/my/reg.html">免费注册</a> ｜
+							<span id="hz">
+						<a href="javascript:;" class="pr10">合作账户登录<i class="arr"></i></a>
+						<div class="alipay dn">
+							<a href="/login/alipay/redirect.html"><img src="/images/zfbexpress.jpg" width="122" height="22" style="margin-bottom:-5px;*vertical-align:-5px;"/></a>
+						</div>
+					</span>
+						</div>
+
+					</div>
+
+					<div class="r lh22 pr10">
+						<a href="http://bbs.bwlc.net">论坛</a>　｜
+						<a href="/help/faqreg.jsp">帮助中心</a>　｜　<span style="color:#606060">客服电话：010-8202 5099</span></div>
+					<div class="msgBox"></div>
+				</div>
+				<div class="top cf">
+					<a href="/" id="logo" title="北京市福利彩票发行中心"></a>
+				</div>
+				<a href="/dl/DownloadApp.html" title="北京市福利彩票发行中心">
+					<div style="margin-left:600px;margin-top:-30px;">
+						<img src="http://211.147.1.142:9890/images/phone.gif" /> 手机客户端
+
+					</div>
+				</a>
+				<a href="/dl/prizer.jsp" title="北京市福利彩票发行中心">
+					<div style="margin-left:750px;margin-top:-38px;">
+						<img src="http://211.147.1.142:9890/images/phone.gif" /> 兑奖客户端
+
+					</div>
+				</a>
+				<div id="navC">
+					<ul id="nav" class="cf ">
+						<li class="menuItem">
+							<a href="/" class="db rs ml5">首页</a>
+						</li>
+						<li class="menuItem">
+							<a href="javascript:;" class="db">福彩资讯<i class="nav_arr"></i></a>
+							<ul class="brb4">
+								<li>
+									<a href="/info/index.html">福彩公告</a>
+								</li>
+								<li>
+									<a href="/info/news.html">福彩新闻</a>
+								</li>
+								<li>
+									<a href="/info/cover.html">中奖报道</a>
+								</li>
+								<li>
+									<a href="/info/award.html">公益金使用</a>
+								</li>
+								<li>
+									<a href="/info/event.html">网站专题</a>
+								</li>
+								<li>
+									<a href="/info/video.html">公益北京</a>
+								</li>
+							</ul>
+						</li>
+						<li class="menuItem">
+							<a href="javascript:;" class="db">开奖公告<i class="nav_arr"></i></a>
+							<ul class="brb4">
+								<li>
+									<a href="/bulletin/slto.html">双色球</a>
+								</li>
+								<li>
+									<a href="/bulletin/pk3.html">3D</a>
+								</li>
+								<li>
+									<a href="/bulletin/qck3.html">快3</a>
+								</li>
+								<li>
+									<a href="/bulletin/loto.html">七乐彩</a>
+								</li>
+								<li>
+									<a href="/bulletin/keno.html">快乐8</a>
+								</li>
+								<li>
+									<a href="/bulletin/trax.html">PK拾</a>
+								</li>
+							</ul>
+						</li>
+						<li class="menuItem">
+							<a href="javascript:;" class="db">游戏规则<i class="nav_arr"></i></a>
+							<ul class="brb4">
+								<li>
+									<a href="/help/ssq.jsp">双色球</a>
+								</li>
+								<li>
+									<a href="/help/3d.jsp">3D</a>
+								</li>
+								<li>
+									<a href="/help/7lc.jsp">七乐彩</a>
+								</li>
+								<li>
+									<a href="/help/happy8.jsp">快乐8</a>
+								</li>
+								<li>
+									<a href="/help/pk10.jsp">PK拾</a>
+								</li>
+								<li>
+									<a href="/help/qck3.html">快3</a>
+								</li>
+							</ul>
+						</li>
+						<li class="menuItem">
+							<a href="javascript:;" class="db">数据分析<i class="nav_arr"></i></a>
+							<ul class="brb4">
+								<li>
+									<a href="/datacenter/ssq/index.html">双色球</a>
+								</li>
+								<li>
+									<a href="/datacenter/3d/index.html">3D</a>
+								</li>
+								<li>
+									<a href="/datacenter/qck3/index.html">快3</a>
+								</li>
+								<li>
+									<a href="/datacenter/qlc/index.html">七乐彩</a>
+								</li>
+							</ul>
+						</li>
+						<li class="menuItem">
+							<a href="/scratch/" class="db rs">刮刮乐</a>
+						</li>
+						<li class="menuItem">
+							<a href="javascript:;" class="db">抽奖活动<i class="nav_arr"></i></a>
+							<ul class="brb4" style="display: none;">
+								<li>
+									<a href="http://k3cjcj.infogrworks.com/">快3游戏</a>
+								</li>
+							</ul>
+						</li>
+						<li class="menuItem">
+							<a href="javascript:;" class="db">帮助<i class="nav_arr"></i></a>
+							<ul class="brb4">
+								<li>
+									<a href="/help/faqreg.jsp">如何注册</a>
+								</li>
+								<li>
+									<a href="/help/faqaward.jsp">如何提奖</a>
+								</li>
+								<li>
+									<a href="/help/faqfindpassword.jsp">忘记密码</a>
+								</li>
+								<li>
+									<a href="/help/ssq.jsp">游戏规则</a>
+								</li>
+								<li>
+									<a href="/message/mobilesms.jsp">短信订制</a>
+								</li>
+							</ul>
+						</li>
+						<li class="menuItem">
+							<a href="http://bbs.bwlc.net" class="db rs">论坛</a>
+						</li>
+					</ul>
+				</div>
+
+			</div>
+			<div readme="我是个弹出层,要放在marquee层上面">
+				<style rel="stylesheet">
+					#ly_mask {
+						background: #000;
+						position: absolute;
+						top: 0;
+						left: 0;
+						z-index: 2;
+						filter: alpha(opacity=60);
+						opacity: 0.60;
+						display: none;
+					}
+					
+					#ly_show {
+						background: url('http://static.bwlc.net/images/event/20150520/Pop.png');
+						position: absolute;
+						margin: 40px 160px;
+						z-index: 3;
+						width: 690px;
+						height: 380px;
+						display: none;
+					}
+					
+					#ly_show .goal {
+						width: 390px;
+						height: 40px;
+						line-height: 40px;
+						margin-top: 520px;
+						float: right;
+					}
+					
+					#ly_show .goal a {
+						float: left;
+						margin-right: 100px;
+						font-size: 14px;
+						color: #fff9c4;
+					}
+					
+					#ly_show .goal a:hover {
+						color: #fffd64;
+					}
+					
+					#popclose {
+						width: 40px;
+						height: 40px;
+						display: block;
+						margin: 60px 60px 0 579px;
+						position: absolute;
+						z-index: 20;
+					}
+					
+					#popDetail {
+						width: 400px;
+						height: 300px;
+						display: block;
+						margin: 85px 124px 0px 127px;
+						position: absolute;
+					}
+					
+					#popBuy {
+						width: 1px;
+						height: 5px;
+						margin: 325px 220px 0px 140px;
+						position: absolute;
+					}
+				</style>
+				<script>
+					// $(function(){$('#ly_mask').css({'width':document.body.clientWidth,'height':$(document).height()}).show();
+					//$('#ly_show').show();$('#popclose').click(function(){$('#ly_show,#ly_mask').hide();});setTimeout("$('#popclose').trigger('click')",10000);});
+				</script>
+				<div id="ly_mask"></div>
+				<div id="ly_show">
+					<a href="javascript:;" id="popclose"></a>
+					<a href="http://www.bwlc.net/info/article.jsp?id=19485" target="_blank" id="popDetail"></a>
+					<a href="#" id="popBuy"></a>
+				</div>
+				<div id="marquee">
+
+					<table>
+						<tr>
+							<td class="marquee_1" nowrap>
+								<a href="#">扶老 助残 救孤 济困</a>
+								<a href="#">扶老 助残 救孤 济困</a>
+								<a href="#">扶老 助残 救孤 济困</a>
+								<a href="#">扶老 助残 救孤 济困</a>
+								<a href="#">扶老 助残 救孤 济困</a>
+								<a href="#">扶老 助残 救孤 济困</a>
+								<a href="#">扶老 助残 救孤 济困</a>
+								<a href="#">扶老 助残 救孤 济困</a>
+								<a href="#">扶老 助残 救孤 济困</a>
+								<a href="#">扶老 助残 救孤 济困</a>
+								<a href="#">扶老 助残 救孤 济困</a>
+								<a href="#">扶老 助残 救孤 济困</a>
+								<a href="#">扶老 助残 救孤 济困</a>
+								<a href="#">扶老 助残 救孤 济困</a>
+								<a href="#">扶老 助残 救孤 济困</a>
+								<a href="#">扶老 助残 救孤 济困</a>
+								<a href="#">扶老 助残 救孤 济困</a>
+								<a href="#">扶老 助残 救孤 济困</a>
+							</td>
+							<td class="marquee_2" nowrap></td>
+						</tr>
+					</table>
+				</div>
+
+				<div id="main">
+
+					<div id="game_news" class="cf">
+						<div class="news_l l">
+							<ul class="dib">
+								<li>
+									<a href="http://www.bwlc.net/info/article.jsp?id=20184"><img src="/upload/2016/10/17/20180122001.png" width="397" height="352" alt="" /></a>
+								</li>
+								<li>
+									<a href="http://www.bwlc.net/info/article.jsp?id=19485"><img src="/upload/2016/10/17/201710301.png" width="397" height="352" alt="" /></a>
+								</li>
+								<li>
+									<a href="http://www.bwlc.net/info/article.jsp?id=19031"><img src="/upload/2016/10/17/20170829111.jpg" width="397" height="352" alt="" /></a>
+								</li>
+								<li>
+									<a href="http://www.bwlc.net/info/article.jsp?id=18636"><img src="/upload/2016/10/17/20170711711.png" width="397" height="352" alt="" /></a>
+								</li>
+								<li>
+									<a href="http://bwlc.net/info/article.jsp?id=17888"><img src="/upload/2016/10/17/2017040511.png" width="397" height="352" alt="" /></a>
+								</li>
+							</ul>
+						</div>
+						<dl class="news_r r">
+							<dt class="news_title brt4">
+    <h3 class="l">福彩新闻</h3><a href="/info/news.html" class="r">更多 &gt;&gt;</a>
+    </dt>
+							<dd>
+								<div class="news_first cf"> <img alt="" width="105" height="99" src="http://static.bwlc.net/UserFiles/2018/01/22/1516585985431.gif" />
+									<a class="hot red" href="/info/article.jsp?id=20184">中国福利彩票“戊戌狗”系列正式上市！</a>
+									<p class="g9">中国福利彩票发行管理中心将在近期推出2018年贺岁版生肖彩票——“戊戌狗”。其延续了多年来福彩生肖票的设计风格，该系列彩票共3个面值7款票面，每款票面都描绘了不同形象的生肖狗。</p>
+								</div>
+								<ul>
+									<li><span class="g9">2018-02-09</span>
+										<a title="双色球017期：头奖5注869万 奖池4.41亿" href="/info/article.jsp?id=20336">双色球017期：头奖5注869万 奖池4.41亿</a>
+									</li>
+									<li><span class="g9">2018-02-09</span>
+										<a title="2018年上海市福利彩票工作会议召开" href="/info/article.jsp?id=20335">2018年上海市福利彩票工作会议召开</a>
+									</li>
+									<li class="brn"><span class="g9">2018-02-09</span>
+										<a title="“福彩情.爱心年夜饭”温暖环卫工" href="/info/article.jsp?id=20334">“福彩情.爱心年夜饭”温暖环卫工</a>
+									</li>
+								</ul>
+							</dd>
+							<dt class="news_title brt4">
+    <h3 class="l">福彩公告</h3>
+    <a href="/info/index.html" class="r">更多 &gt;&gt;</a>
+    </dt>
+							<dd>
+								<ul>
+									<li><span class="g9">2018-02-08</span>
+										<a title="2018年福利彩票春节休市公告" href="/info/article.jsp?id=20326">2018年福利彩票春节休市公告</a>
+									</li>
+									<li><span class="g9">2018-02-08</span>
+										<a title="2016年度北京市福利彩票发行中心部门决算" href="/info/article.jsp?id=18992">2016年度北京市福利彩票发行中心部门决算</a>
+									</li>
+									<li><span class="g9">2017-05-24</span>
+										<a title="2016年北京市福利彩票销售情况" href="/info/article.jsp?id=18199">2016年北京市福利彩票销售情况</a>
+									</li>
+									<li><span class="g9">2017-04-05</span>
+										<a title="关于部分批次福彩即开票停售公告" href="/info/article.jsp?id=17883">关于部分批次福彩即开票停售公告</a>
+									</li>
+								</ul>
+							</dd>
+						</dl>
+					</div>
+					<div id="game_notice">
+						<!--start 双色球-->
+						<div class="game_list cf">
+							<div class="column_1 l">
+								<h3>双色球</h3>
+								<div class="icon_ssq"></div>
+							</div>
+							<div class="column_2 l"> <span class="ml10 b red fa f14">2018017</span> 期
+								<span class="t_bl">每周二、四、日晚 21：15开奖</span>
+								<ul class="ball_list dib">
+									<li>03</li>
+									<li>06</li>
+									<li>11</li>
+									<li>26</li>
+									<li>30</li>
+									<li>32</li>
+									<li class="blue">12</li>
+								</ul>
+								<div class="links">
+									<a href="/bulletin/slto.html">开奖详情</a>
+									<a href="/bulletin/prevslto.html">往期号码</a>
+									<a href="/bulletin/descslto.html?num=2018017&ltype=120">出奖地址</a>
+									<a href="/help/ssq.jsp">玩法规则</a>
+									<a href="/datacenter/ssq/index.html">走势图表</a>
+								</div>
+							</div>
+							<div class="column_3 r">
+								<span class="c3_r g9">大奖大 小奖多 2元可中1000万元</span>
+								<div class="t_dred">当前奖池：<span class="b red fa f16">441,055,600</span> 元</div>
+								<div class="deadline">第2018018期 <br /> 开奖日期：2018-02-11</div>
+
+							</div>
+						</div>
+						<!--start 3d-->
+						<div class="game_list cf">
+							<div class="column_1 l">
+								<h3>3D</h3>
+								<div class="icon_3d"></div>
+							</div>
+							<div class="column_2 l">
+								<span class="ml10 b red fa f14">2018041</span> 期
+								<span class="t_bl">每天21：15开奖</span>
+								<ul class="ball_list t_big dib">
+									<li>6</li>
+									<li>5</li>
+									<li>1</li>
+								</ul>
+								<div class="links">
+									<a href="/bulletin/pk3.html">开奖详情</a>
+									<a href="/bulletin/prevpk3.html">往期号码</a>
+									<a href="/bulletin/video_pk3.html">开奖视频</a>
+									<a href="/help/3d.jsp">玩法规则</a>
+									<a href="/datacenter/3d/index.html">走势图表</a>
+								</div>
+								<div class="c2_dred">
+									<!--20133034期 试机号：367-->
+								</div>
+							</div>
+							<div class="column_3 r"><span class="c3_r g9">天天开奖 选对三个号就有奖</span>
+								<div class="deadline mt38">第2018042期 <br /> 开奖日期：2018-02-11</div>
+							</div>
+						</div>
+						<!--start 快3-->
+						<div class="game_list cf">
+							<div class="column_1 l">
+								<h3>快3</h3>
+								<div class="icon_qck3"></div>
+							</div>
+							<div class="column_2 l"> <span class="ml10 b red fa f14">101713</span> 期
+								<span class="t_bl">返奖率59%</span>
+								<ul class="ball_list t_big dib">
+									<li>3</li>
+									<li>4</li>
+									<li>4</li>
+								</ul>
+								<div class="links">
+									<a href="/bulletin/prevqck3.html">往期号码</a>
+									<a href="/help/qck3.html">玩法规则</a>
+									<a href="/datacenter/qck3/index.html">走势图表</a>
+								</div>
+							</div>
+							<div class="column_3 r">
+								<span class="c3_r g9">开奖时间：09:10 ~ 23:50 每10分钟开奖一次</span>
+							</div>
+						</div>
+						<!--start 七乐彩-->
+						<div class="game_list cf">
+							<div class="column_1 l">
+								<h3>七乐彩</h3>
+								<div class="icon_qlc"></div>
+							</div>
+							<div class="column_2 l"> <span class="ml10 b red fa f14">2018018</span> 期
+								<span class="t_bl">每周一、三、五晚 21：15开奖</span>
+								<ul class="ball_list dib">
+									<li>02</li>
+									<li>07</li>
+									<li>12</li>
+									<li>16</li>
+									<li>20</li>
+									<li>21</li>
+									<li>26</li>
+									<li class="blue">10</li>
+								</ul>
+								<div class="links">
+									<a href="/bulletin/loto.html">开奖详情</a>
+									<a href="/bulletin/prevloto.html">往期号码</a>
+									<a href="/help/7lc.jsp">玩法规则</a>
+									<a href="/datacenter/qlc/index.html">走势图表</a>
+								</div>
+							</div>
+							<div class="column_3 r">
+								<span class="c3_r g9">一等奖最高奖金：500万元</span>
+								<div class="deadline mt38">第2018019期 <br /> 开奖日期：2018-02-12</div>
+							</div>
+						</div>
+						<!--start 快乐8-->
+						<div class="game_list cf">
+							<div class="column_1 l">
+								<h3>快乐8</h3>
+								<div class="icon_kl8"></div>
+							</div>
+							<div class="column_2 l"> 
+								<span class="ml10 b red fa f14">871989</span> 期
+								<div class="t_bl2">
+									<a href="/help/happy8.jsp" class="past_no">玩法规则</a>
+									<a href="/bulletin/prevkeno.html" class="past_no">往期号码</a>
+								</div>
+								<div class="kl8_bg">
+									<ul class="dib">
+										<li>76</li>
+										<li>68</li>
+										<li>02</li>
+										<li>74</li>
+										<li>60</li>
+										<li>01</li>
+										<li>31</li>
+										<li>70</li>
+										<li>77</li>
+										<li>11</li>
+										<li>65</li>
+										<li>55</li>
+										<li>78</li>
+										<li>16</li>
+										<li>66</li>
+										<li>42</li>
+										<li>80</li>
+										<li>08</li>
+										<li>52</li>
+										<li>23</li>
+									</ul>
+									<div class="fp"><span>x2</span>飞盘</div>
+								</div>
+							</div>
+							<div class="column_4 r"><span class="c3_r g9">开奖时间：每5分钟开奖一次　最高奖金：500万元</span>
+							</div>
+						</div>
+						<!--start pk拾-->
+						<div class="game_list cf g_last">
+							<div class="column_1 l">
+								<h3>PK拾</h3>
+								<div class="icon_pk10"></div>
+							</div>
+							<div class="column_2 l"> <span class="ml10 b red fa f14">666562</span> 期
+								<div class="t_bl2">
+									<a href="/help/pk10.jsp" class="past_no">玩法规则</a>
+									<a href="/bulletin/prevtrax.html" class="past_no">往期号码</a>
+								</div>
+								<div class="pk10_bg">
+									<ul class="dib">
+										<li>02</li>
+										<li>09</li>
+										<li>10</li>
+										<li>03</li>
+										<li>01</li>
+										<li>05</li>
+										<li>08</li>
+										<li>06</li>
+										<li>07</li>
+										<li>04</li>
+									</ul>
+								</div>
+							</div>
+							<div class="column_4 r">
+								<span class="c3_r g9">开奖时间：每5分钟开奖一次　最高奖金：888888元</span>
+							</div>
+						</div>
+					</div>
+
+					<div id="game_cards">
+						<dl>
+							<dt class="cf"><h2 class="title_ggl red l">刮刮乐新票介绍</h2><a href="/scratch/" class="ggl_more r">更多 &gt;&gt;</a></dt>
+							<dd>
+								<a href="/scratch/info.jsp?id=27702"><img src="http://static.bwlc.net/UserFiles/2018/01/09/1515484775742.jpg" alt="" /></a>
+								<div>戊戌狗—旺旺年 面值10元</div>
+							</dd>
+							<dd>
+								<a href="/scratch/info.jsp?id=27701"><img src="http://static.bwlc.net/UserFiles/2018/01/09/1515484488145.jpg" alt="" /></a>
+								<div>戊戌狗-福禄寿喜 面值20元</div>
+							</dd>
+							<dd>
+								<a href="/scratch/info.jsp?id=27700"><img src="http://static.bwlc.net/UserFiles/2018/01/09/1515480889898.jpg" alt="" /></a>
+								<div>戊戌狗-金狗银狗 面值5元</div>
+							</dd>
+							<dd>
+								<a href="/scratch/info.jsp?id=27650"><img src="http://static.bwlc.net/UserFiles/2017/03/28/1490685065853.jpg" alt="" /></a>
+								<div>码上有奖 面值10元</div>
+							</dd>
+						</dl>
+						<div class="news_tab cf">
+							<div class="tab_wrapper">
+								<ul class="dib tabs">
+									<li>
+										<a href="/info/news.jsp" class="brt4 cur">福彩新闻</a>
+									</li>
+									<li>
+										<a href="/info/cover.jsp" class="brt4">中奖报道</a>
+									</li>
+									<li>
+										<a href="/info/award.jsp" class="brt4">公益金使用</a>
+									</li>
+									<li>
+										<a href="/video/index.html" class="brt4">公益北京</a>
+									</li>
+								</ul>
+								<div class="t_cont">
+									<ul class="dot cf">
+										<li>
+											<a title="双色球017期：头奖5注869万 奖池4.41亿" href="info/article.jsp?id=20336">双色球017期：头奖5注869万 奖池4.41亿</a>
+										</li>
+										<li>
+											<a title="2018年上海市福利彩票工作会议召开" href="info/article.jsp?id=20335">2018年上海市福利彩票工作会议召开</a>
+										</li>
+										<li>
+											<a title="“福彩情.爱心年夜饭”温暖环卫工" href="info/article.jsp?id=20334">“福彩情.爱心年夜饭”温暖环卫工</a>
+										</li>
+										<li>
+											<a title="扬州“绚丽夕阳”老年歌唱比赛圆满落幕" href="info/article.jsp?id=20325">扬州“绚丽夕阳”老年歌唱比赛圆满落幕</a>
+										</li>
+										<li>
+											<a title="福彩杯“感动河北”颁奖典礼在石家庄举行" href="info/article.jsp?id=20323">福彩杯“感动河北”颁奖典礼在石家庄举行</a>
+										</li>
+										<li>
+											<a title="方寸间有大天地：厕所文化引发的彩票思考" href="info/article.jsp?id=20322">方寸间有大天地：厕所文化引发的彩票思考</a>
+										</li>
+										<li>
+											<a title="双色球016期：头奖4注959万 奖池4.15亿" href="info/article.jsp?id=20314">双色球016期：头奖4注959万 奖池4.15亿</a>
+										</li>
+										<li>
+											<a title="2018年河南福利彩票工作会议在商丘召开" href="info/article.jsp?id=20313">2018年河南福利彩票工作会议在商丘召开</a>
+										</li>
+										<li>
+											<a title="惠州福彩开展投注站安全检查及年检工作" href="info/article.jsp?id=20312">惠州福彩开展投注站安全检查及年检工作</a>
+										</li>
+										<li>
+											<a title="2017河南福彩双色球千万大奖排行出炉" href="info/article.jsp?id=20304">2017河南福彩双色球千万大奖排行出炉</a>
+										</li>
+										<li class="brn">
+											<a title="江苏盱眙福彩开展组织生活暨民主评议党员会" href="info/article.jsp?id=20303">江苏盱眙福彩开展组织生活暨民主评议党员会</a>
+										</li>
+										<li class="brn">
+											<a title="江苏盱眙福彩中心开展员工服务礼仪培训" href="info/article.jsp?id=20302">江苏盱眙福彩中心开展员工服务礼仪培训</a>
+										</li>
+									</ul>
+								</div>
+								<div class="t_cont dn">
+									<ul class="dot cf">
+										<li>
+											<a title="汕头彩民机选红球抱走双色球597万大奖" href="info/article.jsp?id=20342">汕头彩民机选红球抱走双色球597万大奖</a>
+										</li>
+										<li>
+											<a title="大奖连连 江西吉安青原区销售厅又中累积奖" href="info/article.jsp?id=20339">大奖连连 江西吉安青原区销售厅又中累积奖</a>
+										</li>
+										<li>
+											<a title="大奖彩票“出差了” 威海彩友3周后才兑奖" href="info/article.jsp?id=20338">大奖彩票“出差了” 威海彩友3周后才兑奖</a>
+										</li>
+										<li>
+											<a title="中双色球770多万 包大巴从苍南来露脸领奖" href="info/article.jsp?id=20331">中双色球770多万 包大巴从苍南来露脸领奖</a>
+										</li>
+										<li>
+											<a title="欢喜过大年 苏州彩民捧回两注双色球二等奖" href="info/article.jsp?id=20329">欢喜过大年 苏州彩民捧回两注双色球二等奖</a>
+										</li>
+										<li>
+											<a title="幸运彩民精心挑选号码 击中双色球二等奖" href="info/article.jsp?id=20327">幸运彩民精心挑选号码 击中双色球二等奖</a>
+										</li>
+										<li>
+											<a title="中奖如此简单 智能语音自助投注拿下千万奖金" href="info/article.jsp?id=20318">中奖如此简单 智能语音自助投注拿下千万奖金</a>
+										</li>
+										<li>
+											<a title="淮南彩民中奖791万 号码竟来自“外地”" href="info/article.jsp?id=20317">淮南彩民中奖791万 号码竟来自“外地”</a>
+										</li>
+										<li>
+											<a title="685万得主曾痛别头奖 转变战略就中了" href="info/article.jsp?id=20316">685万得主曾痛别头奖 转变战略就中了</a>
+										</li>
+										<li>
+											<a title="临近年关狠心10倍投 深圳女彩民中5970万" href="info/article.jsp?id=20309">临近年关狠心10倍投 深圳女彩民中5970万</a>
+										</li>
+										<li class="brn">
+											<a title="七乐彩200万头奖空降西宁 得主笑称运气好" href="info/article.jsp?id=20307">七乐彩200万头奖空降西宁 得主笑称运气好</a>
+										</li>
+										<li class="brn">
+											<a title="双色球又送大红包 荣昌彩民6元轻取765万" href="info/article.jsp?id=20306">双色球又送大红包 荣昌彩民6元轻取765万</a>
+										</li>
+									</ul>
+								</div>
+								<div class="t_cont dn">
+									<ul class="dot cf">
+										<li>
+											<a title="“爱心接力”温情百色返乡路 携手慰问贫困户" href="info/article.jsp?id=20341">“爱心接力”温情百色返乡路 携手慰问贫困户</a>
+										</li>
+										<li>
+											<a title="辽阳市开展“公益福彩&#8226;播爱古城”公益慰问活动" href="info/article.jsp?id=20340">辽阳市开展“公益福彩&#8226;播爱古城”公益慰问活动</a>
+										</li>
+										<li>
+											<a title="福彩有爱:走进开州区满月乡敬老院新春慰问" href="info/article.jsp?id=20337">福彩有爱:走进开州区满月乡敬老院新春慰问</a>
+										</li>
+										<li>
+											<a title="创新宣传 驱动福彩公益再升温" href="info/article.jsp?id=20332">创新宣传 驱动福彩公益再升温</a>
+										</li>
+										<li>
+											<a title="青海福彩开展“新春送温暖”公益慰问活动" href="info/article.jsp?id=20330">青海福彩开展“新春送温暖”公益慰问活动</a>
+										</li>
+										<li>
+											<a title="江门82位福彩业主自发开展“福彩送爱;情暖蓬江”慰问困难家庭活动" href="info/article.jsp?id=20328">江门82位福彩业主自发开展“福彩送爱;情暖蓬江”慰问困难家庭活动</a>
+										</li>
+										<li>
+											<a title="行走的中国福利彩票：一份执着的默默守候" href="info/article.jsp?id=20320">行走的中国福利彩票：一份执着的默默守候</a>
+										</li>
+										<li>
+											<a title="“福彩刮刮乐，天天送汽车”颁奖暨公益救助活动在济南举行" href="info/article.jsp?id=20319">“福彩刮刮乐，天天送汽车”颁奖暨公益救助活动在济南举行</a>
+										</li>
+										<li>
+											<a title="江门福彩新春送温暖 慰问离退休老同志" href="info/article.jsp?id=20315">江门福彩新春送温暖 慰问离退休老同志</a>
+										</li>
+										<li>
+											<a title="江门福彩业主自发开展慰问困难家庭活动" href="info/article.jsp?id=20310">江门福彩业主自发开展慰问困难家庭活动</a>
+										</li>
+										<li class="brn">
+											<a title="德州福彩为孤残儿童送去生活必需品和关怀" href="info/article.jsp?id=20308">德州福彩为孤残儿童送去生活必需品和关怀</a>
+										</li>
+										<li class="brn">
+											<a title="爱心暖寒冬 中福公益小分队熬制驱寒姜汤" href="info/article.jsp?id=20305">爱心暖寒冬 中福公益小分队熬制驱寒姜汤</a>
+										</li>
+									</ul>
+								</div>
+								<div class="t_cont dn">
+									<ul class="dot cf">
+										<li>
+											<a title="彩讯及时通20180112期" href="/video/index.html?videoId=20150&acteId=640">彩讯及时通20180112期</a>
+										</li>
+										<li>
+											<a title="《京彩30年》—福暖乡村 幸福之路" href="/video/index.html?videoId=20139&acteId=630">《京彩30年》—福暖乡村 幸福之路</a>
+										</li>
+										<li>
+											<a title="《京彩30年》—福养福居 温暖夕阳（下）" href="/video/index.html?videoId=20138&acteId=633">《京彩30年》—福养福居 温暖夕阳（下）</a>
+										</li>
+										<li>
+											<a title="《京彩30年》" href="/video/index.html?videoId=20137&acteId=639">《京彩30年》</a>
+										</li>
+										<li>
+											<a title="《京彩30年》—北京集彩人" href="/video/index.html?videoId=20136&acteId=638">《京彩30年》—北京集彩人</a>
+										</li>
+										<li>
+											<a title="《京彩30年》—北京福彩旗舰店" href="/video/index.html?videoId=20135&acteId=637">《京彩30年》—北京福彩旗舰店</a>
+										</li>
+										<li>
+											<a title="《京彩30年》—北京快3游戏" href="/video/index.html?videoId=20134&acteId=636">《京彩30年》—北京快3游戏</a>
+										</li>
+										<li>
+											<a title="《京彩30年》—福送万家 爱心社区行（下）" href="/video/index.html?videoId=20133&acteId=635">《京彩30年》—福送万家 爱心社区行（下）</a>
+										</li>
+										<li>
+											<a title="《京彩30年》—福送万家 爱心社区行（上）" href="/video/index.html?videoId=20132&acteId=634">《京彩30年》—福送万家 爱心社区行（上）</a>
+										</li>
+										<li>
+											<a title="《京彩30年》—福养福居 温暖夕阳（上）" href="/video/index.html?videoId=20131&acteId=632">《京彩30年》—福养福居 温暖夕阳（上）</a>
+										</li>
+										<li class="brn">
+											<a title="《京彩30年》—福送明亮 爱心护眼" href="/video/index.html?videoId=20130&acteId=631">《京彩30年》—福送明亮 爱心护眼</a>
+										</li>
+										<li class="brn">
+											<a title="《京彩30年》—福彩关爱 助残在行动" href="/video/index.html?videoId=20129&acteId=629">《京彩30年》—福彩关爱 助残在行动</a>
+										</li>
+									</ul>
+								</div>
+							</div>
+							<div class="notice_wrapper r br4">
+								<div class="toolboxTitle">
+									<h5>彩票工具箱</h5>
+									<a href="/message/mobilesms.jsp">更多</a>
+								</div>
+								<div class="toolboxLinks">
+									<a href="/datacenter/ssq/index.html">双色球红蓝走势</a>
+									<a href="/datacenter/ssq/hzzs.html">双色球和值走势</a>
+									<a href="/datacenter/qck3/index.html">快3基本走势</a>
+									<a href="/datacenter/qck3/hzzs.html">快3和值走势</a>
+									<a href="/datacenter/3d/index.html">3D基本走势</a>
+									<a href="/datacenter/3d/dxzs.html">3D大小走势</a>
+								</div>
+								<div class="toolboxTb">
+									<table>
+										<tr>
+											<th>业务名称</th>
+											<th class="spanDot" rowspan="6"></th>
+											<th>短信代码</th>
+											<th class="spanDot" rowspan="6"></th>
+											<th>资费</th>
+										</tr>
+										<tr>
+											<td>双色球开奖号码</td>
+											<td>37</td>
+											<td>5元/月</td>
+										</tr>
+										<tr>
+											<td class="rowDot" colspan="5"></td>
+										</tr>
+										<tr>
+											<td>3D试机号</td>
+											<td>33</td>
+											<td>15元/月</td>
+										</tr>
+										<tr>
+											<td class="rowDot" colspan="5"></td>
+										</tr>
+									</table>
+									<div class="smsTips">手机发送代码到 10662858 订制信息</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div id="game_hots" class="cf br4">
+						<dl>
+							<dt><h3 class="red"><i></i>公益北京</h3><a href="/info/video.html">更多资讯 &gt;&gt;</a></dt>
+							<dd>
+								<a href="/video/index.html">
+									<img alt="公益北京" class="scrollLoading" data-url="/images/event.jpg" src="" width="350" height="250" /></a>
+							</dd>
+						</dl>
+						<div class="bbs">
+							<div class="bbs_hot">
+								<h3 class="red">论坛热版</h3>
+								<ul>
+									<li><img alt="" src="/images/dot1.gif" />
+										<a href="http://bbs.bwlc.net/forum.php?mod=forumdisplay&fid=2" class="bg">3D好运天天有</a>
+									</li>
+									<li><img alt="" src="/images/dot2.gif" />
+										<a href="http://bbs.bwlc.net/forum.php?mod=forumdisplay&fid=6">玩转双色球</a>
+									</li>
+									<li><img alt="" src="/images/dot1.gif" />
+										<a href="http://bbs.bwlc.net/forum.php?mod=forumdisplay&fid=19" class="bg">试机号开奖号专栏</a>
+									</li>
+									<li><img alt="" src="/images/dot2.gif" />
+										<a href="http://bbs.bwlc.net/forum.php?mod=forumdisplay&fid=29">排列三与排列五专栏</a>
+									</li>
+									<li><img alt="" src="/images/dot1.gif" />
+										<a href="http://bbs.bwlc.net/forum.php?mod=forumdisplay&fid=23" class="bg">论坛事务处</a>
+									</li>
+								</ul>
+							</div>
+							<div id="bbs_flash" class="bbsLink scrollLoading" data-url="bbsFlash"></div>
+							<div class="bbsAd">精彩社区 心得技巧</div>
+						</div>
+					</div>
+
+				</div>
+				<div id="footer">
+					<dl id="channel" class="mt5">
+						<dt class="brt4">客服电话：010-8202 5099</dt>
+						<dd class="brb4 cf menu">
+							<div class="l lbn">
+								<h3>游戏规则</h3>
+								<ul class="dot">
+									<li>
+										<a href="/help/ssq.jsp">双色球</a>
+									</li>
+									<li>
+										<a href="/help/3d.jsp">3D</a>
+									</li>
+									<li>
+										<a href="/help/qck3.html">快3</a>
+									</li>
+									<li>
+										<a href="/help/7lc.jsp">七乐彩</a>
+									</li>
+									<li>
+										<a href="/help/happy8.jsp">快乐8</a>
+									</li>
+									<li>
+										<a href="/help/pk10.jsp">PK拾</a>
+									</li>
+								</ul>
+							</div>
+							<div class="l">
+								<h3>开奖公告</h3>
+								<ul class="dot">
+									<li>
+										<a href="/bulletin/slto.html">双色球</a>
+									</li>
+									<li>
+										<a href="/bulletin/pk3.html">3D</a>
+									</li>
+									<li>
+										<a href="/bulletin/qck3.html">快3</a>
+									</li>
+									<li>
+										<a href="/bulletin/loto.html">七乐彩</a>
+									</li>
+									<li>
+										<a href="/bulletin/keno.html">快乐8</a>
+									</li>
+									<li>
+										<a href="/bulletin/trax.html">PK拾</a>
+									</li>
+								</ul>
+							</div>
+							<div class="l">
+								<h3>走势分析</h3>
+								<ul class="dot">
+									<li>
+										<a href="/datacenter/ssq/index.html">双色球</a>
+									</li>
+									<li>
+										<a href="/datacenter/3d/index.html">3D</a>
+									</li>
+									<li>
+										<a href="/datacenter/qck3/index.html">快3</a>
+									</li>
+									<li>
+										<a href="/datacenter/qlc/index.html">七乐彩</a>
+									</li>
+								</ul>
+							</div>
+							<div class="l">
+								<h3>用户服务</h3>
+								<ul class="dot">
+									<li>
+										<a href="/register.jsp">注册用户</a>
+									</li>
+									<li>
+										<a href="/my/refund.html">提取奖金</a>
+									</li>
+									<li>
+										<a href="/my/fpassword.html">忘记密码</a>
+									</li>
+									<li>
+										<a href="/message/mobilesms.jsp">短信订制</a>
+									</li>
+								</ul>
+							</div>
+						</dd>
+					</dl>
+					<div id="copyright">
+						<a target="_blank" href="/footer/about_us.jsp">关于我们</a>
+						&nbsp;|&nbsp;
+						<a target="_blank" href="/footer/contact_us.jsp">联系我们</a>
+						&nbsp;|&nbsp;
+						<a target="_blank" href="/footer/map.jsp">网站地图</a>
+						&nbsp;|&nbsp;
+						<a target="_blank" href="/footer/link.jsp">友情链接</a>
+						&nbsp;|&nbsp;
+						<a target="_blank" href="/footer/policy.jsp">隐私条款</a>
+						&nbsp;|&nbsp;
+						<a target="_blank" href="/footer/agreement.jsp">服务协议</a>
+						&nbsp;|&nbsp;
+						<a target="_blank" href="/footer/job.jsp">诚聘英才</a>
+						<div style="overflow:hidden; line-height:24px;height:24px;">
+							<span style="float:left; margin-left:160px;">北京市福利彩票发行中心版权所有 京ICP备09069186号</span>
+							<a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010202007232" style="float:left;text-decoration:none;margin-left:6px;">
+								<img src="http://static.bwlc.net/images/beian_icon.png" style="float:left; margin-top:2px;" />
+								<p style="float:left;margin: 0px 0px 0px 5px; font-size:12px;">京公网安备 11010202007232号</p>
+							</a>
+						</div>
+						<span class="noice">未成年人不允许购买彩票</span>
+					</div>
+				</div>
+				<script type="text/javascript">
+					var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+					document.write(unescape("%3Cspan id='cnzz_stat_icon_1260158960'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s11.cnzz.com/z_stat.php%3Fid%3D1260158960' type='text/javascript'%3E%3C/script%3E"));
+				</script>
+				<script>
+					var _hmt = _hmt || [];
+					(function() {
+						var hm = document.createElement("script");
+						hm.src = "//hm.baidu.com/hm.js?d1cdc5cd5c769566cc0031ce552afe4e";
+						var s = document.getElementsByTagName("script")[0];
+						s.parentNode.insertBefore(hm, s);
+					})();
+				</script>
+				<a href="http://webscan.360.cn/index/checkwebsite/url/www.bwlc.net"><img border="0" src="http://img.webscan.360.cn/status/pai/hash/08de8af2a2f3905a18bd34878c77f740" /></a>
+
+				<div style="text-align: right;margin-top:-100px;padding-right:20px;padding-bottom: 40px;">
+					<script type="text/javascript">
+						document.write(unescape("%3Cspan id='_ideConac' %3E%3C/span%3E%3Cscript src='http://dcs.conac.cn/js/01/000/0000/60436217/CA010000000604362170002.js' type='text/javascript'%3E%3C/script%3E"));
+					</script>
+				</div>
+			</div>
+
+			<div style="height:0px;line-height: 0px;overflow: hidden;">
+				<script>
+					var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+					document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F59f2f67e65fdaf7d9a2055f2c512fbc0' type='text/javascript'%3E%3C/script%3E"));
+				</script>
+			</div>
+	</body>
+
+</html>
+
+<script>
+	// 焦点图片水平滚动  top banner
+	$('#game_news .news_l').Xslider({
+		affect: 'scrollx',
+		speed: 800,
+		space: 5000,
+		auto: true,
+		conbox: '.dib',
+		ctag: 'li'
+	});
+	// 焦点图片水平滚动 ggl banner
+	$('#game_cards .ggl_banners').Xslider({
+		affect: 'scrollx',
+		speed: 500,
+		space: 5000,
+		auto: true,
+		conbox: '.dib',
+		ctag: 'li'
+	});
+	//福彩新闻切换功能 延时处理200ms
+	$('#game_cards .tabs').find('a').delay(300).hover(function(e) {
+		var _li = $(e.target);
+		var _db = $('#game_cards .t_cont');
+		_li.addClass('cur').parent().siblings().children().removeClass('cur');
+		var idx = _li.parent().index();
+		_db.addClass('dn').eq(idx).removeClass('dn')
+	});
+	//bbs的flash显示
+	function bbsFlash() {
+		$('#bbs_flash').flash({
+			swf: '/images/toBBS.swf',
+			width: 200,
+			height: 209,
+			wmode: 'transparent',
+			allowScriptAccess: 'always'
+		});
+		$('#game_hots .bbs').addClass('bbs_bg')
+	};
+</script>
