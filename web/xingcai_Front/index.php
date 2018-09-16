@@ -5,6 +5,7 @@
 		<meta name="referrer" content="unsafe-url">
 		<meta name="renderer" content="webkit">
 		
+
 		<title>喜羊羊彩</title>
 		<!--<link type="image/x-icon" rel="shortcut icon" href="http://www.cy16cp.com/fhcp/statics/images/favicon.ico?20170114" media="screen"/>-->
 		<link type="text/css" rel="stylesheet" href="./files/_home.css">
@@ -51,7 +52,7 @@ try {
 <script type="text/javascript" src="/skin/layer/layer.js"></script>
 
 		<!--<script type="text/javascript" src="./files/_home_menu.js.下载"></script>-->
-		<script type="text/javascript">function zxkf() {<?php if($this->settings['kefuStatus']){ ?>layer.open({
+		<script type="text/javascript">function zxkf() {<?php if ($this->settings['kefuStatus']) {?>layer.open({
 			type: 2,
 			area: ['800px', '550px'],
 			zIndex: 1999,
@@ -59,8 +60,8 @@ try {
 			title: '在线客服',
 			scrollbar: false, //屏蔽滚动条
 			//maxmin: true,
-			content: '<?=$this -> settings['kefuGG'] ?>'
-});<?php }else{ ?>$.alert("客服系统维护中");<?php } ?>return false;
+			content: '<?=$this->settings['kefuGG']?>'
+});<?php } else {?>$.alert("客服系统维护中");<?php }?>return false;
 }
 $(document).ready(function() {
 	$('#mylottery').unbind().hover(function() {
@@ -225,23 +226,23 @@ $(document).ready(function() {
 							<li class="c-grey topscan">
 								<div class="header-gou"><i class="icon-iphone-icon"></i>手机购彩<span class="head-select"></span></div>
 								<div class="scancode" hidden="">
-									<img src="<?= $this -> settings['ioscode'] ?>" width="124px" height="124px">
+									<img src="<?=$this->settings['ioscode']?>" width="124px" height="124px">
 									<p>微信扫一扫</p>
 									<p>彩票随身买</p>
 								</div>
 							</li>
 						</ul>-->
 						<ul class="header-top-right fr ">
-							
+
 							<li><a id="agent_reg_url" class="right-border" href="http://dl.mptype.com" >代理登陆</a></li>
-							
+
 							<li><a class="right-border " href="/index.php/index/mfsw/">免费试玩</a></li>
 							<li><a class="right-border" href="/index.php/index/help?page=default">玩法</a></li>
 							<li id="wdtg"><a class="right-border " href="#" onClick="__openWin('user_center','/index.php/safe/tuiguang')">推荐好友获收益<img style="margin-left: 2px;margin-bottom: 10px;" src="/assets/statics/images/hot_new.gif"></a></li>
 							<li><a href="http://wpa.qq.com/msgrd?v=3&uin=1163408818&site=qq&menu=yes" target="_blank">在线客服</a></li>
 						</ul>
 					</div>
-					
+
 				</div>
 			</div>
 			<div class="liansai-wrap" id="liansai-wrap">
@@ -281,7 +282,7 @@ $(document).ready(function() {
 						</div>
 						<div id="header_user" class="logxinxi" hidden="" style="display: block;">
 							<div class="top_login">
-								<span>您好，<a onClick="__openWin('user_center','/index.php/box/receive');" rel="nofollow" class="play-jl" target="_blank" name="user_name"><?=$this -> user['username'] ?></a></span>
+								<span>您好，<a onClick="__openWin('user_center','/index.php/box/receive');" rel="nofollow" class="play-jl" target="_blank" name="user_name"><?=$this->user['username']?></a></span>
 								<span>可用余额：</span>
 								<span><a class="balance colorRed" id="refff" rel="nofollow" style="color: #e4393c;"><span id="balance" class="orange">￥0.000</span></a>
 								</span>
@@ -421,8 +422,10 @@ $(document).ready(function() {
                 <a onClick="__openWin('lottery_hall','/index.php/index/game/60/2/12/天津时时彩');">天津时时彩</a></li>
               <li>
                 <a onClick="__openWin('lottery_hall','/index.php/index/game/12/2/12/新疆时时彩');">新疆时时彩</a></li>
+              -->
               <li>
                 <a onClick="__openWin('lottery_hall','/index.php/index/game/79/39/江苏快三');">江苏快三</a></li>
+              <!--
               <li>
                 <a onClick="__openWin('lottery_hall','/index.php/index/game/7/10/山东11选5');">山东11选5</a></li>
               <li>
@@ -526,13 +529,13 @@ $(document).ready(function() {
   </ul>
 </div>
 </div>
-						
+
 						<ul class="nav-plus clearfix">
 							<li  class="on"><a href="/">首页</a></li>
 							<li><a onClick="__openWin('lottery_hall','/index.php/index/hall/');" target="_blank">购彩大厅</a></li>
 							<!--<li><a href="/index.php/index/help?page=phone"><i class="icon-iphone-icon"></i>&nbsp;手机购彩</a><em style="z-index: 9;right: -11px;" class="hot-icon"></em></li>-->
 							<li><a href="/index.php/index/help?page=huodong">优惠活动</a><em class="hot-icon"></em></li>
-							
+
                             <li><a href="/index.php/lottery/hemai" target="_blank">合买大厅</a></li>
 							<li><a href="/index.php/index/help?page=kjgg">开奖公告</a></li>
 						</ul>
@@ -552,19 +555,19 @@ $(document).ready(function() {
 	                            <div class="" id="tab-mobileapp-1" style="display: none;">
 	                                <div class="iosqr">
 	                                    <p>适用于IOS6.0及以上平台</p>
-	                                    <img style="width:125px;" src="<?=$this -> settings['ioscode'] ?>">
+	                                    <img style="width:125px;" src="<?=$this->settings['ioscode']?>">
 	                                    <p>扫一扫二维码下载Iphone版</p>
-	                                </div> 
+	                                </div>
 	                            </div>
-		                                            
+
 		                        <div class="" id="tab-mobileapp-2">
 		                            <div class="androidqr">
 		                                <p>适用于Android及以上平台</p>
-		                                <img style="width:125px;" src="<?=$this -> settings['androidCode'] ?>">
+		                                <img style="width:125px;" src="<?=$this->settings['androidCode']?>">
 		                                <p>扫一扫二维码下载Android版</p>
 		                            </div>
 		                        </div>
-	                        </div>            
+	                        </div>
 	                    </div>
 	                </div>-->
 					<!-- 轮播图 -->
@@ -589,10 +592,10 @@ $(document).ready(function() {
 								<ol class="dots"><li class="dot">1</li><li class="dot">2</li><li class="dot">3</li><li class="dot">4</li></ol></div>
 							</div>
 						</div>
-						
+
 						<div style="position: relative;width: 100%;">
 							<div style="position: absolute;left: 65%;">
-								
+
 							</div>
 						</div>
 					</div>
@@ -603,10 +606,10 @@ $(document).ready(function() {
 							<div class="submain-tip" id="sys_tip_outer">
 								<i class="icon-acc"></i>
 								<!-- 这里是跑马灯<marquee>标签，由js加入dom  -->
-							<marquee id="sys_tip" behavior="scroll"><?=$this -> settings['webGG'] ?></marquee></div>
+							<marquee id="sys_tip" behavior="scroll"><?=$this->settings['webGG']?></marquee></div>
 							<div class="home-wrapper">
 								<div class="quick-buy-box">
-								
+
 								<!-- 快速投注_时时彩 -->
 									<div  name="content" class="qb qb-box-list" id="_index_countdownIssue">
 										<ul name="quick_tab_list" class="quick-tab-list"><li class="tab-sel-open on" data-gameid="5" name="gameid_5"><a>重庆时时彩</a></li><li class="tab-sel-open" data-gameid="1" name="gameid_1"><a>福彩3D</a></li><li class="tab-sel-open" data-gameid="9" name="gameid_9"><a>北京PK拾</a></li><li class="tab-sel-open" data-gameid="2" name="gameid_2"><a>排列三</a></li><li class="tab-sel-open" data-gameid="12" name="gameid_12"><a>山东11选5</a></li></ul>
@@ -625,7 +628,7 @@ $(document).ready(function() {
 											</li>
 											<li class="bztz">
 												<a name="btn_game_play">自助选号</a>
-												
+
 											</li>
 										</ul>
 										<div class="qb-selectnumber">
@@ -646,10 +649,10 @@ $(document).ready(function() {
                                                 <a name="doBet" onClick="rightNow()" class="dg-tz-btn icon" id="fc3d_submit_index">立即投注</a>
                                             </div>
 										</div>
-										
+
 									</div>
-								
-									
+
+
 									<div class="help-tab-box">
 										<ul class="help-tab">
 											<li id="help_tab_hot" class="on" onMouseOver="setHelpTab(this, 'hot')"><a class="web-notice">网站公告</a></li>
@@ -658,23 +661,23 @@ $(document).ready(function() {
 										<ul class="web-notice-box help-ul" id="cont_help_hot" style="">
 										<!--<li><a onclick="__openWin('home2','/index/newsContent.html?skey=DF42E62C-61A1-F85A-D3DA-7BD08D161FCE')">通知：有任何问题请咨询在线...</a></li></ul>-->
 										<?php
-							$bool = true;
-							foreach ($args[0]['data'] as $var) {
-							if ($bool) {
-							$bool = false;
-							$val  = $var;
-							}
-							if($cout>=8){
-								
-								break;
-							}
-							$cout += 1;
-							$mod = $cout % 2;
-						?>                
-										<li><a title="系统公告" href="/index.php/notice/view_new/<?=$var['id'] ?>" class="notice"> <?= $var['title'] ?> </a></li>
+$bool = true;
+foreach ($args[0]['data'] as $var) {
+    if ($bool) {
+        $bool = false;
+        $val  = $var;
+    }
+    if ($cout >= 8) {
+
+        break;
+    }
+    $cout += 1;
+    $mod = $cout % 2;
+    ?>
+										<li><a title="系统公告" href="/index.php/notice/view_new/<?=$var['id']?>" class="notice"> <?=$var['title']?> </a></li>
 										<?php
-										}
-						?>	   
+}
+?>
 										</ul>
 										<ul class="user-help-box help-ul" id="cont_help_newer" style="display: none;">
 											<li><a href="/index.php/notice/view_new/118">如何注册成为C38会员？</a></li>
@@ -700,7 +703,7 @@ $(document).ready(function() {
 						<div class="part-3-cont-right part-right">
 							<div class="ratetop">
 								<div><span>中奖排行榜</span>
-									
+
 								</div>
 							</div>
 							<div class="tableCarousel" cellspacing="0" cellpad="" c-greyding="0" style="">
@@ -734,19 +737,19 @@ $(document).ready(function() {
 							<div class="lottery-news-box">
 								<div class="news-title clearfix">
                                     <?php
-									$one_news = $this -> getRow("select * from blast_content where nodeId=2 limit 0,1");
-                                    ?>
-									<a href="/index.php/notice/view_new/<?=$one_news['id'] ?>" target="_self" id="newsTitle_1"><?=$one_news['title'] ?></a>
+$one_news = $this->getRow("select * from blast_content where nodeId=2 limit 0,1");
+?>
+									<a href="/index.php/notice/view_new/<?=$one_news['id']?>" target="_self" id="newsTitle_1"><?=$one_news['title']?></a>
 								</div>
 								<div class="news-bar">
 									<div class="news-bar-content" id="news-bar-content1">
 										<ul class="news-bar-list news-bar-left clearfix">
                                         <?php
-										$more_one_news = $this -> getRows("select * from blast_content where nodeId=2 limit 1,5");
-										foreach ($more_one_news as $value) {
-											echo '<li><a onclick="" class="c-grey">新闻</a><span class="pad c-grey">|</span> <a href="/index.php/notice/view_new/' . $value['id'] . '">' . $value['title'] . '</a> </li>';
-										}
-                                        ?>
+$more_one_news = $this->getRows("select * from blast_content where nodeId=2 limit 1,5");
+foreach ($more_one_news as $value) {
+    echo '<li><a onclick="" class="c-grey">新闻</a><span class="pad c-grey">|</span> <a href="/index.php/notice/view_new/' . $value['id'] . '">' . $value['title'] . '</a> </li>';
+}
+?>
 										</ul>
 									</div>
 								</div>
@@ -754,19 +757,19 @@ $(document).ready(function() {
 							<div class="lottery-news-box">
 								<div class="news-title clearfix">
                                     <?php
-									$two_news = $this -> getRow("select * from blast_content where nodeId=2 limit 6,1");
-                                    ?>
-                                    <a href="/index.php/notice/view_new/<?=$two_news['id'] ?>" target="_self" id="newsTitle_2"><?=$two_news['title'] ?></a>
+$two_news = $this->getRow("select * from blast_content where nodeId=2 limit 6,1");
+?>
+                                    <a href="/index.php/notice/view_new/<?=$two_news['id']?>" target="_self" id="newsTitle_2"><?=$two_news['title']?></a>
 								</div>
 								<div class="news-bar">
 									<div class="news-bar-content" id="news-bar-content2">
 										<ul class="news-bar-list news-bar-left clearfix">
                                             <?php
-											$more_two_news = $this -> getRows("select * from blast_content where nodeId=2 limit 7,5");
-											foreach ($more_two_news as $value) {
-												echo '<li><a onclick="" class="c-grey">新闻</a><span class="pad c-grey">|</span> <a href="/index.php/notice/view_new/' . $value['id'] . '">' . $value['title'] . '</a> </li>';
-											}
-                                            ?>
+$more_two_news = $this->getRows("select * from blast_content where nodeId=2 limit 7,5");
+foreach ($more_two_news as $value) {
+    echo '<li><a onclick="" class="c-grey">新闻</a><span class="pad c-grey">|</span> <a href="/index.php/notice/view_new/' . $value['id'] . '">' . $value['title'] . '</a> </li>';
+}
+?>
                                         </ul>
 										</ul>
 									</div>
@@ -799,28 +802,28 @@ $(document).ready(function() {
 										<div class="draw-contents" id="tab-cont-2" style="display: none;">
 												<ul class="notice-list" id="lastOpenQt">
                                                 <?php
-												/*获取低频彩-最新一期*/
-												$sql = 'SELECT t.`shortName`,(SELECT t1.data FROM blast_data t1 WHERE t1.type = t.`id`  ORDER BY t1.number DESC LIMIT 1) data,(SELECT t2.number FROM blast_data t2 WHERE t2.type = t.`id`  ORDER BY t2.number DESC LIMIT 1) number,t.`id` FROM  blast_type t WHERE t.id IN (34,10,9)';
-												$dpcl = $this -> getRows($sql);
-												//print_r($dpcl);
-												foreach ($dpcl as $key => $value) {
-													if ($key == 0) {
-														echo '<li><div><span class="lot-name"><a onclick="">' . $value['shortName'] . '&nbsp;</a>' . $value['number'] . '期</span><span class="term">' . date('m-d', $value['time']) . '</span><span class="clear"></span><div class="clear"></div>';
-														$data_number = explode(',', $value['data']);
-														foreach ($data_number as $val) {
-															echo '<div class="redball">' . $val . '</div>';
-														}
-														echo '<br><div class="fr"><a onclick="__openWin(\'lottery_hall\',\'/index.php/index/game/' . $value['id'] . '\');">投注</a></div><div class="clear"></div></div></li>';
-													} else {
-														echo '<li><div><span class="lot-name"><a onclick="">' . $value['shortName'] . '&nbsp;</a>' . $value['number'] . '期</span><span class="term">' . date('m-d', $value['time']) . '</span><span class="clear"></span><div class="clear"></div>';
-														$data_number = explode(',', $value['data']);
-														foreach ($data_number as $val) {
-															echo '<div class="redball">' . $val . '</div>';
-														}
-														echo '<br><div class="fr"><a onclick="__openWin(\'lottery_hall\',\'/index.php/index/game/' . $value['id'] . '\');">投注</a></div><div class="clear"></div></div></li>';
-													}
-												}
-                                                ?>
+/*获取低频彩-最新一期*/
+$sql  = 'SELECT t.`shortName`,(SELECT t1.data FROM blast_data t1 WHERE t1.type = t.`id`  ORDER BY t1.number DESC LIMIT 1) data,(SELECT t2.number FROM blast_data t2 WHERE t2.type = t.`id`  ORDER BY t2.number DESC LIMIT 1) number,t.`id` FROM  blast_type t WHERE t.id IN (34,10,9)';
+$dpcl = $this->getRows($sql);
+//print_r($dpcl);
+foreach ($dpcl as $key => $value) {
+    if ($key == 0) {
+        echo '<li><div><span class="lot-name"><a onclick="">' . $value['shortName'] . '&nbsp;</a>' . $value['number'] . '期</span><span class="term">' . date('m-d', $value['time']) . '</span><span class="clear"></span><div class="clear"></div>';
+        $data_number = explode(',', $value['data']);
+        foreach ($data_number as $val) {
+            echo '<div class="redball">' . $val . '</div>';
+        }
+        echo '<br><div class="fr"><a onclick="__openWin(\'lottery_hall\',\'/index.php/index/game/' . $value['id'] . '\');">投注</a></div><div class="clear"></div></div></li>';
+    } else {
+        echo '<li><div><span class="lot-name"><a onclick="">' . $value['shortName'] . '&nbsp;</a>' . $value['number'] . '期</span><span class="term">' . date('m-d', $value['time']) . '</span><span class="clear"></span><div class="clear"></div>';
+        $data_number = explode(',', $value['data']);
+        foreach ($data_number as $val) {
+            echo '<div class="redball">' . $val . '</div>';
+        }
+        echo '<br><div class="fr"><a onclick="__openWin(\'lottery_hall\',\'/index.php/index/game/' . $value['id'] . '\');">投注</a></div><div class="clear"></div></div></li>';
+    }
+}
+?>
 												</ul>
 										</div>
 									</div>
@@ -864,14 +867,14 @@ $(document).ready(function() {
                 </div>
                 <!--<div class="cn-list service">
                     <h3>&nbsp;&nbsp;APP下载</h3>
-                    
+
                     <div class="app-down">
-                        
+
                         <div class="down-img" id="img-apple1">
-                            <img src="<?=$this -> settings['ioscode'] ?>">
+                            <img src="<?=$this->settings['ioscode']?>">
                         </div>
                         <div class="down-img" id="img-andoid1" style="display: none">
-                            <img src="<?=$this -> settings['androidCode'] ?>">     
+                            <img src="<?=$this->settings['androidCode']?>">
                         </div>
                         <div class="down-txt">-->
                             <!-- <a class="down-apple1">Iphone版</a>
@@ -919,7 +922,7 @@ $(document).ready(function() {
       <li class="browser-firefox"><a href="http://www.firefox.com.cn/" target="_blank"> 火狐浏览器<span>Mozilla Firefox</span></a></li>
       <li class="browser-ie"><a href="http://windows.microsoft.com/zh-cn/internet-explorer/download-ie" target="_blank"> IE浏览器<span>Internet Explorer</span></a></li>
       <li class="browser-qq"><a href="http://browser.qq.com/" target="_blank"> QQ浏览器9 <span>全新升级版本</span></a></li> <!-- 9.4.8187.400 -->
-      
+
       <div class="clean"></div>
     </ul>
     <hr>
@@ -937,7 +940,7 @@ $(document).ready(function() {
 
 <!-- 倒计时维护 -->
 <div class="maintain-countdown" style="display: none;">
-  <div class="maintain-time" id="main_count_down">  
+  <div class="maintain-time" id="main_count_down">
     维护倒计时<br>
     <div id="mian_time"></div>
   </div>
@@ -997,7 +1000,7 @@ function zjph() {
 					music += "<span class=\"orange text_orange\">" + n["bonus"] + "</span>";
 					music += "</p>";
 					//alert(i+"|"+n);
-				} //i表示在data中的索引位置，n表示包含的信息的对象 
+				} //i表示在data中的索引位置，n表示包含的信息的对象
 
 			);
 
@@ -1062,7 +1065,7 @@ $("body").keydown(function() {
 	if(event.keyCode == "13") { //keyCode=13是回车键
 		index_userLogin();
 	}
-});</script>	
+});</script>
 
 <script>$(window).bind("load", function() {
 	var _flag = false;
@@ -1103,7 +1106,7 @@ $("body").keydown(function() {
 }
 setInterval("refreshMoney()","10000");
 $(document).ready(function() {
-	
+
 	var culs = null;
 
 	$("#_leftAD [name=close_btn],#_rightAD [name=close_btn]").click(function() {
@@ -1222,7 +1225,7 @@ $(document).ready(function() {
 
 	/* 		 $.get("/index.php/getOpenLotteryNumber",function(data,textStatus){
 	               alert(data);
-			
+
 			 }); */
 	var arr_gp = ["1", "12", "86", "6"]; //高频彩种ID
 	var arr_dp = ["34", "9", "10"]; //低频彩种ID
@@ -1233,19 +1236,19 @@ $(document).ready(function() {
 		url: "/index.php/getOpenLotteryNumber",
 		//dataType: "json",
 		success: function(msg) {
-            
-            
-            
+
+
+
 			var jsonarray = $.parseJSON(msg);
-			
-			
+
+
 			$.each(jsonarray, function(i, n) {
 				//alert(n.title);
 				if($.inArray(n.type, arr_gp) > -1) {
 					//<li><div><span class="lot-name"><a onclick="">上海时时乐&nbsp;</a>0627007期</span><span class="term">06-27</span><span class="clear"></span><div class="clear"></div><div class="redball">4</div><div class="redball">0</div><div class="redball">1</div><br><div class="fr"><a onclick="">投注</a></div><div class="clear"></div></div></li>
 					kj_html += "<li><div><span class=\"lot-name\"><a onclick=\"__openWin('lottery_hall','/index.php/index/game/" + n.type + "');\">" + n.title + "&nbsp;</a>" + n.number + "期</span><span class=\"term\"></span><span class=\"clear\"></span><div class=\"clear\"></div>"
-					var strs = new Array(); //定义一数组 
-					strs = n.data.split(","); //字符分割 
+					var strs = new Array(); //定义一数组
+					strs = n.data.split(","); //字符分割
 					for(var y = 0; y < strs.length; y++) {
 						kj_html += "<div class=\"redball\">" + strs[y] + "</div>"
 						//"<div class=\"redball\">4</div><div class=\"redball\">0</div><div class="redball">1</div><br><div class="fr"><a onclick="">投注</a></div><div class="clear"></div></div></li>"
