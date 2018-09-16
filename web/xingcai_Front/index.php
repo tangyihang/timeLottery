@@ -4,7 +4,6 @@
 		<meta name="referrer" content="always">
 		<meta name="referrer" content="unsafe-url">
 		<meta name="renderer" content="webkit">
-		
 
 		<title>喜羊羊彩</title>
 		<!--<link type="image/x-icon" rel="shortcut icon" href="http://www.cy16cp.com/fhcp/statics/images/favicon.ico?20170114" media="screen"/>-->
@@ -409,6 +408,10 @@ $(document).ready(function() {
               <li>
                 <a onClick="__openWin('lottery_hall','/index.php/index/game/86/2/12/三分时时彩');">三分时时彩</a></li>
               <li>
+
+              	<li>
+                <a onClick="__openWin('lottery_hall','/index.php/index/game/79/39/江苏快三');">江苏快三</a></li>
+
                 <a onClick="__openWin('lottery_hall','/index.php/index/game/1/2/12/重庆时时彩');">重庆时时彩</a></li>
               <li>
                 <a onClick="__openWin('lottery_hall','/index.php/index/game/20/27/北京PK拾');">北京PK拾</a></li>
@@ -423,8 +426,8 @@ $(document).ready(function() {
               <li>
                 <a onClick="__openWin('lottery_hall','/index.php/index/game/12/2/12/新疆时时彩');">新疆时时彩</a></li>
               -->
-              <li>
-                <a onClick="__openWin('lottery_hall','/index.php/index/game/79/39/江苏快三');">江苏快三</a></li>
+              <!-- <li>
+                <a onClick="__openWin('lottery_hall','/index.php/index/game/79/39/江苏快三');">江苏快三</a></li> -->
               <!--
               <li>
                 <a onClick="__openWin('lottery_hall','/index.php/index/game/7/10/山东11选5');">山东11选5</a></li>
