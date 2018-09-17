@@ -54,10 +54,10 @@ class Record extends WebLoginBase{
 
        $sql_sum="SELECT sum(betinfo.`mode`*betinfo.beiShu*betinfo.actionNum*(betinfo.fpEnable+1)) as sum_bet,
 			sum(betinfo.bonus) as sum_win FROM
-			Z4r5jk12_type AS ltype
-		INNER JOIN Z4r5jk12_bets AS betinfo ON ltype.id = betinfo.type
-		INNER JOIN Z4r5jk12_played AS playinfo ON betinfo.playedId = playinfo.id
-		INNER JOIN Z4r5jk12_members AS member ON member.uid = betinfo.uid
+			blast_type AS ltype
+		INNER JOIN blast_bets AS betinfo ON ltype.id = betinfo.type
+		INNER JOIN blast_played AS playinfo ON betinfo.playedId = playinfo.id
+		INNER JOIN blast_members AS member ON member.uid = betinfo.uid
 		where 1=1  and concat(',',member.parents,',') like '%,{$this->user['uid']},%'";
 
       
@@ -79,10 +79,10 @@ class Record extends WebLoginBase{
 			betinfo.isDelete,
 			betinfo.zhuiHao
 		FROM
-			Z4r5jk12_type AS ltype
-		INNER JOIN Z4r5jk12_bets AS betinfo ON ltype.id = betinfo.type
-		INNER JOIN Z4r5jk12_played AS playinfo ON betinfo.playedId = playinfo.id
-		INNER JOIN Z4r5jk12_members AS member ON member.uid = betinfo.uid
+			blast_type AS ltype
+		INNER JOIN blast_bets AS betinfo ON ltype.id = betinfo.type
+		INNER JOIN blast_played AS playinfo ON betinfo.playedId = playinfo.id
+		INNER JOIN blast_members AS member ON member.uid = betinfo.uid
 		where 1=1  ";
         $sql.="and concat(',',member.parents,',') like '%,{$this->user['uid']},%'";
         $sql.=" and betinfo.actionTime between ". strtotime($startTime)." and ".strtotime($endTime) ;
@@ -193,11 +193,11 @@ class Record extends WebLoginBase{
 			betinfo.zhuiHao,
 			lotteryKj.`data` as lotteryHaoMa
 		FROM
-			Z4r5jk12_type AS ltype
-		INNER JOIN Z4r5jk12_bets AS betinfo ON ltype.id = betinfo.type
-		INNER JOIN Z4r5jk12_played AS playinfo ON betinfo.playedId = playinfo.id
-		INNER JOIN Z4r5jk12_members AS member ON member.uid = betinfo.uid
-		inner join Z4r5jk12_data as lotteryKj on lotteryKj.type = ltype.id
+			blast_type AS ltype
+		INNER JOIN blast_bets AS betinfo ON ltype.id = betinfo.type
+		INNER JOIN blast_played AS playinfo ON betinfo.playedId = playinfo.id
+		INNER JOIN blast_members AS member ON member.uid = betinfo.uid
+		inner join blast_data as lotteryKj on lotteryKj.type = ltype.id
 		where betinfo.wjorderId = '{$orderId}' and lotteryKj.number = betinfo.actionNo";
 
 		// echo $sql;

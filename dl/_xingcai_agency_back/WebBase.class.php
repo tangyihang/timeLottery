@@ -21,7 +21,7 @@ class WebBase extends Object{
 			parent::__construct($dsn, $user, $password);
 			if($_SESSION[$this->memberSessionName]){
 				$this->user=unserialize($_SESSION[$this->memberSessionName]);
-				$this->user = $this->getRow("select * from Z4r5jk12_members where uid = {$this->user['uid']}");
+				$this->user = $this->getRow("select * from blast_members where uid = {$this->user['uid']}");
 				$this->updateSessionTime();
 			}
 		}catch(Exception $e){

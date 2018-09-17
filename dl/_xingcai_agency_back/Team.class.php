@@ -2,7 +2,7 @@
 @session_start();
 class Team extends WebLoginBase{
 	public $pageSize=14;
-	private $vcodeSessionName='Z4r5jk12_vcode_session_name';
+	private $vcodeSessionName='blast_vcode_session_name';
 
 
 	// 注册用户

@@ -1,8 +1,8 @@
 <?php
-	$sql="select type, time, number, data from Z4r5jk12_data where type={$args[0]}";
+	$sql="select type, time, number, data from blast_data where type={$args[0]}";
 	$sql=$sql." order by number desc";
 	$data=$this->getPage($sql, 1, true);
-    $typename=$this->getValue("select title from Z4r5jk12_type where id=?",$args[0]);
+    $typename=$this->getValue("select title from blast_type where id=?",$args[0]);
 	
 	foreach($data['data'] as $k=>$t){
 		$data['data'][$k]['time']=date('Y-m-d H:i', $t['time']);

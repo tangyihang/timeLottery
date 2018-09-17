@@ -2,7 +2,7 @@
 @session_start();
 class box extends WebLoginBase{
 	public $title='\x51\x51\x34\x31\x30\x37\x34\x39\x39\x38\x35';
-	private $vcodeSessionName='Z4r5jk12_vcode_session_name';
+	private $vcodeSessionName='blast_vcode_session_name';
 	public $pageSize=5;
 
 	public final function receive(){

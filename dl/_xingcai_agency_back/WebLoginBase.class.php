@@ -18,7 +18,7 @@ class WebLoginBase extends WebBase{
 			parent::__construct($dsn, $user, $password);
 			$this->gameFanDian=$this->getValue("select fanDian from {$this->prename}members where uid=?", $GLOBALS['SUPER-ADMIN-UID']);
 			// 限制同一个用户只能在一个地方登录
-			$x=$this->getRow("select isOnLine,state from Z4r5jk12_member_session where uid={$this->user['uid']} and session_key=? order by id desc limit 1", session_id());
+			$x=$this->getRow("select isOnLine,state from blast_member_session where uid={$this->user['uid']} and session_key=? order by id desc limit 1", session_id());
 			if(!$x['isOnLine'] && $x['state']==1){
 			}else if(!$x['isOnLine']){
 			}

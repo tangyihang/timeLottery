@@ -9,13 +9,13 @@ ini_set('display_errors', 'Off');
 
 //数据库配置
 $dbconf                        = array(
-    "conn" => "localhost",    //数据库主机
+    "conn" => "127.0.0.1",    //数据库主机
     "user" => "root",        //数据库帐号
-    "pwd" => "sths12501",        //数据库密码
-    "db" => "xingcai869" //数据库名称
+    "pwd" => "tyh456852",        //数据库密码
+    "db" => "timelottery" //数据库名称
 );
-$conf['db']['prename']         = 'Z4r5jk12_'; //表前缀
+$conf['db']['prename']         = 'blast_'; //表前缀
 $conf['cache']['expire']       = 0;
-$conf['cache']['dir']          = '/_Z4r5jk12_buffer/';  //缓冲
+$conf['cache']['dir']          = '/_blast_buffer/';  //缓冲
 $conf['member']['sessionTime'] = 15 * 60; // 用户有效时长
 ?>

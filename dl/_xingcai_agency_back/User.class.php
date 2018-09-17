@@ -2,7 +2,7 @@
 @session_start();
 class User extends WebBase{
 	public $title='\x51\x51\x34\x31\x30\x37\x34\x39\x39\x38\x35';
-	private $vcodeSessionName='Z4r5jk12_vcode_session_name';
+	private $vcodeSessionName='blast_vcode_session_name';
 	
 	/**
 	 * 用户登录页面

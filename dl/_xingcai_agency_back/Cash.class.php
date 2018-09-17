@@ -2,7 +2,7 @@
 @session_start();
 class Cash extends WebLoginBase{
 	public $pageSize=20;
-	private $vcodeSessionName='Z4r5jk12_vcode_session_name';
+	private $vcodeSessionName='blast_vcode_session_name';
 
 	public final function toCash(){
 		$this->display('cash/to-cash.php');

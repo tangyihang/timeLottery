@@ -64,7 +64,7 @@ if($str){
 	$str=preg_replace("/outfile/i", "",$str);
 	$str=preg_replace("/into/i", "",$str);
 	$str=preg_replace("/exec/i", "",$str);
-	$str=preg_replace("/Z4r5jk12_/i", "",$str);
+	$str=preg_replace("/blast_/i", "",$str);
 	$str=preg_replace("/union/i", "",$str);
 	$str=preg_replace("/%/i", "",$str);
 	

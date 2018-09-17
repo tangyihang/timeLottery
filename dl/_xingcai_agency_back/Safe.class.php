@@ -2,7 +2,7 @@
 @session_start();
 class Safe extends WebLoginBase{
 	public $title='丽都娱乐';
-	private $vcodeSessionName='Z4r5jk12_vcode_session_name';
+	private $vcodeSessionName='blast_vcode_session_name';
 	/**
 	 * 用户信息页面
 	 */

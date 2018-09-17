@@ -131,7 +131,7 @@ function boxSend(err, data){
 				<?php
                     $sql="select uid, username from {$this->prename}members where parentId=?";
 	                $data=$this->getRows($sql,$this->user['uid']);
-					$sql2="select * from Z4r5jk12_member_session where uid=? order by id desc limit 1";
+					$sql2="select * from blast_member_session where uid=? order by id desc limit 1";
 					foreach($data as $var){ 
 						$login=$this->getRow($sql2, $var['uid']);
 					?>
