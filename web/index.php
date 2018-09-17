@@ -193,15 +193,14 @@ function isMobile()
 function jumpWap()
 {
     if(isMobile()){
-        //$wap = 'http://www.xc38wap.com';
         $host = $_SERVER['HTTP_HOST'];
         $h_array = explode('.',$host);
         if(count($h_array) > 3){
             unset($h_array[0]);
-            $wap = 'http://wap.'.implode('.',$h_array);
+            $wap = 'http://m.'.implode('.',$h_array);
             header("location:".$wap);exit;
         }else{
-            $wap = 'http://wap.95276688.com';
+            $wap = 'http://m.mptype.com';
             header("location:".$wap);exit;
         }
     }

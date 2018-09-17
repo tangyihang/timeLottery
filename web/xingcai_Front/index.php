@@ -317,6 +317,7 @@ $(document).ready(function() {
         </a>
       </div>
     </li>
+
     <li class="mainGame">
       <a onClick="__openWin('lottery_hall','/index.php/index/game/1/2/12/重庆时时彩');" class="mainA">
         <i class="icon nav40-9">
@@ -490,6 +491,8 @@ $(document).ready(function() {
                 <a onClick="__openWin('lottery_hall','/index.php/index/game/80/104/339/幸运28');">幸运28</a></li>
               <li>
                 <a onClick="__openWin('lottery_hall','/index.php/index/game/85/27/三分PK10');">三分PK拾</a></li>
+                <li>
+                    <a onClick="__openWin('lottery_hall','/index.php/index/game/63/澳门快三');">澳门快三</a></li>
               <!--<li>
                 <a onClick="__openWin('lottery_hall','/index.php/index/game/87');">上海时时乐</a></li>
               <li>
