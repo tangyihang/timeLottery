@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>大地彩票-官方网站</title>
+<title>喜洋洋彩-官方网站</title>
 <link rel="stylesheet" href="/css/nsc/reset.css?v=1.16.11.8" />
 <link rel="stylesheet" href="/css/nsc/login.css?v=1.16.11.8" />
 <link rel="stylesheet" href="/css/nsc/register.css?v=1.16.11.8" />
@@ -49,7 +49,7 @@ function registerSubmit(err,data){
 
 </head>
 <body style=" min-width:980px; overflow-x:hidden;">
-<div class="zc_top"><div class="warp980"><img src="/images/nsc/register/logo_zc.png?v=1.16.11.8" class="fl"></div></div>
+<div class="zc_top"><div class="warp980"></div></div>
 
 <div class="zc_cont">
 	<div class="zc_content">
@@ -134,12 +134,6 @@ function registerSubmit(err,data){
 	</div>
 </div>
 
-<div class="login_footer">
-<div class="warp980">
-<div class="img"><img src="/images/nsc/login/nsc_login_footer-certificate.png?v=1.16.11.8" /></div>
-<div class="clearfix"><p class="t-left">浏览器建议：首选为Google浏览器，其次为火狐和IE9或IE10浏览器<br />分辨率建议：使用1024×768以上的分辨率</p>
-<p class="t-right">未满18周岁禁止购买<br />Copyright © SinCai 2010-2016  大地彩票 版权所有</p></div>
-</div></div>
 
 </body>
 </html>

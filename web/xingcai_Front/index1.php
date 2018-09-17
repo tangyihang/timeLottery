@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" 
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<title>大地彩票-官方网站</title>
+<title>喜洋洋彩-官方网站</title>
 <meta name="keywords" content="">
 <meta nam="description" content="">
 <meta name="renderer" content="webkit">

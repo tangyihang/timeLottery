@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>大地彩票-官方网站</title>
+    <title>喜洋洋彩-官方网站</title>
 	<style>
 	body {margin:0; padding:0; font-family:"Microsoft YaHei",Helvetica, Arial, "5b8b4f53", "Microsoft YaHei", sans-serif;}
     #subContent_bet_re {padding:0;}

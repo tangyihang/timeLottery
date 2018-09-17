@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>大地彩票-官方网站-彩票游戏</title>
+<title>喜洋洋彩-官方网站-彩票游戏</title>
 <link rel="stylesheet" href="/css/nsc/reset.css?v=1.16.11.8" />
 <link rel="stylesheet" href="/css/nsc/regoster.css?v=1.16.11.8" />
 <link href="/js/nsc/dialogUI/dialogUI.css?v=1.16.11.8" media="all" type="text/css" rel="stylesheet">
@@ -118,12 +118,6 @@ function registerSubmit(err,data){
         
         		            </div>
 </div>
-
-<div class="login_footer"><div class="warp980">
-<div class="img"><img src="/images/nsc/login/nsc_login_footer-certificate.png?v=1.16.11.8" /></div>
-<div class="clearfix"><p class="t-left">浏览器建议：首选为Google浏览器，其次为火狐和IE9或IE10浏览器<br />分辨率建议：使用1024×768以上的分辨率</p>
-<p class="t-right">未满18周岁禁止购买<br />Copyright © SinCai 2010-2016  大地彩票 版权所有</p></div>
-</div></div>
 
 </body>
 </html>

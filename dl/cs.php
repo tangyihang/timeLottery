@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="utf-8" />
-<title>大地彩票-官方网站</title>
+<title>喜洋洋彩-官方网站</title>
 <style>
 html,body{width:100%; height:100%; margin:0; padding:0; background:#ebebed}
 .main{width:100%; height:100%; color:#fff; font-family:'Microsoft YaHei'; text-align:center; background:url('/images/bg_xianlu.png') center 200px no-repeat;}

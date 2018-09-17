@@ -29,7 +29,7 @@
 	</div>-->
     </div>
 
-	<div class="logo left" style="width:140px; background-size: 106px;background-position: 20px;"><a href="">大地彩票</a></div>
+	<div class="logo left" style="width:140px; background-size: 106px;background-position: 20px;"><a href="">喜洋洋彩</a></div>
 
 	<div class="left nav navList">
 		<ul>

@@ -62,7 +62,7 @@
 						<div><p>投注达到流水以后即可以领取对应档次的游戏彩金。</p> </div>
 						<div><p>一天只能领取一次，所以建议用户在当天决定停止游戏的时候领取即可以领取到最高的彩金。</p></div>
 						                           
-						<div><p>大地彩票保留对活动的解释权，有更改取消优惠的权利。</p></div>
+						<div><p>喜洋洋彩保留对活动的解释权，有更改取消优惠的权利。</p></div>
 								<div class="tabstyle">
                         <table width="100%" border="0" cellspacing="0" cellpadding="0">
                               <tbody>
