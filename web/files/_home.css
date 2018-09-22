@@ -146,7 +146,7 @@ a#refff{color: #e4393c;}
 .header-navbar-plus .nav-right i{width:17px;height: 9px;background-position: -330px -45px;position: absolute;left:25px;top:32px;overflow: hidden;z-index: 9;}
 .icon-iphone-icon { color:#fff; font-size:20px; vertical-align:middle; margin-right: 5px;}
 /*--navLeft--*/
-.header-navbar-plus .lotterys-list-hd { width:230px; height:591px; border: 1px solid #dddddd;border-top:0;border-bottom: 0px; background: #fff;position: absolute;left:0;top:42px; z-index:100; box-sizing: border-box;}
+.header-navbar-plus .lotterys-list-hd { width:230px; border: 1px solid #dddddd;border-top:0;border-bottom: 0px; background: #fff;position: absolute;left:0;top:42px; z-index:100; box-sizing: border-box;}
 
 #lotterys .hanbo_icon{float: left; width: 20px;height: 14px;padding: 9px 7px;background:#d2161a; margin-top: 5px;margin-right:50px;}
 #lotterys .hanbo_icon i{float: left;border: 1px solid #de1b29;width: 18px;height: 2px;background: #fff;}
