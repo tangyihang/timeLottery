@@ -395,7 +395,7 @@ function rechargModal() {
 // 弹出充值页
 function addQrCode() {
     $.get('/index.php/' + 'business/addQrcodeModel', function(html) {
-    	// console.log(html);
+        // console.log(html);
         $(html).dialog({
             title: '添加二维码',
             width: 380,

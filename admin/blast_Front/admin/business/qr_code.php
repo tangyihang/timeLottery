@@ -1,5 +1,5 @@
 ﻿<?php
-$data = $this->getRows("select * from {$this->prename}code where id between 1 and 2 order by id");
+$data = $this->getRows("select * from {$this->prename}code where status<>2 order by id");
 //print_r($data);
 ?>
 <article class="module width_full">
@@ -21,14 +21,28 @@ $data = $this->getRows("select * from {$this->prename}code where id between 1 an
 		</thead>
 		<tbody id="nav01">
 		<?php if ($data) {
-    foreach ($data as $var) {?>
+    foreach ($data as $var) {
+        ?>
 			<tr>
 				<td><?=$var['id']?></td>
 				<td><?=$var['name']?></td>
 				<td><?=$var['title']?></td>
 				<td><?=$var['account']?></td>
-				<td><img src="<?=$var['imgaddr']?>"></td>
-				<td><a href="business/codeedit/<?=$var['id']?>">修改</a>|<a href="business/codedel/<?=$var['id']?>">删除</a></td>
+				<td><a target="_blank" href="<?=$var['imgaddr']?>"><img style="width: 50px;height:50px;" src="<?=$var['imgaddr']?>"></a></td>
+				<td>
+					<a href="business/codeedit/<?=$var['id']?>">修改</a> |
+					<a onclick="updateCodeStatus('<?=$var['id']?>', '2');" href="#">删除</a> |
+
+					<?php
+if ($var['status'] == '0') {?>
+            <a onclick="updateCodeStatus('<?=$var['id']?>', '1');" href="#">启用</a>
+            <?php
+} else {?>
+            <a onclick="updateCodeStatus('<?=$var['id']?>', '0');" href="#">停用</a>
+            <?php
+}?>
+
+				</td>
 			</tr>
 		<?php }
 }
@@ -37,4 +51,28 @@ $data = $this->getRows("select * from {$this->prename}code where id between 1 an
 	</table>
 </article>
 <script type="text/javascript">
+
+function updateCodeStatus(id,status) {
+	var title = "你确定";
+	if (status == '0'){
+		title = "你确定要停用?";
+	} else if (status=='1') {
+		title = "你确定要启用?";
+	} else if (status=='2'){
+		title = "你确定要删除?";
+	}
+
+    if (confirm(title)) {
+
+    	$.ajax('/index.php/' + 'business/updatecodestatus/' + id + '/' + status, {
+            dataType: 'json',
+            error: defaultError,
+            success: defaultSuccess
+        });
+
+        return true;
+    } else {
+        return false;
+    }
+}
 </script>

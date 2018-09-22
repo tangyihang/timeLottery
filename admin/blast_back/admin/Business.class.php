@@ -308,6 +308,27 @@ class Business extends AdminBase {
     }
 
     /**
+     * 修改二维码状态
+     */
+    public final function UpdatecodeStatus($id, $status) {
+
+        $_POST["status"] = $status;
+        if (!isset($_POST['status'])) {
+            throw new Exception('缺少状态!');
+        }
+
+        $_POST["uptime"] = date("Y-m-d H:i:s");
+        // var_dump($_POST);exit;
+        $ret = $this->updateRows($this->prename . 'code', $_POST, 'id=' . $id);
+        // var_dump($ret);exit;
+        if ($ret) {
+            return '修改成功';
+        } else {
+            throw new Exception('未知出错');
+        }
+    }
+
+    /**
      * 修改二维码
      */
     public final function Updatecode($id) {

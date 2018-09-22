@@ -14,7 +14,7 @@
 	</tr>
 	<tr>
 		<th><span class="spn9">提示：</span></th>
-		<td><span class="spn9">第一栏填写用户名 或 用户ID均可充值</td></span>
+		<td><span class="spn9" style="color: red;">需要在修改的地方设置二维码!</td></span>
 	</tr>
 </table>
 
