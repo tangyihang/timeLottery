@@ -828,40 +828,13 @@
                 <div class="part-3-cont-right part-right">
                     <div class="ratetop">
                         <div><span>中奖排行榜</span>
-
                         </div>
                     </div>
                     <div class="tableCarousel" cellspacing="0" cellpad="" c-greyding="0" style="">
                         <div id="prizeUser" class="tbody" style="margin-top: -20px;">
-                            <p><span><span class="bg_green">18</span>she***</span><span class="orange">137.2元</span></p>
-                            <p><span><span class="bg_green">19</span>lhp***</span><span class="orange">107.8元</span></p>
-                            <p><span><span class="bg_green">20</span>zcm***</span><span class="orange">105.84元</span>
-                            </p>
-                            <p><span><span class="bg_orange">01</span>atj***</span><span class="orange text_orange">5880元</span>
-                            </p>
-                            <p><span><span class="bg_orange">02</span>888***</span><span class="orange text_orange">1960元</span>
-                            </p>
-                            <p><span><span class="bg_orange">03</span>che***</span><span class="orange text_orange">1960元</span>
-                            </p>
-                            <p><span><span class="bg_green">04</span>qi3***</span><span class="orange">1411.2元</span>
-                            </p>
-                            <p><span><span class="bg_green">05</span>722***</span><span class="orange">909.548元</span>
-                            </p>
-                            <p><span><span class="bg_green">06</span>hxz***</span><span class="orange">882元</span></p>
-                            <p><span><span class="bg_green">07</span>194***</span><span class="orange">686元</span></p>
-                            <p><span><span class="bg_green">08</span>aaa***</span><span class="orange">441元</span></p>
-                            <p><span><span class="bg_green">09</span>df6***</span><span class="orange">392元</span></p>
-                            <p><span><span class="bg_green">10</span>xie***</span><span class="orange">362.6元</span></p>
-                            <p><span><span class="bg_green">11</span>lxy***</span><span class="orange">294元</span></p>
-                            <p><span><span class="bg_green">12</span>lyq***</span><span class="orange">205.8元</span></p>
-                            <p><span><span class="bg_green">13</span>129***</span><span class="orange">196元</span></p>
-                            <p><span><span class="bg_green">14</span>521***</span><span class="orange">196元</span></p>
-                            <p><span><span class="bg_green">15</span>q66***</span><span class="orange">183.456元</span>
-                            </p>
                             <p><span><span class="bg_green">16</span>768***</span><span class="orange">176.4元</span></p>
                             <p><span><span class="bg_green">17</span>bao***</span><span class="orange">147元</span></p>
                         </div>
-                        <!-- 	<div id="prizeUser" class="tbody" style="margin-top: -20px;"><p><span><span class="bg_green">18</span>she***</span><span class="orange">137.2元</span></p><p><span><span class="bg_green">19</span>lhp***</span><span class="orange">107.8元</span></p><p><span><span class="bg_green">20</span>zcm***</span><span class="orange">105.84元</span></p><p><span><span class="bg_orange">01</span>atj***</span><span class="orange text_orange">5880元</span></p><p><span><span class="bg_orange">02</span>888***</span><span class="orange text_orange">1960元</span></p><p><span><span class="bg_orange">03</span>che***</span><span class="orange text_orange">1960元</span></p><p><span><span class="bg_green">04</span>qi3***</span><span class="orange">1411.2元</span></p><p><span><span class="bg_green">05</span>722***</span><span class="orange">909.548元</span></p><p><span><span class="bg_green">06</span>hxz***</span><span class="orange">882元</span></p><p><span><span class="bg_green">07</span>194***</span><span class="orange">686元</span></p><p><span><span class="bg_green">08</span>aaa***</span><span class="orange">441元</span></p><p><span><span class="bg_green">09</span>df6***</span><span class="orange">392元</span></p><p><span><span class="bg_green">10</span>xie***</span><span class="orange">362.6元</span></p><p><span><span class="bg_green">11</span>lxy***</span><span class="orange">294元</span></p><p><span><span class="bg_green">12</span>lyq***</span><span class="orange">205.8元</span></p><p><span><span class="bg_green">13</span>129***</span><span class="orange">196元</span></p><p><span><span class="bg_green">14</span>521***</span><span class="orange">196元</span></p><p><span><span class="bg_green">15</span>q66***</span><span class="orange">183.456元</span></p><p><span><span class="bg_green">16</span>768***</span><span class="orange">176.4元</span></p><p><span><span class="bg_green">17</span>bao***</span><span class="orange">147元</span></p></div> -->
                     </div>
                 </div>
                 <!-- 新闻资讯 -->
@@ -1120,7 +1093,7 @@
       success: function (data) {
 
         var jsonarray = $.parseJSON(data);
-        //alert(jsonarray);
+        //console.log(jsonarray);
         $.each(jsonarray, function (i, n) {
 
             music += "<p>";
