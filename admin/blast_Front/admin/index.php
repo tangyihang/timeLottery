@@ -1,6 +1,6 @@
 ﻿<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
-    <input type="hidden" value="<?= $this->user['username'] ?>" />
+    <input type="hidden" value="<?=$this->user['username']?>" />
     <head>
         <meta content="IE=EmulateIE8" http-equiv="X-UA-Compatible" />
         <meta name="renderer" content="ie-comp" />
@@ -13,7 +13,7 @@
                 <link rel="stylesheet" href="/skin/admin/ie.css" type="text/css" />
                 <script src="/skin/js/html5.js"></script>
         <![endif]-->
-        <script src="/skin/js/jquery-1.8.3.min.js"></script>                          
+        <script src="/skin/js/jquery-1.8.3.min.js"></script>
         <script src="/skin/admin/onload.js"></script>
         <script src="/skin/admin/wjevent.js"></script>
         <script src="/skin/admin/function.js"></script>
@@ -89,7 +89,12 @@
     <header id="header">
         <hgroup>
             <h1 class="site_title">后台管理系统</h1>
-            <h2 class="section_title"><a class="tjgk bq load" href="business/betLog">普通投注</a><a class="tjgk bq load" href="member/index">用户列表</a><a class="tjgk bq load" href="#" onclick="rechargModal()" value="充值">账号充值</a><a class="tjgk bq load" href="#" onclick="sysAddBox()">发布消息</a><a class="tjgk bq load" method="post" target="ajax" call="clearDataSuccess" title="即将清空程序缓存，是否继续！" dataType="json" href="/index.php/clear/rmfile">清空缓存</a>
+            <h2 class="section_title">
+                <a class="tjgk bq load" href="business/betLog">普通投注</a>
+                <a class="tjgk bq load" href="member/index">用户列表</a>
+                <a class="tjgk bq load" href="#" onclick="rechargModal()" value="充值">账号充值</a>
+                <a class="tjgk bq load" href="#" onclick="sysAddBox()">发布消息</a>
+                <a class="tjgk bq load" method="post" target="ajax" call="clearDataSuccess" title="即将清空程序缓存，是否继续！" dataType="json" href="/index.php/clear/rmfile">清空缓存</a>
             </h2>
             <div class="btn_view_site"><a href="/index.php/user/logout">安全退出</a></div>
         </hgroup>
@@ -97,7 +102,7 @@
 
     <section id="secondary_bar">
         <div class="user">
-            <p>欢迎：<?= $this->user['username'] ?></p>
+            <p>欢迎：<?=$this->user['username']?></p>
         </div>
         <div class="breadcrumbs_container">
             <article class="breadcrumbs"><a>当前位置：<strong>首页</strong></a> <div class="breadcrumb_divider"></div> <span id="position"><a class="current">统计概况</a></span></article>
@@ -111,9 +116,9 @@
         <!--
         <h3>号码预设<a>＋</a></h3>
         <ul class="toggle" style="display:none;">
-<?php foreach ($this->getRows("select id,title from {$this->prename}type where enable=1 and isDelete=0 order by sort") as $type) { ?>
-                    <li><a href="data/index2/<?= $type['id'] ?>" class="k_b_1 bq"><?= $type['title'] ?></a></li>
-<?php } ?>
+<?php foreach ($this->getRows("select id,title from {$this->prename}type where enable=1 and isDelete=0 order by sort") as $type) {?>
+                    <li><a href="data/index2/<?=$type['id']?>" class="k_b_1 bq"><?=$type['title']?></a></li>
+<?php }?>
         </ul>
         -->
         <h3>业务流水<a>＋</a></h3>
@@ -128,15 +133,15 @@
         </ul>
         <h3>开奖数据<a>＋</a></h3>
         <ul class="toggle" style="display:none;">
-            <?php foreach ($this->getRows("select id,title from {$this->prename}type where enable=1 and isDelete=0 order by sort") as $type) { ?>
-                <li><a href="data/index/<?= $type['id'] ?>" class="k_b_1 bq"><?= $type['title'] ?></a></li>
-            <?php } ?>
+            <?php foreach ($this->getRows("select id,title from {$this->prename}type where enable=1 and isDelete=0 order by sort") as $type) {?>
+                <li><a href="data/index/<?=$type['id']?>" class="k_b_1 bq"><?=$type['title']?></a></li>
+            <?php }?>
         </ul>
         <h3>时间管理<a>＋</a></h3>
         <ul class="toggle" style="display:none;">
-<?php foreach ($this->getRows("select id,title from {$this->prename}type where enable=1 and isDelete=0 order by sort") as $type) { ?>
-                <li><a href="time/index/<?= $type['id'] ?>" class="k_b_1 bq"><?= $type['title'] ?></a></li>
-<?php } ?>
+<?php foreach ($this->getRows("select id,title from {$this->prename}type where enable=1 and isDelete=0 order by sort") as $type) {?>
+                <li><a href="time/index/<?=$type['id']?>" class="k_b_1 bq"><?=$type['title']?></a></li>
+<?php }?>
         </ul>
         <h3>数据统计<a>＋</a></h3>
         <ul class="toggle" style="display:none;">
@@ -192,7 +197,7 @@ $num = $this->getValue($sql, $this->user['uid']);
 ?>
         <ul class="toggle"  style="display:none;">
             <li><a href="#" onclick="sysAddBox()" class="bq jf_b_2">发消息</a></li>
-            <li><a href="Box/receivebox" class="bq jf_b_2">收件箱</a>(<strong style="color:red"> <?= $num ?> </strong>)</li>
+            <li><a href="Box/receivebox" class="bq jf_b_2">收件箱</a>(<strong style="color:red"> <?=$num?> </strong>)</li>
             <li><a href="Box/sendbox" class="bq jf_b_2">发件箱</a></li>
             <li><a href="Box/all" class="bq jf_b_1">整站发信记录</a></li>
         </ul>
@@ -246,7 +251,7 @@ $num = $this->getValue($sql, $this->user['uid']);
                 <li><a href="choujiang/add_leavl" class="yh_b_1 bq">增加奖金区间</a></li>
                 <li><a href="choujiang/leavl" class="yh_b_2 bq">奖金区间列表</a></li>
     <li><a href="choujiang/lucky" class="yh_b_4 bq">用户抽奖明细</a></li>
-    
+
         </ul>-->
         <!--<h3><span>点卡管理</span><a>＋</a></h3>
         <ul class="toggle"  style="display:none;">
@@ -264,16 +269,7 @@ $num = $this->getValue($sql, $this->user['uid']);
     </aside><!-- end of sidebar -->
 
 
-
-
-
-
-
-
-
-
-
     <section id="message-tip"></section>
-    <section id="main" class="column"><?php $this->display('count/index.php'); ?></section>
+    <section id="main" class="column"><?php $this->display('count/index.php');?></section>
 </body>
 </html>
