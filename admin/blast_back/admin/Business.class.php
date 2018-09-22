@@ -289,6 +289,10 @@ class Business extends AdminBase {
         $this->display('business/recharge-log-list.php');
     }
 
+    public final function addQrcodeModel() {
+        $this->display("business/add-qrcode-model.php");
+    }
+
     /**
      * 二维码管理
      */
