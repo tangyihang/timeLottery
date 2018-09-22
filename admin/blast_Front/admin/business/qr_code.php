@@ -28,7 +28,7 @@ $data = $this->getRows("select * from {$this->prename}code where status<>2 order
 				<td><?=$var['id']?></td>
 				<td><?=$var['name']?></td>
 				<td>
-					<?php if ($var['type'] == 0) {
+		<?php if ($var['type'] == 0) {
             echo "微信";
         } else {
             echo "支付宝";
