@@ -14,7 +14,8 @@
 	</tr>
 	<tr>
 		<th>充值备注：</th>
-		<td><select style="width:100px;" name="type" id="type">
+		<td>
+			<select style="width:100px;" name="type" id="type">
 			<option value="0" selected>管理员充值</option>
 			<option value="1">活动赠送</option>
 			<option value="2">支付宝补充</option>

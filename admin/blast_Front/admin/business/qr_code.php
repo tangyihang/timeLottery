@@ -13,6 +13,7 @@ $data = $this->getRows("select * from {$this->prename}code where status<>2 order
 			<tr>
 				<td>id</td>
 				<td>名称</td>
+				<td>类型</td>
 				<td>收款人</td>
 				<td>收款账号</td>
 				<td>二维码</td>
@@ -26,6 +27,14 @@ $data = $this->getRows("select * from {$this->prename}code where status<>2 order
 			<tr>
 				<td><?=$var['id']?></td>
 				<td><?=$var['name']?></td>
+				<td>
+					<?php if ($var['type'] == 0) {
+            echo "微信";
+        } else {
+            echo "支付宝";
+        }
+        ?>
+			    </td>
 				<td><?=$var['title']?></td>
 				<td><?=$var['account']?></td>
 				<td><a target="_blank" href="<?=$var['imgaddr']?>"><img style="width: 50px;height:50px;" src="<?=$var['imgaddr']?>"></a></td>

@@ -13,6 +13,15 @@
 		<td><input type="text" name="account" /></td>
 	</tr>
 	<tr>
+		<th>类型:</th>
+		<td>
+			<select style="width:100px;" name="type" id="type">
+			<option value="0" selected>微信</option>
+			<option value="1">支付宝</option>
+		    </select>
+		</td>
+	</tr>
+	<tr>
 		<th><span class="spn9">提示：</span></th>
 		<td><span class="spn9" style="color: red;">需要在修改的地方设置二维码!</td></span>
 	</tr>
