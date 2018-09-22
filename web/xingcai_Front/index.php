@@ -725,12 +725,11 @@
                                     <li class="tab-sel-open" data-gameid="86" name="gameid_86"><a>三分时时彩</a></li>
                                     <li class="tab-sel-open" data-gameid="1" name="gameid_1"><a>重庆时时彩</a></li>
                                     <li class="tab-sel-open" data-gameid="20" name="gameid_20"><a>北京PK拾</a></li>
-                                    <li class="tab-sel-open" data-gameid="80" name="gameid_80"><a>幸运28</a></li>
+                                    <li class="tab-sel-open" data-gameid="85" name="gameid_85"><a>三分PK拾</a></li>
                                 </ul>
                                 <ul class="qb-info clearfix">
                                     <li>
-                                        <span style="font-size: 18px"><span id="js-default"
-                                                                            name="issue">快速投注</span></span>
+                                        <span style="font-size: 18px"><span id="js-default" name="issue">快速投注</span></span>
                                         <span class="c-gray" style=" display:none;">截止：</span>
                                         <span class="sale_end_timer" style=" display:none;">
                                                     <span>
@@ -748,13 +747,11 @@
                                 </ul>
                                 <div class="qb-selectnumber">
                                     <i class="sprite sprite-sscd"></i>
-                                    <ul name="num_list" class="qb-selectnum clearfix qb_dlt_select"><img
-                                                class="bett-icon" src="./files/5.png">
-                                        <li class="qb-red lot_sn_red"><input value="9" readonly=""></li>
-                                        <li class="qb-red lot_sn_red"><input value="5" readonly=""></li>
-                                        <li class="qb-red lot_sn_red"><input value="4" readonly=""></li>
-                                        <li class="qb-red lot_sn_red"><input value="8" readonly=""></li>
-                                        <li class="qb-red lot_sn_red"><input value="7" readonly=""></li>
+                                    <ul name="num_list" class="qb-selectnum clearfix qb_dlt_select">
+                                        <img class="bett-icon" src="/images/nsc/warp/icon/am_ks.png">
+                                        <li class="qb-red lot_sn_red"><input value="02" readonly=""></li>
+                                        <li class="qb-red lot_sn_red"><input value="04" readonly=""></li>
+                                        <li class="qb-red lot_sn_red"><input value="03" readonly=""></li>
                                     </ul>
                                 </div>
                                 <div class="qb-tz-box clearfix">
@@ -808,7 +805,7 @@
                                     ?>
                                 </ul>
                                 <ul class="user-help-box help-ul" id="cont_help_newer" style="display: none;">
-                                    <li><a href="/index.php/notice/view_new/118">如何注册成为C38会员？</a></li>
+                                    <li><a href="/index.php/notice/view_new/118">如何注册成为喜洋洋彩会员？</a></li>
                                     <li><a href="/index.php/notice/view_new/117">忘记登录密码了怎么办？</a></li>
                                     <li><a href="/index.php/notice/view_new/116">在网站充值要手续费吗？</a></li>
                                 </ul>
@@ -1387,25 +1384,49 @@
 
     $('#_index_countdownIssue ul[name=quick_tab_list] li').on('mouseover', function (e) { //各彩种开奖公告
       var s = "";
-      if ($(this).attr("data-gameid") == 1) { //重庆时时彩快速投注
+      if ($(this).attr("data-gameid") == 63) { //重庆时时彩快速投注
+        $("span[name=issue]").text("澳门快三快速投注");
+        var arr = [1, 2, 3, 4, 5, 6];
+        var numList = arr.sort(randomsort);
+
+        for (var i = 0; i < 3; i++) {
+          s += "<li class=\"qb-red lot_sn_red\"><input value=\"" + numList[i] + "\" readonly></li>"
+        }
+        $("[name=num_list]").html('<img class="bett-icon" src="/images/nsc/warp/icon/am_ks.png">' + s);
+      } else if ($(this).attr("data-gameid") == 1) { //重庆时时彩快速投注
         $("span[name=issue]").text("重庆时时彩快速投注");
-        //$("a[name=doBet]").attr("onclick","__openWin('user_center','index.php/index/game/1/2/12/重庆时时彩');");
         var numList = [parseInt(Math.random(10) * 10), parseInt(Math.random(10) * 10), parseInt(Math.random(10) * 10), parseInt(Math.random(10) * 10), parseInt(Math.random(10) * 10)];
 
         for (var i = 0; i < numList.length; i++) {
           s += "<li class=\"qb-red lot_sn_red\"><input value=\"" + numList[i] + "\" readonly></li>"
         }
         $("[name=num_list]").html('<img class="bett-icon" src="/files/5.png">' + s);
-      } else if ($(this).attr("data-gameid") == 20) { //PK10
-        $("span[name=issue]").text("快速投注");
-        //$("a[name=doBet]").attr("onclick","__openWin('user_center','index.php/index/game/20/27/北京PK拾');");
-        var arr = ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10'];
+      } else if ($(this).attr("data-gameid") == 86) { //三分时时彩快速投注
+        $("span[name=issue]").text("三分时时彩快速投注");
+        var numList = [parseInt(Math.random(10) * 10), parseInt(Math.random(10) * 10), parseInt(Math.random(10) * 10), parseInt(Math.random(10) * 10), parseInt(Math.random(10) * 10)];
+
+        for (var i = 0; i < numList.length; i++) {
+          s += "<li class=\"qb-red lot_sn_red\"><input value=\"" + numList[i] + "\" readonly></li>"
+        }
+        $("[name=num_list]").html('<img class="bett-icon" src="/files/51.png">' + s);
+      } else if ($(this).attr("data-gameid") == 20) { //北京PK10
+        $("span[name=issue]").text("北京PK拾快速投注");
+        var arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
         var numList = arr.sort(randomsort);
 
-        for (var i = 0; i < 3; i++) {
+        for (var i = 0; i < 1; i++) {
           s += "<li class=\"qb-red lot_sn_red\"><input value=\"" + numList[i] + "\" readonly></li>"
         }
         $("[name=num_list]").html('<img class="bett-icon" src="/files/9.png">' + s);
+      } else if ($(this).attr("data-gameid") == 85) { //北京PK10
+        $("span[name=issue]").text("三分PK拾快速投注");
+        var arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+        var numList = arr.sort(randomsort);
+
+        for (var i = 0; i < 1; i++) {
+          s += "<li class=\"qb-red lot_sn_red\"><input value=\"" + numList[i] + "\" readonly></li>"
+        }
+        $("[name=num_list]").html('<img class="bett-icon" src="/files/52.png">' + s);
       }
 
 //      else if ($(this).attr("data-gameid") == 12) { //十一选五
@@ -1457,7 +1478,6 @@
 
         var jsonarray = $.parseJSON(msg);
 
-
         $.each(jsonarray, function (i, n) {
           //alert(n.title);
           if ($.inArray(n.type, arr_gp) > -1) {
@@ -1491,7 +1511,8 @@
     $('._notice').hide();
   } else {
     $('._notice').show();
-  }</script>
+  }
+</script>
 
 </body>
 </html>
