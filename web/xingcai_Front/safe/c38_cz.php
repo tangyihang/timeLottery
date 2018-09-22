@@ -1,4 +1,4 @@
-<?php $this -> display('C38_header_new.php'); ?>
+<?php $this->display('C38_header_new.php');?>
 <script src="../../team_js/bootstrap-datetimepicker.min.js"></script>
 <script src="../../team_js/bootstrap-datetimepicker.zh-CN.js"></script>
 
@@ -51,7 +51,7 @@
 	background-color: #fff;
 	border: 1px solid #ccc !important;
 }</style>
-	<?php $this -> display('siderbar.php'); ?>
+	<?php $this->display('siderbar.php');?>
 	<link rel="stylesheet" href="/css/nsc/list.css?v=1.16.11.9" />
 	<div id="div_1" class="clearfix right-div">
 		<div class="play-wrap">
@@ -1156,7 +1156,7 @@
 										存入时间：
 									</div>
 									<div class="bank-order-r" style="position: relative;">
-										<input class="int bt_time" type="text" readonly="" value="<?=date('Y-m-d') ?>">
+										<input class="int bt_time" type="text" readonly="" value="<?=date('Y-m-d')?>">
 										<div id="bank-order-time" class="bank-order-time">
 											<select name="hour">
 												<!--                                                     <option>00</option><option>01</option><option>02</option><option>03</option><option>04</option><option>05</option><option>06</option><option>07</option><option>08</option><option>09</option><option>10</option>
@@ -1299,7 +1299,7 @@
 	</div>
 	<div class="_clr_"></div>
 </div>
-<input id="current_time" type="hidden" value="<?=date('d/m/Y') ?>" timestamp="<?=date('d/m/Y') ?>">
+<input id="current_time" type="hidden" value="<?=date('d/m/Y')?>" timestamp="<?=date('d/m/Y')?>">
 <link rel="stylesheet" href="/team_css/bootstrap-datepicker.min.css">
 <link rel="stylesheet" href="/team_css/bootstrap-datetimepicker.min.css">
 
@@ -1381,7 +1381,7 @@ function ddbcharge(banktype) {
 	var input2 = $("<input type='hidden' name='amount' />");
 	input2.attr('value', money);
 	var input3 = $("<input type='hidden' name='uid' />");
-	input3.attr('value',<?php echo $this -> user['uid']; ?>);
+	input3.attr('value',<?php echo $this->user['uid']; ?>);
 form.append(input1);
 form.append(input2);
 form.append(input3);
@@ -1433,7 +1433,7 @@ function xmcharge(banktype) {
 	var input2 = $("<input type='hidden' name='amount' />");
 	input2.attr('value', money);
 	var input3 = $("<input type='hidden' name='uid' />");
-	input3.attr('value',<?php echo $this -> user['uid']; ?>);
+	input3.attr('value',<?php echo $this->user['uid']; ?>);
 form.append(input1);
 form.append(input2);
 form.append(input3);
@@ -1443,4 +1443,4 @@ form.submit();
 
 }
 </script>
-<?php $this -> display('C38_footer.php'); ?>
+<?php $this->display('C38_footer.php');?>
