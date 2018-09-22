@@ -10,3 +10,4 @@ web/qrcode.png
 .idea/workspace.xml
 admin/upload/uploads/files/*/*.jpg
 web/upload/uploads/files/*/*.jpg
+web/qrcode.png

@@ -1394,8 +1394,8 @@ form.submit();
 function xmcharge(banktype) {
 	var money;
 	var frame;
-	if(banktype == 1) {
 
+	if(banktype == 1) {
 		money = $("#zfbmoney2").val();
 		frame = "qrcode_zfb";
 		if(money == '' || money <= 0) {
@@ -1424,6 +1424,7 @@ function xmcharge(banktype) {
 			return;
 		}
 	}
+
 	var form = $("<form></form>");
 	form.attr('action', '/index.php/cash/xmRecharge');
 	form.attr('method', 'post');
@@ -1434,13 +1435,12 @@ function xmcharge(banktype) {
 	input2.attr('value', money);
 	var input3 = $("<input type='hidden' name='uid' />");
 	input3.attr('value',<?php echo $this->user['uid']; ?>);
-form.append(input1);
-form.append(input2);
-form.append(input3);
-form.appendTo("body");
-form.css('display', 'none');
-form.submit();
-
+	form.append(input1);
+	form.append(input2);
+	form.append(input3);
+	form.appendTo("body");
+	form.css('display', 'none');
+	form.submit();
 }
 </script>
 <?php $this->display('C38_footer.php');?>
