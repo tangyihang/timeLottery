@@ -394,12 +394,12 @@ function rechargModal() {
 
 // 弹出充值页
 function addQrCode() {
-    $.get('/index.php/' + 'business/rechargeModal', function(html) {
+    $.get('/index.php/' + 'business/addQrcodeModel', function(html) {
 
     	console.log(html);
 
         $(html).dialog({
-            title: '用户充值',
+            title: '添加二维码',
             width: 380,
             buttons: {
                 "确定": function(event, ui) {
@@ -413,7 +413,7 @@ function addQrCode() {
                         amount = $amount.val();
 
                     $(this).dialog("destroy");
-                    
+
                     try {
                         if (userRid == 1) {
                             if (isNaN(uid)) throw ('用户ID不正确，用户ID为用户的数字ID');
