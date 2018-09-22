@@ -1,5 +1,5 @@
 <?php
-$sql = "select * from {$this->prename}code where id=?";
+$sql  = "select * from {$this->prename}code where id=?";
 $info = $this->getRow($sql, $args[0]);
 ?>
 <!DOCTYPE html>
@@ -11,30 +11,28 @@ $info = $this->getRow($sql, $args[0]);
 </head>
 <body>
 <article class="module width_full">
-    <input type="hidden" value="<?= $this->user['username'] ?>"/>
+    <input type="hidden" value="<?=$this->user['username']?>"/>
     <header><h3 class="tabs_involved">修改内容</h3></header>
-    <table>
-        <tr>
-            <td>
-                <form action="/index.php/business/Updatecode/<?= $info['id'] ?>" method="post" target="ajax"
+
+                <form action="/index.php/business/Updatecode/<?=$info['id']?>" method="post" target="ajax"
                       onajax="beforeUpdatecode" call="doUpdatecode">
                     <table class="tablesorter table2" cellspacing="0" width="100%">
                         <tr>
                             <td><span class="aq-txt">收款姓名：</span></td>
-                            <td><input type="text" name="title" value="<?= $info['title'] ?>"/></td>
+                            <td><input type="text" name="title" value="<?=$info['title']?>"/></td>
                         </tr>
 
                         <tr>
                             <td><span class="aq-txt">收款账户：</span></td>
-                            <td><input type="text" name="account" value="<?= $info['account'] ?>"/></td>
+                            <td><input type="text" name="account" value="<?=$info['account']?>"/></td>
                         </tr>
 
                         <tr>
                             <td><span class="aq-txt">上传二维码：</span></td>
                             <td>
                                 <div class="qrcode">
-                                    <img src="<?= $info['imgaddr'] ?>">
-                                    <input type="hidden" class="imgaddr" name="imgaddr" value="<?= $info['imgaddr']?>" />
+                                    <img src="<?=$info['imgaddr']?>">
+                                    <input type="hidden" class="imgaddr" name="imgaddr" value="<?=$info['imgaddr']?>" />
                                 </div>
                             </td>
                             <td>
@@ -51,10 +49,7 @@ $info = $this->getRow($sql, $args[0]);
                         </tr>
                     </table>
                 </form>
-            </td>
 
-        </tr>
-    </table>
 </article>
 
 <script>

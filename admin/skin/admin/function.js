@@ -395,51 +395,32 @@ function rechargModal() {
 // 弹出充值页
 function addQrCode() {
     $.get('/index.php/' + 'business/addQrcodeModel', function(html) {
-
-    	console.log(html);
-
+    	// console.log(html);
         $(html).dialog({
             title: '添加二维码',
             width: 380,
             buttons: {
                 "确定": function(event, ui) {
                     var $this = $(this),
-                        $userRid = $(':radio[name=user]:checked', this),
-                        $uid = $('input[name=uid]', this),
-                        $amount = $('input[name=amount]', this),
-                        //min=parseInt($amount.attr('min')),
-                        userRid = parseInt($userRid.val()),
-                        uid = $uid.val(),
-                        amount = $amount.val();
+                        $name = $('input[name=name]', this),
+                        $title = $('input[name=title]', this),
+                        $account = $('input[name=account]', this),
+                        name = $name.val(),
+                        title = $title.val(),
+                        account = $account.val();
 
                     $(this).dialog("destroy");
-
-                    try {
-                        if (userRid == 1) {
-                            if (isNaN(uid)) throw ('用户ID不正确，用户ID为用户的数字ID');
-                            uid = parseInt(uid);
-                        };
-                        if (!amount.match(/^-?\d+(\.\d{0,2})?$/)) throw ('充值金额错误');
-                        amount = parseFloat(amount).toFixed(2);
-                        //if(!isNaN(min) && min>amount) throw('充值金额不能少于'+min);
-                    } catch (err) {
-                        error(err);
-                        return;
-                    }
-
-                    $.ajax('/index.php/' + 'business/rechargeAction/' + uid + '/' + amount + '/' + userRid, {
+                    $.ajax('/index.php/' + 'business/addQrcodeAction/' + name + '/' + title + '/' + account, {
                         dataType: 'json',
                         error: defaultError,
                         success: defaultSuccess
                     });
                 },
-
                 "取消": function(event, ui) {
                     $(this).dialog("destroy");
                 }
             }
         });
-
     });
 }
 

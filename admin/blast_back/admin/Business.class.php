@@ -289,15 +289,15 @@ class Business extends AdminBase {
         $this->display('business/recharge-log-list.php');
     }
 
-    public final function addQrcodeModel() {
-        $this->display("business/add-qrcode-model.php");
-    }
-
     /**
      * 二维码管理
      */
     public final function qr_code() {
         $this->display('business/qr_code.php');
+    }
+
+    public final function addQrcodeModel() {
+        $this->display("business/add-qrcode-model.php");
     }
 
     /**
@@ -311,6 +311,7 @@ class Business extends AdminBase {
      * 修改二维码
      */
     public final function Updatecode($id) {
+
         if (!$_POST['title']) {
             throw new Exception('标题不能为空');
         }
@@ -326,7 +327,9 @@ class Business extends AdminBase {
         $_POST["uptime"] = date("Y-m-d H:i:s");
         unset($_POST["file"]);
 
-        if ($this->updateRows($this->prename . 'code', $_POST, 'id=' . $id)) {
+        $ret = $this->updateRows($this->prename . 'code', $_POST, 'id=' . $id);
+
+        if ($ret) {
             return '修改成功';
         } else {
             throw new Exception('未知出错');
@@ -388,6 +391,22 @@ class Business extends AdminBase {
                     $this->addCoin($log);
                 }
             }
+        }
+    }
+
+    //添加二维码数据
+    public final function addQrcodeAction($name, $title, $account) {
+        $data = array(
+            'name'    => $name,
+            'title'   => $title,
+            'account' => $account,
+            'addtime' => date('Y-m-d H:i:s'),
+        );
+        $ret = $this->insertRow($this->prename . 'code', $data);
+        if ($ret) {
+            return "添加成功!";
+        } else {
+            return "添加失败!";
         }
     }
 

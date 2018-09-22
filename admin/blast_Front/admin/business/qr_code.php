@@ -28,7 +28,7 @@ $data = $this->getRows("select * from {$this->prename}code where id between 1 an
 				<td><?=$var['title']?></td>
 				<td><?=$var['account']?></td>
 				<td><img src="<?=$var['imgaddr']?>"></td>
-				<td><a href="business/codeedit/<?=$var['id']?>">修改</a></td>
+				<td><a href="business/codeedit/<?=$var['id']?>">修改</a>|<a href="business/codedel/<?=$var['id']?>">删除</a></td>
 			</tr>
 		<?php }
 }
