@@ -915,8 +915,8 @@
                         <div>
                             <div class="title-top">
                                 <ul class="notice-tab">
-                                    <li class="tab-sel on" data-val="1"><a onClick="">高频开奖</a></li>
-                                    <li class="tab-sel" data-val="2"><a onClick="">低频开奖</a></li>
+                                    <li class="tab-sel on" data-val="1"><a onClick="">快三开奖</a></li>
+                                    <li class="tab-sel" data-val="2"><a onClick="">时时彩开奖</a></li>
                                     <!-- <li class="tab-more"><a onclick="__openWin('home2','/draw/index.html')">更多</a></li> -->
                                 </ul>
                             </div>
@@ -926,73 +926,14 @@
                                 <div class="draw-contents" id="tab-cont-1" style="">
                                     <ul class="notice-list" id="lastOpenSsc">
                                         <li>
-                                            <div><span class="lot-name"><a
-                                                            onClick="">上海时时乐&nbsp;</a>0627007期</span><span class="term">06-27</span><span
-                                                        class="clear"></span>
+                                            <div>
+                                                <span class="lot-name"><a onClick="">上海时时乐&nbsp;</a>0627007期</span>
+                                                <span class="term">06-27</span>
+                                                <span class="clear"></span>
                                                 <div class="clear"></div>
                                                 <div class="redball">4</div>
                                                 <div class="redball">0</div>
                                                 <div class="redball">1</div>
-                                                <br>
-                                                <div class="fr"><a onClick="">投注</a></div>
-                                                <div class="clear"></div>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div><span class="lot-name"><a
-                                                            onClick="">天津时时彩&nbsp;</a>0627029期</span><span class="term">06-27</span><span
-                                                        class="clear"></span>
-                                                <div class="clear"></div>
-                                                <div class="redball">5</div>
-                                                <div class="redball">4</div>
-                                                <div class="redball">3</div>
-                                                <div class="redball">7</div>
-                                                <div class="redball">7</div>
-                                                <br>
-                                                <div class="fr"><a onClick="">投注</a></div>
-                                                <div class="clear"></div>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div><span class="lot-name"><a
-                                                            onClick="')">重庆时时彩&nbsp;</a>0627047期</span><span
-                                                        class="term">06-27</span><span class="clear"></span>
-                                                <div class="clear"></div>
-                                                <div class="redball">7</div>
-                                                <div class="redball">8</div>
-                                                <div class="redball">8</div>
-                                                <div class="redball">8</div>
-                                                <div class="redball">8</div>
-                                                <br>
-                                                <div class="fr"><a onClick="">投注</a></div>
-                                                <div class="clear"></div>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div><span class="lot-name"><a
-                                                            onClick="">新疆时时彩&nbsp;</a>0627023期</span><span class="term">06-27</span><span
-                                                        class="clear"></span>
-                                                <div class="clear"></div>
-                                                <div class="redball">8</div>
-                                                <div class="redball">0</div>
-                                                <div class="redball">9</div>
-                                                <div class="redball">7</div>
-                                                <div class="redball">3</div>
-                                                <br>
-                                                <div class="fr"><a onClick="">投注</a></div>
-                                                <div class="clear"></div>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div><span class="lot-name"><a
-                                                            onClick="">广东11选5&nbsp;</a>0627029期</span><span
-                                                        class="term">06-27</span><span class="clear"></span>
-                                                <div class="clear"></div>
-                                                <div class="redball">06</div>
-                                                <div class="redball">05</div>
-                                                <div class="redball">04</div>
-                                                <div class="redball">03</div>
-                                                <div class="redball">10</div>
                                                 <br>
                                                 <div class="fr"><a onClick="">投注</a></div>
                                                 <div class="clear"></div>
@@ -1003,29 +944,7 @@
                                 <!-- 低频彩 -->
                                 <div class="draw-contents" id="tab-cont-2" style="display: none;">
                                     <ul class="notice-list" id="lastOpenQt">
-                                        <?php
-                                        /*获取低频彩-最新一期*/
-                                        $sql = 'SELECT t.`shortName`,(SELECT t1.data FROM blast_data t1 WHERE t1.type = t.`id`  ORDER BY t1.number DESC LIMIT 1) data,(SELECT t2.number FROM blast_data t2 WHERE t2.type = t.`id`  ORDER BY t2.number DESC LIMIT 1) number,t.`id` FROM  blast_type t WHERE t.id IN (34,10,9)';
-                                        $dpcl = $this->getRows($sql);
-                                        //print_r($dpcl);
-                                        foreach ($dpcl as $key => $value) {
-                                            if ($key == 0) {
-                                                echo '<li><div><span class="lot-name"><a onclick="">' . $value['shortName'] . '&nbsp;</a>' . $value['number'] . '期</span><span class="term">' . date('m-d', $value['time']) . '</span><span class="clear"></span><div class="clear"></div>';
-                                                $data_number = explode(',', $value['data']);
-                                                foreach ($data_number as $val) {
-                                                    echo '<div class="redball">' . $val . '</div>';
-                                                }
-                                                echo '<br><div class="fr"><a onclick="__openWin(\'lottery_hall\',\'/index.php/index/game/' . $value['id'] . '\');">投注</a></div><div class="clear"></div></div></li>';
-                                            } else {
-                                                echo '<li><div><span class="lot-name"><a onclick="">' . $value['shortName'] . '&nbsp;</a>' . $value['number'] . '期</span><span class="term">' . date('m-d', $value['time']) . '</span><span class="clear"></span><div class="clear"></div>';
-                                                $data_number = explode(',', $value['data']);
-                                                foreach ($data_number as $val) {
-                                                    echo '<div class="redball">' . $val . '</div>';
-                                                }
-                                                echo '<br><div class="fr"><a onclick="__openWin(\'lottery_hall\',\'/index.php/index/game/' . $value['id'] . '\');">投注</a></div><div class="clear"></div></div></li>';
-                                            }
-                                        }
-                                        ?>
+
                                     </ul>
                                 </div>
                             </div>
@@ -1384,7 +1303,7 @@
 
     $('#_index_countdownIssue ul[name=quick_tab_list] li').on('mouseover', function (e) { //各彩种开奖公告
       var s = "";
-      if ($(this).attr("data-gameid") == 63) { //重庆时时彩快速投注
+      if ($(this).attr("data-gameid") == 63) { //澳门快三快速投注
         $("span[name=issue]").text("澳门快三快速投注");
         var arr = [1, 2, 3, 4, 5, 6];
         var numList = arr.sort(randomsort);
@@ -1428,45 +1347,10 @@
         }
         $("[name=num_list]").html('<img class="bett-icon" src="/files/52.png">' + s);
       }
-
-//      else if ($(this).attr("data-gameid") == 12) { //十一选五
-//        $("span[name=issue]").text("快速投注");
-//        //$("a[name=doBet]").attr("onclick","__openWin('user_center','index.php/index/game/7/10/山东11选5');");
-//        var numList = [];
-//        for (var i = 0; i <= 1; i++) {
-//          var num = parseInt(Math.random(10) * 11 + 1);
-//          while ($.inArray(num, numList) != -1) {
-//            num = parseInt(Math.random(10) * 11 + 1);
-//          }
-//          numList.push(num);
-//        }
-//        for (var i = 0; i < numList.length; i++) {
-//          s += "<li class=\"qb-red lot_sn_red\"><input value=\"" + numList[i] + "\" readonly></li>"
-//        }
-//      } else if ($(this).attr("data-gameid") == 1) { //福彩3D 9/3D福彩
-//        $("span[name=issue]").text("快速投注");
-//        //$("a[name=doBet]").attr("onclick","__openWin('user_center','index.php/index/game/9/3D福彩');");
-//        var numList = [parseInt(Math.random(10) * 10), parseInt(Math.random(10) * 10), parseInt(Math.random(10) * 10)];
-//
-//        for (var i = 0; i < numList.length; i++) {
-//          s += "<li class=\"qb-red lot_sn_red\"><input value=\"" + numList[i] + "\" readonly></li>"
-//        }
-//      } else if ($(this).attr("data-gameid") == 2) { //排列三
-//        $("span[name=issue]").text("快速投注");
-//        var numList = [parseInt(Math.random(10) * 10), parseInt(Math.random(10) * 10), parseInt(Math.random(10) * 10)];
-//        for (var i = 0; i < numList.length; i++) {
-//          s += "<li class=\"qb-red lot_sn_red\"><input value=\"" + numList[i] + "\" readonly></li>";
-//        }
-//      }
-
     });
 
-      /* 		 $.get("/index.php/getOpenLotteryNumber",function(data,textStatus){
-       alert(data);
-
-       }); */
-    var arr_gp = ["1", "12", "86", "6"]; //高频彩种ID
-    var arr_dp = ["34", "9", "10"]; //低频彩种ID
+    var arr_gp = ["63"]; //高频彩种ID
+    var arr_dp = ["1", "86"]; //PK拾彩种ID
     var kj_html = "";
 
     $.ajax({
@@ -1474,8 +1358,6 @@
       url: "/index.php/getOpenLotteryNumber",
       //dataType: "json",
       success: function (msg) {
-
-
         var jsonarray = $.parseJSON(msg);
 
         $.each(jsonarray, function (i, n) {
@@ -1493,6 +1375,22 @@
           }
         });
         $("#lastOpenSsc").html(kj_html);
+        kj_html = '';
+        $.each(jsonarray, function (i, n) {
+          //alert(n.title);
+          if ($.inArray(n.type, arr_dp) > -1) {
+            //<li><div><span class="lot-name"><a onclick="">上海时时乐&nbsp;</a>0627007期</span><span class="term">06-27</span><span class="clear"></span><div class="clear"></div><div class="redball">4</div><div class="redball">0</div><div class="redball">1</div><br><div class="fr"><a onclick="">投注</a></div><div class="clear"></div></div></li>
+            kj_html += "<li><div><span class=\"lot-name\"><a onclick=\"__openWin('lottery_hall','/index.php/index/game/" + n.type + "');\">" + n.title + "&nbsp;</a>" + n.number + "期</span><span class=\"term\"></span><span class=\"clear\"></span><div class=\"clear\"></div>"
+            var strs = new Array(); //定义一数组
+            strs = n.data.split(","); //字符分割
+            for (var y = 0; y < strs.length; y++) {
+              kj_html += "<div class=\"redball\">" + strs[y] + "</div>"
+              //"<div class=\"redball\">4</div><div class=\"redball\">0</div><div class="redball">1</div><br><div class="fr"><a onclick="">投注</a></div><div class="clear"></div></div></li>"
+            }
+            kj_html += "<br><div class=\"fr\"><span class=\"lot-name\" style=\"margin:0 8px 0 0; float:left;\">" + n.time + "</span><a onclick=\"__openWin('lottery_hall','/index.php/index/game/" + n.type + "');\">投注</a></div><div class=\"clear\"></div></div></li>";
+          }
+        });
+        $("#lastOpenQt").html(kj_html);
       }
     });
 
