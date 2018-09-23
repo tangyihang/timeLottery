@@ -144,6 +144,7 @@ $typeid = intval($_REQUEST['typeid']);
 <div class="trend-tips" hidden="" style="display: none;">
     <div class="trtip-tit"><i class="tr-icon"></i>选择彩种</div>
     <ul>
+        <li class="game_li_63 <?php if($typeid == 63){echo 'trend-on';}?>" data-gid="63" data-enable="0">澳门快三</li>
         <li class="game_li_86 <?php if($typeid == 86){echo 'trend-on';}?>" data-gid="86" data-enable="0">三分时时彩</li>
         <li class="game_li_1 <?php if($typeid == 1){echo 'trend-on';}?>" data-gid="1" data-enable="0">重庆时时彩</li>
         <!--<li class="game_li_12 <?php if($typeid == 12){echo 'trend-on';}?>" data-gid="12" data-enable="0">新疆时时彩</li>
@@ -276,6 +277,7 @@ $typeid = intval($_REQUEST['typeid']);
         gamePosArr[60] = {0:'0|1|2|3|4|5|6|7|8|9',1:'万',2:'千',3:'百',4:'十',5:'个'};
         gamePosArr[12] = {0:'0|1|2|3|4|5|6|7|8|9',1:'万',2:'千',3:'百',4:'十',5:'个'};
 
+        gamePosArr[63] = {0:'1|2|3|4|5|6',1:'百',2:'十',3:'个'};
         gamePosArr[87] = {0:'0|1|2|3|4|5|6|7|8|9',1:'百',2:'十',3:'个'};
         gamePosArr[83] = {0:'0|1|2|3|4|5|6|7|8|9',1:'百',2:'十',3:'个'};
         gamePosArr[79] = {0:'0|1|2|3|4|5|6|7|8|9',1:'百',2:'十',3:'个'};
@@ -321,7 +323,7 @@ $typeid = intval($_REQUEST['typeid']);
 <script>
     gameOpArr = {1:'fcsd',2:'tcps',3:'ssl',4:'tjssc',5:'cqssc',6:'jxssc',7:'xjssc',9:'pk10'
         ,10:'jsks',11:'ahks',12:'elevensd',13:'elevensh',14:'elevenjx',15:'elevengd'
-        ,16:'jlks',17:'gxks',51:'sfc',52:'twpk10'};
+        ,16:'jlks',17:'gxks',51:'sfc',52:'twpk10',63:'amk3'};
     $('button.trend-add').click(function() {
         if ($('li.game_li_'+trendGid).data('enable') == 1) {
             msgAlert('该彩种正在维护！');
