@@ -35,6 +35,38 @@ exports.cp = [
 	// 		} //
 	// 	} //
 	// },
+  { //
+    title: '澳门快三', //
+    source: '杏彩', //
+    name: 'amk3', //
+    enable: true, //
+    timer: 'amk3', //
+    option: { //
+      host: myhost, //
+      timeout: 50000, //
+      path: '/index.php/xingcai/xcamk3', //
+      headers: { //
+        "User-Agent": "Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 6.0) " //
+      } //
+    }, //
+    parse: function(str) { //
+      try { //
+        str = str.substr(0, 200); //
+        var reg = /<row expect="([\d\-]+?)" opencode="([\d\,]+?)" opentime="([\d\:\- ]+?)"/; //
+        var m; //杏
+        if(m = str.match(reg)) { //彩
+          return { //系
+            type: 85, //统
+            time: m[3], //彩
+            number: m[1], //
+            data: m[2] //
+          }; //
+        } //
+      } catch(err) { //
+        throw('澳门快三解析数据不正确'); //
+      } //
+    } //
+  },
 	{ //
 		title: '3分彩时时彩', //
 		source: '杏彩', //

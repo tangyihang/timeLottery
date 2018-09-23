@@ -35,7 +35,7 @@
                                         <div class="lott-top">
                                             <div class="lott-name">
                                                 <a class="lott-imgbox" onclick="__location('common/hall?gameId=63');">
-                                                    <img src="/gcdt/17.png" class="mCS_img_loaded" />
+                                                    <img src="/gcdt/63.png" class="mCS_img_loaded" />
                                                 </a>
                                                 <div class="lott-name-righ">
                                                     <h3>澳门快三</h3>
