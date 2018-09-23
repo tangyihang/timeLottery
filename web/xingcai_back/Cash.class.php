@@ -520,7 +520,7 @@ class Cash extends WebLoginBase {
             // $data['back_notify_url'] = 'https://' . $_SERVER['HTTP_HOST'] . '/index.php/cash/notifyxm'; #通知//
             // $data['product_name']    = '11111'; #备注信息   不参与签名
             // // $data['payurl']='http://wgtj.gaotongpay.com/PayBank.aspx';http_build_query($data);
-            $this->display('cash/xinma/qrcodePayAction.php', 0, $data);
+            $this->display('cash/xinma/qrcodePayAction.php', 0, $para);
             //$this->display('cash/xinma/qrcodePayAction.php',0,$data);
         } else {
             throw new Exception('充值订单生产请求出错');

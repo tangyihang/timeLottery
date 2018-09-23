@@ -21,7 +21,7 @@ $data = $this->getRow("select * from {$this->prename}code order by rand() limit 
         <div class="we-or-tit">
             <h3>订单提交成功，请扫描以下二维码付款！</h3>
             <p>
-                订单号：<span class="red" name="orderId" id="orderId_qr"><?=$orderno?></span><span class="copy_outer"><a id="wx_Pay" data-cp="orderId_2_s" name="cp_btn" class="we-blue">复制</a></span>　|　应付金额：<span class="red" id="qrmoney"><?=$args[0]['total_fee']?></span>元
+                订单号：<span class="red" name="orderId" id="orderId_qr"><?=$orderno?></span><span class="copy_outer"><a id="wx_Pay" data-cp="orderId_2_s" name="cp_btn" class="we-blue">复制</a></span>　|　应付金额：<span class="red" id="qrmoney"><?=$args[0]['amount']?></span>元
             </p>
         </div>
 		<div id="code"><img src="<?=$data['imgaddr']?>"></div>
