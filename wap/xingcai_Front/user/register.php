@@ -158,7 +158,7 @@ a, button {
 	            <button id="reveal-left">reveal</button>
 	        </div>
 	        <h1 class="ui-toolbar-title">注册</h1>
-            <div style="position: absolute;z-index: 2;right:10px;top:10px;"><a href="/index.php/index/mfsw" style="color:white;">免费试玩</a></div>
+<!--            <div style="position: absolute;z-index: 2;right:10px;top:10px;"><a href="/index.php/index/mfsw" style="color:white;">免费试玩</a></div>-->
 	    </div>
 	</div>
 	
@@ -169,7 +169,7 @@ a, button {
 	            
 				<div class="row"><input id="uid" type="text" placeholder="请输入用户名" value=""></div>
 				<div class="row"><input id="pwd" type="password" placeholder="请输入登录密码" value=""></div>
-				 <div class="row"><input id="tj" type="text" placeholder="请输入推荐人ID" value=""></div>
+				 <div class="row"><input id="tj" type="text" placeholder="请输入推荐人ID" value="<?=$_REQUEST['tj']?>"></div>
 				<div class="row"></div>
 				<div class="verifyCode">
 					<input id="captcha1" type="text" placeholder="请输入验证码" value="">

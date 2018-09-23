@@ -56,7 +56,7 @@
                     <span class="text-left">我的推荐地址：</span>
                 </li>
             </ul>
-            <b id="spread_url" style="color:red;font-size: 80%;padding-left: 15px;"><?php echo $_SERVER['REQUEST_SCHEME'].'://'.$_SERVER['SERVER_NAME'];?>/user/regs?tj=<?=$this->user['uid']?></b><br>
+            <b id="spread_url" style="color:red;font-size: 80%;padding-left: 15px;"><?php echo 'http://'.$_SERVER['SERVER_NAME'];?>/user/regs?tj=<?=$this->user['uid']?></b><br>
             <b style="font-size: 100%;padding-left: 15px;line-height: 25px;">请复制完整地址给您的好友或者让您的好友在注册时填写您的推荐ID</b><br>
         </div>
         <div class="cash-text">
