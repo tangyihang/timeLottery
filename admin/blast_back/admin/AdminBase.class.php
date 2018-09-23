@@ -91,7 +91,7 @@ class AdminBase extends Object{
 	
 	public function getTypes(){
 		if($this->types) return $this->types;
-		$sql="select * from {$this->prename}type where isDelete=0";
+		$sql="select * from {$this->prename}type where isDelete=0 order by sort";
 		return $this->types=$this->getObject($sql, 'id', null, $this->expire);
 	}
 	
