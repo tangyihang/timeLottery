@@ -93,8 +93,11 @@ class Index extends WebLoginBase
         }else{
             $str_ids = 1;
         }
-
-        $sql="select t1.*,t2.title,t2.onGetNoed,t2.type as groups from  (select id,data,number,time,type from blast_data where id in ({$str_ids}))t1 , blast_type t2 where t1.type = t2.id and t2.enable=1 and t2.isDelete=0";
+        $sql="select t1.*,t2.title,t2.onGetNoed,t2.type as groups from (
+                select id,data,number,time,type from blast_data where id in ({$str_ids})
+                )t1 , blast_type t2 
+                where t1.type = t2.id and t2.enable=1 and t2.isDelete=0  and t2.id in (63,86,85,80,1,20,83,80)
+                order by t1.time desc";
         $d['status']=100;
         if($data = $this->getRows($sql)){
             $d['data']=$data;
