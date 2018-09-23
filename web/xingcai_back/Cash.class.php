@@ -67,6 +67,7 @@ class Cash extends WebLoginBase {
         }
 
         if ($id = $this->getValue("select bankId from {$this->prename}sysadmin_bank where id=?", $para['mBankId'])) {
+
             if ($id == 2 || $id == 3) {
                 if ($para['amount'] < $this->settings['rechargeMin1'] || $para['amount'] > $this->settings['rechargeMax1']) {
                     throw new Exception('支付宝/财付通充值最低' . $this->settings['rechargeMin1'] . '元，最高' . $this->settings['rechargeMax1'] . '元');
@@ -465,11 +466,15 @@ class Cash extends WebLoginBase {
         }
 
     }
+
     /* 进入多得宝充值 */
     public final function xmRecharge() {
+
         if (!$_POST) {
             throw new Exception('参数出错');
         }
+
+        // var_dump($_POST);exit;
 
         $uid             = intval($_POST['uid']);
         $para['mBankId'] = intval($_POST['mBankId']);
@@ -504,20 +509,19 @@ class Cash extends WebLoginBase {
         $para['info']       = '用户充值';
         $para['bankId']     = $id;
         if ($this->insertRow($this->prename . 'member_recharge', $para)) {
+
             //$this->display('cash/recharge-copy.php',0,$para);
-            $data                    = array();
-            $data['key']             = $this->settings['xinma_key'];
-            $data['branch_id']       = $this->settings['xinma_id']; #商户号
-            $data['pay_type']        = $banktype; #选择微信
-            $data['total_fee']       = $para['amount']; #金额 单位元
-            $data['out_trade_no']    = $para['rechargeId']; #订单号
-            $data['back_notify_url'] = 'https://' . $_SERVER['HTTP_HOST'] . '/index.php/cash/notifyxm'; #通知//
-            $data['product_name']    = '11111'; #备注信息   不参与签名
-            // $data['payurl']='http://wgtj.gaotongpay.com/PayBank.aspx';http_build_query($data)
-            $this->display('cash/xinma/qrcodePayAction.php', 0, $data);
-
+            // $data                    = array();
+            // $data['key']             = $this->settings['xinma_key'];
+            // $data['branch_id']       = $this->settings['xinma_id']; #商户号
+            // $data['pay_type']        = $banktype; #选择微信
+            // $data['total_fee']       = $para['amount']; #金额 单位元
+            // $data['out_trade_no']    = $para['rechargeId']; #订单号
+            // $data['back_notify_url'] = 'https://' . $_SERVER['HTTP_HOST'] . '/index.php/cash/notifyxm'; #通知//
+            // $data['product_name']    = '11111'; #备注信息   不参与签名
+            // // $data['payurl']='http://wgtj.gaotongpay.com/PayBank.aspx';http_build_query($data);
+            $this->display('cash/xinma/qrcodePayAction.php', 0, $para);
             //$this->display('cash/xinma/qrcodePayAction.php',0,$data);
-
         } else {
             throw new Exception('充值订单生产请求出错');
         }

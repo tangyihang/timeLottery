@@ -9,5 +9,8 @@ kj2/.svn/*
 web/qrcode.png
 .idea/workspace.xml
 admin/upload/uploads/files/*/*.jpg
+admin/_xingcai_buffer/*
 web/upload/uploads/files/*/*.jpg
+web/qrcode.png
+web/_xingcai_buffer/*
 web/qrcode.png
