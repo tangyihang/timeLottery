@@ -391,7 +391,7 @@ requirejs(["jquery"], function ($) {
             var time = data.items[j].timeout; //关盘剩余秒数
             var openTime = data.items[j].openTime; //上期开奖剩余秒数
             var openNum = data.items[j].lastIssueNum; //开奖号码
-            console.log(lottery);
+
             $("#lot" + id).html(lottery_innerHtml(id, issue, time, openNum, link, name));
             $("#lot" + id).data("issue", issue);
             $("#lot" + id).data("time", time);

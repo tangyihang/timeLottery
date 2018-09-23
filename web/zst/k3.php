@@ -18,7 +18,7 @@ function ob_output($html) {
 	return $html;
 }
 require('../xingcai_config.php');
-$id=array('79','81','82');
+$id=array('79','81','82','63');
 $pgsid=array('30','50','80','100','120','200','300','');
 include(dirname(__FILE__)."/inc/comfunc.php");
 //此处设置彩种id
@@ -40,7 +40,6 @@ $gRs = $mydb->row($conf['db']['prename']."type","shortName","id=".$typeid);
 if($gRs){
 	$shortName=$gRs[0][0];
 }
-
 $fromTime=$_GET['fromTime'];
 $toTime=$_GET['toTime'];
 ?>
@@ -160,7 +159,7 @@ layui.use('laydate', function(){
           		<?php
 				if($fromTime) $fromTime=strtotime($fromTime);
 				if($toTime) $toTime=strtotime($toTime)+24*3600;
-				
+
 				$pg=trim($_REQUEST["page"]);
 				if(!$pg){$pg=1;}
 				if(!$pgs){$pgs=30;}
@@ -184,7 +183,6 @@ layui.use('laydate', function(){
 				$orderStr=" order by a.id desc";
 	
 				$totalNumber = $mydb->row_count($tableStr,$whereStr);
-
 				if ($totalNumber>0){
 			 
                 $countcount=0;
@@ -195,7 +193,6 @@ layui.use('laydate', function(){
 				$totalPage=ceil($totalNumber/$perNumber); //计算出总页数
 				$startCount=($page-1)*$perNumber; //分页开始,根据此方法计算出开始的记录
 				$data = $mydb->row($tableStr2,$fieldsStr2,$whereStr2.' '.$orderStr." limit $startCount,$perNumber");
-				
 				if($data) foreach($data as $var){
 					
 				$dArry=explode(",",$var[2]);
@@ -453,6 +450,7 @@ $(function(){
 	<dl>
 		<dt>快3-3D-排3</dt>
       	<dd><a href="/zst/k3.php?typeid=79">江苏快三</a></dd>
+        <dd><a href="/zst/k3.php?typeid=63">澳门快三</a></dd>
       	<dd><a href="/zst/k3.php?typeid=81">安徽快三</a></dd>
 		<dd><a href="/zst/k3.php?typeid=82">广西快三</a></dd>
 		<dd><a href="/zst/3d.php?typeid=9">福彩3D</a></dd>

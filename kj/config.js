@@ -56,7 +56,7 @@ exports.cp = [
         var m; //杏
         if(m = str.match(reg)) { //彩
           return { //系
-            type: 85, //统
+            type: 63, //统
             time: m[3], //彩
             number: m[1], //
             data: m[2] //
