@@ -1,6 +1,6 @@
 ﻿// 彩票开奖配置
 var cheerio = require('cheerio');
-var myhost = 'www.98.com';
+var myhost = 'www.mptype.com';
 exports.cp = [
 	// { //
 	// 	title: '360彩票重庆时时彩', //
