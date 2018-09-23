@@ -835,34 +835,37 @@ $(function(){
 })
 </script>
 <div class="lhfx_lotterylist">
-  	<dl>
-		<dt>时时彩</dt>
+    <dl>
+        <dt>快3</dt>
+        <dd><a href="/zst/k3.php?typeid=63">澳门快三</a></dd>
+        <!--<dd><a href="/zst/k3.php?typeid=79">江苏快三</a></dd>
+        <dd><a href="/zst/k3.php?typeid=81">安徽快三</a></dd>
+        <dd><a href="/zst/k3.php?typeid=82">广西快三</a></dd>
+        <dd><a href="/zst/3d.php?typeid=9">福彩3D</a></dd>
+        <dd><a href="/zst/3d.php?typeid=10">排列三</a></dd>-->
+    </dl>
+    <dl>
+        <dt>时时彩</dt>
+        <dd><a href="/zst/index.php?typeid=86">三分时时彩</a></dd>
         <dd><a href="/zst/index.php?typeid=1 ">重庆时时彩</a></dd>
-        <dd><a href="/zst/index.php?typeid=12">新疆时时彩</a></dd>
+        <!--<dd><a href="/zst/index.php?typeid=12">新疆时时彩</a></dd>
         <dd><a href="/zst/index.php?typeid=60">天津时时彩</a></dd>
         <dd><a href="/zst/index.php?typeid=87">上海时时彩</a></dd>
-        <dd><a href="/zst/index.php?typeid=86">三分时时彩</a></dd>
-  	</dl>
-	<dl>
-		<dt>11选5</dt>
+        <dd><a href="/zst/index.php?typeid=14">河内5分彩</a></dd>
+        <dd><a href="/zst/index.php?typeid=5">河内1分彩</a></dd>-->
+    </dl>
+    <!--<dl>
+        <dt>11选5</dt>
         <dd><a href="/zst/11x5.php?typeid=7">山东11选5</a></dd>
         <dd><a href="/zst/11x5.php?typeid=16">江西11选5</a></dd>
         <dd><a href="/zst/11x5.php?typeid=6">广东11选5</a></dd>
         <dd><a href="/zst/11x5.php?typeid=15">上海11选5</a></dd>
-	</dl>
-	<dl>
-		<dt>快3-3D-排3</dt>
-        <dd><a href="/zst/k3.php?typeid=79">江苏快三</a></dd>
-        <dd><a href="/zst/k3.php?typeid=81">安徽快三</a></dd>
-        <dd><a href="/zst/k3.php?typeid=82">广西快三</a></dd>
-        <dd><a href="/zst/3d.php?typeid=9">福彩3D</a></dd>
-        <dd><a href="/zst/3d.php?typeid=10">排列三</a></dd>
-	</dl>
-	<dl class="nopb">
-		<dt>快乐十分</dt>
-		<dd><a href="/zst/klsf.php?typeid=71">澳门幸运农场</a></dd>
-		<dd><a href="/zst/klsf.php?typeid=72">台湾幸运农场</a></dd>
-	</dl>
+    </dl>-->
+    <dl>
+        <DT>PC蛋蛋</DT>
+        <dd><a href="/zst/index.php?typeid=83">北京28</a></dd>
+        <dd><a href="/zst/index.php?typeid=80">幸运28</a></dd>
+    </dl>
     <dl>
         <dt>PK10</dt>
         <dd><a href="/zst/pk10.php?typeid=20">北京PK10</a></dd>
