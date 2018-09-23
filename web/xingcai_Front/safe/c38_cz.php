@@ -1382,13 +1382,12 @@ function ddbcharge(banktype) {
 	input2.attr('value', money);
 	var input3 = $("<input type='hidden' name='uid' />");
 	input3.attr('value',<?php echo $this->user['uid']; ?>);
-form.append(input1);
-form.append(input2);
-form.append(input3);
-form.appendTo("body");
-form.css('display', 'none');
-form.submit();
-
+	form.append(input1);
+	form.append(input2);
+	form.append(input3);
+	form.appendTo("body");
+	form.css('display', 'none');
+	form.submit();
 }
 
 function xmcharge(banktype) {
