@@ -73,6 +73,13 @@
                 <ul>
                 	
                 	<li class="game_category_1">
+                        <a href="/index.php/index/game/63">
+                            <div class="hot-icon"><img class="" src="assets/statics/images/icon/63.png"></div>
+                            <p class="hot-text">澳门快三</p>
+                            <p class="last-time" data-gid="86" data-time=""><span class="time_show_2_"></span></p>
+                        </a>
+                    </li>
+                    <li class="game_category_1">
                         <a href="/index.php/index/game/86">
                             <div class="hot-icon"><img class="" src="assets/statics/images/icon/51.png"></div>
                             <p class="hot-text">三分时时彩</p>
@@ -252,6 +259,22 @@
                 <ul>
                 	
                 	<li class="game_category_1">
+                        <a href="/index.php/index/game/63">
+                            <div class="hot-icon"><img class="" src="assets/statics/images/icon/63.png"></div>
+                            <div class="erect-right erect-right-63" data-gid="63" data-time="">
+                                <div><span class="fr red last_period_63"></span>
+                                    <p class="hot-text f12">澳门快三</p>
+                                </div>
+                                <p class="last-time last_open_63"></p>
+                                <p>
+                                	<span class="fr"><span class="time_show_1_63" data-gid="63"></span></span>
+                                	<span style="font-size: 12px;">距第<span class="period_show_63"></span>期 <span class="period_msg_63"></span>还有</span>
+                                </p>
+                            </div>
+                        </a>
+                    </li>
+
+                    <li class="game_category_1">
                         <a href="/index.php/index/game/86">
                             <div class="hot-icon"><img class="" src="assets/statics/images/icon/51.png"></div>
                             <div class="erect-right erect-right-86" data-gid="86" data-time="">
@@ -260,8 +283,8 @@
                                 </div>
                                 <p class="last-time last_open_86"></p>
                                 <p>
-                                	<span class="fr"><span class="time_show_1_86" data-gid="86"></span></span>
-                                	<span style="font-size: 12px;">距第<span class="period_show_86"></span>期 <span class="period_msg_86"></span>还有</span>
+                                    <span class="fr"><span class="time_show_1_86" data-gid="86"></span></span>
+                                    <span style="font-size: 12px;">距第<span class="period_show_86"></span>期 <span class="period_msg_86"></span>还有</span>
                                 </p>
                             </div>
                         </a>
