@@ -290,6 +290,13 @@
                             <span class="lot-text">热门彩种</span></a>
                     </div>
                     <ul>
+                        <li class="nav-li lot10" data-sort="1">
+                            <a id="hot_main-item-10" class="nav-btn cur-btn" data-argsid="10" title="澳门快三"
+                               onclick="__openWin('lottery_hall','/index.php/index/game/63/39/澳门快三')">
+                                <i>
+                                </i>
+                                <span class="lot-text">澳门快三</span></a>
+                        </li>
                         <li class="nav-li lot51" data-sort="1">
                             <a id="hot_main-item-51" class="nav-btn cur-btn" data-argsid="51" title="三分时时彩"
                                onclick="__openWin('lottery_hall','/index.php/index/game/86/2/12/三分时时彩')">
@@ -342,6 +349,24 @@
                             <span class="lot-text">高频彩</span></a>
                     </div>
                     <ul class="gao-ul">
+                        <li id="kuaisan_ul">
+                            <div id="kuaisan_" class="nav-li lot10">
+                                <span class="icon-attr-down"></span>
+                                <a class="nav-btn">
+                                    <i>
+                                    </i>
+                                    <span class="lot-text">快三</span></a>
+                            </div>
+                            <ul hidden="">
+                                <li class="nav-li lot10" data-sort="100">
+                                    <a id="main-item-10" class="nav-btn cur-btn" data-argsid="10" title="澳门快三"
+                                       onclick="__openWin('lottery_hall','/index.php/index/game/63/39/澳门快三')">
+                                        <i>
+                                        </i>
+                                        <span class="lot-text">澳门快三</span></a>
+                                </li>
+                            </ul>
+                        </li>
                         <li id="shishicai_ul">
                             <div id="shishicai_" class="nav-li lot7">
                                 <span class="icon-attr-down"></span>
@@ -399,35 +424,7 @@
                                 </li>-->
                             </ul>
                         </li>
-                        <!--<li id="kuaisan_ul">
-                          <div id="kuaisan_" class="nav-li lot10">
-                            <span class="icon-attr-down"></span>
-                            <a class="nav-btn">
-                              <i>
-                              </i>
-                              <span class="lot-text">快三</span></a>
-                          </div>
-                          <ul hidden="">
-                            <li class="nav-li lot10" data-sort="100">
-                              <a id="main-item-10" class="nav-btn cur-btn" data-argsid="10" title="江苏快三" onclick="__openWin('lottery_hall','/index.php/index/game/79/39/江苏快三')">
-                                <i>
-                                </i>
-                                <span class="lot-text">江苏快三</span></a>
-                            </li>
-                            <li class="nav-li lot17" data-sort="100">
-                              <a id="main-item-17" class="nav-btn cur-btn" data-argsid="17" title="广西快三" onclick="__openWin('lottery_hall','/index.php/index/game/82/39/广西快三')">
-                                <i>
-                                </i>
-                                <span class="lot-text">广西快三</span></a>
-                            </li>
-                            <li class="nav-li lot11" data-sort="100">
-                              <a id="main-item-11" class="nav-btn cur-btn" data-argsid="11" title="安徽快三" onclick="__openWin('lottery_hall','/index.php/index/game/81/39/安徽快三')">
-                                <i>
-                                </i>
-                                <span class="lot-text">安徽快三</span></a>
-                            </li>
-                          </ul>
-                        </li>-->
+
                         <!--<li id="shiyixuanwu_ul">
                           <div id="shiyixuanwu_" class="nav-li lot12">
                             <span class="icon-attr-down"></span>
@@ -589,8 +586,6 @@
                             </div>
                             <input class="lottery_anniu" type="button" name="login" onclick="userLogin_t()" value="登录">
                             <input class="lottery_anniu" type="button" onclick="opRegDIV()" value="注册">
-                            <input class="lottery_anniu" type="button" onclick="opFreePalyDIV()" value="免费试玩">
-
                         </div>
                         <div class="download">
                             <a class="icon-appleinc"
@@ -619,11 +614,9 @@
     </div>
 </div>
 
-
 <script src="/files/jquery.mCustomScrollbar.concat.min.js"></script><!-- 滚动条插件 -->
 <script src="/files/tool_scroll_lobby.js"></script><!-- 自适应浏览器尺寸，滚动条插件 -->
-<script>    function parentSay() {
-        /*刷新资金*/
+<script>
     //登陆
     function userLogin_t() {
       var username = $("#username").val();
@@ -648,6 +641,7 @@
       $.ajax({
           type: 'POST', url: '/index.php/user/ajaxlogined', // timeout : 10000,
           data: user, dataType: "json", success: function (data) {
+
             if (data.code > 0) {
               alert(data.msg);
             }

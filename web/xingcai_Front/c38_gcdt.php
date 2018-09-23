@@ -30,6 +30,68 @@
 					<div id="mCSB_1_container" class="mCSB_container" style="position:relative; top:0; left:0;" dir="ltr">
 						<div id="ele-live-wrap" class="ele-live-wrap" >
 							<div class="wrap-lot clearfix">
+                                <div class="showhide-38 ele-live-layout" id="lot63" data-id="63" data-issue="20170727333" data-time="172" data-opentime="undefined" data-opennum="null" data-lasttimer="1501148138500">
+                                    <div class="lot-wrap">
+                                        <div class="lott-top">
+                                            <div class="lott-name">
+                                                <a class="lott-imgbox" onclick="__location('common/hall?gameId=63');">
+                                                    <img src="/gcdt/17.png" class="mCS_img_loaded" />
+                                                </a>
+                                                <div class="lott-name-righ">
+                                                    <h3>澳门快三</h3>
+                                                    <p>
+                                                        第 20170727333 期
+                                                    </p>
+                                                    <div class="gct_time">
+                                                        <div class="gct_time_now">
+                                                            <div class="gct_time_now_l">
+                                                                <span class="leaveh-1">00</span>
+                                                                <span class="interval"> ：</span>
+                                                                <span class="leavem-1">00</span>
+                                                                <span class="interval"> ：</span>
+                                                                <span class="leaves-1">39</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="lot-fore">
+                                                <span class="fl">上期开奖</span>
+                                                <div class="show-gd1">
+                                                    <ul class="big_ball">
+                                                        <li flag="normal">
+                                                            2
+                                                        </li>
+                                                        <li flag="normal">
+                                                            0
+                                                        </li>
+                                                        <li flag="normal">
+                                                            3
+                                                        </li>
+                                                        <li flag="normal">
+                                                            9
+                                                        </li>
+                                                        <li flag="normal">
+                                                            9
+                                                        </li>
+                                                        <span class="tabulousclear"></span>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="lott-bot">
+                                            <a href="/common/draw?gameOpen=63" target="_blank">
+                                                开奖结果
+                                            </a>
+                                            <a href="/common/trend?gameOpen=63" target="_blank">
+                                                开奖走势
+                                            </a>
+                                            <a class="lot-btn" onclick="__location('common/hall?gameId=63')">
+                                                立即投注
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
 								<div class="showhide-38 ele-live-layout" id="lot86" data-id="51" data-issue="20170727333" data-time="172" data-opentime="undefined" data-opennum="null" data-lasttimer="1501148138500">
 									<div class="lot-wrap">
 										<div class="lott-top">
