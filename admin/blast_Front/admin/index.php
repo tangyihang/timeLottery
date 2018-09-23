@@ -22,10 +22,9 @@
     <script src="/skin/js/jqueryui/i18n/jquery.ui.datepicker-zh-CN.js"></script>
     <script src="/skin/js/jquery.messager.js"></script>
     <script src="/skin/js/jquery.cookie.js"></script>
-    <link type="text/css" rel="stylesheet" href="/skin/js/jqueryui/jquery-ui-1.8.23.custom.css"/>
     <script type="text/javascript" src="/skin/js/jqueryui/jquery-ui-1.8.23.custom.min.js"></script>
     <link rel="stylesheet" href="/skin/editor/themes/default/default.css"/>
-    <script charset="utf-8" src="/skin/editor/kindeditor-min.js"></script>
+    <script charset="utf-8" src="/skin/editor/kindeditor.js"></script>
     <script charset="utf-8" src="/skin/editor/lang/zh_CN.js"></script>
     <script src="http://fex.baidu.com/webuploader/js/webuploader.js"></script>
     <script>
