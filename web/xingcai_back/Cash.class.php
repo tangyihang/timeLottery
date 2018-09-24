@@ -489,10 +489,10 @@ class Cash extends WebLoginBase {
         }
 
         $id = $para['mBankId'];
-        if ($id == 0) {
+        if ($id == 20) {
             $banktype = '20';
-        } else if ($id == 1) {
-            $banktype = '2';
+        } else if ($id == 21) {
+            $banktype = '21';
         } else if ($id == 3) {
             $banktype = '50';
         } else {
@@ -514,9 +514,10 @@ class Cash extends WebLoginBase {
             // $data                    = array();
             // $data['key']             = $this->settings['xinma_key'];
             // $data['branch_id']       = $this->settings['xinma_id']; #商户号
-            $data['pay_type'] = $banktype; #选择微信
-            $data['bankId']   = $id;
-            $data['amount']   = $amount;
+            $data['pay_type']   = $banktype; #选择微信
+            $data['bankId']     = $id;
+            $data['amount']     = $para['amount'];
+            $data['rechargeId'] = $para['rechargeId'];
             // $data['total_fee']       = $para['amount']; #金额 单位元
             // $data['out_trade_no']    = $para['rechargeId']; #订单号
             // $data['back_notify_url'] = 'https://' . $_SERVER['HTTP_HOST'] . '/index.php/cash/notifyxm'; #通知//

@@ -8,8 +8,18 @@
 require_once "utils.php";
 require_once 'phpqrcode.php';
 
-$data = $this->getRow("select * from {$this->prename}code order by rand() limit 1");
-// var_dump($data);exit;
+$data = array();
+if ($args[0]['bankId'] == '21') {
+    //微信充值
+    $data = $this->getRow("select * from {$this->prename}code where type=0 order by rand() limit 1");
+} else if ($args[0]['bankId'] == '20') {
+    //支付宝
+    $data = $this->getRow("select * from {$this->prename}code where type=1 order by rand() limit 1");
+} else {
+    exit('充值异常！');
+}
+
+// var_dump($args[0]);
 ?>
 <html>
 <body>
@@ -38,7 +48,7 @@ $data = $this->getRow("select * from {$this->prename}code order by rand() limit 
             操作步骤：
         </div>
         <div class="tips f12">
-            <p>※ 1.手机登录<?php if ($args[0]['pay_type'] == 10) {echo '微信';} else if ($args[0]['pay_type'] == 20) {echo "支付宝";} else if ($args[0]['pay_type'] == 50) {echo "QQ";}?>.</p>
+            <p>※ 1.手机登录<?php if ($args[0]['pay_type'] == 21) {echo '微信手动充值';} else if ($args[0]['pay_type'] == 20) {echo "支付宝";} else if ($args[0]['pay_type'] == 50) {echo "QQ";}?>.</p>
             <p>※ 2.打开<?php if ($args[0]['pay_type'] == 10) {echo "微信";} else if ($args[0]['pay_type'] == 20) {echo "支付宝";} else if ($args[0]['pay_type'] == 50) {echo "QQ";}?>扫一扫页面</p>
             <p>※ 3.扫描电脑屏幕二维码.即可到账</p>
             <p>※ 存款遇到问题？立即联络在线客服为您服务。</p>
