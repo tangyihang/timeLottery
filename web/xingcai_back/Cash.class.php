@@ -489,10 +489,10 @@ class Cash extends WebLoginBase {
         }
 
         $id = $para['mBankId'];
-        if ($id == 1) {
+        if ($id == 0) {
             $banktype = '20';
-        } else if ($id == 2) {
-            $banktype = '10';
+        } else if ($id == 1) {
+            $banktype = '2';
         } else if ($id == 3) {
             $banktype = '50';
         } else {
@@ -514,13 +514,15 @@ class Cash extends WebLoginBase {
             // $data                    = array();
             // $data['key']             = $this->settings['xinma_key'];
             // $data['branch_id']       = $this->settings['xinma_id']; #商户号
-            // $data['pay_type']        = $banktype; #选择微信
+            $data['pay_type'] = $banktype; #选择微信
+            $data['bankId']   = $id;
+            $data['amount']   = $amount;
             // $data['total_fee']       = $para['amount']; #金额 单位元
             // $data['out_trade_no']    = $para['rechargeId']; #订单号
             // $data['back_notify_url'] = 'https://' . $_SERVER['HTTP_HOST'] . '/index.php/cash/notifyxm'; #通知//
             // $data['product_name']    = '11111'; #备注信息   不参与签名
             // // $data['payurl']='http://wgtj.gaotongpay.com/PayBank.aspx';http_build_query($data);
-            $this->display('cash/xinma/qrcodePayAction.php', 0, $para);
+            $this->display('cash/xinma/qrcodePayAction.php', 0, $data);
             //$this->display('cash/xinma/qrcodePayAction.php',0,$data);
         } else {
             throw new Exception('充值订单生产请求出错');

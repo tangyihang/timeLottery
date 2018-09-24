@@ -1,58 +1,63 @@
 <?php
-	$para=$_GET;
-	
-	// 用户限制
-	if($para['username'] && $para['username']!="用户名"){
-		$para['username']=wjStrFilter($para['username']);
-		if(!ctype_alnum($para['username'])) throw new Exception('用户名包含非法字符,请重新输入');
-		$userWhere="and u.username like '%{$para['username']}%'";
-	}
+$para = $_GET;
 
-	// 充值编号限制
-	if($para['rechargeId'] && $para['rechargeId']!="充值编号"){
-		$para['rechargeId']=wjStrFilter($para['rechargeId'],0,0);
-		if(!ctype_digit($para['rechargeId'])) throw new Exception('充值编号包含非法字符');
-		$rechargeIdWhere="and c.rechargeId={$para['rechargeId']}";
-	}
+// 用户限制
+if ($para['username'] && $para['username'] != "用户名") {
+    $para['username'] = wjStrFilter($para['username']);
+    if (!ctype_alnum($para['username'])) {
+        throw new Exception('用户名包含非法字符,请重新输入');
+    }
 
-	//状态类型限制
-	if($para['type']=intval($para['type'])){
-		if($para['type']==99){
-			$typeWhere="and c.state=0";
-		}else{
-			$typeWhere="and c.state={$para['type']}";
-		}
-	}
-	
-	// 时间限制
-	if($para['fromTime'] && $para['toTime']){
-		$fromTime=strtotime($para['fromTime']);
-		$toTime=strtotime($para['toTime'])+24*3600;
-		$timeWhere="and c.actionTime between $fromTime and $toTime";
-	}elseif($para['fromTime']){
-		$fromTime=strtotime($para['fromTime']);
-		$timeWhere="and c.actionTime>=$fromTime";
-	}elseif($para['toTime']){
-		$toTime=strtotime($para['toTime'])+24*3600;
-		$timeWhere="and c.actionTime<$fromTime";
-	}else{
-		$timeWhere=' and c.actionTime>'.strtotime('00:00');
-	}
+    $userWhere = "and u.username like '%{$para['username']}%'";
+}
 
-	$sql="select c.*, c.username as uname, u.username, u.parents from {$this->prename}member_recharge c, {$this->prename}members u where c.isDelete=0 $rechargeIdWhere $timeWhere $userWhere $typeWhere and c.uid=u.uid order by c.id desc";
-	$data=$this->getPage($sql, $this->page, $this->pageSize);
+// 充值编号限制
+if ($para['rechargeId'] && $para['rechargeId'] != "充值编号") {
+    $para['rechargeId'] = wjStrFilter($para['rechargeId'], 0, 0);
+    if (!ctype_digit($para['rechargeId'])) {
+        throw new Exception('充值编号包含非法字符');
+    }
 
-$sql="select * from {$this->prename}bank_list  ";
+    $rechargeIdWhere = "and c.rechargeId={$para['rechargeId']}";
+}
+
+//状态类型限制
+if ($para['type'] = intval($para['type'])) {
+    if ($para['type'] == 99) {
+        $typeWhere = "and c.state=0";
+    } else {
+        $typeWhere = "and c.state={$para['type']}";
+    }
+}
+
+// 时间限制
+if ($para['fromTime'] && $para['toTime']) {
+    $fromTime  = strtotime($para['fromTime']);
+    $toTime    = strtotime($para['toTime']) + 24 * 3600;
+    $timeWhere = "and c.actionTime between $fromTime and $toTime";
+} elseif ($para['fromTime']) {
+    $fromTime  = strtotime($para['fromTime']);
+    $timeWhere = "and c.actionTime>=$fromTime";
+} elseif ($para['toTime']) {
+    $toTime    = strtotime($para['toTime']) + 24 * 3600;
+    $timeWhere = "and c.actionTime<$fromTime";
+} else {
+    $timeWhere = ' and c.actionTime>' . strtotime('00:00');
+}
+
+$sql  = "select c.*, c.username as uname, u.username, u.parents from {$this->prename}member_recharge c, {$this->prename}members u where c.isDelete=0 $rechargeIdWhere $timeWhere $userWhere $typeWhere and c.uid=u.uid order by c.id desc";
+$data = $this->getPage($sql, $this->page, $this->pageSize);
+
+$sql = "select * from {$this->prename}bank_list  ";
 
 $banks = $this->getRows($sql);
-foreach ($banks as $val){
-	$bank[$val["id"]] = $val["name"];
+foreach ($banks as $val) {
+    $bank[$val["id"]] = $val["name"];
 }
 unset($banks);
 
-
-//	$sql="select b.home, b.name, u.id, u.account, u.username from {$this->prename}sysadmin_bank u, {$this->prename}bank_list b where b.isDelete=0 and u.admin=1 and u.bankId=b.id";
-//	$bank=$this->getObject($sql, 'id');
+//    $sql="select b.home, b.name, u.id, u.account, u.username from {$this->prename}sysadmin_bank u, {$this->prename}bank_list b where b.isDelete=0 and u.admin=1 and u.bankId=b.id";
+//    $bank=$this->getObject($sql, 'id');
 ?>
 <table class="tablesorter" cellspacing="0">
 <input type="hidden" value="<?=$this->user['username']?>" />
@@ -73,16 +78,17 @@ unset($banks);
     </tr>
 </thead>
 <tbody id="nav01">
-<?php if($data['data']) foreach($data['data'] as $var){ if($var['state']){$amount+=$var['rechargeAmount'];}?>
+<?php if ($data['data']) {
+    foreach ($data['data'] as $var) {if ($var['state']) {$amount += $var['rechargeAmount'];}?>
     <tr>
         <td><?=$var['uid']?></td>
-        <td><?=$var['username']?> <?php if($var["flag"] !=0){ ?>[昵称：<?=$var['uname']?>]<?php } ?></td>
-		<td><?=implode('> ',$this->getCol("select username from {$this->prename}members where uid in ({$var['parents']})"))?></td>
+        <td><?=$var['username']?> <?php if ($var["flag"] != 0) {?>[昵称：<?=$var['uname']?>]<?php }?></td>
+		<td><?=implode('> ', $this->getCol("select username from {$this->prename}members where uid in ({$var['parents']})"))?></td>
         <td><?=$var['amount']?></td>
         <td><?=$var['rechargeAmount']?></td>
         <td><?=$this->iff($var['state'], $var['coin'], '--')?></td>
-        
-        
+
+
         <td><?=$var['rechargeId']?></td>
 <!--        <td><a href="--><?//=$bank[$var['mBankId']]['home']?><!--" title="银行帐号：--><?//=$bank[$var['mBankId']]['account']?><!--，开户名：--><?//=$bank[$var['mBankId']]['username']?><!--" target="_blank">--><?//=$bank[$var['mBankId']]['name']?><!--</a></td>-->
 		<td><?=$bank[$var['mBankId']]?></td>
@@ -90,29 +96,30 @@ unset($banks);
         <td><?=$var['info']?></td>
         <td><?=date('Y-m-d H:i:s', $var['actionTime'])?></td>
         <td>
-            <?php if(!$var['state']){ ?>
+            <?php if (!$var['state']) {?>
             <a href="/index.php/business/rechargeActionModal/<?=$var['id']?>" target="modal"  width="420" title="编辑用户" modal="true" button="确定:dataAddCode|取消:defaultCloseModal">到帐处理</a>
             <a href="/index.php/business/rechargeDelete/<?=$var['id']?>" target="ajax" dataType="json" call="defaultAjaxLink">删除</a>
-            <?php }else{ ?>
+            <?php } else {?>
             <a>--</a>
             <?php }?>
-            
+
         </td>
     </tr>
-<?php }else{ ?>
+<?php }
+} else {?>
     <tr>
         <td colspan="12" align="center">暂时没有充值记录。</td>
     </tr>
-<?php } ?>
+<?php }?>
 </tbody>
 </table>
-<tr><span style="font-size:15px;color:#FF0000;margin-left:540px;line-height:40px">本次统计充值总额：<?=$this->iff($amount,$amount,0)?>元</span></tr>
+<tr><span style="font-size:15px;color:#FF0000;margin-left:540px;line-height:40px">本次统计充值总额：<?=$this->iff($amount, $amount, 0)?>元</span></tr>
 <footer>
     <?php
-		$rel=get_class($this).'/rechargeLog-{page}?'.http_build_query($_GET,'','&');
-		$this->display('inc/page.php', 0, $data['total'], $rel, 'defaultReplacePageAction');
-	?>
+$rel = get_class($this) . '/rechargeLog-{page}?' . http_build_query($_GET, '', '&');
+$this->display('inc/page.php', 0, $data['total'], $rel, 'defaultReplacePageAction');
+?>
 </footer>
-<script type="text/javascript">  
-ghhs("nav01","tr");  
+<script type="text/javascript">
+ghhs("nav01","tr");
 </script>

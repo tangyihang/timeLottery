@@ -122,7 +122,7 @@
 								<div class="wechat-recharge">
 									<span>充值金额：</span>
 									<input id="money2" name="amount" class="wechat-int" maxlength="14">
-									<a name="next_btn" data-index="0" class="btn fr"  onclick="xmcharge('2')">
+									<a name="next_btn" data-index="0" class="btn fr"  onclick="xmcharge('21')">
 										下一步
 									</a>
 								</div>
@@ -553,7 +553,7 @@
 								<div class="wechat-recharge">
 									<span>充值金额：</span>
 									<input id="zfbmoney2" name="amount" class="wechat-int" maxlength="14">
-									<a name="next_btn" onclick="xmcharge(1)" data-index="1" class="btn fr">
+									<a name="next_btn" onclick="xmcharge(22)" data-index="1" class="btn fr">
 										下一步
 									</a>
 								</div>
@@ -1394,14 +1394,14 @@ function xmcharge(banktype) {
 	var money;
 	var frame;
 
-	if(banktype == 1) {
+	if(banktype == 22) {
 		money = $("#zfbmoney2").val();
 		frame = "qrcode_zfb";
 		if(money == '' || money <= 0) {
 			alert('请输入充值金额');
 			return;
 		}
-	} else if(banktype == 2) {
+	} else if(banktype == 21) {
 		money = $("#money2").val();
 		frame = "qrcode_wx";
 		if(money == '' || money <= 0) {
