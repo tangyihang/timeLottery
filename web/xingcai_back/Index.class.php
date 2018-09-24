@@ -293,7 +293,9 @@ class Index extends WebLoginBase
         $id = '';
         $settings = $this->getSystemSettings();
         $id = $settings['openLotteryList'];
-        $sql = "select  d.*,FROM_UNIXTIME(d.time) time,t.title from {$this->prename}data d,{$this->prename}type t,(select type,max(time) as time from {$this->prename}data group by type)  a where a.type=d.type and a.time=d.time and d.type=t.id and t.enable = 1";
+        $sql = "select  d.*,FROM_UNIXTIME(d.time) time,t.title from {$this->prename}data d,{$this->prename}type t,(
+                  select type,max(time) as time from {$this->prename}data group by type
+                )  a where a.type=d.type and a.time=d.time and d.type=t.id and t.enable = 1 order by t.sort";
         if ($id != '') {
             $sql .= " and d.type in (" . $id . ")";
         }
@@ -356,7 +358,7 @@ class Index extends WebLoginBase
         $id = intval($typeid);
         $sscarray = array('1', '5', '12', '14', '60', '80', '83', '86', '87');
         $_3darray = array('9', '10', '69', '70');
-        $k3array = array('79', '81', '82');
+        $k3array = array('79', '81', '82', '63');
         $_11x5array = array('6', '7', '15', '16', '67', '68');
 		$pk10 = array('20', '85');
         $lhc = array('34');
