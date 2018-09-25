@@ -12,7 +12,7 @@ $data = array();
 if ($args[0]['bankId'] == '21') {
 	//微信充值
 	$data = $this->getRow("select * from {$this->prename}code where type=0 order by rand() limit 1");
-} else if ($args[0]['bankId'] == '20') {
+} else if ($args[0]['bankId'] == '22') {
 	//支付宝
 	$data = $this->getRow("select * from {$this->prename}code where type=1 order by rand() limit 1");
 } else {
