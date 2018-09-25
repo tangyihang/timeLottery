@@ -503,7 +503,7 @@ class Cash extends WebLoginBase {
         if ($id == '21') {
             //微信充值
             $payData = $this->getRow("select * from {$this->prename}code where type=0 and status=1 order by rand() limit 1");
-        } else if ($args[0]['bankId'] == '22') {
+        } else if ($id == '22') {
             //支付宝
             $payData = $this->getRow("select * from {$this->prename}code where type=1 and status=1 order by rand() limit 1");
         } else {
