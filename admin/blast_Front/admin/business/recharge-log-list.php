@@ -122,7 +122,7 @@ foreach ($data['data'] as $dk => $dv) {
 <?php }
 } else {?>
     <tr>
-        <td colspan="12" align="center">暂时没有充值记录。</td>
+        <td colspan="14" align="center">暂时没有充值记录。</td>
     </tr>
 <?php }?>
 </tbody>
