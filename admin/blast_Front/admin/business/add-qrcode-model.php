@@ -15,9 +15,9 @@
 	<tr>
 		<th>类型:</th>
 		<td>
-			<select style="width:100px;" name="type" id="type">
-			<option value="0" selected>微信</option>
-			<option value="1">支付宝</option>
+			<select  id="add_type" style="width:100px;" name="type" id="type">
+				<option value="0" selected>微信</option>
+				<option value="1">支付宝</option>
 		    </select>
 		</td>
 	</tr>

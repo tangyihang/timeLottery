@@ -403,7 +403,7 @@ function addQrCode() {
                 "确定": function(event, ui) {
                     var $this = $(this),
                         $name = $('input[name=name]', this),
-                        $type = $('input[name=type]', this),
+                        $type = $('#add_type', this),
                         $title = $('input[name=title]', this),
                         $account = $('input[name=account]', this),
                         name = $name.val(),
