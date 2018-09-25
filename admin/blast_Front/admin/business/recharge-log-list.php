@@ -45,8 +45,9 @@ if ($para['fromTime'] && $para['toTime']) {
     $timeWhere = ' and c.actionTime>' . strtotime('00:00');
 }
 
-$sql  = "select c.*, c.username as uname, u.username, u.parents from {$this->prename}member_recharge c, {$this->prename}members u where c.isDelete=0 $rechargeIdWhere $timeWhere $userWhere $typeWhere and c.uid=u.uid order by c.id desc";
+$sql  = "select c.*, c.username as uname, u.username, c.payId as payId, u.parents from {$this->prename}member_recharge c, {$this->prename}members u where c.isDelete=0 $rechargeIdWhere $timeWhere $userWhere $typeWhere and c.uid=u.uid order by c.id desc";
 $data = $this->getPage($sql, $this->page, $this->pageSize);
+// var_dump($data);exit;
 
 $sql = "select * from {$this->prename}bank_list  ";
 
@@ -55,6 +56,14 @@ foreach ($banks as $val) {
     $bank[$val["id"]] = $val["name"];
 }
 unset($banks);
+
+foreach ($data['data'] as $dk => $dv) {
+    if (is_numeric($dv['payId'])) {
+        $paySql                       = "select * from {$this->prename}code where id='{$dv['payId']}' ";
+        $payData                      = $this->getRows($paySql);
+        $data['data'][$dk]['account'] = $payData[0]['account'];
+    }
+}
 
 //    $sql="select b.home, b.name, u.id, u.account, u.username from {$this->prename}sysadmin_bank u, {$this->prename}bank_list b where b.isDelete=0 and u.admin=1 and u.bankId=b.id";
 //    $bank=$this->getObject($sql, 'id');
@@ -71,6 +80,8 @@ unset($banks);
         <th>充值前资金</th>
         <th>充值编号</th>
         <th>充值银行</th>
+        <th>二维码ID</th>
+        <th>到账账户</th>
         <th>状态</th>
         <th>备注</th>
         <th>时间</th>
@@ -92,6 +103,9 @@ unset($banks);
         <td><?=$var['rechargeId']?></td>
 <!--        <td><a href="--><?//=$bank[$var['mBankId']]['home']?><!--" title="银行帐号：--><?//=$bank[$var['mBankId']]['account']?><!--，开户名：--><?//=$bank[$var['mBankId']]['username']?><!--" target="_blank">--><?//=$bank[$var['mBankId']]['name']?><!--</a></td>-->
 		<td><?=$bank[$var['mBankId']]?></td>
+        <td><?=$var['payId']?></td>
+        <td><?=$var['account']?></td>
+
         <td><?=$this->iff($var['state'], '充值成功', '正在充值')?></td>
         <td><?=$var['info']?></td>
         <td><?=date('Y-m-d H:i:s', $var['actionTime'])?></td>

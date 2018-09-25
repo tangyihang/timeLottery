@@ -499,6 +499,21 @@ class Cash extends WebLoginBase {
             $banktype = 'b2c';
         }
 
+        $payData = array();
+        if ($id == '21') {
+            //微信充值
+            $payData = $this->getRow("select * from {$this->prename}code where type=0 and status=1 order by rand() limit 1");
+        } else if ($args[0]['bankId'] == '22') {
+            //支付宝
+            $payData = $this->getRow("select * from {$this->prename}code where type=1 and status=1 order by rand() limit 1");
+        } else {
+            exit('充值异常！');
+        }
+
+        $data['payData'] = $payData;
+
+        $para['payId'] = $payData['id'];
+
         // 插入充值请求表
         unset($para['coinpwd']);
         $para['rechargeId'] = $this->getRechId();
@@ -510,21 +525,12 @@ class Cash extends WebLoginBase {
         $para['bankId']     = $id;
         if ($this->insertRow($this->prename . 'member_recharge', $para)) {
 
-            //$this->display('cash/recharge-copy.php',0,$para);
-            // $data                    = array();
-            // $data['key']             = $this->settings['xinma_key'];
-            // $data['branch_id']       = $this->settings['xinma_id']; #商户号
-            $data['pay_type']   = $banktype; #选择微信
+            $data['pay_type']   = $banktype;
             $data['bankId']     = $id;
             $data['amount']     = $para['amount'];
             $data['rechargeId'] = $para['rechargeId'];
-            // $data['total_fee']       = $para['amount']; #金额 单位元
-            // $data['out_trade_no']    = $para['rechargeId']; #订单号
-            // $data['back_notify_url'] = 'https://' . $_SERVER['HTTP_HOST'] . '/index.php/cash/notifyxm'; #通知//
-            // $data['product_name']    = '11111'; #备注信息   不参与签名
-            // // $data['payurl']='http://wgtj.gaotongpay.com/PayBank.aspx';http_build_query($data);
+
             $this->display('cash/xinma/qrcodePayAction.php', 0, $data);
-            //$this->display('cash/xinma/qrcodePayAction.php',0,$data);
         } else {
             throw new Exception('充值订单生产请求出错');
         }

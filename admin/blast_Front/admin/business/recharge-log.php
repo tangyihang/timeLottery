@@ -17,7 +17,7 @@ $(function(){
 	.keypress(function(e){
 		if(e.keyCode==13) $(this).closest('form').submit();
 	});
-	
+
 });
 
 
@@ -38,7 +38,7 @@ function rechargeLogList(err, data){
                 <input type="text" class="alt_btn" style="width:80px;" value="充值编号" name="rechargeId" />&nbsp;&nbsp;
                 时间：从<input type="date" class="alt_btn" name="fromTime"/> 到 <input type="date" class="alt_btn" name="toTime"/>&nbsp;&nbsp;
                 状态类型：<select style="width:100px" name="type">
-					<option value="">所有类型</option>                    
+					<option value="">所有类型</option>
                     <option value="0">正在申请</option>
                     <option value="1">手动到账</option>
                     <option value="2">自动到账</option>
@@ -52,7 +52,7 @@ function rechargeLogList(err, data){
 			</div>
 		</h3>
 	</header>
-	
+
 	<div class="tab_content">
     	<?php $this->display("business/recharge-log-list.php");?>
     </div>
