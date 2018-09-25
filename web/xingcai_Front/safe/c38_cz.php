@@ -1089,7 +1089,7 @@
 											</a>
 										</div></td>
 								</tr>
-								<tr>
+								<!--<tr>
 									<td class="bold">支付确认码</td>
 									<td name="confirmCode"></td>
 									<td>
@@ -1098,11 +1098,11 @@
 												复制
 											</a>
 										</div></td>
-								</tr>
+								</tr>-->
 							</tbody>
 						</table>
 						<p>
-							<span class="c-red bold">请在转账备注中填写支付确认码，方便快速到账。</span>
+							<span class="c-red bold">请在转账备注中填写订单号，方便快速到账。</span>
 						</p>
 						<p>
 							<span class="c-red">*</span>接下来您可以透过以下方式完成转帐...
