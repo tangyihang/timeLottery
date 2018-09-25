@@ -858,7 +858,7 @@ getNotice();
 function getNotice() {
     $.ajax({
         type: 'GET',
-        url: 'index.php/notice/getList',
+        url: '/index.php/notice/getList',
         data: '',
         dataType: 'json',
         timeout: '8000',
