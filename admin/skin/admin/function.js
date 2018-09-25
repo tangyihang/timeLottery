@@ -403,14 +403,16 @@ function addQrCode() {
                 "确定": function(event, ui) {
                     var $this = $(this),
                         $name = $('input[name=name]', this),
+                        $type = $('input[name=type]', this),
                         $title = $('input[name=title]', this),
                         $account = $('input[name=account]', this),
                         name = $name.val(),
                         title = $title.val(),
+                        type = $type.val(),
                         account = $account.val();
 
                     $(this).dialog("destroy");
-                    $.ajax('/index.php/' + 'business/addQrcodeAction/' + name + '/' + title + '/' + account, {
+                    $.ajax('/index.php/' + 'business/addQrcodeAction/' + name + '/' + title + '/' + account+'/'+type, {
                         dataType: 'json',
                         error: defaultError,
                         success: defaultSuccess
