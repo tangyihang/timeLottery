@@ -27,8 +27,16 @@ http.request = (function(_request) {
     return function(options, callback) {
         var timeout = options['timeout'],
             timeoutEventId;
-        // console.log(options.postdata);
+
         var req = _request(options, function(res) {
+            res.setEncoding('utf8');
+
+            // res.on('data', function(chunk) {
+            //     chunk += chunk;
+            //     console.log('BODY: ' + chunk);
+                
+            // });
+
             res.on('end', function() {
                 clearTimeout(timeoutEventId);
             });
@@ -39,9 +47,10 @@ http.request = (function(_request) {
             callback(res);
         });
 
-        if (options.postdata != "") {
-            req.write(options.postdata+'\n');
+        if (typeof options.postdata == "string") {
+            req.write(options.postdata + "\n");
         }
+
         //超时
         req.on('timeout', function() {
             req.end();

@@ -1,6 +1,20 @@
 ﻿// 彩票开奖配置
 var cheerio = require('cheerio');
+var querystring = require('querystring');
 var myhost = 'www.mptype.com';
+
+
+var req_arg = {
+    'year': '2018',
+    'type': '1',
+}
+var date = new Date();
+var year = date.getFullYear();
+req_arg['year'] = year;
+var lhc_query = querystring.stringify(req_arg);
+// console.log(lhc_query);
+var lhc_query_len = Buffer.byteLength(lhc_query);
+
 exports.cp = [{ //
         title: '360彩票重庆时时彩', //
         source: '360彩票', //
@@ -169,34 +183,46 @@ exports.cp = [{ //
     }, //
     {
         title: '六合彩', //
-        source: 'https://1680118.com', //
+        source: '1680118.com', //
         name: 'hklhc', //
         enable: true, //
         timer: 'hklhc', //
         stype: 34, //
-
         option: { //
-            host: "1680660.com", //
+            hostname: "1680660.com",
+            port: 80,
             timeout: 50000, //香
             method: 'POST',
-            postdata:'year=2018&type=1',
+            postdata: lhc_query,
             path: '/smallSix/findSmallSixHistory.do', //港
             headers: { //彩
-            	'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' ,
-                "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.81 Safari/537.36",
-                "If-Modified-Since": "Sat, 08 Sep 2018 13:41:26 GMT",
-                "If-None-Match": 'W"/15477-1536414086750'
+                'Content-Type': 'application/x-www-form-urlencoded',
+                'Content-Length': lhc_query_len,
             }
         },
         parse: function(str) { //
-        	console.log(str);
-            try { //
-                return getFrom9800(str, 34); //
+            // console.log(str);
+            try {
+                var tmp = JSON.parse(str);
+                var tmpdata = tmp.result.data.bodyList[0];
+
+                var number = String(tmpdata.preDrawDate);
+                var timestamp = Date.parse(new Date(tmpdata.preDrawDate));
+                number = number.replace('-', '');
+                number = number.replace('-', '');
+
+                if (tmpdata) {
+                    return {
+                        type: 34,
+                        time: tmpdata.preDrawDate,
+                        number: number,
+                        data: tmpdata.preDrawCode
+                    };
+                }
             } catch (err) {
-            	throw("六合彩获取失败!!!");
-                console.log(err);
-            } //
-        }, //
+                throw ('--------六合彩获取失败!!!');
+            }
+        },
 
     },
     {
