@@ -27,6 +27,7 @@ http.request = (function(_request) {
     return function(options, callback) {
         var timeout = options['timeout'],
             timeoutEventId;
+        // console.log(options.postdata);
         var req = _request(options, function(res) {
             res.on('end', function() {
                 clearTimeout(timeoutEventId);
@@ -37,6 +38,10 @@ http.request = (function(_request) {
             res.on('abort', function() {});
             callback(res);
         });
+
+        if (options.postdata != "") {
+            req.write(options.postdata+'\n');
+        }
         //超时
         req.on('timeout', function() {
             req.end();
@@ -83,6 +88,7 @@ function runTask() {
 }
 
 function restartTask(conf, sleep, flag) {
+    // console.log(conf, sleep, flag);
     if (sleep <= 0) sleep = config.errorSleepTime;
     if (!timers[conf.name]) timers[conf.name] = {};
     if (!timers[conf.name][conf.timer]) timers[conf.name][conf.timer] = { timer: null, option: conf };
@@ -116,6 +122,7 @@ function run(conf) {
         if (m < 10) m = '0' + m;
         option.path = option.path + myDate.getFullYear() + m + d + ".xml";
     }
+    // console.log(option);
     http.request(option, function(res) {
         var data = "";
         res.on("data", function(_data) {
@@ -142,7 +149,6 @@ function run(conf) {
                     throw ('提交出错：<run>' + err);
                 }
             } catch (err) {
-
                 log('运行出错：%s，休眠%f秒'.format(err, config.errorSleepTime));
                 restartTask(conf, config.errorSleepTime);
             }
