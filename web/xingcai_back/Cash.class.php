@@ -474,8 +474,6 @@ class Cash extends WebLoginBase {
             throw new Exception('参数出错');
         }
 
-        // var_dump($_POST);exit;
-
         $uid             = intval($_POST['uid']);
         $para['mBankId'] = intval($_POST['mBankId']);
         $para['amount']  = floatval($_POST['amount']);
@@ -534,8 +532,8 @@ class Cash extends WebLoginBase {
         } else {
             throw new Exception('充值订单生产请求出错');
         }
-
     }
+
     //充值提现详细信息弹出
     public final function rechargeModal($id) {
         $this->getTypes();
