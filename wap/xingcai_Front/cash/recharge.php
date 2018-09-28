@@ -20,12 +20,13 @@
     	if(('standalone' in window.navigator)&&window.navigator.standalone){
 	        var noddy,remotes=false;
 	        document.addEventListener('click',function(event){
-	                noddy=event.target;
-	                while(noddy.nodeName!=='A'&&noddy.nodeName!=='HTML') noddy=noddy.parentNode;
-	                if('href' in noddy&&noddy.href.indexOf('http')!==-1&&(noddy.href.indexOf(document.location.host)!==-1||remotes)){
-	                        event.preventDefault();
-	                        document.location.href=noddy.href;
-	                }
+	        	console.log(event);
+                noddy=event.target;
+                while(noddy.nodeName!=='A'&&noddy.nodeName!=='HTML') noddy=noddy.parentNode;
+                if('href' in noddy&&noddy.href.indexOf('http')!==-1&&(noddy.href.indexOf(document.location.host)!==-1||remotes)){
+                        event.preventDefault();
+                        document.location.href=noddy.href;
+                }
 	        },false);
 		}
     </script>
@@ -112,6 +113,7 @@
 	                <label for="www"style="display: none;"><a  data-type="online" style="width: 20%;">网银支付</a></label>
 	                <input type="radio" id="www" name="recharge_type" value="abc" style="display: none;"/>
 	            </div>
+	            <!-- style="display:none;" -->
 	            <div class="rech_cont rech_wechat" style="display:none;">
 	                <!-- 微信充值 -->
 	               <ul class="wechat-box"><li data-payid="1" data-payflag="3" data-needchk="1"><a class="fr" href="javascript:;"><img class="imgsel" style="display: block;" src="/assets/statics/images/cz_02.png"><img class="imgnotsel" style="display: none;" src="/assets/statics/images/cz_01.png"></a><div class="rech-list-t">微信（自动跳转支付）￥：1-1000元
@@ -269,7 +271,7 @@
 	<script type="text/javascript" src="/skin/js/jquery-1.8.3.min.js"></script>
 	<script type="text/javascript">
 	var payid;
-		  function bindPayList() {
+	function bindPayList() {
         $('ul.wechat-box li').bind('click', function() {
             event.preventDefault();
             $('ul.wechat-box li img.imgsel').hide();
@@ -278,109 +280,119 @@
             $(this).find('img.imgsel').show();
 
             payid = $(this).data('payid');
-/*            payMin = $(this).data('min');
-            payMax = $(this).data('max');
-            payCode = $(this).data('code');
-            payUrl = $(this).data('payurl');
-            payReturnType = $(this).data('type');
-            isBank = $(this).data('paytype') == 5 ? 1 : 0;*/
+			/*
+			payMin = $(this).data('min');
+			payMax = $(this).data('max');
+			payCode = $(this).data('code');
+			payUrl = $(this).data('payurl');
+			payReturnType = $(this).data('type');
+			isBank = $(this).data('paytype') == 5 ? 1 : 0;
+			*/
+
+
         });
     }
 
-      bindPayList();
-		function incharge()
-		{
-			var money=$("#money").val();
-			var banktype=$('input[name="recharge_type"]:checked').val();
-			if (money==''||money==0) {
-				alert('请输入充值金额');
-				return;
-			}
+    bindPayList();
+	function incharge() {
+		var money=$("#money").val();
+		var banktype=$('input[name="recharge_type"]:checked').val();
 
-			/*
-			if (payid==2) {
-				ddbcharge(2,money);
-				return;
-			}else if(payid==12)
-			{
-				ddbcharge(1,money);
-				return;
-			}else if(payid==22)
-			{
-				ddbcharge(3,money);
-				return;
-			}else */if(banktype=='WEIXIN')
-			{
-				xmcharge(21,money);
-				return;
-			}else if(banktype=='ALIPAYWAP')
-			{
-				xmcharge(22,money);
-				return;
-			}else if(banktype=='QQPAY')
-			{
-				xmcharge(3,money);
-				return;
-			}else  if(banktype=='abc')
-			{
-				ddbcharge(4,money);
-				return;
-			}
-
-	var form = $("<form></form>");
-    form.attr('action', '/index.php/cash/inRecharge');
-    form.attr('method', 'post');
-    form.attr('target', '_self');
-     var input1 = $("<input type='hidden' name='mBankId' />");
-     input1.attr('value', banktype);
-      var input2 = $("<input type='hidden' name='amount' />");
-     input2.attr('value', money);
-
-    form.append(input1);
-	form.append(input2);
-    form.appendTo("body");
-    form.css('display', 'none');
-    form.submit();
-
+		// console.log(banktype);
+		if (banktype != 'WEIXIN' && banktype != 'ALIPAYWAP'){
+			alert('请选择充值方式');
+			return;
 		}
-		function ddbcharge(banktype,money)
-		{
-	var form = $("<form></form>");
-    form.attr('action', '/index.php/cash/ddbRecharge');
-    form.attr('method', 'post');
-    form.attr('target', '_self');
-     var input1 = $("<input type='hidden' name='mBankId' />");
-     input1.attr('value', banktype);
-      var input2 = $("<input type='hidden' name='amount' />");
-     input2.attr('value', money);
-    var input3 = $("<input type='hidden' name='uid' />");
-     input3.attr('value', <?php echo $this->user['uid']; ?>);
-    form.append(input1);
-    form.append(input2);
-    form.append(input3);
-    form.appendTo("body");
-    form.css('display', 'none');
-    form.submit();
+
+		if (money==''||money==0) {
+			alert('请输入充值金额');
+			return;
 		}
-		function xmcharge(banktype,money)
+
+		/*
+		if (payid==2) {
+			ddbcharge(2,money);
+			return;
+		}else if(payid==12)
 		{
-	var form = $("<form></form>");
-    form.attr('action', '/index.php/cash/xmRecharge');
-    form.attr('method', 'post');
-    form.attr('target', '_self');
-     var input1 = $("<input type='hidden' name='mBankId' />");
-     input1.attr('value', banktype);
-      var input2 = $("<input type='hidden' name='amount' />");
-     input2.attr('value', money);
-    var input3 = $("<input type='hidden' name='uid' />");
-     input3.attr('value', <?php echo $this->user['uid']; ?>);
-    form.append(input1);
-    form.append(input2);
-    form.append(input3);
-    form.appendTo("body");
-    form.css('display', 'none');
-    form.submit();
-}
+			ddbcharge(1,money);
+			return;
+		}else if(payid==22)
+		{
+			ddbcharge(3,money);
+			return;
+		}else */if(banktype=='WEIXIN')
+		{
+			xmcharge(21,money);
+			return;
+		}else if(banktype=='ALIPAYWAP')
+		{
+			xmcharge(22,money);
+			return;
+		}else if(banktype=='QQPAY')
+		{
+			xmcharge(3,money);
+			return;
+		}else  if(banktype=='abc')
+		{
+			ddbcharge(4,money);
+			return;
+		}
+
+		var form = $("<form></form>");
+	    form.attr('action', '/index.php/cash/inRecharge');
+	    form.attr('method', 'post');
+	    form.attr('target', '_self');
+	    var input1 = $("<input type='hidden' name='mBankId' />");
+	    input1.attr('value', banktype);
+	    var input2 = $("<input type='hidden' name='amount' />");
+	    input2.attr('value', money);
+
+	    form.append(input1);
+		form.append(input2);
+	    form.appendTo("body");
+	    form.css('display', 'none');
+	    form.submit();
+
+	}
+
+	function ddbcharge(banktype,money) {
+		var form = $("<form></form>");
+	    form.attr('action', '/index.php/cash/ddbRecharge');
+	    form.attr('method', 'post');
+	    form.attr('target', '_self');
+	     var input1 = $("<input type='hidden' name='mBankId' />");
+	     input1.attr('value', banktype);
+	      var input2 = $("<input type='hidden' name='amount' />");
+	     input2.attr('value', money);
+	    var input3 = $("<input type='hidden' name='uid' />");
+	     input3.attr('value', <?php echo $this->user['uid']; ?>);
+	    form.append(input1);
+	    form.append(input2);
+	    form.append(input3);
+	    form.appendTo("body");
+	    form.css('display', 'none');
+	    form.submit();
+	}
+
+	function xmcharge(banktype,money) {
+		var form = $("<form></form>");
+	    form.attr('action', '/index.php/cash/xmRecharge');
+	    form.attr('method', 'post');
+	    form.attr('target', '_self');
+	     var input1 = $("<input type='hidden' name='mBankId' />");
+	     input1.attr('value', banktype);
+	      var input2 = $("<input type='hidden' name='amount' />");
+	     input2.attr('value', money);
+	    var input3 = $("<input type='hidden' name='uid' />");
+	     input3.attr('value', <?php echo $this->user['uid']; ?>);
+	    form.append(input1);
+	    form.append(input2);
+	    form.append(input3);
+	    form.appendTo("body");
+	    form.css('display', 'none');
+	    form.submit();
+	}
 	</script>
 </body>
 </html>
