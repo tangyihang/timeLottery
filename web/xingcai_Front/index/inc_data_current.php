@@ -65,6 +65,10 @@
 	if($this->type==66){//台湾PK10
 		$logcls = "icon_tw_pk10";
 	}
+    if($this->type==63){//澳门快三
+        $logcls = "icon_amk3";
+        $zst_url = '/zst/k3.php?typeid='.$this->type;
+    }
     if($this->type==81){//江苏快3icon_gxk3
         $logcls = "icon_ahk3";
     }
