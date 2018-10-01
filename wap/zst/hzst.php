@@ -146,7 +146,7 @@ $typeid = intval($_REQUEST['typeid']);
     </div>
     <div class="trend-foot">
         <div class="trend-foot-txt">
-            <span id="game_name" style="align: center; color:#999;">福彩3D</span>
+            <span id="game_name" style="align: center; color:#999;">澳门快三</span>
             <!--<span class="red"></span>-->
         </div>
         <button class="trend-add">去投一注</button>
@@ -165,16 +165,13 @@ $typeid = intval($_REQUEST['typeid']);
         <ul>
             <li class="game_li_63 <?php if ($typeid == 63) {
                 echo 'trend-on';
-            } ?>" data-gid="63" data-enable="0">澳门快三
-            </li>
+            } ?>" data-gid="63" data-enable="0"><a href="/zst/hzst.php?typeid=63&g=1">澳门快三</a></li>
             <li class="game_li_86 <?php if ($typeid == 86) {
                 echo 'trend-on';
-            } ?>" data-gid="86" data-enable="0">三分时时彩
-            </li>
+            } ?>" data-gid="86" data-enable="0"><a href="/zst/zst.php?typeid=86&g=1">三分时时彩</a></li>
             <li class="game_li_1 <?php if ($typeid == 1) {
                 echo 'trend-on';
-            } ?>" data-gid="1" data-enable="0">重庆时时彩
-            </li>
+            } ?>" data-gid="1" data-enable="0"><a href="/zst/zst.php?typeid=1&g=1">重庆时时彩</a></li>
             <!--<li class="game_li_12 <?php if ($typeid == 12) {
                 echo 'trend-on';
             } ?>" data-gid="12" data-enable="0">新疆时时彩</li>
@@ -186,21 +183,17 @@ $typeid = intval($_REQUEST['typeid']);
             } ?>" data-gid="87" data-enable="0">上海时时乐</li>-->
             <li class="game_li_83 <?php if ($typeid == 83) {
                 echo 'trend-on';
-            } ?>" data-gid="83" data-enable="0">北京28
-            </li>
+            } ?>" data-gid="83" data-enable="0"><a href="/zst/zst.php?typeid=83&g=1">北京28</a></li>
             <li class="game_li_80 <?php if ($typeid == 80) {
                 echo 'trend-on';
-            } ?>" data-gid="80" data-enable="0">幸运28
-            </li>
+            } ?>" data-gid="80" data-enable="0"><a href="/zst/zst.php?typeid=80&g=1">幸运28</a></li>
 
             <li class="game_li_20 <?php if ($typeid == 20) {
                 echo 'trend-on';
-            } ?>" data-gid="20" data-enable="0">北京PK拾
-            </li>
+            } ?>" data-gid="20" data-enable="0"><a href="/zst/zst.php?typeid=20&g=1">北京PK拾</a></li>
             <li class="game_li_85 <?php if ($typeid == 85) {
                 echo 'trend-on';
-            } ?>" data-gid="85" data-enable="0">三分PK拾
-            </li>
+            } ?>" data-gid="85" data-enable="0"><a href="/zst/zst.php?typeid=85&g=1">三分PK拾</a></li>
 
             <!--<li class="game_li_6 <?php if ($typeid == 6) {
                 echo 'trend-on';
@@ -233,8 +226,7 @@ $typeid = intval($_REQUEST['typeid']);
             } ?>" data-gid="10" data-enable="0">排列三</li>-->
             <li class="game_li_34 <?php if ($typeid == 34) {
                 echo 'trend-on';
-            } ?>" data-gid="34" data-enable="0">香港六合彩
-            </li>
+            } ?>" data-gid="34" data-enable="0"><a href="/zst/zst.php?typeid=34&g=1">香港六合彩</a></li>
         </ul>
     </div>
     <!--<div class="tips-bg" hidden=""></div>-->
@@ -303,7 +295,7 @@ $typeid = intval($_REQUEST['typeid']);
 
         function showPosTitle() {
           //显示游戏名
-          var gNameArr = $('li.game_li_' + trendGid).html();
+          var gNameArr = $('li.game_li_' + trendGid + ' a').html();
           $('span#game_name').text(gNameArr);
 
           trendPos = 1;//默认1
@@ -384,7 +376,6 @@ $typeid = intval($_REQUEST['typeid']);
               }
               var startHtml = '<tr class="trend-bg-1"><td colspan="5">' + results.time + '开奖：</td></tr>';
               var endHtml = '<tr class="trend-bg-1"><td colspan="5">已显示近期走势</td></tr>';
-              console.log(headHtml, txtHtml);
               $('#trend_table').html(startHtml + headHtml + txtHtml + endHtml);
             } else {
               $('#trend_table').html(results.msg)
