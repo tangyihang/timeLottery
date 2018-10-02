@@ -511,17 +511,15 @@
                                     </div>
 
                                     <!--拖动-->
-                                    <div class="tz_work"
-                                         style="width: 100%;box-sizing:border-box;background-color: #fff;padding: 10px ;">
+                                    <div class="tz_work" style="width: 100%; display:none; box-sizing:border-box;background-color: #fff;padding: 10px ;">
                                         <div class="ball_write">
                                             <div class="write_bg">
                                                 <div class="jiangjin" id="game-dom">
                                                     <div class="fandian-k fl">
                                                         <input type="button" class="min" value="" step="-0.1"/>
                                                         <input type="button" class="max" value="" step="0.1"/>
-                                                        <strong>奖金/返点：</strong><span id="fandian-value" class="fdmoney"
-                                                                                     style=" color: #000 !important;"><?= $maxPl ?>
-                                                            /0%</span>
+                                                        <strong>奖金/返点：</strong>
+                                                        <span id="fandian-value" class="fdmoney" style=" color: #000 !important;"><?= $maxPl ?> /0%</span>
                                                         <div id="slider-range-min" class="tiao slider fandian-box"
                                                              value="<?= $this->ifs($_COOKIE['fanDian'], 0) ?>"
                                                              data-bet-count="<?= $this->settings['betMaxCount'] ?>"
@@ -538,7 +536,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <!--拖动-->
+                                    拖动
 
 
                                 </div>
