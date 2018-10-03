@@ -373,6 +373,21 @@ class Game extends WebLoginBase
             throw new Exception('投注失败：你投注第' . $para['actionNo'] . '已过购买时间');
         // 查检每注的赔率是否正常
         $this->getPlayeds();
+        // 拆分订单，将一个多选项的订单拆分成多个订单
+        $orderCodes = array();
+        foreach ($codes as $key => $code) {
+            if ($code['actionNum'] != 1) {
+                $actionData = explode(' ', $code['actionData']);
+                foreach ($actionData as $action) {
+                    $code['actionData'] = $action;
+                    $code['actionNum'] = 1;
+                    $orderCodes[] = $code;
+                }
+            } else {
+                $orderCodes[] = $code;
+            }
+        }
+        $codes = $orderCodes;
         foreach ($codes as $key => $code) {
             //检查时间 期数2
             $ftime2 = $this->getTypeFtime(intval($code['type'])); //封单时间2
