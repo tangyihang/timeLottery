@@ -122,7 +122,6 @@ class Game extends WebLoginBase
                     if ($code['actionNum'] > Bet::$betCountFun($code['actionData']))
                         throw new Exception('下单失败,您投注号码不符合投注规则，请重新投注(1)');
                 } else {
-                    echo $code['actionNum'] != Bet::$betCountFun($code['actionData'], $code['actionNum']);
                     if ($code['actionNum'] != Bet::$betCountFun($code['actionData'], $code['actionNum']))
                         throw new Exception($code['actionNum'] . '下单失败,您投注号码不符合投注规则，请重新投注(2)' . Bet::$betCountFun($code['actionData']) . "/" . $code['actionData']);
                 }
@@ -342,19 +341,27 @@ class Game extends WebLoginBase
     {
         $codes = $_POST['code'];
         $para = $_POST['para'];
-        if ($this->type)
-            $para['type'] = $this->type;
+        if ($this->type) $para['type'] = $this->type;
         $amount = 0;
+        $mincoin = 0;
+        $maxcount = 0;
+        $allNum = 0;
 
+        if (empty($this->user['uid'])) {
+            throw new Exception('请先登录！');
+        }
         $this->getSystemSettings();
         if ($this->settings['switchBuy'] == 0)
-            throw new Exception('游戏玩法已停止投注');
+            throw new Exception('本平台已经停止购买！');
+        if ($this->settings['switchDLBuy'] == 0 && $this->user['type'])
+            throw new Exception('代理不能买单！');
+        if ($this->settings['switchZDLBuy'] == 0 && ($this->user['parents'] == $this->user['uid']))
+            throw new Exception('总代理不能买单！');
         if (count($codes) == 0)
-            throw new Exception('请先买单再提交投注');
-        //玩法开启
-        if (!$this->getValue("select enable from {$this->prename}played where id=?", intval($para['playedId'])))
-            throw new Exception('游戏玩法已停,请刷新再投(2)');
+            throw new Exception('请先选择号码再提交投注');
         //检查时间 期数
+        if ($para['kjTime'] < $this->time)
+            throw new Exception('提交数据出错,请刷新再投');
         $ftime = $this->getTypeFtime(intval($para['type'])); //封单时间
         $actionTime = $this->getGameActionTime(intval($para['type'])); //当期时间
         $actionNo = $this->getGameActionNo(intval($para['type'])); //当期期数
@@ -364,6 +371,71 @@ class Game extends WebLoginBase
             throw new Exception('投注失败：你投注第' . $para['actionNo'] . '已过购买时间');
         if ($actionTime - $ftime < $this->time)
             throw new Exception('投注失败：你投注第' . $para['actionNo'] . '已过购买时间');
+        // 查检每注的赔率是否正常
+        $this->getPlayeds();
+        foreach ($codes as $key => $code) {
+            //检查时间 期数2
+            $ftime2 = $this->getTypeFtime(intval($code['type'])); //封单时间2
+            $actionTime2 = $this->getGameActionTime(intval($code['type'])); //当期时间2
+            $actionNo2 = $this->getGameActionNo(intval($code['type'])); //当期期数2
+            if ($actionTime2 != $para['kjTime'])
+                throw new Exception('投注失败：你投注第' . $para['actionNo'] . '已过购买时间');
+            if ($actionNo2 != $para['actionNo'])
+                throw new Exception('投注失败：你投注第' . $para['actionNo'] . '已过购买时间');
+            if ($actionTime - $ftime2 < $this->time)
+                throw new Exception('投注失败：你投注第' . $para['actionNo'] . '已过购买时间');
+            $played = $this->playeds[$code['playedId']];
+            //检查开启
+            if (!$played['enable'])
+                throw new Exception('游戏玩法组已停,请刷新再投(1)');
+            //检查ID
+            if ($played['groupId'] != $code['playedGroup'])
+                throw new Exception('提交数据出错，请重新投注1');
+            if ($played['id'] != $code['playedId'])
+                throw new Exception('提交数据出错，请重新投注2');
+            $code['bonusProp'] = $this->getK3Rte($code['actionData']);
+            //检查返点
+            if ($code['fanDian'] != 0)
+                throw new Exception('请勿改包！');
+            $code['fanDian'] = 0;
+            //检查倍数
+            if (intval($code['beiShu']) < 1)
+                throw new Exception('倍数只能为大于1正整数');
+            //检查模式
+            $mosi = array();
+            if ($this->settings['yuanmosi'] == 1)
+                array_unshift($mosi, '2.000');
+            if ($this->settings['jiaomosi'] == 1)
+                array_unshift($mosi, '0.200');
+            if ($this->settings['fenmosi'] == 1)
+                array_unshift($mosi, '0.020');
+            if ($this->settings['limosi'] == 1)
+                array_unshift($mosi, '0.002');
+            if (!in_array($code['mode'], $mosi))
+                throw new Exception('投注模式出错，请重新投注');
+            // 检查注数
+            if ($code['actionNum'] < 1)
+                throw new Exception('注数不能小于1，请重新投注');
+            if ($betCountFun = $played['betCountFun']) {
+                if ($played['betCountFun'] == 'descar') {
+                    if ($code['actionNum'] > Bet::$betCountFun($code['actionData']))
+                        throw new Exception('下单失败,您投注号码不符合投注规则，请重新投注(1)');
+                } else {
+                    if ($code['actionNum'] != Bet::$betCountFun($code['actionData'], $code['actionNum']))
+                        throw new Exception($code['actionNum'] . '下单失败,您投注号码不符合投注规则，请重新投注(2)' . Bet::$betCountFun($code['actionData']) . "/" . $code['actionData']);
+                }
+            }
+            //最大注数检查
+            $maxcount = $this->getmaxcount($code['playedId']);
+            $playedname = $this->getplayedname($code['playedId']);
+            if ($code['actionNum'] > $maxcount)
+                throw new Exception('注数超过玩法:' . $playedname . '  最高注数:' . $maxcount . '注,请重新投注!');
+            //最低消费金额计算
+            $mincoin += $this->getmincoin($code['playedId']);
+            //总注数计算
+            $allNum += $code['actionNum'];
+            $codes[$key] = $code;
+        }
         $code = current($codes);
         if (isset($para['actionNo']))
             unset($para['actionNo']);
@@ -377,43 +449,73 @@ class Game extends WebLoginBase
             'uid' => $this->user['uid'],
             'username' => $this->user['username'],
             'serializeId' => uniqid(),
-            'nickname' => $this->user['username']
+            'nickname' => $this->user['nickname'],
+            'hmEnable' => $_POST['is_combine']
         ));
         $code = array_merge($code, $para);
-        $liqType = 101;
-        $info = '投注';
-        foreach ($codes as $i => $code) {
-            if ($code['bonusProp'] != $this->getLHCRte($code['bonusPropName'], intval($para['playedId']))) throw new Exception('奖金数值调用错误' . $code['bonusProp'] . '-' . $code['bonusPropName']);
-            if (isset($code['bonusPropName']))
-                unset($code['bonusPropName']);
-            //检查返点
-            if ($code['fanDian'] != 0)
-                throw new Exception('请勿改包！');
-            $code['fanDian'] = 0;
-            $code['mode'] = 1.00;
-            //检查倍数
-            if (intval($code['beiShu']) < 1)
-                throw new Exception('倍数只能为大于1正整数');
-            //检查金额
-            $code['actionAmount'] = $code['actionNum'] * $code['mode'] * $code['beiShu'];
-            //if(intval($code['actionNum']*$code['mode']*$code['beiShu'])!=intval($code['actionAmount'])) throw new Exception('提交数据出错，请重新投注');
-            //throw new Exception('111');
-            $codes[$i] = array_merge($code, $para);
-            $amount += abs($code['actionNum'] * $code['mode'] * $code['beiShu']);
+        if ($zhuihao = $_POST['zhuiHao']) {
+            $liqType = 102;
+            $codes = array();
+            $info = '追号投注';
+
+            if (isset($para['actionNo']))
+                unset($para['actionNo']);
+            if (isset($para['kjTime']))
+                unset($para['kjTime']);
+
+            foreach (explode(';', $zhuihao) as $var) {
+                list($code['actionNo'], $code['beiShu'], $code['kjTime']) = explode('|', $var);
+                $code['kjTime'] = strtotime($code['kjTime']);
+                $code['beiShu'] = abs($code['beiShu']);
+                $actionNo = $this->getGameNo($para['type'], $code['kjTime'] - 1);
+
+                $ano = $this->getGameNo($code['type'], $this->time);
+                if ($code['actionNo'] != $ano['actionNo']) {
+                    list($dt1, $b1) = explode('-', $code['actionNo']); //提交的
+                    list($dt2, $b2) = explode('-', $ano['actionNo']); //当前的
+                    if ($dt2 < $dt1 || ($dt2 == $dt1 && $b2 < $b1)) {
+                    } else {
+                        throw new Exception('投注失败1：您追投注的第' . $ano['actionNo'] . '期已经过购买时间！');
+                    }
+                }
+                if (strtotime($actionNo['actionTime']) - $ftime < $this->time)
+                    throw new Exception('投注失败2：你追号投注第' . $code['actionNo'] . '已过购买时间');
+                $amount += abs($code['actionNum'] * $code['mode'] * $code['beiShu']);
+                $codes[] = $code;
+            }
+        } else {
+            $liqType = 101;
+            $info = '投注';
+
+            if ($actionNo != $code['actionNo'])
+                throw new Exception('投注失败：你投注第' . $code['actionNo'] . '已过购买时间');
+            foreach ($codes as $i => $code) {
+                $codes[$i] = array_merge($code, $para);
+                $amount += abs($code['actionNum'] * $code['mode'] * $code['beiShu']);
+            }
         }
+
+        //最低消费金额检查
+        if ($amount < $mincoin)
+            throw new Exception('本次投注方案总共:' . $allNum . '注,最低消费金额:' . $mincoin . '元,请重新投注!');
         // 查询用户可用资金
         $userAmount = $this->getValue("select coin from {$this->prename}members where uid={$this->user['uid']}");
         if ($userAmount < $amount)
-            throw new Exception('您的可用资金不足，请充值(3)');
+            throw new Exception('您的可用资金不足，是否充值？(2)');
         // 开始事物处理
         $this->beginTransaction();
         try {
             foreach ($codes as $code) {
+                //throw new Exception('error');
+                unset($code['playedName']);
                 // 插入投注表
                 $code['wjorderId'] = $code['type'] . $code['playedId'] . $this->randomkeys(8 - strlen($code['type'] . $code['playedId']));
-                $amount1 = abs($code['actionAmount']);
-                //throw new Exception('222');
+                $code['actionNum'] = abs($code['actionNum']);
+                $code['mode'] = abs($code['mode']);
+                $code['beiShu'] = abs($code['beiShu']);
+                $code['amount'] = abs($code['actionNum'] * $code['mode'] * $code['beiShu']);
                 $this->insertRow($this->prename . 'bets', $code);
+
                 // 添加用户资金流动日志
                 $this->addCoin(array(
                     'uid' => $this->user['uid'],
@@ -422,7 +524,7 @@ class Game extends WebLoginBase
                     'info' => $info,
                     'extfield0' => $this->lastInsertId(),
                     'extfield1' => $para['serializeId'],
-                    'coin' => -$amount1
+                    'coin' => -$code['amount']
                 ));
             }
             // 返点与积分等开奖时结算
@@ -639,7 +741,6 @@ class Game extends WebLoginBase
         $return['nickname'] = $this->user['nickname'];
         $return['serializeId'] = uniqid();
         $return['hmEnable'] = 0;
-//                var_dump($para);
         $code = array_merge($code, $para);
 
         $liqType = 101;

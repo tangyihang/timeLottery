@@ -74,8 +74,6 @@
                     <ul>
                         <li><span class="grey">订单号</span><?=$bet['wjorderId']?></li>
                         <li><span class="grey">投注金额</span><?=number_format($betCont, 3)?></li>
-                        <li><span class="grey">投注返点</span><?=number_format($bet['bonusProp'], 2)?>－<?=number_format($bet['fanDian'],1)?>%</li>
-                        <li><span class="grey">返点金额</span><?=$this->iff($bet['lotteryNo'], number_format(($bet['fanDian']/100)*$betCont, 3). '元', '－')?></li>
                         <li><span class="grey">投注赔率</span><?=$bet['bonusProp']?></li>
                         <li><span class="grey">投注时间</span><?=date('m-d H:i:s',$bet['actionTime'])?></li>
                         <li><span class="grey">是否中奖</span><span id="win_state">

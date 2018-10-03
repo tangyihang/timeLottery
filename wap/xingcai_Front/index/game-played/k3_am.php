@@ -45,74 +45,28 @@
 </style>
 <div class="pp pp11" action="tz11x5Select" length="1" style="width:100%;text-align: left;">
     <div class="relative">
+        <div style="text-align: center;">猜3个开奖号相加的和，3-10为小，11-18为大。</div>
         <ul class="nList1" style="">
-            <li>
-                <input type="button" value="大" class="code"/><br/><label>赔率1.88</label>
-            </li>
-            <li>
-                <input type="button" value="小" class="code"/><br/><label>赔率1.88</label>
-            </li>
-            <li>
-                <input type="button" value="单" class="code"/><br/><label>赔率1.88</label>
-            </li>
-            <li>
-                <input type="button" value="双" class="code"/><br/><label>赔率1.88</label>
-            </li>
-            <li>
-                <input type="button" value="3" class="code"/><br/><label>赔率1.88</label>
-            </li>
-            <li>
-                <input type="button" value="4" class="code"/><br/><label>赔率1.88</label>
-            </li>
-            <li>
-                <input type="button" value="5" class="code"/><br/><label>赔率1.88</label>
-            </li>
-            <li>
-                <input type="button" value="6" class="code"/><br/><label>赔率1.88</label>
-            </li>
-            <li>
-                <input type="button" value="7" class="code"/><br/><label>赔率1.88</label>
-            </li>
-            <li>
-                <input type="button" value="8" class="code"/><br/><label>赔率1.88</label>
-            </li>
-            <li>
-                <input type="button" value="9" class="code"/><br/><label>赔率1.88</label>
-            </li>
-            <li>
-                <input type="button" value="10" class="code"/><br/><label>赔率1.88</label>
-            </li>
-            <li>
-                <input type="button" value="11" class="code"/><br/><label>赔率1.88</label>
-            </li>
-            <li>
-                <input type="button" value="12" class="code"/><br/><label>赔率1.88</label>
-            </li>
-            <li>
-                <input type="button" value="13" class="code"/><br/><label>赔率1.88</label>
-            </li>
-            <li>
-                <input type="button" value="14" class="code"/><br/><label>赔率1.88</label>
-            </li>
-            <li>
-                <input type="button" value="15" class="code"/><br/><label>赔率1.88</label>
-            </li>
-            <li>
-                <input type="button" value="16" class="code"/><br/><label>赔率1.88</label>
-            </li>
-            <li>
-                <input type="button" value="17" class="code"/><br/><label>赔率1.88</label>
-            </li>
-            <li>
-                <input type="button" value="18" class="code"/><br/><label>赔率1.88</label>
-            </li>
+            <?php
+            // 获取澳门快三赔率
+            $sql = "select id, Rte, rName from {$this->prename}k3 where enable=1 order by sort";
+            $groups = $this->getRows($sql);
+            if ($groups)
+                foreach ($groups as $key => $group) {
+                    ?>
+                    <li>
+                        <input type="button" value="<?php echo $group['rName'] ?>" class="code"/>
+                        <br/><label>赔率<?php echo $group['Rte'] ?></label>
+                    </li>
+                    <?php
+                }
+            ?>
         </ul>
     </div>
 
 
 </div>
 <?php
-
 $maxPl = $this->getPl($this->type, $this->played);
 ?>
 <script type="text/javascript">

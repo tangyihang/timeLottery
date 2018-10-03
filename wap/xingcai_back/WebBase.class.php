@@ -584,6 +584,19 @@ class WebBase extends Object {
 
         return $returnVal;
     }
+
+    //快三赔率获取
+    public function getK3Rte($rName){
+        $flag      = wjStrFilter($rName);
+        $sql       = "select Rte from {$this->prename}k3 where rName='{$rName}'";
+        $returnVal = $this->getValue($sql);
+        if (!$returnVal) {
+            $returnVal = 0.00;
+        }
+
+        return $returnVal;
+    }
+
     public function getLHCInfo($playid, $remark) {
         $playid    = intval($playid);
         $remark    = intval($remark);

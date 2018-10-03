@@ -1168,7 +1168,7 @@ class Bet{
 
 	// K3和值
 	public static function k3hz($bet){
-		$check=array('3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18');
+		$check=array('3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','大','小','单','双');
 		$bet1=explode(' ', $bet);$a=array_unique($bet1);
 		if(count($bet1)!=count($a) || count($bet1)>16 || count($bet1)<1) return 0;
 		foreach($bet1 as $bets){
