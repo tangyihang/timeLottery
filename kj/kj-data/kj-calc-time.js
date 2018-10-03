@@ -293,3 +293,12 @@ exports.bj28=function(data){
 exports.sfssc=function(data){
 	return 10000;  //10秒后
 }
+exports.amk3=function(data){
+  return 10000;  //10秒后
+}
+exports.hklhc=function(data){
+  return 10000;  //10秒后
+}
+exports.twpk10=function(data){
+  return 10000;  //10秒后
+}
