@@ -280,7 +280,7 @@
                     <a href="/index.php/index/game/63">
                         <div class="hot-icon icon_idx_0"><img class="" src="assets/statics/images/icon/63.png"></div>
                         <div class="hot-text text_idx_0"><span>澳门快三</span>
-                            <p>3分钟一期</p></div>
+                            <p>5分钟一期</p></div>
                     </a>
                 </li>
                 <li>
@@ -294,7 +294,7 @@
                     <a href="/index.php/index/game/1/2/12">
                         <div class="hot-icon icon_idx_0"><img class="" src="assets/statics/images/icon/5.png"></div>
                         <div class="hot-text text_idx_0"><span>重庆时时彩</span>
-                            <p>5分钟一期</p></div>
+                            <p>全天120期</p></div>
 
                     </a>
                 </li>
@@ -302,8 +302,8 @@
                 <li>
                     <a href="/index.php/index/game/20">
                         <div class="hot-icon icon_idx_0"><img class="" src="assets/statics/images/icon/9.png"></div>
-                        <div class="hot-text text_idx_0"><span>北京赛车(PK10)</span>
-                            <p>5分钟一期</p></div>
+                        <div class="hot-text text_idx_0"><span>北京赛车</span>
+                            <p>全天179期</p></div>
 
                     </a>
                 </li>
@@ -312,7 +312,7 @@
                     <a href="/index.php/index/game/83">
                         <div class="hot-icon icon_idx_0"><img class="" src="assets/statics/images/icon/41.png"></div>
                         <div class="hot-text text_idx_0"><span>北京28</span>
-                            <p>10分钟一期</p></div>
+                            <p>5分钟一期</p></div>
                     </a>
                 </li>
 
@@ -381,7 +381,7 @@
                 <p>开奖</p></a>
         </li>
         <li>
-            <a class="menu-news" href="/zst/zst.php?typeid=86&g=1"><i class="ion-ios-pulse"></i>
+            <a class="menu-news" href="/zst/hzst.php?typeid=63&g=1"><i class="ion-ios-pulse"></i>
                 <p>走势</p></a>
         </li>
         <li>

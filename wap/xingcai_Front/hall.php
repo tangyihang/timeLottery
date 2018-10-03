@@ -664,7 +664,7 @@
                  <a class="menu-lot" href="/index/draw"><i class="ion-ios-trophy-outline"></i><p>开奖</p></a>
              </li>
              <li>
-                 <a class="menu-news" href="/zst/zst.php?typeid=86&g=1"><i class="ion-ios-pulse"></i><p>走势</p></a>
+                 <a class="menu-news" href="/zst/hzst.php?typeid=63&g=1"><i class="ion-ios-pulse"></i><p>走势</p></a>
              </li>
              <li>
                  <a class="menu-my" href="/safe/Personal"><i class="ion-ios-person-outline"></i><p>我的</p></a>

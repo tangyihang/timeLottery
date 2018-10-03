@@ -13,7 +13,7 @@ class WebBase extends Object {
     public $params = array(); // 系统配置参数
     public $types; // 彩票种类信息数组
     public $playeds; // 玩法信息数组
-    private $expire        = 3600; // 读取玩法、彩票缓存
+    public $expire        = 3600; // 读取玩法、彩票缓存
     public $urlPasswordKey = '5d4!@$2#fe25d4!@$2#fe5d4!@$2#f5d4!@$2#fee5d4!@$2#feu39g867d5d4!@$2#fe6yftd3y';
     function __construct($dsn, $user = '', $password = '') {
         session_start();

@@ -76,7 +76,7 @@
                 <p>开奖</p></a>
         </li>
         <li>
-            <a class="menu-news" href="/zst/zst.php?typeid=86&g=1"><i class="ion-ios-pulse"></i>
+            <a class="menu-news" href="/zst/hzst.php?typeid=63&g=1"><i class="ion-ios-pulse"></i>
                 <p>走势</p></a>
         </li>
         <li>

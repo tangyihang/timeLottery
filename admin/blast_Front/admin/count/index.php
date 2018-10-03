@@ -166,18 +166,18 @@
     </div>
 </article>
 
-<article class="module width_full">
-	<header><h3 class="tabs_involved">玩法统计<span class="spn1">（玩法统计：投注金额 / 注数）</span></h3></header>
-	<div class="module_content">
-	<?php
-		$sql="select playedId, sum(beiShu*mode*actionNum) amount,sum(actionNum) actionNumA from {$this->prename}bets where lotteryNo!='' group by playedId";
-		$data=$this->getObject($sql, 'playedId');
-		$this->getPlayeds();
-		if($this->playeds) foreach($this->playeds as $var){
-	?>
-		<div class="cztz"><span class="title"><?=$var['name']?></span><span class="spn2">￥<?=number_format($this->ifs($data[$var['id']]['amount'], 0),2)?> / <?=$this->ifs($data[$var['id']]['actionNumA'], 0)?>注</span></div>
-	<?php } ?>
-	</div>
-</article>
+<!--<article class="module width_full">-->
+<!--	<header><h3 class="tabs_involved">玩法统计<span class="spn1">（玩法统计：投注金额 / 注数）</span></h3></header>-->
+<!--	<div class="module_content">-->
+<!--	--><?php
+//		$sql="select playedId, sum(beiShu*mode*actionNum) amount,sum(actionNum) actionNumA from {$this->prename}bets where lotteryNo!='' group by playedId";
+//		$data=$this->getObject($sql, 'playedId');
+//		$this->getPlayeds();
+//		if($this->playeds) foreach($this->playeds as $var){
+//	?>
+<!--		<div class="cztz"><span class="title">--><?//=$var['name']?><!--</span><span class="spn2">￥--><?//=number_format($this->ifs($data[$var['id']]['amount'], 0),2)?><!-- / --><?//=$this->ifs($data[$var['id']]['actionNumA'], 0)?><!--注</span></div>-->
+<!--	--><?php //} ?>
+<!--	</div>-->
+<!--</article>-->
 
 <!-- <div class="tip">提示：本页数据被缓存5分钟，你看到的可能是几分钟之前的数据！</div> -->

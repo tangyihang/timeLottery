@@ -1,6 +1,6 @@
 ﻿<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
-<input type="hidden" value="<?=$this->user['username']?>"/>
+<input type="hidden" value="<?= $this->user['username'] ?>"/>
 <head>
     <meta content="IE=EmulateIE8" http-equiv="X-UA-Compatible"/>
     <meta name="renderer" content="ie-comp"/>
@@ -102,7 +102,7 @@
 
 <section id="secondary_bar">
     <div class="user">
-        <p>欢迎：<?=$this->user['username']?></p>
+        <p>欢迎：<?= $this->user['username'] ?></p>
     </div>
     <div class="breadcrumbs_container">
         <article class="breadcrumbs"><a>当前位置：<strong>首页</strong></a>
@@ -119,9 +119,9 @@
     <!--
         <h3>号码预设<a>＋</a></h3>
         <ul class="toggle" style="display:none;">
-<?php foreach ($this->getRows("select id,title from {$this->prename}type where enable=1 and isDelete=0 order by sort") as $type) {?>
-                    <li><a href="data/index2/<?=$type['id']?>" class="k_b_1 bq"><?=$type['title']?></a></li>
-<?php }?>
+<?php foreach ($this->getRows("select id,title from {$this->prename}type where enable=1 and isDelete=0 order by sort") as $type) { ?>
+                    <li><a href="data/index2/<?= $type['id'] ?>" class="k_b_1 bq"><?= $type['title'] ?></a></li>
+<?php } ?>
         </ul>
         -->
     <h3>业务流水<a>＋</a></h3>
@@ -136,15 +136,15 @@
     </ul>
     <h3>开奖数据<a>＋</a></h3>
     <ul class="toggle" style="display:none;">
-        <?php foreach ($this->getRows("select id,title from {$this->prename}type where enable=1 and isDelete=0 order by sort") as $type) {?>
-            <li><a href="data/index/<?=$type['id']?>" class="k_b_1 bq"><?=$type['title']?></a></li>
-        <?php }?>
+        <?php foreach ($this->getRows("select id,title from {$this->prename}type where enable=1 and isDelete=0 order by sort") as $type) { ?>
+            <li><a href="data/index/<?= $type['id'] ?>" class="k_b_1 bq"><?= $type['title'] ?></a></li>
+        <?php } ?>
     </ul>
     <h3>时间管理<a>＋</a></h3>
     <ul class="toggle" style="display:none;">
-        <?php foreach ($this->getRows("select id,title from {$this->prename}type where enable=1 and isDelete=0 order by sort") as $type) {?>
-            <li><a href="time/index/<?=$type['id']?>" class="k_b_1 bq"><?=$type['title']?></a></li>
-        <?php }?>
+        <?php foreach ($this->getRows("select id,title from {$this->prename}type where enable=1 and isDelete=0 order by sort") as $type) { ?>
+            <li><a href="time/index/<?= $type['id'] ?>" class="k_b_1 bq"><?= $type['title'] ?></a></li>
+        <?php } ?>
     </ul>
     <h3>数据统计<a>＋</a></h3>
     <ul class="toggle" style="display:none;">
@@ -196,12 +196,12 @@
     </ul>
     <h3><span>站内信管理</span><a>＋</a></h3>
     <?php
-$sql = "select count(id) from {$this->prename}message_receiver where to_uid=? and is_readed=0 and is_deleted=0";
-$num = $this->getValue($sql, $this->user['uid']);
-?>
+    $sql = "select count(id) from {$this->prename}message_receiver where to_uid=? and is_readed=0 and is_deleted=0";
+    $num = $this->getValue($sql, $this->user['uid']);
+    ?>
     <ul class="toggle" style="display:none;">
         <li><a href="#" onclick="sysAddBox()" class="bq jf_b_2">发消息</a></li>
-        <li><a href="Box/receivebox" class="bq jf_b_2">收件箱</a>(<strong style="color:red"> <?=$num?> </strong>)</li>
+        <li><a href="Box/receivebox" class="bq jf_b_2">收件箱</a>(<strong style="color:red"> <?= $num ?> </strong>)</li>
         <li><a href="Box/sendbox" class="bq jf_b_2">发件箱</a></li>
         <li><a href="Box/all" class="bq jf_b_1">整站发信记录</a></li>
     </ul>
@@ -274,6 +274,6 @@ $num = $this->getValue($sql, $this->user['uid']);
 
 
 <section id="message-tip"></section>
-<section id="main" class="column"><?php $this->display('count/index.php');?></section>
+<section id="main" class="column"><?php $this->display('count/index.php'); ?></section>
 </body>
 </html>

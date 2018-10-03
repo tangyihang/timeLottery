@@ -169,7 +169,7 @@ class Game extends WebLoginBase
                 $code['beiShu'] = abs($code['beiShu']);
                 $actionNo = $this->getGameNo($para['type'], $code['kjTime'] - 1);
 
-                $ano = $this->getGameNo($code['type'], $this->time + $tps[$code['type']]['data_ftime']);
+                $ano = $this->getGameNo($code['type'], $this->time);
                 if ($code['actionNo'] != $ano['actionNo']) {
                     list($dt1, $b1) = explode('-', $code['actionNo']); //提交的
                     list($dt2, $b2) = explode('-', $ano['actionNo']); //当前的
@@ -922,8 +922,6 @@ class Game extends WebLoginBase
             throw $e;
         }
     }
-
-    //}}}
 
     public function calcCount($codeList, $codeLen = 1)
     {
