@@ -88,7 +88,6 @@
 				</div-->
 
 
-                    <div style="float: right;margin-right: 300px;">
                     <div class="fl">
                         <?php if ($this->settings['yuanmosi'] == 1) { ?>
                         <b value="2.000" data-max-fan-dian="<?= $this->settings['betModeMaxFanDian0'] ?>"
@@ -110,7 +109,7 @@
                         <input id="beishu" value="<?php echo $_REQUEST['dc'] ? $_REQUEST['dc'] : $this->ifs($_COOKIE['beishu'], 1); ?>" class="txt"/>
                         <input type="button" class="addbeishu" value="+"/>
                     </div>
-                    </div>
+
                     <div class="addOrderBox">
                         <div class="prompt" id="game-tip-dom">请选择号码</div>
                         <input type="button" class="addBtn" onclick="gameActionAddCode()" value="添加投注" style="letter-spacing: 2px;font-weight: 400; background: url(/images/g_submit_bg.jpg) repeat-x;">

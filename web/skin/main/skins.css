@@ -383,7 +383,8 @@ border-bottom: 2px solid #745a8e;      font-weight: bold;      color: #694d85;}
 .game-main .game-cont .num-table .fandian .fandian-k .fdmoney2{font-size: 13px; color: #FF632C; font-weight:bold; /* margin-left: 35px; *//* margin-right: -69px; */}
 .game-main .game-cont .num-table .fandian .danwei{  }
 .game-main .game-cont .num-table .fandian .danwei input{cursor:pointer;}
-.game-main .game-cont .num-table .fandian .beishu{margin-left:10px; height:32px; float:left; display:inline; margin-right:20px;}
+.game-main .game-cont .num-table .fandian .fl {position: absolute; right: 440px;}
+.game-main .game-cont .num-table .fandian .beishu{margin-left:10px; right: 250px; position: absolute; height:32px; float:left; display:inline; margin-right:20px;}
 .game-main .game-cont .num-table .fandian .beishu span{float:left;}
 .game-main .game-cont .num-table .fandian .beishu input.txt{height:20px; width:35px; text-align:center; float:left;  margin-top: -1px; font-size:14px; font-weight:bold;display: inline-block;      position: relative;      padding: 4px;      border: 1px solid #ddd;      z-index: 10;      border-radius: 3px;      background-color: #fff;}
 .game-main .game-cont .num-table .fandian .beishu .surbeishu{float:left;      display: inline-block;      width: 26px;      line-height: 26px;      text-align: center;      margin: 0 1px;      border-radius: 3px;      cursor: pointer;      font-size: 20px;      font-family: arial;      border: 1px solid #caced1;      color: #a8aeb3;      background-color: #f4f4f4;            background-image: linear-gradient(to bottom,#f4f4f4,#e9ebec);            box-shadow: inset 0 1px 1px #fff;      text-shadow: 0 1px 1px #fff;            }
@@ -1021,7 +1022,7 @@ position: static;
 	border-color: #F08436;
 	color: #8f8f8f;
 }
-.game .pp .code-wrapper input.code.checked{
+.game .pp .code-wrapper input.code.checked,.game .pp .code-wrapperk3 input.code.checked{
 	background: none;
 	border-color: #F08436;
 	background-color: #F08436 !important;
