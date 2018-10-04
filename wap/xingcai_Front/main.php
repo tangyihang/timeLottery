@@ -477,7 +477,7 @@
                                     if ($this->settings['yuanmosi'] == 1) {
                                         ?>
                                     <b value="2.000" data-max-fan-dian="<?= $this->settings['betModeMaxFanDian0'] ?>"
-                                       class="danwei" onclick="chargeMode(2)">元</b><?php
+                                       class="danwei dwon" onclick="chargeMode(2)">元</b><?php
                                     }
                                     ?>
                                     <?php
@@ -491,7 +491,7 @@
                                     if ($this->settings['fenmosi'] == 1) {
                                         ?>
                                     <b value="0.020" data-max-fan-dian="<?= $this->settings['betModeMaxFanDian2'] ?>"
-                                       class="danwei dwon" onclick="chargeMode(0.02)">分</b><?php
+                                       class="danwei" onclick="chargeMode(0.02)">分</b><?php
                                     }
                                     ?>
                                     <?php

@@ -1,21 +1,25 @@
 <?php
+
 /**
  * 前台页面基类
  */
-class WebBase extends Object {
+class WebBase extends Object
+{
     public $controller;
     public $action;
     public $memberSessionName = 'member-session-name';
     public $user;
     public $headers;
-    public $page   = 1;
-    public $title  = '\x51\x51\x34\x31\x30\x37\x34\x39\x39\x38\x35';
+    public $page = 1;
+    public $title = '\x51\x51\x34\x31\x30\x37\x34\x39\x39\x38\x35';
     public $params = array(); // 系统配置参数
     public $types; // 彩票种类信息数组
     public $playeds; // 玩法信息数组
-    public $expire        = 3600; // 读取玩法、彩票缓存
+    public $expire = 3600; // 读取玩法、彩票缓存
     public $urlPasswordKey = '5d4!@$2#fe25d4!@$2#fe5d4!@$2#f5d4!@$2#fee5d4!@$2#feu39g867d5d4!@$2#fe6yftd3y';
-    function __construct($dsn, $user = '', $password = '') {
+
+    function __construct($dsn, $user = '', $password = '')
+    {
         session_start();
         try {
             parent::__construct($dsn, $user, $password);
@@ -26,7 +30,9 @@ class WebBase extends Object {
         } catch (Exception $e) {
         }
     }
-    public function getSystemSettings($expire = null) {
+
+    public function getSystemSettings($expire = null)
+    {
         if ($expire === null) {
             $expire = $this->expire;
         }
@@ -35,7 +41,7 @@ class WebBase extends Object {
         if ($expire && is_file($file) && filemtime($file) + $expire > $this->time) {
             return $this->settings = unserialize(file_get_contents($file));
         }
-        $sql            = "select * from {$this->prename}params";
+        $sql = "select * from {$this->prename}params";
         $this->settings = array();
         if ($data = $this->getRows($sql)) {
             foreach ($data as $var) {
@@ -46,34 +52,38 @@ class WebBase extends Object {
         return $this->settings;
     }
 
-    public function getTypes() {
+    public function getTypes()
+    {
         if ($this->types) {
             return $this->types;
         }
 
-        $sql                = "select * from {$this->prename}type where isDelete=0 order by sort asc";
+        $sql = "select * from {$this->prename}type where isDelete=0 order by sort asc";
         return $this->types = $this->getObject($sql, 'id', null, $this->expire);
     }
 
-    public function getPlayeds() {
+    public function getPlayeds()
+    {
         if ($this->playeds) {
             return $this->playeds;
         }
 
-        $sql                  = "select * from {$this->prename}played ";
+        $sql = "select * from {$this->prename}played ";
         return $this->playeds = $this->getObject($sql, 'id', null, $this->expire);
     }
 
-    public function getCurPlayeds() {
+    public function getCurPlayeds()
+    {
         $this->getTypes();
-        $sql                     = "select * from {$this->prename}played where type=" . $this->types[$this->type]["type"];
+        $sql = "select * from {$this->prename}played where type=" . $this->types[$this->type]["type"];
         return $this->curPlayeds = $this->getObject($sql, 'id', null, $this->expire);
     }
 
     /**
      * 读取系统配置参数
      */
-    public function getSystemConfig() {
+    public function getSystemConfig()
+    {
         $file = $this->cacheDir . 'FDJSALKFJSIDFJSKLJFFSJDafkljdasa5235465723';
         if (is_file($file) && filemtime($file) + $this->expire > $this->time) {
             $this->params = unserialize(file_get_contents($file));
@@ -89,8 +99,9 @@ class WebBase extends Object {
         }
     }
 
-    public function getPl($type = null, $played = null) {
-        $type   = intval($type);
+    public function getPl($type = null, $played = null)
+    {
+        $type = intval($type);
         $played = intval($played);
         if ($type == null) {
             $type = $this->type;
@@ -110,15 +121,17 @@ class WebBase extends Object {
      * @params $actionNo    最后一期的id
      */
     //获取指定的号码
-    public function getGameZdData($type, $actionNo) {
-        $type   = intval($type);
-        $sql    = "select data from {$this->prename}data_admin where type=$type and `number`= '" . $actionNo . "' limit 1";
+    public function getGameZdData($type, $actionNo)
+    {
+        $type = intval($type);
+        $sql = "select data from {$this->prename}data_admin where type=$type and `number`= '" . $actionNo . "' limit 1";
         $return = $this->getRow($sql);
         if (!$return) {
             return "";
         }
         return $return['data'];
     }
+
     /**
      * 读取将要开奖期号
      *
@@ -126,7 +139,8 @@ class WebBase extends Object {
      * @params $time        时间，如果没有，当默认当前时间
      * @params $flag        如果为true，则返回最近过去的一期（一般是最近开奖的一期），如果为flase，则是将要开奖的一期
      */
-    public function getGameNo($type, $time = null) {
+    public function getGameNo($type, $time = null)
+    {
         $type = intval($type);
         if ($time === null) {
             $time = $this->time;
@@ -134,20 +148,20 @@ class WebBase extends Object {
 
         if ($type == 34) {
             //六合彩
-            $atime   = date('Y-m-d H:i:s', $time);
+            $atime = date('Y-m-d H:i:s', $time);
             $atimedb = $this->prename . 'lhc_time';
         } else {
-            $atime   = date('H:i:s', $time);
+            $atime = date('H:i:s', $time);
             $atimedb = $this->prename . 'data_time';
         }
 
-        $sql    = "select actionNo, actionTime from {$atimedb} where type=$type and actionTime>? order by actionTime limit 1";
+        $sql = "select actionNo, actionTime from {$atimedb} where type=$type and actionTime>? order by actionTime limit 1";
         $return = $this->getRow($sql, $atime);
 
         if (!$return) {
-            $sql    = "select actionNo, actionTime from {$atimedb} where type=$type order by actionTime limit 1";
+            $sql = "select actionNo, actionTime from {$atimedb} where type=$type order by actionTime limit 1";
             $return = $this->getRow($sql, $atime);
-            $time   = $time + 24 * 3600;
+            $time = $time + 24 * 3600;
         }
 
         $types = $this->getTypes();
@@ -158,7 +172,8 @@ class WebBase extends Object {
         return $return;
     }
 
-    public function getGameLastNo($type, $time = null) {
+    public function getGameLastNo($type, $time = null)
+    {
         $type = intval($type);
         if ($time === null) {
             $time = $this->time;
@@ -166,10 +181,10 @@ class WebBase extends Object {
 
         if ($type == 34) {
             //六合彩
-            $atime   = date('Y-m-d H:i:s', $time);
+            $atime = date('Y-m-d H:i:s', $time);
             $atimedb = $this->prename . 'lhc_time';
         } else {
-            $atime   = date('H:i:s', $time);
+            $atime = date('H:i:s', $time);
             $atimedb = $this->prename . 'data_time';
         }
 
@@ -178,7 +193,7 @@ class WebBase extends Object {
         $return = $this->getRow($sql, $atime);
 
         if (!$return) {
-            $sql    = "select actionNo, actionTime from {$atimedb} where type=$type order by actionNo desc limit 1";
+            $sql = "select actionNo, actionTime from {$atimedb} where type=$type order by actionNo desc limit 1";
             $return = $this->getRow($sql, $atime);
             //$return['actionTime']=date('Y-m-d ', $time-24*3600).$return['actionTime'];
             $time = $time - 24 * 3600;
@@ -190,20 +205,21 @@ class WebBase extends Object {
         return $return;
     }
 
-    public function getGamenextNo($type, $time = null) {
+    public function getGamenextNo($type, $time = null)
+    {
         $type = intval($type);
         if ($time === null) {
             $time = $this->time;
         }
 
         $kjTime = $this->getTypeFtime($type);
-        $atime  = date('H:i:s', $time);
-        $sql    = "select actionNo, actionTime from {$this->prename}data_time where type=$type and actionTime>? order by actionTime limit 1";
+        $atime = date('H:i:s', $time);
+        $sql = "select actionNo, actionTime from {$this->prename}data_time where type=$type and actionTime>? order by actionTime limit 1";
         $return = $this->getRow($sql, $atime);
         if (!$return) {
-            $sql    = "select actionNo, actionTime from {$this->prename}data_time where type=$type order by actionTime limit 1";
+            $sql = "select actionNo, actionTime from {$this->prename}data_time where type=$type order by actionTime limit 1";
             $return = $this->getRow($sql, $atime);
-            $time   = $time + 24 * 3600;
+            $time = $time + 24 * 3600;
         }
         $types = $this->getTypes();
         if (($fun = $types[$type]['onGetNoed']) && method_exists($this, $fun)) {
@@ -212,7 +228,8 @@ class WebBase extends Object {
         return $return;
     }
 
-    public function getGameNos($type, $num = 0, $time = null) {
+    public function getGameNos($type, $num = 0, $time = null)
+    {
         $type = intval($type);
         if ($time === null) {
             $time = $this->time;
@@ -220,10 +237,10 @@ class WebBase extends Object {
 
         if ($type == 34) {
             //六合彩
-            $atime   = date('Y-m-d H:i:s', $time);
+            $atime = date('Y-m-d H:i:s', $time);
             $atimedb = $this->prename . 'lhc_time';
         } else {
-            $atime   = date('H:i:s', $time);
+            $atime = date('H:i:s', $time);
             $atimedb = $this->prename . 'data_time';
         }
 
@@ -246,7 +263,7 @@ class WebBase extends Object {
         }
 
         if (count($return) < $num) {
-            $sql     = "select actionNo, actionTime from {$this->prename}data_time where type=$type order by actionTime limit " . ($num - count($return));
+            $sql = "select actionNo, actionTime from {$this->prename}data_time where type=$type order by actionTime limit " . ($num - count($return));
             $return1 = $this->getRows($sql);
 
             if (($fun = $types[$type]['onGetNoed']) && method_exists($this, $fun)) {
@@ -265,7 +282,8 @@ class WebBase extends Object {
         return $return;
     }
 
-    private function setTimeNo(&$actionTime, &$time = null) {
+    private function setTimeNo(&$actionTime, &$time = null)
+    {
         $actionTime = wjStrFilter($actionTime);
         if (!$time) {
             $time = $this->time;
@@ -274,11 +292,12 @@ class WebBase extends Object {
         $actionTime = date('Y-m-d ', $time) . $actionTime;
     }
 
-    public function noHdCQSSC(&$actionNo, &$actionTime, $time = null) {
+    public function noHdCQSSC(&$actionNo, &$actionTime, $time = null)
+    {
         $actionNo = wjStrFilter($actionNo);
         $this->setTimeNo($actionTime, $time);
         if ($actionNo == 0 || $actionNo == 120) {
-            $actionNo   = date('Ymd-120', $time - 24 * 3600);
+            $actionNo = date('Ymd-120', $time - 24 * 3600);
             $actionTime = date('Y-m-d 00:00', $time);
             //echo $actionTime;
         } else {
@@ -286,7 +305,8 @@ class WebBase extends Object {
         }
     }
 
-    public function onHdXjSsc(&$actionNo, &$actionTime, $time = null) {
+    public function onHdXjSsc(&$actionNo, &$actionTime, $time = null)
+    {
         $this->setTimeNo($actionTime, $time);
         if ($actionNo >= 96) {
             $actionNo = date('Ymd-' . $actionNo, $time - 24 * 3600);
@@ -295,13 +315,15 @@ class WebBase extends Object {
         }
     }
 
-    public function noHd(&$actionNo, &$actionTime, $time = null) {
+    public function noHd(&$actionNo, &$actionTime, $time = null)
+    {
         //echo $actionNo;
         $this->setTimeNo($actionTime, $time);
         $actionNo = date('Ymd-', $time) . substr(100 + $actionNo, 1);
     }
 
-    public function noxHd(&$actionNo, &$actionTime, $time = null) {
+    public function noxHd(&$actionNo, &$actionTime, $time = null)
+    {
         $this->setTimeNo($actionTime, $time);
         if ($actionNo > 84) {
             $time -= 24 * 3600;
@@ -310,12 +332,14 @@ class WebBase extends Object {
         $actionNo = date('Ymd-', $time) . substr(100 + $actionNo, 1);
     }
 
-    public function no0Hd(&$actionNo, &$actionTime, $time = null) {
+    public function no0Hd(&$actionNo, &$actionTime, $time = null)
+    {
         $this->setTimeNo($actionTime, $time);
         $actionNo = date('Ymd-', $time) . substr(1000 + $actionNo, 1);
     }
 
-    public function no6Hd(&$actionNo, &$actionTime, $time = null) {
+    public function no6Hd(&$actionNo, &$actionTime, $time = null)
+    {
         if (!$time) {
             $time = $this->time;
         }
@@ -323,17 +347,20 @@ class WebBase extends Object {
         $actionNo = substr(date('Yz', $time), 0, 4) . substr(1000 + $actionNo, 1);
     }
 
-    public function no0Hdk3(&$actionNo, &$actionTime, $time = null) {
+    public function no0Hdk3(&$actionNo, &$actionTime, $time = null)
+    {
         $this->setTimeNo($actionTime, $time);
         $actionNo = date('md', $time) . substr(100 + $actionNo, 1);
     }
 
-    public function no0Hdf(&$actionNo, &$actionTime, $time = null) {
+    public function no0Hdf(&$actionNo, &$actionTime, $time = null)
+    {
         $this->setTimeNo($actionTime, $time);
         $actionNo = date('Ymd-', $time) . substr(10000 + $actionNo, 1);
     }
 
-    public function pai3(&$actionNo, &$actionTime, $time = null) {
+    public function pai3(&$actionNo, &$actionTime, $time = null)
+    {
         $this->setTimeNo($actionTime, $time);
         $actionNo = date('Yz', $time);
         $actionNo = substr($actionNo, 0, 4) . substr(substr($actionNo, 4) + 994, 1);
@@ -344,74 +371,99 @@ class WebBase extends Object {
         }
     }
 
-    public function GXklsf(&$actionNo, &$actionTime, $time = null) {
+    public function GXklsf(&$actionNo, &$actionTime, $time = null)
+    {
         $this->setTimeNo($actionTime, $time);
         $actionNo = date('Yz', $time) . substr(100 + $actionNo, 1) + 100;
         $actionNo = substr($actionNo, 0, 4) . substr(substr($actionNo, 4) + 100000, 1);
     }
+
     //北京PK10
-    public function BJpk10(&$actionNo, &$actionTime, $time = null) {
+    public function BJpk10(&$actionNo, &$actionTime, $time = null)
+    {
         $this->setTimeNo($actionTime, $time);
         $actionNo = 179 * (strtotime(date('Y-m-d', $time)) - strtotime('2007-11-11')) / 3600 / 24 + $actionNo - 5046;
     }
+
     //北京快乐8
-    public function bjkl8(&$actionNo, &$actionTime, $time = null) {
+    public function bjkl8(&$actionNo, &$actionTime, $time = null)
+    {
         $this->setTimeNo($actionTime, $time);
         $actionNo = 179 * (strtotime(date('Y-m-d', $time)) - strtotime('2004-09-19')) / 3600 / 24 + $actionNo - 3857;
     }
+
     //澳门快乐8
-    public function amkl8(&$actionNo, &$actionTime, $time = null) {
+    public function amkl8(&$actionNo, &$actionTime, $time = null)
+    {
         $this->setTimeNo($actionTime, $time);
         $actionNo = 288 * (strtotime(date('Y-m-d', $time)) - strtotime('2004-09-19')) / 3600 / 24 + $actionNo - 1234;
     }
+
     //韩国快乐8
-    public function hgkl8(&$actionNo, &$actionTime, $time = null) {
+    public function hgkl8(&$actionNo, &$actionTime, $time = null)
+    {
         $this->setTimeNo($actionTime, $time);
         $actionNo = 288 * (strtotime(date('Y-m-d', $time)) - strtotime('2004-09-19')) / 3600 / 24 + $actionNo - 4567;
     }
+
     //澳门幸运农场
-    public function amxync(&$actionNo, &$actionTime, $time = null) {
+    public function amxync(&$actionNo, &$actionTime, $time = null)
+    {
         $this->setTimeNo($actionTime, $time);
         $actionNo = date('17md', $time) . substr(1000 + $actionNo, 1);
     }
 
     //台湾幸运农场
-    public function twxync(&$actionNo, &$actionTime, $time = null) {
+    public function twxync(&$actionNo, &$actionTime, $time = null)
+    {
         $this->setTimeNo($actionTime, $time);
         $actionNo = date('17md', $time) . substr(1000 + $actionNo, 1);
     }
+
     //幸运28
-    public function luckyTwoEight(&$actionNo, &$actionTime, $time = null) {
+    public function luckyTwoEight(&$actionNo, &$actionTime, $time = null)
+    {
         $this->setTimeNo($actionTime, $time);
         $actionNo = 288 * (strtotime(date('Y-m-d', $time)) - strtotime('2004-09-19')) / 3600 / 24 + $actionNo - 4567 + 1411869;
     }
+
     //北京28
-    public function beijingTwoEight(&$actionNo, &$actionTime, $time = null) {
+    public function beijingTwoEight(&$actionNo, &$actionTime, $time = null)
+    {
         $this->setTimeNo($actionTime, $time);
         $actionNo = 179 * (strtotime(date('Y-m-d', $time)) - strtotime('2004-09-19')) / 3600 / 24 + $actionNo - 4560;
     }
+
     //三分PK10
-    public function sfpk10no(&$actionNo, &$actionTime, $time = null) {
+    public function sfpk10no(&$actionNo, &$actionTime, $time = null)
+    {
         $this->setTimeNo($actionTime, $time);
         $actionNo = date('17md', $time) . substr(1000 + $actionNo, 1);
     }
-    public function sfssc(&$actionNo, &$actionTime, $time = null) {
+
+    public function sfssc(&$actionNo, &$actionTime, $time = null)
+    {
         $this->setTimeNo($actionTime, $time);
         $actionNo = date('18md', $time) . substr(1000 + $actionNo, 1);
     }
 
     //澳门PK10
-    public function ampk10(&$actionNo, &$actionTime, $time = null) {
+    public function ampk10(&$actionNo, &$actionTime, $time = null)
+    {
         $this->setTimeNo($actionTime, $time);
         $actionNo = 288 * (strtotime(date('Y-m-d', $time)) - strtotime('2007-11-11')) / 3600 / 24 + $actionNo - 6789;
     }
+
     //台湾PK10
-    public function twpk10(&$actionNo, &$actionTime, $time = null) {
+    public function twpk10(&$actionNo, &$actionTime, $time = null)
+    {
         $this->setTimeNo($actionTime, $time);
         $actionNo = 288 * (strtotime(date('Y-m-d', $time)) - strtotime('2007-11-11')) / 3600 / 24 + $actionNo - 4321;
     }
+
     //天津时时彩
-    public function tjssc(&$actionNo, &$actionTime, $time = null) {
+    public function tjssc(&$actionNo, &$actionTime, $time = null)
+    {
         $this->setTimeNo($actionTime, $time);
         if ($actionNo > 84) {
             $time -= 24 * 3600;
@@ -419,12 +471,16 @@ class WebBase extends Object {
 
         $actionNo = date('17md', $time) . substr(1000 + $actionNo, 1);
     }
+
     //上海时时乐
-    public function shsslno(&$actionNo, &$actionTime, $time = null) {
+    public function shsslno(&$actionNo, &$actionTime, $time = null)
+    {
         $actionNo = date('17md', $time) . substr(1000 + $actionNo, 1);
     }
+
     //广东11选5
-    public function gd11(&$actionNo, &$actionTime, $time = null) {
+    public function gd11(&$actionNo, &$actionTime, $time = null)
+    {
         $this->setTimeNo($actionTime, $time);
         if ($actionNo > 84) {
             $time -= 24 * 3600;
@@ -432,8 +488,10 @@ class WebBase extends Object {
 
         $actionNo = date('17md', $time) . substr(100 + $actionNo, 1);
     }
+
     //江西11选5
-    public function jx11(&$actionNo, &$actionTime, $time = null) {
+    public function jx11(&$actionNo, &$actionTime, $time = null)
+    {
         $this->setTimeNo($actionTime, $time);
         if ($actionNo > 84) {
             $time -= 24 * 3600;
@@ -441,8 +499,10 @@ class WebBase extends Object {
 
         $actionNo = date('Ymd-', $time) . substr(100 + $actionNo, 1);
     }
+
     //山东11选5
-    public function sd11(&$actionNo, &$actionTime, $time = null) {
+    public function sd11(&$actionNo, &$actionTime, $time = null)
+    {
         $this->setTimeNo($actionTime, $time);
         if ($actionNo > 90) {
             $time -= 24 * 3600;
@@ -450,18 +510,23 @@ class WebBase extends Object {
 
         $actionNo = date('17md', $time) . substr(100 + $actionNo, 1);
     }
+
     //上海11选5
-    public function sh11(&$actionNo, &$actionTime, $time = null) {
+    public function sh11(&$actionNo, &$actionTime, $time = null)
+    {
         $this->setTimeNo($actionTime, $time);
         $actionNo = date('17md', $time) . substr(100 + $actionNo, 1);
     }
+
     //江苏快3
-    public function jsk3(&$actionNo, &$actionTime, $time = null) {
+    public function jsk3(&$actionNo, &$actionTime, $time = null)
+    {
         $this->setTimeNo($actionTime, $time);
         $actionNo = date('Ymd', $time) . substr(1000 + $actionNo, 1);
     }
 
-    public function xjssc(&$actionNo, &$actionTime, $time = null) {
+    public function xjssc(&$actionNo, &$actionTime, $time = null)
+    {
         $this->setTimeNo($actionTime, $time);
         if ($actionNo > 84) {
             $time -= 24 * 3600;
@@ -469,23 +534,27 @@ class WebBase extends Object {
 
         $actionNo = date('Ymd-', $time) . substr(100 + $actionNo, 1);
     }
+
     /**
      * 读取当前设置的赔率
      *
      * @params $type        彩种ID，
      * @params $playedId    玩法ID
      */
-    public function getBonusProp($type, $playedId) {
+    public function getBonusProp($type, $playedId)
+    {
         $sql = "select value from {$this->prename}played where type=? and playedId=?";
         return $this->getValue($sql, array($type, $playedId));
     }
 
-    public function updateSessionTime() {
+    public function updateSessionTime()
+    {
         $sql = "update {$this->prename}member_session set accessTime={$this->time} where id=?";
         $this->update($sql, $this->user['sessionId']);
     }
 
-    public function checkLogin() {
+    public function checkLogin()
+    {
         if ($user = unserialize($_SESSION[$this->memberSessionName])) {
             return $user;
         }
@@ -494,27 +563,37 @@ class WebBase extends Object {
         exit();
     }
 
-    private function setClientMessage($message, $type = 'Info', $showTime = 3000) {
+    private function setClientMessage($message, $type = 'Info', $showTime = 3000)
+    {
         $message = trim(rawurlencode($message), '"');
         header("X-$type-Message: $message");
         header("X-$type-Message-Times: $showTime");
     }
 
-    protected function info($message, $showTime = 3000) {
+    protected function info($message, $showTime = 3000)
+    {
         $this->setClientMessage($message, 'Info', $showTime);
     }
-    protected function success($message, $showTime = 3000) {
+
+    protected function success($message, $showTime = 3000)
+    {
         $this->setClientMessage($message, 'Success', $showTime);
     }
-    protected function warning($message, $showTime = 3000) {
+
+    protected function warning($message, $showTime = 3000)
+    {
         $this->setClientMessage($message, 'Warning', $showTime);
     }
-    public function error($message, $showTime = 5000) {
+
+    public function error($message, $showTime = 5000)
+    {
         $this->setClientMessage($message, 'Error', $showTime);
         exit;
     }
+
     //获取延迟时间
-    public function getTypeFtime($type) {
+    public function getTypeFtime($type)
+    {
 
         if ($type) {
             $Ftime = $this->getValue("select data_ftime from {$this->prename}type where id = ? ", $type);
@@ -525,8 +604,10 @@ class WebBase extends Object {
 
         return intval($Ftime);
     }
+
     //获取该玩法最大注数
-    public function getmaxcount($playedid) {
+    public function getmaxcount($playedid)
+    {
         if ($playedid) {
             $maxcount = $this->getValue("select maxcount from {$this->prename}played where id = ? ", $playedid);
         }
@@ -534,7 +615,8 @@ class WebBase extends Object {
     }
 
     //获取该玩法名
-    public function getplayedname($playedid) {
+    public function getplayedname($playedid)
+    {
         if ($playedid) {
             $playedname = $this->getValue("select name from {$this->prename}played where id = ? ", $playedid);
         }
@@ -542,7 +624,8 @@ class WebBase extends Object {
     }
 
     //获取最低消费金额
-    public function getmincoin($playedid) {
+    public function getmincoin($playedid)
+    {
         if ($playedid) {
             $mincoin = $this->getValue("select minCharge from {$this->prename}played where id = ? ", $playedid);
         }
@@ -551,7 +634,8 @@ class WebBase extends Object {
     //////
 
     //获取当期时间
-    public function getGameActionTime($type, $old = 0) {
+    public function getGameActionTime($type, $old = 0)
+    {
         $actionNo = $this->getGameNo($type);
 
         if ($type == 1 && $actionNo['actionTime'] == '00:00') {
@@ -567,16 +651,18 @@ class WebBase extends Object {
     } /////
 
     //获取当期期数
-    public function getGameActionNo($type) {
+    public function getGameActionNo($type)
+    {
         $actionNo = $this->getGameNo($type);
         return $actionNo['actionNo'];
     } /////
 
     //六合彩获取赔率
-    public function getLHCRte($flag, $playid) {
-        $flag      = wjStrFilter($flag);
-        $playid    = intval($playid);
-        $sql       = "select Rte from {$this->prename}lhc_ratio where playid={$playid} and flag='{$flag}'";
+    public function getLHCRte($flag, $playid)
+    {
+        $flag = wjStrFilter($flag);
+        $playid = intval($playid);
+        $sql = "select Rte from {$this->prename}lhc_ratio where playid={$playid} and flag='{$flag}'";
         $returnVal = $this->getValue($sql);
         if (!$returnVal) {
             $returnVal = 0.00;
@@ -586,9 +672,10 @@ class WebBase extends Object {
     }
 
     //快三赔率获取
-    public function getK3Rte($rName){
-        $flag      = wjStrFilter($rName);
-        $sql       = "select Rte from {$this->prename}k3 where rName='{$rName}'";
+    public function getK3Rte($rName)
+    {
+        $flag = wjStrFilter($rName);
+        $sql = "select Rte from {$this->prename}k3 where rName='{$rName}'";
         $returnVal = $this->getValue($sql);
         if (!$returnVal) {
             $returnVal = 0.00;
@@ -597,14 +684,17 @@ class WebBase extends Object {
         return $returnVal;
     }
 
-    public function getLHCInfo($playid, $remark) {
-        $playid    = intval($playid);
-        $remark    = intval($remark);
-        $sql       = "select * from {$this->prename}lhc_ratio where playid={$playid}  and remark='{$remark}'";
+    public function getLHCInfo($playid, $remark)
+    {
+        $playid = intval($playid);
+        $remark = intval($remark);
+        $sql = "select * from {$this->prename}lhc_ratio where playid={$playid}  and remark='{$remark}'";
         $returnVal = $this->getRows($sql);
         return $returnVal;
     }
-    public function tranSecToMHDY($second, $return = '') {
+
+    public function tranSecToMHDY($second, $return = '')
+    {
         if (!is_numeric($second) || $second < 0) {
             return false;
         }
@@ -613,20 +703,16 @@ class WebBase extends Object {
             if ($second < 60) {
                 $return .= $second . '秒';
                 $second = 0;
-            } else if ($second >= 60 && $second < 60 * 60) {
-//分
+            } else if ($second >= 60 && $second < 60 * 60) {//分
                 $return .= floor($second / 60) . '分';
                 $second %= 60;
-            } else if ($second >= 60 * 60 && $second < 24 * 60 * 60) {
-//小时
+            } else if ($second >= 60 * 60 && $second < 24 * 60 * 60) {//小时
                 $return .= floor($second / (60 * 60)) . '小时';
                 $second %= (60 * 60);
-            } else if ($second >= 24 * 60 * 60 && $second < 7 * 24 * 60 * 60) {
-//天
+            } else if ($second >= 24 * 60 * 60 && $second < 7 * 24 * 60 * 60) {//天  
                 $return .= floor($second / (24 * 60 * 60)) . '天';
                 $second %= (24 * 60 * 60);
-            } else if ($second >= 7 * 24 * 60 * 60 && $second < 365 * 24 * 60 * 60) {
-//年
+            } else if ($second >= 7 * 24 * 60 * 60 && $second < 365 * 24 * 60 * 60) {//年  
                 $return .= floor($second / (7 * 24 * 60 * 60)) . '年';
                 $second %= (7 * 24 * 60 * 60);
             }
@@ -637,9 +723,10 @@ class WebBase extends Object {
     }
 
     //随机函数
-    public function randomkeys($length) {
-        $key      = "";
-        $pattern  = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+    public function randomkeys($length)
+    {
+        $key = "";
+        $pattern = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
         $pattern1 = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
         $pattern2 = '0123456789';
         for ($i = 0; $i < $length; $i++) {
@@ -648,7 +735,8 @@ class WebBase extends Object {
         return $key;
     }
 
-    public function myxor($string, $key = '') {
+    public function myxor($string, $key = '')
+    {
         if ('' == $string) {
             return '';
         }
@@ -665,7 +753,9 @@ class WebBase extends Object {
 
         return $string ^ $key;
     }
-    public function strToHex($string) {
+
+    public function strToHex($string)
+    {
         $hex = "";
         for ($i = 0; $i < strlen($string); $i++) {
             $hex .= dechex(ord($string[$i]));
@@ -673,14 +763,18 @@ class WebBase extends Object {
         $hex = strtoupper($hex);
         return $hex;
     }
-    public function hexToStr($hex) {
+
+    public function hexToStr($hex)
+    {
         $string = "";
         for ($i = 0; $i < strlen($hex) - 1; $i += 2) {
             $string .= chr(hexdec($hex[$i] . $hex[$i + 1]));
         }
         return $string;
     }
-    public function getRand($proArr) {
+
+    public function getRand($proArr)
+    {
         $result = '';
         $proSum = array_sum($proArr);
         foreach ($proArr as $key => $proCur) {
@@ -695,8 +789,10 @@ class WebBase extends Object {
         unset($proArr);
         return $result;
     }
+
     //输出单号
-    function formatwords($str) {
+    function formatwords($str)
+    {
         if ($str) {
             $len = strlen($str);
             for ($i = 0; $i < $len; $i++) {

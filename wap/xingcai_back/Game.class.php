@@ -305,6 +305,9 @@ class Game extends WebLoginBase
             $codes[$i] = array_merge($code, $para);
             $amount += abs($code['actionNum'] * $code['mode'] * $code['beiShu']);
         }
+        if (empty($this->user['uid'])) {
+            throw new Exception('请先登录');
+        }
         // 查询用户可用资金
         $userAmount = $this->getValue("select coin from {$this->prename}members where uid={$this->user['uid']}");
         if ($userAmount < $amount)

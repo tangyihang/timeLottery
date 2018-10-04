@@ -2,13 +2,14 @@
 
 class Random extends WebBase
 {
-    private $al = array(363, 364, 365, 366, 367, 368, 369,93,244,300,63,65,120,119,123,121,124,126,54,348,56,355,358,282,361,362,45,46,47,48,49,50,51,52,292);//ÍÏµ¨
-    private $a2 = array(197, 198, 199, 200, 201, 202, 16, 324, 17, 19, 325, 20, 23);//ÈıĞÇ×éÑ¡
-    private $a3 = array(209, 211, 213, 214, 31, 33, 30, 35, 36, 15,60,157);//¶şĞÇ×éÑ¡
-    private $a4 = array(215, 223, 224, 220, 221, 222, 37, 142, 143, 261, 262, 263, 331, 42, 43, 44,144);//¶¨µ¨
+    private $al = array(363, 364, 365, 366, 367, 368, 369, 93, 244, 300, 63, 65, 120, 119, 123, 121, 124, 126, 54, 348, 56, 355, 358, 282, 361, 362, 45, 46, 47, 48, 49, 50, 51, 52, 292, 411);//æ‹–èƒ†
+    private $a2 = array(197, 198, 199, 200, 201, 202, 16, 324, 17, 19, 325, 20, 23);//ä¸‰æ˜Ÿç»„é€‰
+    private $a3 = array(209, 211, 213, 214, 31, 33, 30, 35, 36, 15, 60, 157);//äºŒæ˜Ÿç»„é€‰
+    private $a4 = array(215, 223, 224, 220, 221, 222, 37, 142, 143, 261, 262, 263, 331, 42, 43, 44, 144);//å®šèƒ†
+    private $a5 = array();
 
     /**
-     *  »úÑ¡ºÅÂë
+     *  æœºé€‰å·ç 
      */
     public final function getLotteryRandom($playid, $count = 1)
     {
@@ -73,13 +74,13 @@ class Random extends WebBase
             $n = $this->getRandom301();
             return json_encode(array('actionData' => $n['number'], 'actionNum' => (int)$n['actionNum']));
         }
-        if (in_array($playid,array(225,227,226,228,229,230,231,232,233,234,235,236))) {
+        if (in_array($playid, array(225, 227, 226, 228, 229, 230, 231, 232, 233, 234, 235, 236))) {
             $n = $this->getRandom225();
-            return json_encode(array('actionData' => $n, 'actionNum' =>2));
+            return json_encode(array('actionData' => $n, 'actionNum' => 2));
         }
-        if (in_array($playid,array(237,238,239,240,241,242,243))) {
+        if (in_array($playid, array(237, 238, 239, 240, 241, 242, 243))) {
             $n = $this->getRandom237();
-            return json_encode(array('actionData' => $n, 'actionNum' =>1));
+            return json_encode(array('actionData' => $n, 'actionNum' => 1));
         }
         if ($playid == 265 || $playid == 266 || $playid == 73) {
             $n = $this->getRandom265();
@@ -97,27 +98,27 @@ class Random extends WebBase
         if ($row) {
             for ($i = 0; $i < $count; $i++) {
                 switch ($row['type']) {
-                    case 1://Ê±Ê±²Ê
+                    case 1://æ—¶æ—¶å½©
                         $number[] = $this->getSSCRandom($row['selectNum'], $playid);
                         break;
-                    case 5://Ê±Ê±²Ê
+                    case 5://æ—¶æ—¶å½©
                         $number[] = $this->getSSCRandom($row['selectNum'], $playid);
                         break;
-                    case 2://Ê®Ò»Ñ¡Îå
+                    case 2://åä¸€é€‰äº”
                         $number[] = $this->get11x5Random($row['selectNum'], $playid);
                         break;
-                    case 3://3dÅÅÈı
+                    case 3://3dæ’ä¸‰
                         $number[] = $this->get3dRandom($row['selectNum'], $playid);
                         break;
                     case 6://PK10
                         $number[] = $this->getPK10Random($row['selectNum'], $playid);
                         break;
-                    case 9://¿ìÈı
+                    case 9://å¿«ä¸‰
                         $number[] = $this->getK3Random($row['selectNum'], $playid);
                         break;
-                    case 10://±±¾©28
+                    case 10://åŒ—äº¬28
                         break;
-                    case 11://ÁùºÏ²Ê
+                    case 11://å…­åˆå½©
                         break;
                 }
             }
@@ -212,12 +213,11 @@ class Random extends WebBase
             $actionNum = $number[0]['count'];
         }
 
-
         return json_encode(array('actionData' => $n, 'actionNum' => (int)$actionNum));
     }
 
     /*
-    *Ê±Ê±²Ê»úÑ¡
+    *æ—¶æ—¶å½©æœºé€‰
     */
     public function getSSCRandom($num, $playid)
     {
@@ -263,23 +263,23 @@ class Random extends WebBase
         return array('number' => str_ireplace(" ", "", $number), 'count' => $count);
     }
 
-    /*3dÅÅÈı»úÑ¡*/
+    /*3dæ’ä¸‰æœºé€‰*/
     public function get3DRandom($num, $playid)
     {
         $number = "";
         $zhixun = array('57', '67', '69');
         $count = 1;
-        if (in_array($playid, $zhixuan))//Ö±Ñ¡
+        if (in_array($playid, $zhixuan))//ç›´é€‰
         {
             $number = $this->getRandom($num, $num, 0, 9, 1, 0);
-        } else if ($playid == '72')//´óĞ¡µ¥Ë«
+        } else if ($playid == '72')//å¤§å°å•åŒ
         {
             $number = implode(" ", $this->getRandomDXDS(2));
-        } else if ($playid == '300')//Ö±Ñ¡ºÍÖµ
+        } else if ($playid == '300')//ç›´é€‰å’Œå€¼
         {
             $number = $this->getRandom(1, 1, 0, 27, 0, 0);
             $count = intval($this->getCount($number, $playid));
-        } else if ($playid == '301')//×éÑ¡ºÍÖµ
+        } else if ($playid == '301')//ç»„é€‰å’Œå€¼
         {
             $number = $this->getRandom(1, 1, 1, 26, 0, 0);
             $count = intval($this->getCount($number, $playid));
@@ -290,55 +290,60 @@ class Random extends WebBase
         return array('number' => str_ireplace(" ", "", $number), 'count' => $count);
     }
 
-    /*11Ñ¡Îå»úÑ¡*/
+    /*11é€‰äº”æœºé€‰*/
     public function get11x5Random($num, $playid)
     {
-        if (in_array($playid,array(363, 364, 365, 366, 367, 368 ))) {
+        if (in_array($playid, array(363, 364, 365, 366, 367, 368))) {
             $number = '(' . $this->get11x5RandomNumberOne(1, 3) . ' ' . $this->get11x5RandomNumberOne(4, 6) . ')' . $this->get11x5RandomNumberOne(7, 9) . ' ' . $this->get11x5RandomNumberOne(10, 11);
-        } elseif($playid == 54 | $playid == 348 || $playid == 46){
-            $number =$this->get11x5RandomNumberOne(1, 6) . ' ' . $this->get11x5RandomNumberOne(7, 11);
-        }elseif(in_array($playid,array(47,48,358,355,56,49,50,51,52))){
+        } elseif ($playid == 54 | $playid == 348 || $playid == 46) {
+            $number = $this->get11x5RandomNumberOne(1, 6) . ' ' . $this->get11x5RandomNumberOne(7, 11);
+        } elseif (in_array($playid, array(47, 48, 358, 355, 56, 49, 50, 51, 52))) {
             $number = $this->getRandom($num, $num, 1, 11, 0, 1);
-            $number = str_replace(',',' ',$number);
-        }else {
+            $number = str_replace(',', ' ', $number);
+        } else {
             $number = $this->getRandom($num, $num, 1, 11, 0, 1);
         }
 
         return array('number' => $number, 'count' => 1);
     }
 
-    /*K3»úÑ¡*/
+    /*K3æœºé€‰*/
     public function getK3Random($num, $playid)
     {
         $number = "";
-        if ($playid == '118')//ºÍÖµ
+        if ($playid == '118')//å’Œå€¼
         {
             $number = $this->getRandom($num, $num, 3, 18, 0, 0);
-        } else if ($playid == '119')//ÈıÍ¬ºÅÍ¨Ñ¡
+        } else if ($playid == '411') {
+            $arr = array('å¤§', 'å°', 'å•', 'åŒ', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18');
+
+            $randNum = mt_rand(0, 19);
+            $number = $arr[$randNum];
+        } else if ($playid == '119')//ä¸‰åŒå·é€šé€‰
         {
             $number = "111,222,333,444,555,666";
-        } else if ($playid == '120')//ÈıÍ¬ºÅµ¥Ñ¡
+        } else if ($playid == '120')//ä¸‰åŒå·å•é€‰
         {
             $tong = mt_rand(1, 6);
             $number = $tong . $tong . $tong;
-        } else if ($playid == '121')//¶şÍ¬ºÅ¸´Ñ¡
+        } else if ($playid == '121')//äºŒåŒå·å¤é€‰
         {
             $tong = mt_rand(1, 6);
             $number = $tong . $tong . '*';
-        } else if ($playid == '122')//¶şÍ¬ºÅµ¥Ñ¡
+        } else if ($playid == '122')//äºŒåŒå·å•é€‰
         {
             $number = $this->getRandom(2, 2, 1, 6, 0, 0);
             $number = substr($number, 0, 1) . $number;
-        } else if ($playid == '123')//Èı²»Í¬ºÅ
+        } else if ($playid == '123')//ä¸‰ä¸åŒå·
         {
             $number = $this->getRandom(3, 1, 1, 6, 0, 0);
-        } else if ($playid == '124')//¶ş²»Í¬ºÅ
+        } else if ($playid == '124')//äºŒä¸åŒå·
         {
             $number = $this->getRandom(2, 1, 1, 6, 0, 0);
-        } else if ($playid == '125')//ÈıÁ¬ºÅÍ¨Ñ¡
+        } else if ($playid == '125')//ä¸‰è¿å·é€šé€‰
         {
             $number = "123,234,345,456";
-        } else if ($playid == '126')//´óĞ¡µ¥Ë«
+        } else if ($playid == '126')//å¤§å°å•åŒ
         {
             $number = implode(" ", $this->getRandomDXDS(1));
         }
@@ -346,26 +351,26 @@ class Random extends WebBase
         return array('number' => $number, 'count' => 1);
     }
 
-    /*PK10»úÑ¡*/
+    /*PK10æœºé€‰*/
     public function getPK10Random($num, $playid)
     {
         $number = "";
         $dxds = array('225', '226', '227', '228', '229', '230', '231', '232', '233', '234', '235', '236');
         $longhu = array('238', '239', '240', '241', '242', '243', '244');
         $zhixuan = array('93', '94', '95', '244');
-        if (in_array($playid, $zhixuan))//Ö±Ñ¡
+        if (in_array($playid, $zhixuan))//ç›´é€‰
         {
             $number = $this->getRandom($num, $num, 0, 10, 0, 1);
-        } else if (in_array($playid, $longhu))//Áú»¢
+        } else if (in_array($playid, $longhu))//é¾™è™
         {
             $number = $this->getRandomLH();
-        } else if (in_array($playid, $dxds))//´óĞ¡µ¥Ë«
+        } else if (in_array($playid, $dxds))//å¤§å°å•åŒ
         {
             $number = implode(" ", $this->getRandomDXDS(1));
-        } else if ($playid == '246')//ºÍÖµ
+        } else if ($playid == '246')//å’Œå€¼
         {
             $number = $this->getRandom(1, 1, 3, 19, 0, 0);
-        } else if ($playid == '247')//¹ÚÑÇ¾ü×éºÏ
+        } else if ($playid == '247')//å† äºšå†›ç»„åˆ
         {
             $gyzh = $this->getRandomNumber(2, 1, 10);
             sort($gyzh);
@@ -374,7 +379,7 @@ class Random extends WebBase
         return array('number' => $number, 'count' => 1);
     }
 
-    /*Ëæ»úÑ¡ºÅ Î»Êı Ñ¡ºÅ¸öÊı ÆğÖ¹ ÊÇ·ñ¿ÉÒÔÏàÍ¬ ÊÇ·ñ²¹0*/
+    /*éšæœºé€‰å· ä½æ•° é€‰å·ä¸ªæ•° èµ·æ­¢ æ˜¯å¦å¯ä»¥ç›¸åŒ æ˜¯å¦è¡¥0*/
     public function getRandom($num, $row, $start, $end, $diff, $bu)
     {
         $number = "";
@@ -406,7 +411,7 @@ class Random extends WebBase
 
     }
 
-    /**»ñÈ¡sscËæ»úÊı*/
+    /**è·å–sscéšæœºæ•°*/
     public function getRandomNumber($num, $start, $end)
     {
         $return = array();
@@ -420,30 +425,30 @@ class Random extends WebBase
         return $return;
     }
 
-    /**»ñÈ¡´óĞ¡µ¥Ë«Ëæ»úÊı*/
+    /**è·å–å¤§å°å•åŒéšæœºæ•°*/
     public function getRandomDXDS($row)
     {
         $return = array();
-        $dxds = array('´ó', 'Ğ¡', 'µ¥', 'Ë«');
+        $dxds = array('å¤§', 'å°', 'å•', 'åŒ');
         $count = 0;
         while ($count < $row) {
-            $return[] = iconv('gbk', 'utf-8',$dxds[mt_rand(0, 3)]);
+            $return[] = iconv('gbk', 'utf-8', $dxds[mt_rand(0, 3)]);
             $count = count($return);
         }
 
         return $return;
     }
 
-    /**»ñÈ¡Áú»¢Ëæ»úÊı*/
+    /**è·å–é¾™è™éšæœºæ•°*/
     public function getRandomLH()
     {
 
-        $dxds = array('Áú', '»¢');
+        $dxds = array('é¾™', 'è™');
         $return = $dxds[mt_rand(0, 1)];
         return $return;
     }
 
-    /**»ñÈ¡11x5Ëæ»úÊı*/
+    /**è·å–11x5éšæœºæ•°*/
     public function get11x5RandomNumber($num, $start, $end)
     {
         $return = array();
@@ -457,13 +462,13 @@ class Random extends WebBase
         return $return;
     }
 
-    /**»ñÈ¡11x5Ëæ»úÊı--»ñÈ¡Ò»¸öºÅ*/
+    /**è·å–11x5éšæœºæ•°--è·å–ä¸€ä¸ªå·*/
     public function get11x5RandomNumberOne($start, $end)
     {
         return str_pad(mt_rand($start, $end), 2, "0", STR_PAD_LEFT);
     }
 
-    /*»ñÈ¡×¢Êı*/
+    /*è·å–æ³¨æ•°*/
     public function getCount($number, $playid)
     {
         $ssczux_count = array('1', '2', '2', '4', '5', '6', '8', '10', '11', '13', '14', '14', '15', '15', '14', '14', '13', '11', '10', '8', '6', '5', '4', '2', '2', '1');
@@ -490,17 +495,17 @@ class Random extends WebBase
     }
 
     /**
-     * @desc Íæ·¨220 ´óĞ¡µ¥Ë«
+     * @desc ç©æ³•220 å¤§å°å•åŒ
      * @date 2017/9/9 10:09
      * @Version v10
      * @author 6046
-     * @return uid | ÓÃ»§id
+     * @return uid | ç”¨æˆ·id
      * @sample {}
      */
     public function getRandom220()
     {
-        $w = array('´ó', 'Ğ¡', 'µ¥', 'Ë«');
-        $q = array('´ó', 'Ğ¡', 'µ¥', 'Ë«');
+        $w = array('å¤§', 'å°', 'å•', 'åŒ');
+        $q = array('å¤§', 'å°', 'å•', 'åŒ');
 
         $wr = rand(0, 3);
         $wq = rand(0, 3);
@@ -509,18 +514,18 @@ class Random extends WebBase
     }
 
     /**
-     * @desc Íæ·¨220 ´óĞ¡µ¥Ë«
+     * @desc ç©æ³•220 å¤§å°å•åŒ
      * @date 2017/9/9 10:09
      * @Version v10
      * @author 6046
-     * @return uid | ÓÃ»§id
+     * @return uid | ç”¨æˆ·id
      * @sample {}
      */
     public function getRandom265()
     {
-        $w = array('´ó', 'Ğ¡', 'µ¥', 'Ë«');
-        $q = array('´ó', 'Ğ¡', 'µ¥', 'Ë«');
-        $g = array('´ó', 'Ğ¡', 'µ¥', 'Ë«');
+        $w = array('å¤§', 'å°', 'å•', 'åŒ');
+        $q = array('å¤§', 'å°', 'å•', 'åŒ');
+        $g = array('å¤§', 'å°', 'å•', 'åŒ');
 
 
         $wr = rand(0, 3);
@@ -532,8 +537,8 @@ class Random extends WebBase
 
     public function getRandom72()
     {
-        $w = array('´ó', 'Ğ¡', 'µ¥', 'Ë«');
-        $q = array('´ó', 'Ğ¡', 'µ¥', 'Ë«');
+        $w = array('å¤§', 'å°', 'å•', 'åŒ');
+        $q = array('å¤§', 'å°', 'å•', 'åŒ');
 
 
         $wr = rand(0, 3);
@@ -543,11 +548,11 @@ class Random extends WebBase
     }
 
     /**
-     * @desc ¹¦ÄÜÃèÊö
+     * @desc åŠŸèƒ½æè¿°
      * @date 2017/9/9 10:34
      * @Version v10
      * @author 6046
-     * @return uid | ÓÃ»§id
+     * @return uid | ç”¨æˆ·id
      * @sample {}
      */
     public function getRandom321()
@@ -561,11 +566,11 @@ class Random extends WebBase
     }
 
     /**
-     * @desc ¹¦ÄÜÃèÊö
+     * @desc åŠŸèƒ½æè¿°
      * @date 2017/9/9 10:34
      * @Version v10
      * @author 6046
-     * @return uid | ÓÃ»§id
+     * @return uid | ç”¨æˆ·id
      * @sample {}
      */
     public function getRandom320()
@@ -580,7 +585,7 @@ class Random extends WebBase
 
     public function getRandom323()
     {
-        $w = array('±ª×Ó', 'Ë³×Ó', '¶Ô×Ó');
+        $w = array('è±¹å­', 'é¡ºå­', 'å¯¹å­');
         $wr = rand(0, 3);
         $actionNum = 1;
         return array('number' => iconv('gbk', 'utf-8', $w[$wr]), 'actionNum' => $actionNum);
@@ -664,29 +669,32 @@ class Random extends WebBase
         $w2 = rand(1, 10);
         $w3 = rand(1, 10);
         $w4 = rand(1, 10);
-        $wr = $w1.','.$w2.','.$w3.','.$w4.',-,-,-,-,-,-';
+        $wr = $w1 . ',' . $w2 . ',' . $w3 . ',' . $w4 . ',-,-,-,-,-,-';
         $actionNum = $Bet->dwd10($wr);
 
         return array('number' => $wr, 'actionNum' => $actionNum);
     }
+
     public function getRandom225()
     {
-        $w = array('´ó', 'Ğ¡');
-        $q = array('µ¥', 'Ë«');
+        $w = array('å¤§', 'å°');
+        $q = array('å•', 'åŒ');
 
-        $wr = rand(0,1);
-        $wq = rand(0,1);
+        $wr = rand(0, 1);
+        $wq = rand(0, 1);
 
-        return iconv('gbk', 'utf-8', $w[$wr]).iconv('gbk', 'utf-8', $q[$wq]);
+        return iconv('gbk', 'utf-8', $w[$wr]) . iconv('gbk', 'utf-8', $q[$wq]);
     }
+
     public function getRandom237()
     {
-        $w = array('Áú', '»¢');
+        $w = array('é¾™', 'è™');
 
-        $wr = rand(0,1);
+        $wr = rand(0, 1);
 
         return iconv('gbk', 'utf-8', $w[$wr]);
     }
+
     public function getRandom301()
     {
         require 'Bet.class.php';
