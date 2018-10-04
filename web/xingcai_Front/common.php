@@ -617,76 +617,76 @@
 <script src="/files/jquery.mCustomScrollbar.concat.min.js"></script><!-- 滚动条插件 -->
 <script src="/files/tool_scroll_lobby.js"></script><!-- 自适应浏览器尺寸，滚动条插件 -->
 <script>
-    //登陆
-    function userLogin_t() {
-      var username = $("#username").val();
-      var password = $("#password").val();
-      var vcode = $("#authnum").val();
-      if (username == '') {
-        alert('请输入用户名');
-        return
+  //登陆
+  function userLogin_t() {
+    var username = $("#username").val();
+    var password = $("#password").val();
+    var vcode = $("#authnum").val();
+    if (username == '') {
+      alert('请输入用户名');
+      return
+    }
+    if (password == '') {
+      alert('请输入登录密码');
+      return
+    }
+    if (vcode == '') {
+      alert('请输入验证码');
+      return
+    }
+    var user = {
+        username: username, password: password, vcode: vcode
       }
-      if (password == '') {
-        alert('请输入登录密码');
-        return
-      }
-      if (vcode == '') {
-        alert('请输入验证码');
-        return
-      }
-      var user = {
-          username: username, password: password, vcode: vcode
-        }
-      ;
-      $.ajax({
-          type: 'POST', url: '/index.php/user/ajaxlogined', // timeout : 10000,
-          data: user, dataType: "json", success: function (data) {
+    ;
+    $.ajax({
+        type: 'POST', url: '/index.php/user/ajaxlogined', // timeout : 10000,
+        data: user, dataType: "json", success: function (data) {
 
-            if (data.code > 0) {
-              alert(data.msg);
+          if (data.code > 0) {
+            alert(data.msg);
+          }
+          else {
+            parent.culs = true;
+            var user_baseinfo = parent.$("#user_baseinfo");
+            if (user_baseinfo) {
+              $("a[name=user_name]").html(data.data.username);
+              parent.$("#user_username").html(data.data.username);
+              //reloadMemberInfo();
             }
             else {
-              parent.culs = true;
-              var user_baseinfo = parent.$("#user_baseinfo");
-              if (user_baseinfo) {
-                $("a[name=user_name]").html(data.data.username);
-                parent.$("#user_username").html(data.data.username);
-                //reloadMemberInfo();
-              }
-              else {
-                $("a[name=user_name]").html(data.data.username);
-                parent.$("#user_username").html(data.data.username);
-                //reloadMemberInfo();
-              }
-              $("#wdtg").hide();
-              alert('登录成功');
-              culs = true;
-              $("#header_user_login").hide();
-              $("#header_user").show();
-              //parent.layer.closeAll();
-              $("#user_name").text(data.data.name);
-              $("#balance").text(data.data.coin);
+              $("a[name=user_name]").html(data.data.username);
+              parent.$("#user_username").html(data.data.username);
+              //reloadMemberInfo();
             }
-          }
-          , error: function (e) {
-            console.log(e);
-          }
-          , complete: function (XHR, textStatus) {
-            XHR = null;
+            $("#wdtg").hide();
+            alert('登录成功');
+            culs = true;
+            $("#header_user_login").hide();
+            $("#header_user").show();
+            //parent.layer.closeAll();
+            $("#user_name").text(data.data.name);
+            $("#balance").text(data.data.coin);
           }
         }
-      );
-    }
+        , error: function (e) {
+          console.log(e);
+        }
+        , complete: function (XHR, textStatus) {
+          XHR = null;
+        }
+      }
+    );
+  }
 
-    function topay1() {
-      layer.open({
-          type: 2, area: ['1000px', '600px'], //fixed: false, //不固定
-          title: '提现', scrollbar: false, //屏蔽滚动条
-          //maxmin: true,
-          content: '/index.php/cash/toCash'
-        }
-      );
-      return false;
-    }</script>
+  function topay1() {
+    layer.open({
+        type: 2, area: ['1000px', '600px'], //fixed: false, //不固定
+        title: '提现', scrollbar: false, //屏蔽滚动条
+        //maxmin: true,
+        content: '/index.php/cash/toCash'
+      }
+    );
+    return false;
+  }</script>
 </body>
 </html>

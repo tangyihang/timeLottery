@@ -76,6 +76,9 @@ class Game extends WebLoginBase
                 throw new Exception('提交数据出错，请重新投注1');
             if ($played['id'] != $code['playedId'])
                 throw new Exception('提交数据出错，请重新投注2');
+            //检查返点
+            if ($code['fanDian'] != 0)
+                throw new Exception('请勿改包！');
             //检查赔率
             $chkBonus = ($played['bonusProp'] - $played['bonusPropBase']) / $this->settings['fanDianMax'] * $this->user['fanDian'] + $played['bonusPropBase'] - ($played['bonusProp'] - $played['bonusPropBase']) * $code['fanDian'] / $this->settings['fanDianMax']; //实际奖金
             //if($code['bonusProp']>$played['bonusProp']) throw new Exception('提交奖金大于最大奖金，请重新投注');
