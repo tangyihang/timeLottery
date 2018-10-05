@@ -1268,7 +1268,7 @@ function gameAddCode(code) {
             $('<td>').data('value', code.actionNum).append('[' + code.actionNum + '注]')
           )
           .append(
-            $('<td>').data('value', amount).append(amount.round(3) + "元")
+            $('<td>').data('value', amount).append(amount + "元")
           )
           .append(
             $('<td>').append(code.beiShu + '倍')
@@ -1345,7 +1345,7 @@ function gameAddCode(code) {
           $('<td>').data('value', code.actionNum).append('[' + code.actionNum + '注]')
         )
         .append(
-          $('<td>').data('value', amount).append(amount.round(3) + "元")
+          $('<td>').data('value', amount).append(amount + "元")
         )
         .append(
           $('<td>').append(code.beiShu + '倍')
