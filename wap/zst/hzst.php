@@ -373,7 +373,7 @@ $typeid = intval($_REQUEST['typeid']);
                   var doubleString = '<span style="background:#b49458;-moz-border-radius:3px; -webkit-border-radius:3px; font-size: 18px; border-radius:5px; border:1px solid #b49458;color:#fff;">双</span>';
                   var singleString = '<span style="background:#87c95f;-moz-border-radius:3px; -webkit-border-radius:3px; font-size: 18px; border-radius:5px; border:1px solid #87c95f;color:#fff;">单</span>';
                   tmpHtml += '<td>' + total + '</td>';
-                  tmpHtml += '<td>' + (total >= 10 ? bigString : smallString) + '</td>';
+                  tmpHtml += '<td>' + (total > 10 ? bigString : smallString) + '</td>';
                   tmpHtml += '<td>' + (total % 2 == 0 ? doubleString : singleString) + '</td>';
                 }
                 txtHtml += '<tr class="trend-bg-'+(i % 2 == 0 ? '1' : '2')+'">' + tmpHtml + '</tr>';
