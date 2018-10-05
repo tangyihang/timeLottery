@@ -360,7 +360,7 @@ class Random extends WebBase
         $zhixuan = array('93', '94', '95', '244');
         if (in_array($playid, $zhixuan))//直选
         {
-            $number = $this->getRandom($num, $num, 0, 10, 0, 1);
+            $number = $this->getRandom($num, $num, 1, 10, 0, 1);
         } else if (in_array($playid, $longhu))//龙虎
         {
             $number = $this->getRandomLH();

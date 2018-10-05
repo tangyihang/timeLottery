@@ -1336,10 +1336,7 @@ function gameAddCode(code) {
       delete code.undefined;
       $('<tr>').data('code', code)
         .append(
-          $('<td>').append(playedName)
-        )
-        .append(
-          $('<td class="code-list">')//.append(wei+(code.actionData.length>18?(code.actionData.substr(0,5)+'...'):code.actionData))
+          $('<td>').append(playedName + code.actionData)
         )
         .append(
           $('<td>').data('value', code.actionNum).append('[' + code.actionNum + '注]')
