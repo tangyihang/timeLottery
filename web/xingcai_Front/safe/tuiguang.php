@@ -75,7 +75,7 @@
             <div id="tabs-1" class="tip_mesg" style="width: 100%;">
                     <strong>我的推荐ID：<b id="userid"><?=$this->user['uid']?></b></strong>
                     <strong>我的推荐地址：
-                    <b id="spread_url" style="color: red;">http://xyu001.cn/index.php/team/register1/<?=$this->user['uid']?></b><br>
+                    <b id="spread_url" style="color: red;">http://www.mptype.com/index.php/team/register1/<?=$this->user['uid']?></b><br>
                     </strong>
                     <p style="padding-left: 100px;font-size: 15px;">请复制完整地址给您的好友或者让您的好友在注册时填写您的推荐ID
                     </p>
