@@ -103,10 +103,6 @@
       success: function (results) {
         layer.close(index);
 
-        // console.log(results);
-        // if ()
-        delete results.data[5];
-        delete results.data[6];
 
         if (results.status == "200") {
           var data = results.data;
@@ -117,6 +113,14 @@
             if (data[i] == null) {
               continue;
             }
+
+            if (data[i]['title'] == '北京28' || data[i]['title'] == '幸运28'){
+              continue;
+            }
+
+
+
+
             var numArr = data[i].data;
             numArr = (numArr != undefined && numArr != '') ? numArr.split(',') : [];
             var numHtml = '';
