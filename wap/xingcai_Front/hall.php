@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<base id="base_path" href="/">	
+	<base id="base_path" href="/">
 	<meta http-equiv=Content-Type content="text/html;charset=utf-8">
     <meta content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0" name="viewport" />
     <meta name=format-detection content="telphone=no" />
@@ -11,10 +11,10 @@
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="uploadimg/wapicon/icon-72.png">
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="uploadimg/wapicon/icon-114.png">
     <link rel="apple-touch-icon-precomposed" sizes="144x144" href="uploadimg/wapicon/icon-144.png">
-    
+
     <link rel="stylesheet" href="assets/statics/css/style.css" type="text/css">
     <link rel="stylesheet" href="assets/statics/css/global.css" type="text/css">
-    <link rel="stylesheet" href="assets/statics/ionicons-3.0/dist/css/ionicons.css" type="text/css">  
+    <link rel="stylesheet" href="assets/statics/ionicons-3.0/dist/css/ionicons.css" type="text/css">
     <script type="text/javascript">
     	if(('standalone' in window.navigator)&&window.navigator.standalone){
 	        var noddy,remotes=false;
@@ -43,7 +43,7 @@
             </div>
         </div>
     </div>
-    
+
     <div class="lott-menu">
         <ul>
             <li class="nav_category_0" data-cat="0" style="display:none;">
@@ -66,12 +66,12 @@
             </li>
         </ul>
     </div>
-    
+
     <div id="wrapper_1" class="bottom_bar lott_bar">
         <div class="sub_ScorllCont">
             <div class="lottery-list" hidden="">
                 <ul>
-                	
+
                 	<li class="game_category_1">
                         <a href="/index.php/index/game/63">
                             <div class="hot-icon"><img class="" src="assets/statics/images/icon/63.png"></div>
@@ -86,7 +86,7 @@
                             <p class="last-time" data-gid="86" data-time=""><span class="time_show_2_"></span></p>
                         </a>
                     </li>
-                    
+
                 	<li class="game_category_1">
                         <a href="/index.php/index/game/1/2/12">
                             <div class="hot-icon"><img class="" src="assets/statics/images/icon/5.png"></div>
@@ -94,7 +94,7 @@
                             <p class="last-time" data-gid="1" data-time=""><span class="time_show_2_"></span></p>
                         </a>
                     </li>
-                    
+
                 	<li class="game_category_1">
                         <a href="/index.php/index/game/20">
                             <div class="hot-icon"><img class="" src="assets/statics/images/icon/9.png"></div>
@@ -116,7 +116,7 @@
                             <p class="last-time" data-gid="83" data-time=""><span class="time_show_2_"></span></p>
                         </a>
                     </li>
-                    
+
                 	<li class="game_category_2">
                         <a href="/index.php/index/game/34">
                             <div class="hot-icon"><img class="" src="assets/statics/images/icon/18.png"></div>
@@ -156,7 +156,7 @@
                             <p class="last-time" data-gid="87" data-time=""><span class="time_show_2_"></span></p>
                         </a>
                     </li>
-                    
+
                 	<li class="game_category_1">
                         <a href="/index.php/index/game/60">
                             <div class="hot-icon"><img class="" src="assets/statics/images/icon/4.png"></div>
@@ -164,7 +164,7 @@
                             <p class="last-time" data-gid="60" data-time=""><span class="time_show_2_"></span></p>
                         </a>
                     </li>
-                    
+
                 	<li class="game_category_1">
                         <a href="/index.php/index/game/12">
                             <div class="hot-icon"><img class="" src="assets/statics/images/icon/7.png"></div>
@@ -172,7 +172,7 @@
                             <p class="last-time" data-gid="12" data-time=""><span class="time_show_2_"></span></p>
                         </a>
                     </li>
-                    
+
                 	<li class="game_category_1">
                         <a href="/index.php/index/game/81">
                             <div class="hot-icon"><img class="" src="assets/statics/images/icon/11.png"></div>
@@ -196,7 +196,7 @@
                             <p class="last-time" data-gid="82" data-time=""><span class="time_show_2_"></span></p>
                         </a>
                     </li>
-                    
+
                 	<li class="game_category_1">
                         <a href="/index.php/index/game/7">
                             <div class="hot-icon"><img class="" src="assets/statics/images/icon/12.png"></div>
@@ -204,7 +204,7 @@
                             <p class="last-time" data-gid="7" data-time=""><span class="time_show_2_"></span></p>
                         </a>
                     </li>
-                    
+
                 	<li class="game_category_1">
                         <a href="/index.php/index/game/15">
                             <div class="hot-icon"><img class="" src="assets/statics/images/icon/13.png"></div>
@@ -212,7 +212,7 @@
                             <p class="last-time" data-gid="15" data-time=""><span class="time_show_2_"></span></p>
                         </a>
                     </li>
-                    
+
                 	<li class="game_category_1">
                         <a href="/index.php/index/game/16">
                             <div class="hot-icon"><img class="" src="assets/statics/images/icon/14.png"></div>
@@ -220,7 +220,7 @@
                             <p class="last-time" data-gid="16" data-time=""><span class="time_show_2_"></span></p>
                         </a>
                     </li>
-                    
+
                 	<li class="game_category_1">
                         <a href="/index.php/index/game/6">
                             <div class="hot-icon"><img class="" src="assets/statics/images/icon/15.png"></div>
@@ -244,7 +244,7 @@
                             <p class="last-time" data-gid="9" data-time=""><span class="time_show_2_"></span></p>
                         </a>
                     </li>
-                    
+
                 	<li class="game_category_2">
                         <a href="/index.php/index/game/10">
                             <div class="hot-icon"><img class="" src="assets/statics/images/icon/2.png"></div>
@@ -252,12 +252,12 @@
                             <p class="last-time" data-gid="10" data-time=""><span class="time_show_2_"></span></p>
                         </a>
                     </li>-->
-                    
+
                 </ul>
             </div>
             <div class="lottery-list-erect">
                 <ul>
-                	
+
                 	<li class="game_category_1">
                         <a href="/index.php/index/game/63">
                             <div class="hot-icon"><img class="" src="assets/statics/images/icon/63.png"></div>
@@ -289,7 +289,7 @@
                             </div>
                         </a>
                     </li>
-                    
+
                 	<li class="game_category_1">
                         <a href="/index.php/index/game/1/2/12">
                             <div class="hot-icon"><img class="" src="assets/statics/images/icon/5.png"></div>
@@ -305,7 +305,7 @@
                             </div>
                         </a>
                     </li>
-                    
+
                 	<li class="game_category_1">
                         <a href="/index.php/index/game/20">
                             <div class="hot-icon"><img class="" src="assets/statics/images/icon/9.png"></div>
@@ -351,8 +351,8 @@
                             </div>
                         </a>
                     </li>
-                    
-                	<li class="game_category_2">
+
+                	<!-- <li class="game_category_2">
                         <a href="/index.php/index/game/34">
                             <div class="hot-icon"><img class="" src="assets/statics/images/icon/18.png"></div>
                             <div class="erect-right erect-right-34" data-gid="34" data-time="">
@@ -366,8 +366,8 @@
                                 </p>
                             </div>
                         </a>
-                    </li>
-                    
+                    </li> -->
+
 					<!--
                 	<li class="game_category_1">
                         <a href="/index.php/index/game/78">
@@ -385,7 +385,7 @@
                         </a>
                     </li>
                     -->
-					
+
                 	<!--<li class="game_category_1">
                         <a href="/index.php/index/game/79">
                             <div class="hot-icon"><img class="" src="assets/statics/images/icon/27.png"></div>
@@ -433,7 +433,7 @@
                             </div>
                         </a>
                     </li>
-                    
+
                 	<li class="game_category_1">
                         <a href="/index.php/index/game/60">
                             <div class="hot-icon"><img class="" src="assets/statics/images/icon/4.png"></div>
@@ -449,7 +449,7 @@
                             </div>
                         </a>
                     </li>
-                    
+
                 	<li class="game_category_1">
                         <a href="/index.php/index/game/12">
                             <div class="hot-icon"><img class="" src="assets/statics/images/icon/7.png"></div>
@@ -465,7 +465,7 @@
                             </div>
                         </a>
                     </li>
-                    
+
                 	<li class="game_category_1">
                         <a href="/index.php/index/game/81">
                             <div class="hot-icon"><img class="" src="assets/statics/images/icon/11.png"></div>
@@ -513,7 +513,7 @@
                             </div>
                         </a>
                     </li>
-                    
+
                 	<li class="game_category_1">
                         <a href="/index.php/index/game/7">
                             <div class="hot-icon"><img class="" src="assets/statics/images/icon/12.png"></div>
@@ -529,7 +529,7 @@
                             </div>
                         </a>
                     </li>
-                    
+
                 	<li class="game_category_1">
                         <a href="/index.php/index/game/15">
                             <div class="hot-icon"><img class="" src="assets/statics/images/icon/13.png"></div>
@@ -545,7 +545,7 @@
                             </div>
                         </a>
                     </li>
-                    
+
                 	<li class="game_category_1">
                         <a href="/index.php/index/game/16">
                             <div class="hot-icon"><img class="" src="assets/statics/images/icon/14.png"></div>
@@ -561,7 +561,7 @@
                             </div>
                         </a>
                     </li>
-                    
+
                 	<li class="game_category_1">
                         <a href="/index.php/index/game/6">
                             <div class="hot-icon"><img class="" src="assets/statics/images/icon/15.png"></div>
@@ -609,7 +609,7 @@
                             </div>
                         </a>
                     </li>
-                    
+
                 	<li class="game_category_2">
                         <a href="/index.php/index/game/10">
                             <div class="hot-icon"><img class="" src="assets/statics/images/icon/2.png"></div>
@@ -625,13 +625,13 @@
                             </div>
                         </a>
                     </li>-->
-                    
+
                 </ul>
             </div>
         </div>
     </div>
-    
-    
+
+
 
 	<!--<div class="menu">
 	     <ul>
@@ -671,7 +671,7 @@
              </li>
          </ul>
    	</div>
-    
+
     <script src="assets/js/require.js" data-main="assets/js/application/lottery"></script>
     <script src="assets/js/require.config.js"></script>
 </body>
