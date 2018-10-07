@@ -896,7 +896,7 @@ class Team extends WebLoginBase{
 			$fcoinModalWhere='and l.fcoin!=0';
 		}
 		
-		$sql="select l.id, l.liqType as type, l.coin as `money`, l.fcoin, l.userCoin as beforeMoney, l.coin+l.userCoin as afterMoney ,l.actionTime as createDatetime, l.extfield0, l.extfield1, l.info as remark, u.username as account from {$this->prename}members u, {$this->prename}coin_log l  where l.uid=u.uid $liqTypeWhere $timeWhere $userWhere $typeWhere $fcoinModalWhere order by l.id desc";
+		$sql="select l.id, l.liqType as type, l.coin as `money`, l.fcoin, l.userCoin - l.coin as beforeMoney, l.userCoin as afterMoney ,l.actionTime as createDatetime, l.extfield0, l.extfield1, l.info as remark, u.username as account from {$this->prename}members u, {$this->prename}coin_log l  where l.uid=u.uid $liqTypeWhere $timeWhere $userWhere $typeWhere $fcoinModalWhere order by l.id desc";
 		
 		$ps = $_POST['pageSize'];
 		$pi = $_POST['pageNumber'];
