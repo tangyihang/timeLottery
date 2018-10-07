@@ -1,48 +1,69 @@
 <?php
 ob_start('ob_output');
 function ob_output($html) {
-	// 一些用户喜欢使用windows笔记本编辑文件，因此在输出时需要检查是否包含BOM头
-	if (ord(substr($html, 0, 1)) === 239 && ord(substr($html, 1, 2)) === 187 && ord(substr($html, 2, 1)) === 191) $html = substr($html, 3);
-	// gzip输出
-	if(
-		!headers_sent() && // 如果页面头部信息还没有输出
-		extension_loaded("zlib") && // 而且zlib扩展已经加载到PHP中
-		array_key_exists('HTTP_ACCEPT_ENCODING', $_SERVER) &&
-		stripos($_SERVER["HTTP_ACCEPT_ENCODING"], "gzip") !== false // 而且浏览器说它可以接受GZIP的页面 
-	) {
-		$html = gzencode($html, 3);
-		header('Content-Encoding: gzip'); 
-		header('Vary: Accept-Encoding');
-	}
-	header('Content-Length: '.strlen($html));
-	return $html;
+    // 一些用户喜欢使用windows笔记本编辑文件，因此在输出时需要检查是否包含BOM头
+    if (ord(substr($html, 0, 1)) === 239 && ord(substr($html, 1, 2)) === 187 && ord(substr($html, 2, 1)) === 191) {
+        $html = substr($html, 3);
+    }
+
+    // gzip输出
+    if (
+        !headers_sent() && // 如果页面头部信息还没有输出
+        extension_loaded("zlib") && // 而且zlib扩展已经加载到PHP中
+        array_key_exists('HTTP_ACCEPT_ENCODING', $_SERVER) &&
+        stripos($_SERVER["HTTP_ACCEPT_ENCODING"], "gzip") !== false// 而且浏览器说它可以接受GZIP的页面
+    ) {
+        $html = gzencode($html, 3);
+        header('Content-Encoding: gzip');
+        header('Vary: Accept-Encoding');
+    }
+    header('Content-Length: ' . strlen($html));
+    return $html;
 }
-require('../xingcai_config.php');
-$id=array('20','65','66','85');
-$pgsid=array('30','50','80','100','120','200','300','');
-include(dirname(__FILE__)."/inc/comfunc.php");
+require '../xingcai_config.php';
+$id    = array('20', '65', '66', '85');
+$pgsid = array('30', '50', '80', '100', '120', '200', '300', '');
+include dirname(__FILE__) . "/inc/comfunc.php";
 //此处设置彩种id
-$typeid=intval($_GET['typeid']);
-if(!in_array($typeid,$id)) die("typeid error");
-if(!$typeid) $typeid=14;
-//每页默认显示
-$pgs=intval($_GET['pgs']);
-if(!in_array($pgs,$pgsid)) die("pgs error");
-if(!$pgs) $pgs=30;
-//当前页面
-$page=intval($_GET['page']);
-if(!$page) $page=1;
-//传参
-$toUrl="?page=";
-$params=http_build_query($_REQUEST, '', '&');
-if(!$mydb) $mydb = new MYSQL($dbconf);
-$gRs = $mydb->row($conf['db']['prename']."type","shortName","id=".$typeid);
-if($gRs){
-	$shortName=$gRs[0][0];
+$typeid = intval($_GET['typeid']);
+if (!in_array($typeid, $id)) {
+    die("typeid error");
 }
 
-$fromTime=$_GET['fromTime'];
-$toTime=$_GET['toTime'];
+if (!$typeid) {
+    $typeid = 14;
+}
+
+//每页默认显示
+$pgs = intval($_GET['pgs']);
+if (!in_array($pgs, $pgsid)) {
+    die("pgs error");
+}
+
+if (!$pgs) {
+    $pgs = 30;
+}
+
+//当前页面
+$page = intval($_GET['page']);
+if (!$page) {
+    $page = 1;
+}
+
+//传参
+$toUrl  = "?page=";
+$params = http_build_query($_REQUEST, '', '&');
+if (!$mydb) {
+    $mydb = new MYSQL($dbconf);
+}
+
+$gRs = $mydb->row($conf['db']['prename'] . "type", "shortName", "id=" . $typeid);
+if ($gRs) {
+    $shortName = $gRs[0][0];
+}
+
+$fromTime = $_GET['fromTime'];
+$toTime   = $_GET['toTime'];
 ?>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:esun="" style="font-size: 15.525px;"><head>
 <title>C38-官方网站</title>
@@ -66,7 +87,7 @@ $toTime=$_GET['toTime'];
 html {overflow:-moz-scrollbars-vertical; overflow-y:scroll;}
 </style>
 
-<script type="text/javascript"> 
+<script type="text/javascript">
   $(function(){
     //切换漏号分析
       $('.lhfx_tit').click(function(e){
@@ -116,13 +137,13 @@ html {overflow:-moz-scrollbars-vertical; overflow-y:scroll;}
 										<li><a href="/index.php/index/game/60/2/12">天津时时彩</a> </li>
 										<li><a href="/index.php/index/game/61/59/193">澳门时时彩<i>H</i></a> </li>
 										<li><a href="/index.php/index/game/62/59/193">台湾时时彩<i>H</i></a> </li>
-										<li><a href="/index.php/index/game/5/59/193">河内1分彩<i>H</i></a> </li>
+										<!-- <li><a href="/index.php/index/game/5/59/193">河内1分彩<i>H</i></a> </li>
 										<li><a href="/index.php/index/game/26/59/193">河内2分彩<i>H</i></a> </li>
 										<li><a href="/index.php/index/game/14/59/193">河内5分彩<i>H</i></a></li>
 										<li><a href="/index.php/index/game/76/59/193">巴西1.5分彩<i>H</i></a></li>
-										<li><a href="/index.php/index/game/75/59/193">巴西快乐彩<i>H</i></a></li>
-										
-										<!-- comingsoon();  如果需要禁用用这个函数即可--> 
+										<li><a href="/index.php/index/game/75/59/193">巴西快乐彩<i>H</i></a></li> -->
+
+										<!-- comingsoon();  如果需要禁用用这个函数即可-->
 									</ul>
                 </dd>
               </dl>
@@ -147,7 +168,7 @@ html {overflow:-moz-scrollbars-vertical; overflow-y:scroll;}
 								</dd>
 							</dl>
 							<dl>
-							<dt>11选5</dt>
+							<!-- <dt>11选5</dt>
 								<dd>
 									<ul class="lot_list">
 										<li><a href="/index.php/index/game/6">广东11选5<i>H</i></a></li>
@@ -180,7 +201,7 @@ html {overflow:-moz-scrollbars-vertical; overflow-y:scroll;}
 									</ul>
 								</dd>
 							</dl>
-						</li> 
+						</li>  -->
 					</ul>
 					<div class="m_nav_line"></div>
         </li>
@@ -242,7 +263,7 @@ html {overflow:-moz-scrollbars-vertical; overflow-y:scroll;}
 						</li>
 					</ul>
 					<div class="m_nav_line"></div>
-				</li>			
+				</li>
 			</ul>
 		</section>
     <div class="home_b">
@@ -257,7 +278,7 @@ html {overflow:-moz-scrollbars-vertical; overflow-y:scroll;}
 </div>
 <script language="javascript">
 fw.onReady(function(){
-	Chart.init();	
+	Chart.init();
 	DrawLine.bind("chartsTable","has_line");
 
 		DrawLine.color('#499495');
@@ -288,9 +309,9 @@ fw.onReady(function(){
 	// $("#container").height($("#chartsTable").height() + "px");
 	// $("#missedTable").width($("#chartsTable").width() + "px");
     resize();
-	
 
-	
+
+
 	//最近多少期高亮
 	var _num = "",_href;
 	_href = window.location.href;
@@ -308,11 +329,11 @@ function daysBetween(start, end){
    var startY = start.substring(0, start.indexOf('-'));
    var startM = start.substring(start.indexOf('-')+1, start.lastIndexOf('-'));
    var startD = start.substring(start.lastIndexOf('-')+1, start.length);
-  
+
    var endY = end.substring(0, end.indexOf('-'));
    var endM = end.substring(end.indexOf('-')+1, end.lastIndexOf('-'));
    var endD = end.substring(end.lastIndexOf('-')+1, end.length);
-  
+
    var val = (Date.parse(endY+'/'+endM+'/'+endD)-Date.parse(startY+'/'+startM+'/'+startD))/86400000;
    return Math.abs(val);
 }
@@ -328,9 +349,18 @@ function toggleMiss(){
 
     <div class="secondary_tabs">
         <ul>
-            <li data="num_30" class="hover"><a href="?typeid=<?=$typeid?>&pgs=30" class="ml10<?php if($pgs==30) echo ' on'?>" target="_self">最近30期</a></li>
-            <li data="num_50"><a href="?typeid=<?=$typeid?>&pgs=50" class="ml10<?php if($pgs==50) echo ' on'?>" target="_self">最近50期</a></li>
-            <li data="num_100"><a href="?typeid=<?=$typeid?>&pgs=100" class="ml10<?php if($pgs==100) echo ' on'?>" target="_self">最近100期</a></li>
+            <li data="num_30" class="hover"><a href="?typeid=<?=$typeid?>&pgs=30" class="ml10<?php if ($pgs == 30) {
+    echo ' on';
+}
+?>" target="_self">最近30期</a></li>
+            <li data="num_50"><a href="?typeid=<?=$typeid?>&pgs=50" class="ml10<?php if ($pgs == 50) {
+    echo ' on';
+}
+?>" target="_self">最近50期</a></li>
+            <li data="num_100"><a href="?typeid=<?=$typeid?>&pgs=100" class="ml10<?php if ($pgs == 100) {
+    echo ' on';
+}
+?>" target="_self">最近100期</a></li>
         </ul>
     </div>
     	<!-- <div class="lhfx_search_time">
@@ -348,82 +378,92 @@ function toggleMiss(){
 
 <div style=" min-height:430px;" id="container">
 	<table id="chartsTable" width="100%" cellpadding="0" cellspacing="0" border="0" style="display: table;">
-    
+
        	       		<tbody>
 		<tr id="title">
              <td style="width:20%;"><strong>期号</strong></td>
              <td colspan="10" class="redtext"><strong>开奖号码</strong></td>
     	</tr>
-		
-		<?php
-				if($fromTime) $fromTime=strtotime($fromTime);
-				if($toTime) $toTime=strtotime($toTime)+24*3600;
-				
-				$pg=trim($_REQUEST["page"]);
-				if(!$pg){$pg=1;}
-				if(!$pgs){$pgs=30;}
-				$tableStr=$conf['db']['prename']."data";
-				$tableStr2=$conf['db']['prename']."data a";
-				$fieldsStr="time, number, data";
-				
-				$fieldsStr2="a.time, a.number, a.data";
-				$whereStr=" type=$typeid ";
-				$whereStr2=" a.type=$typeid ";
-				if($fromTime && $toTime){
-					$whereStr.=" and time between $fromTime and $toTime";
-					$whereStr2.=" and a.time between $fromTime and $toTime";
-				}elseif($fromTime){
-					$whereStr.=' and time>='.$fromTime;
-					$whereStr2.=' and a.time>='.$fromTime;
-				}elseif($toTime){
-					$whereStr.=' and time<'.$toTime;
-					$whereStr2.=' and a.time<'.$toTime;
-				}else{}
-				$orderStr=" order by a.id desc";
-	
-				$totalNumber = $mydb->row_count($tableStr,$whereStr);
 
-				if ($totalNumber>0){
-			 
-                $countcount=0;
-				$perNumber=$pgs; //每页显示的记录数
-				$page=$pg; //获得当前的页面值
-				if (!isset($page)) $page=1;
-				
-				$totalPage=ceil($totalNumber/$perNumber); //计算出总页数
-				$startCount=($page-1)*$perNumber; //分页开始,根据此方法计算出开始的记录
-				$data = $mydb->row($tableStr2,$fieldsStr2,$whereStr2.' '.$orderStr." limit $startCount,$perNumber");
-				
-				if($data) foreach($data as $var){
-					
-				$dArry=explode(",",$var[2]);
-				$var['d1']=$dArry[0];
-				$var['d2']=$dArry[1];
-				$var['d3']=$dArry[2];
-				$var['d4']=$dArry[3];
-				$var['d5']=$dArry[4];
-				$var['d6']=$dArry[5];
-				$var['d7']=$dArry[6];
-				$var['d8']=$dArry[7];
-				$var['d9']=$dArry[8];
-				$var['d10']=$dArry[9];
-				
-				echo '<tr>';
-				echo '<td id="title">'.$var[1].'</td>';
-				echo '<td class="wdh" align="center"><div class="ball02">'.$var['d1'].'</div></td>';
-				echo '<td class="wdh" align="center"><div class="ball02">'.$var['d2'].'</div></td>';
-				echo '<td class="wdh" align="center"><div class="ball02">'.$var['d3'].'</div></td>';
-				echo '<td class="wdh" align="center"><div class="ball02">'.$var['d4'].'</div></td>';
-				echo '<td class="wdh" align="center"><div class="ball02">'.$var['d5'].'</div></td>';
-				echo '<td class="wdh" align="center"><div class="ball02">'.$var['d6'].'</div></td>';
-				echo '<td class="wdh" align="center"><div class="ball02">'.$var['d7'].'</div></td>';
-				echo '<td class="wdh" align="center"><div class="ball02">'.$var['d8'].'</div></td>';
-				echo '<td class="wdh" align="center"><div class="ball02">'.$var['d9'].'</div></td>';
-				echo '<td class="wdh" align="center"><div class="ball02">'.$var['d10'].'</div></td>';
-				echo '</tr>';	
-				} ?>   
-       	
-      <?php } ?>
+		<?php
+if ($fromTime) {
+    $fromTime = strtotime($fromTime);
+}
+
+if ($toTime) {
+    $toTime = strtotime($toTime) + 24 * 3600;
+}
+
+$pg = trim($_REQUEST["page"]);
+if (!$pg) {$pg = 1;}
+if (!$pgs) {$pgs = 30;}
+$tableStr  = $conf['db']['prename'] . "data";
+$tableStr2 = $conf['db']['prename'] . "data a";
+$fieldsStr = "time, number, data";
+
+$fieldsStr2 = "a.time, a.number, a.data";
+$whereStr   = " type=$typeid ";
+$whereStr2  = " a.type=$typeid ";
+if ($fromTime && $toTime) {
+    $whereStr .= " and time between $fromTime and $toTime";
+    $whereStr2 .= " and a.time between $fromTime and $toTime";
+} elseif ($fromTime) {
+    $whereStr .= ' and time>=' . $fromTime;
+    $whereStr2 .= ' and a.time>=' . $fromTime;
+} elseif ($toTime) {
+    $whereStr .= ' and time<' . $toTime;
+    $whereStr2 .= ' and a.time<' . $toTime;
+} else {}
+$orderStr = " order by a.id desc";
+
+$totalNumber = $mydb->row_count($tableStr, $whereStr);
+
+if ($totalNumber > 0) {
+
+    $countcount = 0;
+    $perNumber  = $pgs; //每页显示的记录数
+    $page       = $pg; //获得当前的页面值
+    if (!isset($page)) {
+        $page = 1;
+    }
+
+    $totalPage  = ceil($totalNumber / $perNumber); //计算出总页数
+    $startCount = ($page - 1) * $perNumber; //分页开始,根据此方法计算出开始的记录
+    $data       = $mydb->row($tableStr2, $fieldsStr2, $whereStr2 . ' ' . $orderStr . " limit $startCount,$perNumber");
+
+    if ($data) {
+        foreach ($data as $var) {
+
+            $dArry      = explode(",", $var[2]);
+            $var['d1']  = $dArry[0];
+            $var['d2']  = $dArry[1];
+            $var['d3']  = $dArry[2];
+            $var['d4']  = $dArry[3];
+            $var['d5']  = $dArry[4];
+            $var['d6']  = $dArry[5];
+            $var['d7']  = $dArry[6];
+            $var['d8']  = $dArry[7];
+            $var['d9']  = $dArry[8];
+            $var['d10'] = $dArry[9];
+
+            echo '<tr>';
+            echo '<td id="title">' . $var[1] . '</td>';
+            echo '<td class="wdh" align="center"><div class="ball02">' . $var['d1'] . '</div></td>';
+            echo '<td class="wdh" align="center"><div class="ball02">' . $var['d2'] . '</div></td>';
+            echo '<td class="wdh" align="center"><div class="ball02">' . $var['d3'] . '</div></td>';
+            echo '<td class="wdh" align="center"><div class="ball02">' . $var['d4'] . '</div></td>';
+            echo '<td class="wdh" align="center"><div class="ball02">' . $var['d5'] . '</div></td>';
+            echo '<td class="wdh" align="center"><div class="ball02">' . $var['d6'] . '</div></td>';
+            echo '<td class="wdh" align="center"><div class="ball02">' . $var['d7'] . '</div></td>';
+            echo '<td class="wdh" align="center"><div class="ball02">' . $var['d8'] . '</div></td>';
+            echo '<td class="wdh" align="center"><div class="ball02">' . $var['d9'] . '</div></td>';
+            echo '<td class="wdh" align="center"><div class="ball02">' . $var['d10'] . '</div></td>';
+            echo '</tr>';
+        }
+    }
+    ?>
+
+      <?php }?>
 	</tbody></table>
 </div>
 <!-- <div id="quickbuy"><a href="">购买重庆时时彩</a></div> //-->
@@ -431,14 +471,14 @@ function toggleMiss(){
 <div class="lhfx_lotterylist" style="display: none;">
   	<dl>
 		<dt>高频彩</dt>
-		
+
 		<dd><a href="/zst/index.php?typeid=1">重庆时时彩<i></i></a></dd>
 		<dd><a href="/zst/index.php?typeid=86">三分时时彩</a></dd>
 		<dd><a href="/zst/index.php?typeid=60">天津时时彩</a></dd>
 		<dd><a href="/zst/index.php?typeid=12">新疆时时彩</a></dd>
-		<dd><a href="/zst/index.php?typeid=87">上海时时乐</a></dd>
+		<dd><a href="/zst/index.php?typeid=87">上海时时乐</a></dd><!--
 		<dd><a href="/zst/index.php?typeid=83">北京28<i></i></a></dd>
-		<dd><a href="/zst/index.php?typeid=80">幸运28<i></i></a></dd>
+		<dd><a href="/zst/index.php?typeid=80">幸运28<i></i></a></dd> -->
   	</dl>
 	<dl>
 		<dt>PK拾</dt>
@@ -451,25 +491,25 @@ function toggleMiss(){
 		<dd><a href="/zst/k3.php?typeid=82">广西快三</a></dd>
 		<dd><a href="/zst/k3.php?typeid=81">安徽快三</a></dd>
 	</dl>
-	<dl>
+	<!-- <dl>
 		<dt>11选5</dt>
 		<dd><a href="/zst/11x5.php?typeid=6">广东11选5</a></dd>
 		<dd><a href="/zst/11x5.php?typeid=16">江西11选5</a></dd>
 		<dd><a href="/zst/11x5.php?typeid=7">山东11选5</a></dd>
 		<dd><a href="/zst/11x5.php?typeid=15">上海11选5</a></dd>
-	</dl>
+	</dl> -->
 	<!-- <dl>
 		<dt>快乐8</dt>
       	<dd><a href="/zst/kl8.php?typeid=78">北京快乐8</a></dd>
       	<dd><a href="/zst/kl8.php?typeid=74">韩国快乐8</a></dd>
 		<dd><a href="/zst/kl8.php?typeid=73">澳门快乐8</a></dd>
 	</dl> -->
-	<dl class="nopb">
+	<!-- <dl class="nopb">
 		<dt>其他</dt>
 		<dd><a href="/zst/3dp3.php?typeid=9">福彩3D</a></dd>
 		<dd><a href="/zst/3dp3.php?typeid=10">排列3</a></dd>
       	<dd><a href="/zst/3dp3.php?typeid=34">香港六合彩</a></dd>
-	</dl>
+	</dl> -->
 </div>
 
 
@@ -496,7 +536,7 @@ $(function(){
         $(".m-lott-methodBox-list").toggle();
     });
 }())
-    
+
 </script>
 
 </body>

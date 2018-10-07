@@ -102,6 +102,12 @@
       timeout: 30000,
       success: function (results) {
         layer.close(index);
+
+        // console.log(results);
+        // if ()
+        delete results.data[5];
+        delete results.data[6];
+
         if (results.status == "200") {
           var data = results.data;
           var txtHtml = '';

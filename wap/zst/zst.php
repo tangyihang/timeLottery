@@ -162,69 +162,69 @@ $typeid = intval($_REQUEST['typeid']);
         <div class="trtip-tit"><i class="tr-icon"></i>选择彩种</div>
         <ul>
             <li class="game_li_63 <?php if ($typeid == 63) {
-                echo 'trend-on';
-            } ?>" data-gid="63" data-enable="0"><a href="/zst/hzst.php?typeid=63&g=1">澳门快三</a></li>
+    echo 'trend-on';
+}?>" data-gid="63" data-enable="0"><a href="/zst/hzst.php?typeid=63&g=1">澳门快三</a></li>
             <li class="game_li_86 <?php if ($typeid == 86) {
-                echo 'trend-on';
-            } ?>" data-gid="86" data-enable="0"><a href="/zst/zst.php?typeid=86&g=1">三分时时彩</a></li>
+    echo 'trend-on';
+}?>" data-gid="86" data-enable="0"><a href="/zst/zst.php?typeid=86&g=1">三分时时彩</a></li>
             <li class="game_li_1 <?php if ($typeid == 1) {
-                echo 'trend-on';
-            } ?>" data-gid="1" data-enable="0"><a href="/zst/zst.php?typeid=1&g=1">重庆时时彩</a></li>
+    echo 'trend-on';
+}?>" data-gid="1" data-enable="0"><a href="/zst/zst.php?typeid=1&g=1">重庆时时彩</a></li>
             <!--<li class="game_li_12 <?php if ($typeid == 12) {
-                echo 'trend-on';
-            } ?>" data-gid="12" data-enable="0">新疆时时彩</li>
+    echo 'trend-on';
+}?>" data-gid="12" data-enable="0">新疆时时彩</li>
         <li class="game_li_60 <?php if ($typeid == 60) {
-                echo 'trend-on';
-            } ?>" data-gid="60" data-enable="0">天津时时彩</li>
+    echo 'trend-on';
+}?>" data-gid="60" data-enable="0">天津时时彩</li>
         <li class="game_li_87 <?php if ($typeid == 87) {
-                echo 'trend-on';
-            } ?>" data-gid="87" data-enable="0">上海时时乐</li>-->
-            <li class="game_li_83 <?php if ($typeid == 83) {
-                echo 'trend-on';
-            } ?>" data-gid="83" data-enable="0"><a href="/zst/zst.php?typeid=83&g=1">北京28</a></li>
+    echo 'trend-on';
+}?>" data-gid="87" data-enable="0">上海时时乐</li>-->
+           <!--  <li class="game_li_83 <?php if ($typeid == 83) {
+    echo 'trend-on';
+}?>" data-gid="83" data-enable="0"><a href="/zst/zst.php?typeid=83&g=1">北京28</a></li>
             <li class="game_li_80 <?php if ($typeid == 80) {
-                echo 'trend-on';
-            } ?>" data-gid="80" data-enable="0"><a href="/zst/zst.php?typeid=80&g=1">幸运28</a></li>
-
+    echo 'trend-on';
+}?>" data-gid="80" data-enable="0"><a href="/zst/zst.php?typeid=80&g=1">幸运28</a></li>
+ -->
             <li class="game_li_20 <?php if ($typeid == 20) {
-                echo 'trend-on';
-            } ?>" data-gid="20" data-enable="0"><a href="/zst/zst.php?typeid=20&g=1">北京PK拾</a></li>
+    echo 'trend-on';
+}?>" data-gid="20" data-enable="0"><a href="/zst/zst.php?typeid=20&g=1">北京PK拾</a></li>
             <li class="game_li_85 <?php if ($typeid == 85) {
-                echo 'trend-on';
-            } ?>" data-gid="85" data-enable="0"><a href="/zst/zst.php?typeid=85&g=1">三分PK拾</a></li>
+    echo 'trend-on';
+}?>" data-gid="85" data-enable="0"><a href="/zst/zst.php?typeid=85&g=1">三分PK拾</a></li>
 
             <!--<li class="game_li_6 <?php if ($typeid == 6) {
-                echo 'trend-on';
-            } ?>" data-gid="6" data-enable="0">广东11选5</li>
+    echo 'trend-on';
+}?>" data-gid="6" data-enable="0">广东11选5</li>
         <li class="game_li_7 <?php if ($typeid == 7) {
-                echo 'trend-on';
-            } ?>" data-gid="7" data-enable="0">山东11选5</li>
+    echo 'trend-on';
+}?>" data-gid="7" data-enable="0">山东11选5</li>
         <li class="game_li_15 <?php if ($typeid == 15) {
-                echo 'trend-on';
-            } ?>" data-gid="15" data-enable="0">上海11选5</li>
+    echo 'trend-on';
+}?>" data-gid="15" data-enable="0">上海11选5</li>
         <li class="game_li_16 <?php if ($typeid == 16) {
-                echo 'trend-on';
-            } ?>" data-gid="16" data-enable="0">江西11选5</li>
+    echo 'trend-on';
+}?>" data-gid="16" data-enable="0">江西11选5</li>
 
         <li class="game_li_81 <?php if ($typeid == 81) {
-                echo 'trend-on';
-            } ?>" data-gid="81" data-enable="0">安徽快三</li>
+    echo 'trend-on';
+}?>" data-gid="81" data-enable="0">安徽快三</li>
         <li class="game_li_82 <?php if ($typeid == 82) {
-                echo 'trend-on';
-            } ?>" data-gid="82" data-enable="0">广西快三</li>
+    echo 'trend-on';
+}?>" data-gid="82" data-enable="0">广西快三</li>
         <li class="game_li_79 <?php if ($typeid == 79) {
-                echo 'trend-on';
-            } ?>" data-gid="79" data-enable="0">江苏快三</li>
+    echo 'trend-on';
+}?>" data-gid="79" data-enable="0">江苏快三</li>
 
         <li class="game_li_9 <?php if ($typeid == 9) {
-                echo 'trend-on';
-            } ?>" data-gid="9" data-enable="0">福彩3D</li>
+    echo 'trend-on';
+}?>" data-gid="9" data-enable="0">福彩3D</li>
         <li class="game_li_10 <?php if ($typeid == 10) {
-                echo 'trend-on';
-            } ?>" data-gid="10" data-enable="0">排列三</li>-->
-            <li class="game_li_34 <?php if ($typeid == 34) {
-                echo 'trend-on';
-            } ?>" data-gid="34" data-enable="0"><a href="/zst/zst.php?typeid=34&g=1">香港六合彩</a></li>
+    echo 'trend-on';
+}?>" data-gid="10" data-enable="0">排列三</li>-->
+          <!--   <li class="game_li_34 <?php if ($typeid == 34) {
+    echo 'trend-on';
+}?>" data-gid="34" data-enable="0"><a href="/zst/zst.php?typeid=34&g=1">香港六合彩</a></li> -->
         </ul>
     </div>
     <!--<div class="tips-bg" hidden=""></div>-->
