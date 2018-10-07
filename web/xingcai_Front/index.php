@@ -460,9 +460,9 @@
                                     <li>
                                         <a onClick="__openWin('lottery_hall','/index.php/index/game/20/27/北京PK拾');">北京PK拾</a>
                                     </li>
-                                    <li>
+                                  <!--   <li>
                                         <a onClick="__openWin('lottery_hall','/index.php/index/game/80/104/339/幸运28');">幸运28</a>
-                                    </li>
+                                    </li> -->
                                     <li>
                                         <a onClick="__openWin('lottery_hall','/index.php/index/game/85/27/三分PK10');">三分PK拾</a>
                                     </li>
@@ -1333,6 +1333,7 @@ foreach ($more_two_news as $value) {
       success: function (msg) {
         var jsonarray = $.parseJSON(msg);
 
+
         $.each(jsonarray, function (i, n) {
           //alert(n.title);
           if ($.inArray(n.type, arr_gp) > -1) {
@@ -1347,7 +1348,7 @@ foreach ($more_two_news as $value) {
             kj_html += "<br><div class=\"fr\"><span class=\"lot-name\" style=\"margin:0 8px 0 0; float:left;\">" + n.time + "</span><a onclick=\"__openWin('lottery_hall','/index.php/index/game/" + n.type + "');\">投注</a></div><div class=\"clear\"></div></div></li>";
           }
         });
-        $("#lastOpenSsc").html(kj_html);
+        // $("#lastOpenSsc").html(kj_html);
         kj_html = '';
         $.each(jsonarray, function (i, n) {
           //alert(n.title);

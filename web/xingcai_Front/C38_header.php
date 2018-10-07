@@ -78,7 +78,7 @@
     <!--<script type="text/javascript" src="/files/_home_menu.js.下载"></script>-->
     <script type="text/javascript">
       function zxkf() {
-          <?php if($this->settings['kefuStatus']){ ?>
+          <?php if ($this->settings['kefuStatus']) {?>
         layer.open({
           type: 2,
           area: ['800px', '550px'],
@@ -89,7 +89,7 @@
           //maxmin: true,
           content: '<?=$this->settings['kefuGG']?>'
         });
-          <?php }else{?>
+          <?php } else {?>
         $.alert("客服系统维护中");
           <?php }?>
         return false;
@@ -196,7 +196,7 @@
                 <div id="header_user" class="logxinxi" hidden="" style="display: block;">
                     <div class="top_login">
                         <span>您好，<a onClick="__openWin('user_center','/index.php/box/receive');" rel="nofollow"
-                                    class="play-jl" target="_blank" name="user_name"><?= $this->user['username'] ?></a></span>
+                                    class="play-jl" target="_blank" name="user_name"><?=$this->user['username']?></a></span>
                         <span>可用余额：</span>
                         <span><a class="balance colorRed" id="refff" rel="nofollow" style="color: #e4393c;"><span
                                         id="balance" class="orange">￥0.000</span></a>
@@ -282,7 +282,7 @@
                                     </a>
                                 </div>
                             </li>
-                            <li class="mainGame">
+                            <!-- <li class="mainGame">
                                 <a onClick="__openWin('lottery_hall','/index.php/index/game/80/104/339/幸运28');"
                                    class="mainA">
                                     <i class="icon nav40-9">
@@ -297,7 +297,7 @@
                                         </p>
                                     </a>
                                 </div>
-                            </li>
+                            </li> -->
                             <li class="mainGame">
                                 <a onClick="__openWin('lottery_hall','/index.php/index/game/85/27/三分PK10');"
                                    class="mainA">
@@ -314,7 +314,7 @@
                                     </a>
                                 </div>
                             </li>
-                            <li class="mainGame">
+                            <!-- <li class="mainGame">
                                 <a onClick="__openWin('lottery_hall','/index.php/index/game/34/香港⑥合彩');" class="mainA">
                                     <i class="icon nav40-9">
                                         <img src="/files/18.png"></i>
@@ -326,7 +326,7 @@
                                         <p onClick="__openWin('lottery_hall','/index.php/index/game/34/香港⑥合彩');"
                                            target="_blank" class="status-desc">每周开奖三期</p></a>
                                 </div>
-                            </li>
+                            </li> -->
                             <li class="allGames clearfix" data-type="1">
                                 <h3>
                                     <i class="icon-ALARM"></i>
@@ -341,9 +341,9 @@
                                     <li>
                                         <a onClick="__openWin('lottery_hall','/index.php/index/game/20/27/北京PK拾');">北京PK拾</a>
                                     </li>
-                                    <li>
+                                    <!-- <li>
                                         <a onClick="__openWin('lottery_hall','/index.php/index/game/80/104/339/幸运28');">幸运28</a>
-                                    </li>
+                                    </li> -->
                                     <li>
                                         <a onClick="__openWin('lottery_hall','/index.php/index/game/85/27/三分PK10');">三分PK拾</a>
                                     </li>
@@ -367,9 +367,9 @@
                                                 <li>
                                                     <a onClick="__openWin('lottery_hall','/index.php/index/game/20/27/北京PK拾');">北京PK拾</a>
                                                 </li>
-                                                <li>
+                                                <!-- <li>
                                                     <a onClick="__openWin('lottery_hall','/index.php/index/game/80/104/339/幸运28');">幸运28</a>
-                                                </li>
+                                                </li> -->
                                                 <li>
                                                     <a onClick="__openWin('lottery_hall','/index.php/index/game/85/27/三分PK10');">三分PK拾</a>
                                                 </li>
@@ -400,9 +400,9 @@
                                                 <li>
                                                     <a onClick="__openWin('lottery_hall','/index.php/index/game/82/39/广西快三');">广西快三</a>
                                                 </li>
-                                                <li>
+                                               <!--  <li>
                                                     <a onClick="__openWin('lottery_hall','/index.php/index/game/83/104/339/北京28');">北京28</a>
-                                                </li>
+                                                </li> -->
                                                 <li>
                                                     <a onClick="__openWin('lottery_hall','/index.php/index/game/81/39/安徽快三');">安徽快三</a>
                                                 </li>
@@ -411,7 +411,7 @@
                                     </div>
                                 </div>
                             </li>
-                            <li class="allGames" data-type="2">
+                            <!-- <li class="allGames" data-type="2">
                                 <h3>
                                     <i class="icon-TIME"></i>
                                     <span>低频彩</span></h3>
@@ -425,7 +425,7 @@
                                     <li>
                                         <a onClick="__openWin('lottery_hall','/index/game/10/排列3');">排列三</a></li>
                                 </ul>
-                            </li>
+                            </li> -->
                             <li class="allGames clearfix" data-type="3">
                                 <h3>
                                     <i class="icon-billiard-ball"></i>
@@ -440,15 +440,15 @@
                                     <li>
                                         <a onClick="__openWin('lottery_hall','/index.php/index/game/20/27/北京PK拾');">北京PK拾</a>
                                     </li>
-                                    <li>
+                                    <!-- <li>
                                         <a onClick="__openWin('lottery_hall','/index.php/index/game/80/104/339/幸运28');">幸运28</a>
-                                    </li>
+                                    </li> -->
                                     <li>
                                         <a onClick="__openWin('lottery_hall','/index.php/index/game/85/27/三分PK10');">三分PK拾</a>
                                     </li>
-                                    <li>
+                                    <!-- <li>
                                         <a onClick="__openWin('lottery_hall','/index.php/index/game/34/香港⑥合彩');">香港⑥合彩</a>
-                                    </li>
+                                    </li> -->
                                 </ul>
                                 <i class="icon" id="open-btn-1" style="display: block;"></i>
                                 <div class="line-fff"></div>
@@ -466,9 +466,9 @@
                                                 <li>
                                                     <a onClick="__openWin('lottery_hall','/index.php/index/game/20/27/北京PK拾');">北京PK拾</a>
                                                 </li>
-                                                <li>
+                                                <!-- <li>
                                                     <a onClick="__openWin('lottery_hall','/index.php/index/game/80/104/339/幸运28');">幸运28</a>
-                                                </li>
+                                                </li> -->
                                                 <li>
                                                     <a onClick="__openWin('lottery_hall','/index.php/index/game/85/27/三分PK10');">三分PK拾</a>
                                                 </li>
@@ -499,15 +499,15 @@
                                                 <li>
                                                     <a onClick="__openWin('lottery_hall','/index.php/index/game/82/39/广西快三');">广西快三</a>
                                                 </li>
-                                                <li>
+                                                <!-- <li>
                                                     <a onClick="__openWin('lottery_hall','/index.php/index/game/83/104/339/北京28');">北京28</a>
-                                                </li>
+                                                </li> -->
                                                 <li>
                                                     <a onClick="__openWin('lottery_hall','/index.php/index/game/81/39/安徽快三');">安徽快三</a>
                                                 </li>
-                                                <li>
+                                                <!-- <li>
                                                     <a onClick="__openWin('lottery_hall','/index.php/index/game/34/香港⑥合彩');">香港⑥合彩</a>
-                                                </li>
+                                                </li> -->
                                                 <li>
                                                     <a onClick="__openWin('lottery_hall','/index.php/index/game/9/3D福彩');">福彩3D</a>
                                                 </li>
