@@ -50,7 +50,7 @@
                         </table>
                     </div>
 
-                    <div name="game_type_6" class="kj_box">
+                    <!-- <div name="game_type_6" class="kj_box">
                         <h1>PC蛋蛋</h1>
                         <table cellpadding="0" cellspacing="0" class="kj_tab">
                             <thead>
@@ -70,7 +70,7 @@
 
                             </tbody>
                         </table>
-                    </div>
+                    </div> -->
 
 
 
@@ -96,7 +96,7 @@
                         </table>
                     </div>-->
 
-                    <div name="game_type_5" class="kj_box">
+                    <!-- <div name="game_type_5" class="kj_box">
                         <h1>低频彩</h1>
                         <table cellpadding="0" cellspacing="0" class="kj_tab">
                             <thead>
@@ -116,7 +116,7 @@
 
                             </tbody>
                         </table>
-                    </div>
+                    </div> -->
 
                 </div>
                 <div class="div_iframe" name="iframe_div"></div>
