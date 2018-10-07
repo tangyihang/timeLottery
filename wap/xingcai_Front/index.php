@@ -195,7 +195,7 @@
 
 <div class="header">
     <div class="headerTop header-logo">
-        <?php if ($_SESSION[$this->memberSessionName]) { ?>
+        <?php if ($_SESSION[$this->memberSessionName]) {?>
             <div class="ui-toolbar-left">
                 <button id="header-left" onClick="location.href='/safe/Personal';return false;">reveal</button>
             </div>
@@ -206,7 +206,7 @@
                 </div>
             </div>
             <!--<button id="header-checkin" onclick="location.href='/';return false;"></button>-->
-        <?php } else { ?>
+        <?php } else {?>
             <div class="ui-toolbar-left">
                 <button id="header-left2" onClick="location.href='user/login';return false;">reveal</button>
             </div>
@@ -220,7 +220,7 @@
                 <a class="header-head" href="user/regs"></a>
             </div>
 
-        <? } ?>
+        <?}?>
 
     </div>
 </div>
@@ -242,12 +242,12 @@
         <div class="bulletin" onClick="location.href='notice/info';">
             <i style="color: #ec0909;" class="bull-ila ion-md-volume-up"></i>
             <marquee style="font-size: 0.9rem;" behavior="scroll"><span id="horse"></span> <?php
-                $seting = $this->getSystemSettings();
-                /* $sql="select title from {$this->prename}content where enable=1 and nodeId=1";
-                  $sql.=' order by addTime desc';
-                  $val = $this->getValue($sql);*/
-                echo $seting['webGG'];
-                ?></marquee>
+$seting = $this->getSystemSettings();
+/* $sql="select title from {$this->prename}content where enable=1 and nodeId=1";
+$sql.=' order by addTime desc';
+$val = $this->getValue($sql);*/
+echo $seting['webGG'];
+?></marquee>
             <i class="bull-arrow ion-ios-arrow-forward"></i>
         </div>
         <div class="index-menu">
@@ -308,21 +308,21 @@
                     </a>
                 </li>
 
-                <li>
+                <!-- <li>
                     <a href="/index.php/index/game/83">
                         <div class="hot-icon icon_idx_0"><img class="" src="assets/statics/images/icon/41.png"></div>
                         <div class="hot-text text_idx_0"><span>北京28</span>
                             <p>5分钟一期</p></div>
                     </a>
-                </li>
+                </li> -->
 
-                <li>
+                <!-- <li>
                     <a href="/index.php/index/game/34">
                         <div class="hot-icon icon_idx_0"><img class="" src="assets/statics/images/icon/18.png"></div>
                         <div class="hot-text text_idx_0"><span>香港⑥合彩</span>
                             <p>每周开奖3期</p></div>
                     </a>
-                </li>
+                </li> -->
                 <!--
                 <li>
                     <a href="/index.php/index/game/34">
