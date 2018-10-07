@@ -336,7 +336,7 @@
                             </div>
                         </a>
                     </li>
-                	<li class="game_category_1">
+                	<!-- <li class="game_category_1">
                         <a href="/index.php/index/game/83">
                             <div class="hot-icon"><img class="" src="assets/statics/images/icon/41.png"></div>
                             <div class="erect-right erect-right-83" data-gid="83" data-time="">
@@ -350,7 +350,7 @@
                                 </p>
                             </div>
                         </a>
-                    </li>
+                    </li> -->
 
                 	<!-- <li class="game_category_2">
                         <a href="/index.php/index/game/34">
