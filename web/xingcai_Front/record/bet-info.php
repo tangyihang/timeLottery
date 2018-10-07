@@ -88,7 +88,8 @@ $betCont = $bet['mode'] * $bet['beiShu'] * $bet['actionNum'] * ($bet['fpEnable']
     </colgroup>
     <thead>
     <tr>
-        <th>赔率</th>
+        <th>赔率-返点</th>
+        <th>返点金额</th>
         <th>中奖注数</th>
         <th>投注时间</th>
         <th></th>
@@ -96,7 +97,8 @@ $betCont = $bet['mode'] * $bet['beiShu'] * $bet['actionNum'] * ($bet['fpEnable']
     </thead>
     <tbody>
     <tr>
-        <td><span style="color: #F00;"><?= number_format($bet['bonusProp'], 2) ?>%</span></td>
+        <td><span style="color: #F00;"><?=number_format($bet['bonusProp'], 2)?>－<?=number_format($bet['fanDian'],1)?>%</span></td>
+        <td><span style="color: #F00;"><?=$this->iff($bet['lotteryNo'], number_format(($bet['fanDian']/100)*$betCont, 3). '元', '－')?></span></td>
         <td>
             <span style="color: #F00;"><?= $this->iff($bet['lotteryNo'], $bet['bonus'] / $bet['bonusProp'] . '注', '－') ?></span>
         </td>

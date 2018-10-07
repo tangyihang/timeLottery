@@ -90,11 +90,11 @@ class Game extends WebLoginBase
                 }
             //if(intval($chkBonus)!=intval($code['bonusProp'])) throw new Exception('提交奖金出错，请重新投注');
             //检查返点
-            if (floatval($code['fanDian']) > floatval($this->user['fanDian']) || floatval($code['fanDian']) > floatval($this->settings['fanDianMax']))
-                //throw new Exception('提交返点出错，请重新投注');
-                //检查倍数
-                if (intval($code['beiShu']) < 1)
-                    throw new Exception('倍数只能为大于1正整数');
+            //if (floatval($code['fanDian']) > floatval($this->user['fanDian']) || floatval($code['fanDian']) > floatval($this->settings['fanDianMax']))
+            //throw new Exception('提交返点出错，请重新投注');
+            //检查倍数
+            if (intval($code['beiShu']) < 1)
+                throw new Exception('倍数只能为大于1正整数');
             //检查位数
             if (in_array($code['playedId'], $arr4id)) {
                 //if(!in_array($code['weiShu'],$arr4)) throw new Exception('提交数据出错，请重新投注3');
@@ -170,6 +170,7 @@ class Game extends WebLoginBase
                 list($code['actionNo'], $code['beiShu'], $code['kjTime']) = explode('|', $var);
                 $code['kjTime'] = strtotime($code['kjTime']);
                 $code['beiShu'] = abs($code['beiShu']);
+                $code['fanDian'] = $this->user['fanDian'];
                 $actionNo = $this->getGameNo($para['type'], $code['kjTime'] - 1);
 
                 $ano = $this->getGameNo($code['type'], $this->time);
@@ -215,6 +216,7 @@ class Game extends WebLoginBase
                 $code['wjorderId'] = $code['type'] . $code['playedId'] . $this->randomkeys(8 - strlen($code['type'] . $code['playedId']));
                 $code['actionNum'] = abs($code['actionNum']);
                 $code['mode'] = abs($code['mode']);
+                $code['fanDian'] = $this->user['fanDian'];
                 $code['beiShu'] = abs($code['beiShu']);
                 $code['amount'] = abs($code['actionNum'] * $code['mode'] * $code['beiShu']);
                 unset($code['dantuo']);
@@ -422,7 +424,7 @@ class Game extends WebLoginBase
             //检查返点
             if ($code['fanDian'] != 0)
                 throw new Exception('请勿改包！');
-            $code['fanDian'] = 0;
+            $code['fanDian'] = $this->user['fanDian'];
             //检查倍数
             if (intval($code['beiShu']) < 1)
                 throw new Exception('倍数只能为大于1正整数');
