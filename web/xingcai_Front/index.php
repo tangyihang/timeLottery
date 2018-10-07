@@ -831,7 +831,7 @@ foreach ($args[0]['data'] as $var) {
                         </div>
                     </div>
                     <div class="tableCarousel" cellspacing="0" cellpad="" c-greyding="0" style="">
-                        <div id="prizeUser" class="tbody" style="margin-top: -20px;">
+                        <div id="prizeUser" class="tbody" style="margin-top: 0px;">
                             <p><span><span class="bg_green">16</span>768***</span><span class="orange">176.4元</span></p>
                             <p><span><span class="bg_green">17</span>bao***</span><span class="orange">147元</span></p>
                         </div>
@@ -1384,6 +1384,20 @@ foreach ($more_two_news as $value) {
   } else {
     $('._notice').show();
   }
+
+var margin_top = 0;
+setInterval(function(){
+
+    // console.log(margin_top);
+    if (margin_top < -400 ){
+        margin_top = 0;
+    } else {
+        margin_top = margin_top-5;
+    }
+
+    $('#prizeUser').css('margin-top', margin_top);
+}, 100);
+
 </script>
 
 </body>
