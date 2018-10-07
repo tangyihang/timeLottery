@@ -318,13 +318,13 @@
                                 </i>
                                 <span class="lot-text">北京PK拾</span></a>
                         </li>
-                        <li class="nav-li lot42" data-sort="4">
+                        <!-- <li class="nav-li lot42" data-sort="4">
                             <a id="hot_main-item-42" class="nav-btn cur-btn" data-argsid="42" title="幸运28"
                                onclick="__openWin('lottery_hall','/index.php/index/game/80/104/339/幸运28')">
                                 <i>
                                 </i>
                                 <span class="lot-text">幸运28</span></a>
-                        </li>
+                        </li> -->
                         <li class="nav-li lot52" data-sort="5">
                             <a id="hot_main-item-52" class="nav-btn cur-btn" data-argsid="52" title="三分PK拾"
                                onclick="__openWin('lottery_hall','/index.php/index/game/85/27/三分PK10')">
@@ -332,13 +332,13 @@
                                 </i>
                                 <span class="lot-text">三分PK拾</span></a>
                         </li>
-                        <li class="nav-li lot18" data-sort="6">
+                        <!-- <li class="nav-li lot18" data-sort="6">
                             <a id="hot_main-item-18" class="nav-btn cur-btn" data-argsid="18" title="香港⑥合彩"
                                onclick="__openWin('lottery_hall','/index.php/index/game/34/香港⑥合彩')">
                                 <i>
                                 </i>
                                 <span class="lot-text">香港⑥合彩</span></a>
-                        </li>
+                        </li> -->
                     </ul>
                 </div>
                 <div id="high_lottery" class="live-nav" style="top: 0px;">
@@ -460,7 +460,7 @@
                             </li>
                           </ul>
                         </li>-->
-                        <li id="pcdd_ul">
+                        <!-- <li id="pcdd_ul">
                             <div id="pcdd_" class="nav-li lot41-1">
                                 <span class="icon-attr-down"></span>
                                 <a class="nav-btn">
@@ -484,10 +484,10 @@
                                         <span class="lot-text">北京28</span></a>
                                 </li>
                             </ul>
-                        </li>
+                        </li> -->
                     </ul>
                 </div>
-                <div id="low_lottery" class="live-nav" style="top: 0px;">
+                <!-- <div id="low_lottery" class="live-nav" style="top: 0px;">
                     <div class="main-top">
                         <i class="icon-attr-down icon-attr-up"></i>
                         <a>
@@ -501,7 +501,7 @@
                                 <i>
                                 </i>
                                 <span class="lot-text">香港⑥合彩</span></a>
-                        </li>
+                        </li> -->
                         <!--<li class="nav-li lot1" data-sort="100">
                           <a id="main-item-1" class="nav-btn cur-btn" data-argsid="1" title="福彩3D" onclick="__openWin('lottery_hall','/index.php/index/game/9/3D福彩')">
                             <i>
@@ -514,8 +514,8 @@
                             </i>
                             <span class="lot-text">排列三</span></a>
                         </li>-->
-                    </ul>
-                </div>
+                   <!--  </ul>
+                </div> -->
 
 
             </div>
@@ -532,11 +532,11 @@
                     <div class="bull" id="sys_tip_outer">
                         <span class="icon-acc"></span>
                         <!-- 这里是跑马灯<marquee>标签，由js加入dom  -->
-                        <marquee id="sys_tip" behavior="scroll"><?= $this->settings['webGG'] ?></marquee>
+                        <marquee id="sys_tip" behavior="scroll"><?=$this->settings['webGG']?></marquee>
                     </div>
                     <div id="header_user" class="header-user">
                         <div class="user-name">账号：<span id="user_name"
-                                                        name="user_name"><?= $this->user['username'] ?></span></div>
+                                                        name="user_name"><?=$this->user['username']?></span></div>
                         <div class="user-money">余额：<span id="balance">￥</span>
                             <div class="money-btn">
                                 <button class="recharge" onclick="__openWin('user_center','/index.php/safe/c38_cz')">

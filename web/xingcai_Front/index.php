@@ -239,7 +239,7 @@
 							<li class="c-grey topscan">
 								<div class="header-gou"><i class="icon-iphone-icon"></i>手机购彩<span class="head-select"></span></div>
 								<div class="scancode" hidden="">
-									<img src="<?= $this->settings['ioscode'] ?>" width="124px" height="124px">
+									<img src="<?=$this->settings['ioscode']?>" width="124px" height="124px">
 									<p>微信扫一扫</p>
 									<p>彩票随身买</p>
 								</div>
@@ -315,7 +315,7 @@
                 <div id="header_user" class="logxinxi" hidden="" style="display: block;">
                     <div class="top_login">
                         <span>您好，<a onClick="__openWin('user_center','/index.php/box/receive');" rel="nofollow"
-                                    class="play-jl" target="_blank" name="user_name"><?= $this->user['username'] ?></a></span>
+                                    class="play-jl" target="_blank" name="user_name"><?=$this->user['username']?></a></span>
                         <span>可用余额：</span>
                         <span><a class="balance colorRed" id="refff" rel="nofollow" style="color: #e4393c;"><span
                                         id="balance" class="orange">￥0.000</span></a>
@@ -398,7 +398,7 @@
                                     </a>
                                 </div>
                             </li>
-                            <li class="mainGame">
+                            <!-- <li class="mainGame">
                                 <a onClick="__openWin('lottery_hall','/index.php/index/game/80/104/339/幸运28');"
                                    class="mainA">
                                     <i class="icon nav40-9">
@@ -413,7 +413,7 @@
                                         </p>
                                     </a>
                                 </div>
-                            </li>
+                            </li> -->
                             <li class="mainGame">
                                 <a onClick="__openWin('lottery_hall','/index.php/index/game/85/27/三分PK10');"
                                    class="mainA">
@@ -430,7 +430,7 @@
                                     </a>
                                 </div>
                             </li>
-                            <li class="mainGame">
+                            <!-- <li class="mainGame">
                                 <a onClick="__openWin('lottery_hall','/index.php/index/game/34/香港⑥合彩');" class="mainA">
                                     <i class="icon nav40-9">
                                         <img src="./files/18.png"></i>
@@ -442,7 +442,7 @@
                                         <p onClick="__openWin('lottery_hall','/index.php/index/game/34/香港⑥合彩');"
                                            target="_blank" class="status-desc">每周开奖三期</p></a>
                                 </div>
-                            </li>
+                            </li> -->
                             <li class="allGames clearfix" data-type="1">
                                 <h3>
                                     <i class="icon-ALARM"></i>
@@ -528,7 +528,7 @@
                                     </div>
                                 </div>
                             </li>
-                            <li class="allGames allGames-on" data-type="2">
+                            <!-- <li class="allGames allGames-on" data-type="2">
                                 <h3>
                                     <i class="icon-TIME"></i>
                                     <span>低频彩</span></h3>
@@ -536,12 +536,12 @@
                                     <li>
                                         <a onClick="__openWin('lottery_hall','/index.php/index/game/34/香港⑥合彩');">香港⑥合彩</a>
                                     </li>
-                                    <!--<li>
+                                    <li>
                                       <a onClick="__openWin('lottery_hall','/index.php/index/game/9/3D福彩');">福彩3D</a></li>
                                     <li>
-                                      <a onClick="__openWin('lottery_hall','/index.php/index/game/10/排列3');">排列三</a></li>-->
+                                      <a onClick="__openWin('lottery_hall','/index.php/index/game/10/排列3');">排列三</a></li>
                                 </ul>
-                            </li>
+                            </li> -->
                             <li class="allGames clearfix" data-type="3">
                                 <h3>
                                     <i class="icon-billiard-ball"></i>
@@ -655,7 +655,7 @@
 	                            <div class="" id="tab-mobileapp-1" style="display: none;">
 	                                <div class="iosqr">
 	                                    <p>适用于IOS6.0及以上平台</p>
-	                                    <img style="width:125px;" src="<?= $this->settings['ioscode'] ?>">
+	                                    <img style="width:125px;" src="<?=$this->settings['ioscode']?>">
 	                                    <p>扫一扫二维码下载Iphone版</p>
 	                                </div>
 	                            </div>
@@ -663,7 +663,7 @@
 		                        <div class="" id="tab-mobileapp-2">
 		                            <div class="androidqr">
 		                                <p>适用于Android及以上平台</p>
-		                                <img style="width:125px;" src="<?= $this->settings['androidCode'] ?>">
+		                                <img style="width:125px;" src="<?=$this->settings['androidCode']?>">
 		                                <p>扫一扫二维码下载Android版</p>
 		                            </div>
 		                        </div>
@@ -713,7 +713,7 @@
                     <div class="submain-tip" id="sys_tip_outer">
                         <i class="icon-acc"></i>
                         <!-- 这里是跑马灯<marquee>标签，由js加入dom  -->
-                        <marquee id="sys_tip" behavior="scroll"><?= $this->settings['webGG'] ?></marquee>
+                        <marquee id="sys_tip" behavior="scroll"><?=$this->settings['webGG']?></marquee>
                     </div>
                     <div class="home-wrapper">
                         <div class="quick-buy-box">
@@ -785,24 +785,24 @@
                                 <ul class="web-notice-box help-ul" id="cont_help_hot" style="">
                                     <!--<li><a onclick="__openWin('home2','/index/newsContent.html?skey=DF42E62C-61A1-F85A-D3DA-7BD08D161FCE')">通知：有任何问题请咨询在线...</a></li></ul>-->
                                     <?php
-                                    $bool = true;
-                                    foreach ($args[0]['data'] as $var) {
-                                        if ($bool) {
-                                            $bool = false;
-                                            $val = $var;
-                                        }
-                                        if ($cout >= 8) {
+$bool = true;
+foreach ($args[0]['data'] as $var) {
+    if ($bool) {
+        $bool = false;
+        $val  = $var;
+    }
+    if ($cout >= 8) {
 
-                                            break;
-                                        }
-                                        $cout += 1;
-                                        $mod = $cout % 2;
-                                        ?>
-                                        <li><a title="系统公告" href="/index.php/notice/view_new/<?= $var['id'] ?>"
-                                               class="notice"> <?= $var['title'] ?> </a></li>
+        break;
+    }
+    $cout += 1;
+    $mod = $cout % 2;
+    ?>
+                                        <li><a title="系统公告" href="/index.php/notice/view_new/<?=$var['id']?>"
+                                               class="notice"> <?=$var['title']?> </a></li>
                                         <?php
-                                    }
-                                    ?>
+}
+?>
                                 </ul>
                                 <ul class="user-help-box help-ul" id="cont_help_newer" style="display: none;">
                                     <li><a href="/index.php/notice/view_new/118">如何注册成为喜洋洋彩会员？</a></li>
@@ -842,20 +842,20 @@
                     <div class="lottery-news-box">
                         <div class="news-title clearfix">
                             <?php
-                            $one_news = $this->getRow("select * from blast_content where nodeId=2 limit 0,1");
-                            ?>
-                            <a href="/index.php/notice/view_new/<?= $one_news['id'] ?>" target="_self"
-                               id="newsTitle_1"><?= $one_news['title'] ?></a>
+$one_news = $this->getRow("select * from blast_content where nodeId=2 limit 0,1");
+?>
+                            <a href="/index.php/notice/view_new/<?=$one_news['id']?>" target="_self"
+                               id="newsTitle_1"><?=$one_news['title']?></a>
                         </div>
                         <div class="news-bar">
                             <div class="news-bar-content" id="news-bar-content1">
                                 <ul class="news-bar-list news-bar-left clearfix">
                                     <?php
-                                    $more_one_news = $this->getRows("select * from blast_content where nodeId=2 limit 1,5");
-                                    foreach ($more_one_news as $value) {
-                                        echo '<li><a onclick="" class="c-grey">新闻</a><span class="pad c-grey">|</span> <a href="/index.php/notice/view_new/' . $value['id'] . '">' . $value['title'] . '</a> </li>';
-                                    }
-                                    ?>
+$more_one_news = $this->getRows("select * from blast_content where nodeId=2 limit 1,5");
+foreach ($more_one_news as $value) {
+    echo '<li><a onclick="" class="c-grey">新闻</a><span class="pad c-grey">|</span> <a href="/index.php/notice/view_new/' . $value['id'] . '">' . $value['title'] . '</a> </li>';
+}
+?>
                                 </ul>
                             </div>
                         </div>
@@ -863,20 +863,20 @@
                     <div class="lottery-news-box">
                         <div class="news-title clearfix">
                             <?php
-                            $two_news = $this->getRow("select * from blast_content where nodeId=2 limit 6,1");
-                            ?>
-                            <a href="/index.php/notice/view_new/<?= $two_news['id'] ?>" target="_self"
-                               id="newsTitle_2"><?= $two_news['title'] ?></a>
+$two_news = $this->getRow("select * from blast_content where nodeId=2 limit 6,1");
+?>
+                            <a href="/index.php/notice/view_new/<?=$two_news['id']?>" target="_self"
+                               id="newsTitle_2"><?=$two_news['title']?></a>
                         </div>
                         <div class="news-bar">
                             <div class="news-bar-content" id="news-bar-content2">
                                 <ul class="news-bar-list news-bar-left clearfix">
                                     <?php
-                                    $more_two_news = $this->getRows("select * from blast_content where nodeId=2 limit 7,5");
-                                    foreach ($more_two_news as $value) {
-                                        echo '<li><a onclick="" class="c-grey">新闻</a><span class="pad c-grey">|</span> <a href="/index.php/notice/view_new/' . $value['id'] . '">' . $value['title'] . '</a> </li>';
-                                    }
-                                    ?>
+$more_two_news = $this->getRows("select * from blast_content where nodeId=2 limit 7,5");
+foreach ($more_two_news as $value) {
+    echo '<li><a onclick="" class="c-grey">新闻</a><span class="pad c-grey">|</span> <a href="/index.php/notice/view_new/' . $value['id'] . '">' . $value['title'] . '</a> </li>';
+}
+?>
                                 </ul>
                                 </ul>
                             </div>
@@ -965,10 +965,10 @@
                     <div class="app-down">
 
                         <div class="down-img" id="img-apple1">
-                            <img src="<?= $this->settings['ioscode'] ?>">
+                            <img src="<?=$this->settings['ioscode']?>">
                         </div>
                         <div class="down-img" id="img-andoid1" style="display: none">
-                            <img src="<?= $this->settings['androidCode'] ?>">
+                            <img src="<?=$this->settings['androidCode']?>">
                         </div>
                         <div class="down-txt">-->
                 <!-- <a class="down-apple1">Iphone版</a>
