@@ -109,21 +109,21 @@
                             <p class="last-time" data-gid="85" data-time=""><span class="time_show_2_"></span></p>
                         </a>
                     </li>
-                	<li class="game_category_1">
+                	<!-- <li class="game_category_1">
                         <a href="/index.php/index/game/83">
                             <div class="hot-icon"><img class="" src="assets/statics/images/icon/41.png"></div>
                             <p class="hot-text">北京28</p>
                             <p class="last-time" data-gid="83" data-time=""><span class="time_show_2_"></span></p>
                         </a>
-                    </li>
+                    </li> -->
 
-                	<li class="game_category_2">
+                	<!-- <li class="game_category_2">
                         <a href="/index.php/index/game/34">
                             <div class="hot-icon"><img class="" src="assets/statics/images/icon/18.png"></div>
                             <p class="hot-text">香港⑥合彩</p>
                             <p class="last-time" data-gid="34" data-time=""><span class="time_show_2_"></span></p>
                         </a>
-                    </li>
+                    </li> -->
                     <!--
                 	<li class="game_category_1">
                         <a href="/index.php/index/game/78">

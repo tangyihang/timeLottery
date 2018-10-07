@@ -492,9 +492,9 @@
                                                 <li>
                                                     <a onClick="__openWin('lottery_hall','/index.php/index/game/20/27/北京PK拾');">北京PK拾</a>
                                                 </li>
-                                                <li>
+                                                <!-- <li>
                                                     <a onClick="__openWin('lottery_hall','/index.php/index/game/80/104/339/幸运28');">幸运28</a>
-                                                </li>
+                                                </li> -->
                                                 <li>
                                                     <a onClick="__openWin('lottery_hall','/index.php/index/game/85/27/三分PK10');">三分PK拾</a>
                                                 </li>
@@ -518,9 +518,9 @@
                                                   <a onClick="__openWin('lottery_hall','/index.php/index/game/6/10/广东11选5');">广东11选5</a></li>
                                                 <li>
                                                   <a onClick="__openWin('lottery_hall','/index.php/index/game/82/39/广西快三');">广西快三</a></li>-->
-                                                <li>
+                                                <!-- <li>
                                                     <a onClick="__openWin('lottery_hall','/index.php/index/game/83/104/339/北京28');">北京28</a>
-                                                </li>
+                                                </li> -->
                                                 <!--<li>
                                                   <a onClick="__openWin('lottery_hall','/index.php/index/game/81/39/安徽快三');">安徽快三</a></li>-->
                                             </ol>
