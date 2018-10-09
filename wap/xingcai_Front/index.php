@@ -265,8 +265,16 @@ echo $seting['webGG'];
                         <p>优惠活动</p></a>
                 </li>
                 <li>
-                    <a href="http://wpa.qq.com/msgrd?v=3&uin=1163408818&site=qq&menu=yes"
+                    <!-- <a href="http://wpa.qq.com/msgrd?v=3&uin=1163408818&site=qq&menu=yes"
                        target="_blank"><img src="assets/statics/img/menu4.png">
+                        <p>在线客服</p></a> -->
+                    <script type="text/javascript">
+                        function cOnclick(){
+                            alert("客服QQ:1163408818");
+                        }
+                    </script>
+
+                    <a href="#" onclick="cOnclick();"><img src="assets/statics/img/menu4.png">
                         <p>在线客服</p></a>
                 </li>
             </ul>
