@@ -181,14 +181,150 @@
     }
 </style>
 
+<style>
+
+
+
+._notice2 {
+    position: fixed;
+    z-index: 1000;
+    background-color: rgba(0, 0, 0, 0.7);
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: none;
+}
+
+._notice-wrapper2 {
+    position: absolute;
+    left: 20px;
+    right: 20px;
+    top: 50%;
+    transform: translate3d(0, -50%, 0);
+    background-color: #fff;
+    border-radius: 5px;
+    height: 80%;
+    overflow-y: auto;
+    /*box-shadow: 0 0 0 5px rgba(255,255,255,.3);*/
+}
+
+._notice-wrapper2 .title2 {
+    height: 40px;
+    line-height: 40px;
+    width: 100%;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 400;
+    letter-spacing: 3px;
+    color: #fff;
+    background-color: #F13131;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+}
+
+._notice-wrapper2 .close2 {
+    height: 40px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 28px;
+    line-height: 40px;
+    color: #fff;
+    padding: 0 15px;
+}
+
+._notice-list2 {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px 10px 10px;
+    position: absolute;
+    top: 40px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    box-sizing: border-box;
+    overflow: hidden;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+._notice-list2 li {
+    width: 100%;
+    border-bottom: 1px dashed #dbdbdb;
+}
+
+._notice-list2 li.active .notice-content {
+    display: block;
+}
+
+.notice-tit2 {
+    height: 40px;
+}
+
+.notice-tit2 p:last-child {
+    margin: 0 100px 0 0;
+    height: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    line-height: 40px;
+    text-indent: 20px;
+    position: relative;
+    font-size: 16px;
+    color: #212A31;
+}
+
+.notice-tit2 p:last-child:before {
+    content: "";
+    display: block;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #F13131;
+    top: 14px;
+    left: 0;
+    position: absolute;
+}
+
+.notice-tit2 p:first-child {
+    float: right;
+    width: 90px;
+    padding: 0 0 0 10px;
+    white-space: nowrap;
+    line-height: 40px;
+    box-sizing: content-box;
+    text-align: right;
+    font-size: 14px;
+    color: #A9A9A9;
+}
+
+.notice-content2 {
+    color: #5C5C5C;
+    padding-bottom: 15px;
+    display: none;
+}
+</style>
+
 <body>
-<div class="_notice">
+<div id="website_notice" class="_notice">
     <div class="_notice-wrapper">
         <div class="title">平台公告<span class="close">×</span></div>
         <ul class="_notice-list">
             <li>
 
             </li>
+        </ul>
+    </div>
+</div>
+
+<div id="website_kf" class="_notice2" style="display: none;">
+    <div class="_notice-wrapper2">
+        <div class="title2">在线客服<span class="close2">×</span></div>
+        <ul class="_notice-list2">
+            <li>在线客服QQ:1163408818</li>
         </ul>
     </div>
 </div>
@@ -269,9 +405,8 @@ echo $seting['webGG'];
                        target="_blank"><img src="assets/statics/img/menu4.png">
                         <p>在线客服</p></a> -->
                     <script type="text/javascript">
-                        function cOnclick(){
-                            alert("客服QQ:1163408818");
-                        }
+
+
                     </script>
 
                     <a href="#" onclick="cOnclick();"><img src="assets/statics/img/menu4.png">
@@ -403,24 +538,34 @@ echo $seting['webGG'];
 <script src="assets/js/require.js" data-main="assets/js/index"></script>
 <script src="assets/js/require.config.js?v=2.1"></script>
 <script>
-  $("._notice-list").on("click", "li", function () {
-    if ($(this).is(".active")) {
-      $(this).removeClass("active").siblings("li").removeClass("active");
-    } else {
-      $(this).addClass("active").siblings("li").removeClass("active");
-    }
-  })
-  $("._notice .close").click(function () {
+function cOnclick(){
+    $("#website_kf").css("display","block");
+}
+
+$("._notice-list").on("click", "li", function () {
+if ($(this).is(".active")) {
+  $(this).removeClass("active").siblings("li").removeClass("active");
+} else {
+  $(this).addClass("active").siblings("li").removeClass("active");
+}
+})
+
+$("._notice .close").click(function () {
     setCookie('yiShowNoticeWap', 1, 1000 * 60 * 1);
     $("._notice").hide();
-  })
-  var yishownotice = getCookie('yiShowNoticeWap');
-  if (yishownotice == 1) {
+})
+
+$("._notice2 .close2").click(function () {
+    $("._notice2").hide();
+})
+
+var yishownotice = getCookie('yiShowNoticeWap');
+if (yishownotice == 1) {
     $('._notice').hide();
-  } else {
+} else {
     $('._notice').show();
-  }
-  function setCookie(name, value, expire, path) {
+}
+function setCookie(name, value, expire, path) {
     var curdate = new Date();
     var cookie = name + "=" + encodeURIComponent(value) + "; ";
     if (expire != undefined || expire == 0) {
@@ -435,15 +580,15 @@ echo $seting['webGG'];
     path = path || "/";
     cookie += "path=" + path;
     document.cookie = cookie;
-  }
-  function getCookie(name) {
+}
+function getCookie(name) {
     var re = "(?:; )?" + encodeURIComponent(name) + "=([^;]*);?";
     re = new RegExp(re);
     if (re.test(document.cookie)) {
       return decodeURIComponent(RegExp.$1);
     }
     return '';
-  }
+}
 </script>
 </body>
 </html>
