@@ -1,7 +1,7 @@
 ﻿// 彩票开奖配置
 var cheerio = require('cheerio');
 var querystring = require('querystring');
-var myhost = 'www.mptype.com';
+var myhost = 'www.xyy8686.com';
 
 
 var req_arg = {
@@ -276,8 +276,8 @@ exports.submit = {
 
 exports.dbinfo = {
   host: '127.0.0.1',
-  user: 'root',
-  password: 'tyh456852',
+  user: 'timelottery',
+  password: 'NSxehHCGPNRSFzFk',
   database: 'timelottery',
   'multipleStatements': true
 }

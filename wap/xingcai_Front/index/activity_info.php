@@ -82,12 +82,12 @@
                             </div>
                             <div class="hd_cont_txtarea">
                                 <div>
-                                    <p><span style="font-size:12px;background-color:#E53333;"><span style="color:#FFE500;">●喜羊羊彩● </span><span style="color:#003399;">易记网址：www.mptype.com </span>●大品牌 <span style="color:#FFFFFF;">值得信赖！</span></span></p>
+                                    <p><span style="font-size:12px;background-color:#E53333;"><span style="color:#FFE500;">●喜羊羊彩● </span><span style="color:#003399;">易记网址：www.xyy8686.com </span>●大品牌 <span style="color:#FFFFFF;">值得信赖！</span></span></p>
                                     <p>
                                         <br>
                                     </p>
                                     <p>
-                                        <span style="background-color:;">喜羊羊彩官方网址：www.mptype.com</span>
+                                        <span style="background-color:;">喜羊羊彩官方网址：www.xyy8686.com</span>
                                     </p>
                                     <p>
                                         <span style="background-color:;">喜羊羊彩是世界彩界著名线上数字娱乐平台之一,专注于彩票事业。 </span>
@@ -203,7 +203,7 @@
                             <div class="hd_cont_txtarea">
                                 <div>
                                     <p><br></p>
-                                    <p><span style="font-size:12px;background-color:#E53333;"><span style="color:#FFE500;">●喜羊羊彩● </span><span style="color:#003399;">易记网址：www.mptype.com </span>●大品牌 <span style="color:#FFFFFF;">值得信赖！</span></span></p>
+                                    <p><span style="font-size:12px;background-color:#E53333;"><span style="color:#FFE500;">●喜羊羊彩● </span><span style="color:#003399;">易记网址：www.xyy8686.com </span>●大品牌 <span style="color:#FFFFFF;">值得信赖！</span></span></p>
                                     <p><br></p>
                                     <p>1：点击右上角 免费试玩 马上就可获得一个试玩账号</p>
                                     <p>2：设置密码就可以马上登入。</p>
@@ -227,7 +227,7 @@
                             <div class="hd_cont_txtarea">
                                 <div>
                                     <p><br></p>
-                                    <p><span style="font-size:12px;background-color:#E53333;"><span style="color:#FFE500;">●喜羊羊彩● </span><span style="color:#003399;">易记网址：www.mptype.com </span>●大品牌 <span style="color:#FFFFFF;">值得信赖！</span></span></p>
+                                    <p><span style="font-size:12px;background-color:#E53333;"><span style="color:#FFE500;">●喜羊羊彩● </span><span style="color:#003399;">易记网址：www.xyy8686.com </span>●大品牌 <span style="color:#FFFFFF;">值得信赖！</span></span></p>
                                     <p><br></p>
                                     <p>支持支付宝，微信，银行转账，在线支付，入款最低10元起，出款最低100元起。</p>
                                     <p>喜羊羊彩提供更全面的支付方式，支付宝、微信支付、银行转账、在线快速支付等渠道多管齐下，360度无死角满足彩民入款需求的同时，要求出款系统3—10分钟的急速出款到客户账上。</p>
@@ -267,12 +267,12 @@
                                     <p>
                                         <br>
                                     </p>
-                                    <p><span style="font-size:12px;background-color:#E53333;"><span style="color:#FFE500;">●喜羊羊彩● </span><span style="color:#003399;">易记网址：www.mptype.com </span>●大品牌 <span style="color:#FFFFFF;">值得信赖！</span></span></p>
+                                    <p><span style="font-size:12px;background-color:#E53333;"><span style="color:#FFE500;">●喜羊羊彩● </span><span style="color:#003399;">易记网址：www.xyy8686.com </span>●大品牌 <span style="color:#FFFFFF;">值得信赖！</span></span></p>
                                     <p>
                                         <br>
                                     </p>
 
-                                    <p>喜羊羊彩官方网址：www.mptype.com</p>
+                                    <p>喜羊羊彩官方网址：www.xyy8686.com</p>
                                     <p>喜羊羊彩是世界彩界著名线上数字娱乐平台之一，由彩票专家研发高端程序,专注于彩票事业。</p>
                                     <p> 喜羊羊彩获得GEOTRUST国际认证,实力彩票娱乐平台，彩种丰富玩法多样（如：时时彩,香港彩,北京PK10,快乐十分,快三,五分彩等）。</p>
                                     <p><br></p>

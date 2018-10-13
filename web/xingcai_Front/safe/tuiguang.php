@@ -79,7 +79,7 @@
                     <strong>我的推荐ID：<b id="userid"><?= $this->user['uid'] ?></b></strong>
                     <strong>我的推荐地址：
                         <b id="spread_url"
-                           style="color: red;">http://www.mptype.com/index.php/user/login?tj=<?= $this->user['uid'] ?></b><br>
+                           style="color: red;">http://www.xyy8686.com/index.php/user/login?tj=<?= $this->user['uid'] ?></b><br>
                     </strong>
                     <p style="padding-left: 100px;font-size: 15px;">请复制完整地址给您的好友或者让您的好友在注册时填写您的推荐ID
                     </p>

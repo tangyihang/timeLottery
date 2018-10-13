@@ -1,4 +1,20 @@
 <?php
+
+if (!function_exists('getallheaders')) {
+    function getallheaders() {
+        foreach ($_SERVER as $name => $value) {
+            if ($name == 'HTTP_X_CALL') {
+                $headers['x-call'] = $value;
+            } elseif ($name == 'HTTP_X_FORM_CALL') {
+                $headers['x-form-call'] = $value;
+            } elseif (substr($name, 0, 5) == 'HTTP_') {
+                $headers[str_replace(' ', '-', ucwords(strtolower(str_replace('_', ' ', substr($name, 5)))))] = $value;
+            }
+        }
+        return $headers;
+    }
+}
+
 require 'xingcai_lib/core/DBAccess.class';
 require 'xingcai_lib/core/Object.class';
 require 'xingcai_config.php';

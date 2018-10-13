@@ -4,8 +4,8 @@ $conf['debug']['level']=5;
 
 /*		���ݿ�����		*/
 $conf['db']['dsn']='mysql:host=localhost;dbname=timelottery';
-$conf['db']['user']='root';
-$conf['db']['password']='tyh456852';
+$conf['db']['user']='timelottery';
+$conf['db']['password']='NSxehHCGPNRSFzFk';
 $conf['db']['charset']='utf8';
 $conf['db']['prename']='blast_';
 

@@ -85,7 +85,7 @@ $data = $args[0]['payData'];
                                         编码：<span class="red" name="orderId" id="orderId_qr"><?=$args[0]['rechargeId']?></span><span class="copy_outer"><a id="wx_Pay" data-cp="orderId_2_s" name="cp_btn" class="we-blue">复制</a></span>　|　应付金额：<span class="red" id="qrmoney"><?=$args[0]['amount']?></span>元
                                     </p>
                                 </div>
-								<div id="code"><img style="width: 350px;" src="http://admin.mptype.com<?=$data['imgaddr']?>"></div>
+								<div id="code"><img style="width: 350px;" src="http://admin.xyy8686.com<?=$data['imgaddr']?>"></div>
 								  <div>
 
 								  </div>
