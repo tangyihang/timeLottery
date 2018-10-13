@@ -10,8 +10,8 @@ ini_set('display_errors', 'Off');
 //数据库配置
 $dbconf                        = array(
     "conn" => "127.0.0.1",    //数据库主机
-    "user" => "root",        //数据库帐号
-    "pwd" => "tyh456852",        //数据库密码
+    "user" => "timelottery",        //数据库帐号
+    "pwd" => "NSxehHCGPNRSFzFk",        //数据库密码
     "db" => "timelottery" //数据库名称
 );
 $conf['db']['prename']         = 'blast_'; //表前缀

@@ -276,8 +276,8 @@ exports.submit = {
 
 exports.dbinfo = {
   host: '127.0.0.1',
-  user: 'root',
-  password: 'tyh456852',
+  user: 'timelottery',
+  password: 'NSxehHCGPNRSFzFk',
   database: 'timelottery',
   'multipleStatements': true
 }
