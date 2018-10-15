@@ -66,10 +66,12 @@ class Index extends WebLoginBase
             $time = strtotime(date('Ymd'));
             $times = strtotime(date('Ymd')) + 86400;
         }
+        $lastNo = $this->getGameLastNo($gameId);
         $where = ' and time between '.$time.' and '.$times;
+        $where .= ' and number < "'.$lastNo['actionNo'].'"';
         $sql = "select * from blast_data where type = ".$gameId;
         $sql.=$where;
-        $sql.=" order by id desc";
+        $sql.=" order by number desc";
 
         if($data = $this->getRows($sql)){
             $d['data']=$data;
