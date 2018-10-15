@@ -491,7 +491,7 @@
     }
   }
 
-  var host = "http://www.xyy8686.com/index.php/team/register/"
+  var host = "http://www.xyy6868.com/index.php/team/register/"
 
   function pasteFormatter(value, row, index) {
     return host + row.linkUrl + '&nbsp;<span class="label label-primary handIco" id="' + host + row.linkUrl + '" linkUrl="' + host + row.linkUrl + '">复制</span>';
