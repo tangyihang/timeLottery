@@ -43,7 +43,7 @@ class Data extends AdminBase{
 			$para['type']=intval($_POST['type']);
 			$para['number']=$_POST['number'];
 			$para['data']=$_POST['data'];
-			$para['time']=$this->time;
+			$para['time']=strtotime($_POST['time']);
 			try{
 				$this->beginTransaction();
 				$this->insertRow($this->prename .'data', $para);

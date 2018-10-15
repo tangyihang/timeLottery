@@ -68,7 +68,7 @@ class Index extends WebLoginBase
         }
         $lastNo = $this->getGameLastNo($gameId);
         $where = ' and time between '.$time.' and '.$times;
-        $where .= ' and number < "'.$lastNo['actionNo'].'"';
+        $where .= ' and number <= "'.$lastNo['actionNo'].'"';
         $sql = "select * from blast_data where type = ".$gameId;
         $sql.=$where;
         $sql.=" order by number desc";
@@ -84,17 +84,24 @@ class Index extends WebLoginBase
         return $d;
     }
     public final function getDraw(){
-        //$sql="select t1.*,t2.title,t2.onGetNoed,t2.type as groups from  (select id,data,number,time,type from blast_data where id in (select max(id) from blast_data group by type))t1 , blast_type t2 where t1.type = t2.id and t2.enable=1 and t2.isDelete=0";
-        $sql1 = 'select max(id) as id from blast_data group by type';
-        $ids = $this->getRows($sql1);
-        if(!empty($ids)){
-            foreach ($ids as $value) {
-                $ids_array[] = $value['id'];
+        // 获取最后一期的开奖结果
+        $gameIds = array(63,86,85,80,1,20,83,80);
+        $time = strtotime(date('Ymd'));
+        $times = strtotime(date('Ymd')) + 86400;
+        $str_ids = array();
+        foreach ($gameIds as $gameId) {
+            $lastNo = $this->getGameLastNo($gameId);
+            $where = ' and time between '.$time.' and '.$times;
+            $where .= ' and number <= "'.$lastNo['actionNo'].'"';
+            $sql = "select * from blast_data where type = ".$gameId;
+            $sql.=$where;
+            $sql.=" order by number desc";
+            if($resoult = $this->getRow($sql)){
+                $str_ids[] = $resoult['id'];
             }
-            $str_ids = implode(',',$ids_array);
-        }else{
-            $str_ids = 1;
         }
+
+        $str_ids = implode(',',$str_ids);
         $sql="select t1.*,t2.title,t2.onGetNoed,t2.type as groups from (
                 select id,data,number,time,type from blast_data where id in ({$str_ids})
                 )t1 , blast_type t2 
