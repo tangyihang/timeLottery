@@ -1,6 +1,7 @@
 <?php
 ob_start('ob_output');
-function ob_output($html) {
+function ob_output($html)
+{
     // 一些用户喜欢使用windows笔记本编辑文件，因此在输出时需要检查是否包含BOM头
     if (ord(substr($html, 0, 1)) === 239 && ord(substr($html, 1, 2)) === 187 && ord(substr($html, 2, 1)) === 191) {
         $html = substr($html, 3);
@@ -22,7 +23,7 @@ function ob_output($html) {
 }
 
 require '../xingcai_config.php';
-$id    = array('79', '81', '82', '63');
+$id = array('79', '81', '82', '63');
 $pgsid = array('30', '50', '80', '100', '120', '200', '300', '');
 include dirname(__FILE__) . "/inc/comfunc.php";
 //此处设置彩种id
@@ -52,7 +53,7 @@ if (!$page) {
 }
 
 //传参
-$toUrl  = "?page=";
+$toUrl = "?page=";
 $params = http_build_query($_REQUEST, '', '&');
 if (!$mydb) {
     $mydb = new MYSQL($dbconf);
@@ -62,8 +63,9 @@ $gRs = $mydb->row($conf['db']['prename'] . "type", "shortName", "id=" . $typeid)
 if ($gRs) {
     $shortName = $gRs[0][0];
 }
+
 $fromTime = $_GET['fromTime'];
-$toTime   = $_GET['toTime'];
+$toTime = $_GET['toTime'];
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN""http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:esun="">
@@ -113,47 +115,47 @@ $toTime   = $_GET['toTime'];
     </script>
 <body style="background:none;">
 <div id="searchBox" style="background: #f8f8f8; padding:10px 0;">
-    <div class="lhfx_tit"><span><?=$shortName?></span><span class="showAll"></span>基本走势</div>
+    <div class="lhfx_tit"><span><?= $shortName ?></span><span class="showAll"></span>基本走势</div>
     <div class="secondary_tabs">
         <ul>
-            <li data="num_30" class="hover"><a href="?typeid=<?=$typeid?>&pgs=30"
+            <li data="num_30" class="hover"><a href="?typeid=<?= $typeid ?>&pgs=30"
                                                class="ml10<?php if ($pgs == 30) {
-    echo ' on';
-}
-?>" target="_self">最近30期</a>
+                                                   echo ' on';
+                                               }
+                                               ?>" target="_self">最近30期</a>
             </li>
-            <li data="num_50"><a href="?typeid=<?=$typeid?>&pgs=50" class="ml10<?php if ($pgs == 50) {
-    echo ' on';
-}
-?>"
+            <li data="num_50"><a href="?typeid=<?= $typeid ?>&pgs=50" class="ml10<?php if ($pgs == 50) {
+                    echo ' on';
+                }
+                ?>"
                                  target="_self">最近50期</a></li>
-            <li data="num_100"><a href="?typeid=<?=$typeid?>&pgs=80" class="ml10<?php if ($pgs == 80) {
-    echo ' on';
-}
-?>"
+            <li data="num_100"><a href="?typeid=<?= $typeid ?>&pgs=80" class="ml10<?php if ($pgs == 80) {
+                    echo ' on';
+                }
+                ?>"
                                   target="_self">最近80期</a></li>
-            <li data="num_100"><a href="?typeid=<?=$typeid?>&pgs=200" class="ml10<?php if ($pgs == 200) {
-    echo ' on';
-}
-?>"
+            <li data="num_100"><a href="?typeid=<?= $typeid ?>&pgs=200" class="ml10<?php if ($pgs == 200) {
+                    echo ' on';
+                }
+                ?>"
                                   target="_self">最近200期</a></li>
-            <li data="num_100"><a href="?typeid=<?=$typeid?>&pgs=300" class="ml10<?php if ($pgs == 300) {
-    echo ' on';
-}
-?>"
+            <li data="num_100"><a href="?typeid=<?= $typeid ?>&pgs=300" class="ml10<?php if ($pgs == 300) {
+                    echo ' on';
+                }
+                ?>"
                                   target="_self">最近300期</a></li>
         </ul>
     </div>
     <div class="lhfx_search_time">
         <form action="" method="get">
-            <input type="hidden" name="typeid" value="<?=$typeid?>"/>
-            <input type="hidden" name="pgs" value="<?=$pgs?>"/>
+            <input type="hidden" name="typeid" value="<?= $typeid ?>"/>
+            <input type="hidden" name="pgs" value="<?= $pgs ?>"/>
             时间范围：
-            <input type="text" value="<?=$fromTime?>" name="fromTime"
+            <input type="text" value="<?= $fromTime ?>" name="fromTime"
                    onclick="layui.laydate({elem: this, festival: true})" class="time_input">
             <span class="image"></span>
             <label>至</label>
-            <input type="text" value="<?=$toTime?>" onclick="layui.laydate({elem: this, festival: true})"
+            <input type="text" value="<?= $toTime ?>" onclick="layui.laydate({elem: this, festival: true})"
                    name="toTime" class="time_input">
             <span class="image"></span>
             <input type="submit" value="查询" id="showissue1" class="time_btn">
@@ -206,247 +208,259 @@ $toTime   = $_GET['toTime'];
 
         </tr>
         <?php
-if ($fromTime) {
-    $fromTime = strtotime($fromTime);
-}
-
-if ($toTime) {
-    $toTime = strtotime($toTime) + 24 * 3600;
-}
-
-$pg = trim($_REQUEST["page"]);
-if (!$pg) {
-    $pg = 1;
-}
-if (!$pgs) {
-    $pgs = 30;
-}
-$tableStr  = $conf['db']['prename'] . "data";
-$tableStr2 = $conf['db']['prename'] . "data a";
-$fieldsStr = "time, number, data";
-
-$fieldsStr2 = "a.time, a.number, a.data";
-$whereStr   = " type=$typeid ";
-$whereStr2  = " a.type=$typeid ";
-if ($fromTime && $toTime) {
-    $whereStr .= " and time between $fromTime and $toTime";
-    $whereStr2 .= " and a.time between $fromTime and $toTime";
-} elseif ($fromTime) {
-    $whereStr .= ' and time>=' . $fromTime;
-    $whereStr2 .= ' and a.time>=' . $fromTime;
-} elseif ($toTime) {
-    $whereStr .= ' and time<' . $toTime;
-    $whereStr2 .= ' and a.time<' . $toTime;
-} else {
-}
-$orderStr = " order by a.id desc";
-
-$totalNumber = $mydb->row_count($tableStr, $whereStr);
-if ($totalNumber > 0) {
-
-    $countcount = 0;
-    $perNumber  = $pgs; //每页显示的记录数
-    $page       = $pg; //获得当前的页面值
-    if (!isset($page)) {
-        $page = 1;
-    }
-
-    $totalPage  = ceil($totalNumber / $perNumber); //计算出总页数
-    $startCount = ($page - 1) * $perNumber; //分页开始,根据此方法计算出开始的记录
-    $data       = $mydb->row($tableStr2, $fieldsStr2, $whereStr2 . ' ' . $orderStr . " limit $startCount,$perNumber");
-    if ($data) {
-        foreach ($data as $var) {
-
-            $dArry     = explode(",", $var[2]);
-            $var['d1'] = $dArry[0];
-            $var['d2'] = $dArry[1];
-            $var['d3'] = $dArry[2];
-
-            echo '<tr>';
-            echo '<td id="title">' . $var[1] . '</td>';
-
-            echo '<td class="wdh" align="center"><div class="ball02">' . $var['d1'] . '</div></td>';
-            echo '<td class="wdh" align="center"><div class="ball02">' . $var['d2'] . '</div></td>';
-            echo '<td class="wdh" align="center"><div class="ball02">' . $var['d3'] . '</div></td>';
-
-            for ($i = 1; $i < 7; $i++) //百位
-            {
-                if ($i == intval($var['d1'])) {
-                    echo '<td class="charball" align="center"><div class="ball01">' . $var['d1'] . '</div></td>';
-                    $five['LB' . $i] = 0;
-                    if ($five['SB' . $i]) {
-                        $five['SB' . $i]++;
-                    } else {
-                        $five['SB' . $i] = 1;
-                    }
-                    if ($five['LCB' . $i]) {
-                        $five['LCB' . $i]++;
-                    } else {
-                        $five['LCB' . $i] = 1;
-                    }
-                } else {
-                    if ($five['LB' . $i]) {
-                        $five['LB' . $i]++;
-                    } else {
-                        $five['LB' . $i] = 1;
-                    }
-                    echo '<td class="wdh" align="center"><div class="ball03">' . $five['LB' . $i] . '</div></td>';
-                    $five['LCB' . $i] = 0;
-                }
-                if ($five['ZB' . $i]) {
-                    $five['ZB' . $i] += $five['LB' . $i];
-                } else {
-                    $five['ZB' . $i] = $five['LB' . $i];
-                }
-                if ($five['MB' . $i] < $five['LB' . $i]) {
-                    $five['MB' . $i] = $five['LB' . $i];
-                }
-                if ($five['MLCB' . $i] < $five['LCB' . $i]) {
-                    $five['MLCB' . $i] = $five['LCB' . $i];
-                }
-
-            }
-
-            for ($i = 1; $i < 7; $i++) //十位
-            {
-                if ($i == intval($var['d2'])) {
-                    echo '<td class="charball" align="center"><div class="ball02">' . $var['d2'] . '</div></td>';
-                    $five['LS' . $i] = 0;
-                    if ($five['SS' . $i]) {
-                        $five['SS' . $i]++;
-                    } else {
-                        $five['SS' . $i] = 1;
-                    }
-                    if ($five['LCS' . $i]) {
-                        $five['LCS' . $i]++;
-                    } else {
-                        $five['LCS' . $i] = 1;
-                    }
-                } else {
-                    if ($five['LS' . $i]) {
-                        $five['LS' . $i]++;
-                    } else {
-                        $five['LS' . $i] = 1;
-                    }
-                    echo '<td class="wdh" align="center"><div class="ball04">' . $five['LS' . $i] . '</div></td>';
-                    $five['LCS' . $i] = 0;
-                }
-                if ($five['ZS' . $i]) {
-                    $five['ZS' . $i] += $five['LS' . $i];
-                } else {
-                    $five['ZS' . $i] = $five['LS' . $i];
-                }
-                if ($five['MS' . $i] < $five['LS' . $i]) {
-                    $five['MS' . $i] = $five['LS' . $i];
-                }
-                if ($five['MLCS' . $i] < $five['LCS' . $i]) {
-                    $five['MLCS' . $i] = $five['LCS' . $i];
-                }
-
-            }
-
-            for ($i = 1; $i < 7; $i++) //个位
-            {
-                if ($i == intval($var['d3'])) {
-                    echo '<td class="charball" align="center"><div class="ball01">' . $var['d3'] . '</div></td>';
-                    $five['LG' . $i] = 0;
-                    if ($five['SG' . $i]) {
-                        $five['SG' . $i]++;
-                    } else {
-                        $five['SG' . $i] = 1;
-                    }
-                    if ($five['LCG' . $i]) {
-                        $five['LCG' . $i]++;
-                    } else {
-                        $five['LCG' . $i] = 1;
-                    }
-                } else {
-                    if ($five['LG' . $i]) {
-                        $five['LG' . $i]++;
-                    } else {
-                        $five['LG' . $i] = 1;
-                    }
-                    echo '<td class="wdh" align="center"><div class="ball03">' . $five['LG' . $i] . '</div></td>';
-                    $five['LCG' . $i] = 0;
-                }
-                if ($five['ZG' . $i]) {
-                    $five['ZG' . $i] += $five['LG' . $i];
-                } else {
-                    $five['ZG' . $i] = $five['LG' . $i];
-                }
-                if ($five['MG' . $i] < $five['LG' . $i]) {
-                    $five['MG' . $i] = $five['LG' . $i];
-                }
-                if ($five['MLCG' . $i] < $five['LCG' . $i]) {
-                    $five['MLCG' . $i] = $five['LCG' . $i];
-                }
-            }
-
-            echo '</tr>';
-
+        if ($fromTime) {
+            $fromTime = strtotime($fromTime);
         }
-    }
 
-    ?>
+        if ($toTime) {
+            $toTime = strtotime($toTime) + 24 * 3600;
+        }
+
+        $pg = trim($_REQUEST["page"]);
+        if (!$pg) {
+            $pg = 1;
+        }
+        if (!$pgs) {
+            $pgs = 30;
+        }
+
+        $atime = date('H:i:s');
+        $dataTimeSql = "select actionNo, actionTime from {$conf['db']['prename']}data_time where type=$typeid and actionTime<='$atime' order by actionTime desc limit 1";
+        $return = $mydb->row_query($dataTimeSql);
+
+        if ($return) {
+            $max_actionNo = $atime = date('Ymd-') . $return['0']['0'];
+        }
+        $tableStr = $conf['db']['prename'] . "data";
+        $tableStr2 = $conf['db']['prename'] . "data a";
+        $fieldsStr = "time, number, data";
+
+        $fieldsStr2 = "a.time, a.number, a.data";
+        $whereStr = " type=$typeid ";
+        $whereStr2 = " a.type=$typeid ";
+
+        if ($fromTime && $toTime) {
+            $whereStr .= " and time between $fromTime and $toTime";
+            $whereStr2 .= " and a.time between $fromTime and $toTime";
+        } elseif ($fromTime) {
+            $whereStr .= ' and time>=' . $fromTime;
+            $whereStr2 .= ' and a.time>=' . $fromTime;
+        } elseif ($toTime) {
+            $whereStr .= ' and time<' . $toTime;
+            $whereStr2 .= ' and a.time<' . $toTime;
+        } else if ($max_actionNo) {
+            $whereStr .= " and number<='" . $max_actionNo . "'";
+            $whereStr2 .= " and a.number<='" . $max_actionNo . "'";
+        }
+
+        $orderStr = " order by a.number desc";
+
+        $totalNumber = $mydb->row_count($tableStr, $whereStr);
+        if ($totalNumber > 0) {
+
+            $countcount = 0;
+            $perNumber = $pgs; //每页显示的记录数
+            $page = $pg; //获得当前的页面值
+            if (!isset($page)) {
+                $page = 1;
+            }
+
+            $totalPage = ceil($totalNumber / $perNumber); //计算出总页数
+            $startCount = ($page - 1) * $perNumber; //分页开始,根据此方法计算出开始的记录
+            $data = $mydb->row($tableStr2, $fieldsStr2, $whereStr2 . ' ' . $orderStr . " limit $startCount,$perNumber");
+            if ($data) {
+                foreach ($data as $var) {
+
+                    $dArry = explode(",", $var[2]);
+                    $var['d1'] = $dArry[0];
+                    $var['d2'] = $dArry[1];
+                    $var['d3'] = $dArry[2];
+
+                    echo '<tr>';
+                    echo '<td id="title">' . $var[1] . '</td>';
+
+                    echo '<td class="wdh" align="center"><div class="ball02">' . $var['d1'] . '</div></td>';
+                    echo '<td class="wdh" align="center"><div class="ball02">' . $var['d2'] . '</div></td>';
+                    echo '<td class="wdh" align="center"><div class="ball02">' . $var['d3'] . '</div></td>';
+
+                    for ($i = 1; $i < 7; $i++) //百位
+                    {
+                        if ($i == intval($var['d1'])) {
+                            echo '<td class="charball" align="center"><div class="ball01">' . $var['d1'] . '</div></td>';
+                            $five['LB' . $i] = 0;
+                            if ($five['SB' . $i]) {
+                                $five['SB' . $i]++;
+                            } else {
+                                $five['SB' . $i] = 1;
+                            }
+                            if ($five['LCB' . $i]) {
+                                $five['LCB' . $i]++;
+                            } else {
+                                $five['LCB' . $i] = 1;
+                            }
+                        } else {
+                            if ($five['LB' . $i]) {
+                                $five['LB' . $i]++;
+                            } else {
+                                $five['LB' . $i] = 1;
+                            }
+                            echo '<td class="wdh" align="center"><div class="ball03">' . $five['LB' . $i] . '</div></td>';
+                            $five['LCB' . $i] = 0;
+                        }
+                        if ($five['ZB' . $i]) {
+                            $five['ZB' . $i] += $five['LB' . $i];
+                        } else {
+                            $five['ZB' . $i] = $five['LB' . $i];
+                        }
+                        if ($five['MB' . $i] < $five['LB' . $i]) {
+                            $five['MB' . $i] = $five['LB' . $i];
+                        }
+                        if ($five['MLCB' . $i] < $five['LCB' . $i]) {
+                            $five['MLCB' . $i] = $five['LCB' . $i];
+                        }
+
+                    }
+
+                    for ($i = 1; $i < 7; $i++) //十位
+                    {
+                        if ($i == intval($var['d2'])) {
+                            echo '<td class="charball" align="center"><div class="ball02">' . $var['d2'] . '</div></td>';
+                            $five['LS' . $i] = 0;
+                            if ($five['SS' . $i]) {
+                                $five['SS' . $i]++;
+                            } else {
+                                $five['SS' . $i] = 1;
+                            }
+                            if ($five['LCS' . $i]) {
+                                $five['LCS' . $i]++;
+                            } else {
+                                $five['LCS' . $i] = 1;
+                            }
+                        } else {
+                            if ($five['LS' . $i]) {
+                                $five['LS' . $i]++;
+                            } else {
+                                $five['LS' . $i] = 1;
+                            }
+                            echo '<td class="wdh" align="center"><div class="ball04">' . $five['LS' . $i] . '</div></td>';
+                            $five['LCS' . $i] = 0;
+                        }
+                        if ($five['ZS' . $i]) {
+                            $five['ZS' . $i] += $five['LS' . $i];
+                        } else {
+                            $five['ZS' . $i] = $five['LS' . $i];
+                        }
+                        if ($five['MS' . $i] < $five['LS' . $i]) {
+                            $five['MS' . $i] = $five['LS' . $i];
+                        }
+                        if ($five['MLCS' . $i] < $five['LCS' . $i]) {
+                            $five['MLCS' . $i] = $five['LCS' . $i];
+                        }
+
+                    }
+
+                    for ($i = 1; $i < 7; $i++) //个位
+                    {
+                        if ($i == intval($var['d3'])) {
+                            echo '<td class="charball" align="center"><div class="ball01">' . $var['d3'] . '</div></td>';
+                            $five['LG' . $i] = 0;
+                            if ($five['SG' . $i]) {
+                                $five['SG' . $i]++;
+                            } else {
+                                $five['SG' . $i] = 1;
+                            }
+                            if ($five['LCG' . $i]) {
+                                $five['LCG' . $i]++;
+                            } else {
+                                $five['LCG' . $i] = 1;
+                            }
+                        } else {
+                            if ($five['LG' . $i]) {
+                                $five['LG' . $i]++;
+                            } else {
+                                $five['LG' . $i] = 1;
+                            }
+                            echo '<td class="wdh" align="center"><div class="ball03">' . $five['LG' . $i] . '</div></td>';
+                            $five['LCG' . $i] = 0;
+                        }
+                        if ($five['ZG' . $i]) {
+                            $five['ZG' . $i] += $five['LG' . $i];
+                        } else {
+                            $five['ZG' . $i] = $five['LG' . $i];
+                        }
+                        if ($five['MG' . $i] < $five['LG' . $i]) {
+                            $five['MG' . $i] = $five['LG' . $i];
+                        }
+                        if ($five['MLCG' . $i] < $five['LCG' . $i]) {
+                            $five['MLCG' . $i] = $five['LCG' . $i];
+                        }
+                    }
+
+                    echo '</tr>';
+
+                }
+            }
+
+            ?>
             <tr>
                 <td nowrap="">出现总次数</td>
                 <td align="center" colspan="3">&nbsp;</td>
                 <?php
-foreach (array('B', 'S', 'G') as $var) {
-        for ($i = 1; $i < 7; $i++) {
-            if ($five['S' . $var . $i]) {
-                $five['D' . $var . $i] = $five['S' . $var . $i];
-            } else {
-                $five['D' . $var . $i] = 0;
-            }
-            echo '<td align="center">' . $five['D' . $var . $i] . '</td>';
-        }
-    }
-    ?>
+                foreach (array('B', 'S', 'G') as $var) {
+                    for ($i = 1; $i < 7; $i++) {
+                        if ($five['S' . $var . $i]) {
+                            $five['D' . $var . $i] = $five['S' . $var . $i];
+                        } else {
+                            $five['D' . $var . $i] = 0;
+                        }
+                        echo '<td align="center">' . $five['D' . $var . $i] . '</td>';
+                    }
+                }
+                ?>
             </tr>
             <tr>
                 <td nowrap="">平均遗漏值</td>
                 <td align="center" colspan="3">&nbsp;</td>
                 <?php
-foreach (array('B', 'S', 'G') as $var) {
-        for ($i = 1; $i < 7; $i++) {
-            $five['P' . $var . $i] = intval($pgs / ($five['D' . $var . $i] + 1));
-            echo '<td align="center">' . $five['P' . $var . $i] . '</td>';
-        }
-    }
-    ?>
+                foreach (array('B', 'S', 'G') as $var) {
+                    for ($i = 1; $i < 7; $i++) {
+                        $five['P' . $var . $i] = intval($pgs / ($five['D' . $var . $i] + 1));
+                        echo '<td align="center">' . $five['P' . $var . $i] . '</td>';
+                    }
+                }
+                ?>
             </tr>
             <tr>
                 <td nowrap>最大遗漏值</td>
                 <td align="center" colspan="3">&nbsp;</td>
                 <?php
-foreach (array('B', 'S', 'G') as $var) {
-        for ($i = 1; $i < 7; $i++) {
-            if ($five['M' . $var . $i]) {
-                $five['Max' . $var . $i] = $five['M' . $var . $i];
-            } else {
-                $five['Max' . $var . $i] = 0;
-            }
-            echo '<td align="center">' . $five['Max' . $var . $i] . '</td>';
-        }
-    }
-    ?>
+                foreach (array('B', 'S', 'G') as $var) {
+                    for ($i = 1; $i < 7; $i++) {
+                        if ($five['M' . $var . $i]) {
+                            $five['Max' . $var . $i] = $five['M' . $var . $i];
+                        } else {
+                            $five['Max' . $var . $i] = 0;
+                        }
+                        echo '<td align="center">' . $five['Max' . $var . $i] . '</td>';
+                    }
+                }
+                ?>
             </tr>
             <tr>
                 <td nowrap>最大连出值</td>
                 <td align="center" colspan="3">&nbsp;</td>
                 <?php
-foreach (array('B', 'S', 'G') as $var) {
-        for ($i = 1; $i < 7; $i++) {
-            if ($five['MLC' . $var . $i]) {
-                $five['MaxLC' . $var . $i] = $five['MLC' . $var . $i];
-            } else {
-                $five['MaxLC' . $var . $i] = 0;
-            }
-            echo '<td align="center">' . $five['MaxLC' . $var . $i] . '</td>';
-        }
-    }
-    ?>
+                foreach (array('B', 'S', 'G') as $var) {
+                    for ($i = 1; $i < 7; $i++) {
+                        if ($five['MLC' . $var . $i]) {
+                            $five['MaxLC' . $var . $i] = $five['MLC' . $var . $i];
+                        } else {
+                            $five['MaxLC' . $var . $i] = 0;
+                        }
+                        echo '<td align="center">' . $five['MaxLC' . $var . $i] . '</td>';
+                    }
+                }
+                ?>
             </tr>
             <tr id="head">
                 <td rowspan="2" align="center"><strong>期号</strong></td>
@@ -484,8 +498,8 @@ foreach (array('B', 'S', 'G') as $var) {
             </tr>
             <?php
 
-}
-?>
+        }
+        ?>
         </tbody>
     </table>
 </div>

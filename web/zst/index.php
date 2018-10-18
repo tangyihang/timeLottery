@@ -31,10 +31,11 @@ $typeid = intval($_GET['typeid']);
 if (!in_array($typeid, $id)) {
     if (in_array($typeid, $id_pk10)) {
         echo "<script>window.location.href='/zst/pk10.php?typeid='+$typeid;</script>";
+    } else if ($typeid == 63) {
+        echo "<script>window.location.href='/zst/k3.php?typeid='+$typeid;</script>";
     } else {
         echo "<script>alert('当前彩种暂没有走势图x'+$typeid)</script>";
     }
-
     $typeid = 1;
 }
 if (!$typeid) {
