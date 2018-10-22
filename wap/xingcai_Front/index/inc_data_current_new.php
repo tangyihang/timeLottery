@@ -315,7 +315,7 @@ if ($types[$this->type]['type'] == 4) { //快乐十分
                     </ul>
                 </div>
               
-  <a id="m_more_lott_list" href="/zst/pk10.php?typeid=<?= $this->type ?>">查看更多</a>
+  <a id="m_more_lott_list" href="/zst/zst.php?typeid=<?= $this->type ?>">查看更多</a>
                 <a class="m_jqkj_close" href="#">关闭</a>
             </div>
     </div>
@@ -403,7 +403,7 @@ if ($types[$this->type]['type'] == 4) { //快乐十分
 				</table>
             </ul>
                 </div>              
-				<a id="m_more_lott_list" href="/zst?typeid=<?= $this->type ?>">查看更多</a>
+				<a id="m_more_lott_list" href="/zst/zst.php?typeid=<?= $this->type ?>">查看更多</a>
                 <a class="m_jqkj_close" href="#">关闭</a>
             </div>
     </div>	

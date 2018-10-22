@@ -1,5 +1,6 @@
 <?php
-$sql="select time, number, data from {$this->prename}data where type={$this->type} order by number desc,time desc limit {$args[0]}";
+$lastNo=$this->getGameLastNo($this->type);
+$sql="select time, number, data from {$this->prename}data where type={$this->type} and number <='{$lastNo['actionNo']}' order by number desc,time desc limit {$args[0]}";
 if($data=$this->getRows($sql)) foreach($data as $var){
 if($this->type==24){ 
 $datan=explode("|",$var['data']);
