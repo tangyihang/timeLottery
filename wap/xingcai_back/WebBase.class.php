@@ -410,14 +410,14 @@ class WebBase extends Object
     public function amxync(&$actionNo, &$actionTime, $time = null)
     {
         $this->setTimeNo($actionTime, $time);
-        $actionNo = date('17md', $time) . substr(1000 + $actionNo, 1);
+        $actionNo = date('ymd', $time) . substr(1000 + $actionNo, 1);
     }
 
     //台湾幸运农场
     public function twxync(&$actionNo, &$actionTime, $time = null)
     {
         $this->setTimeNo($actionTime, $time);
-        $actionNo = date('17md', $time) . substr(1000 + $actionNo, 1);
+        $actionNo = date('ymd', $time) . substr(1000 + $actionNo, 1);
     }
 
     //幸运28
@@ -438,13 +438,13 @@ class WebBase extends Object
     public function sfpk10no(&$actionNo, &$actionTime, $time = null)
     {
         $this->setTimeNo($actionTime, $time);
-        $actionNo = date('17md', $time) . substr(1000 + $actionNo, 1);
+        $actionNo = date('ymd', $time) . substr(1000 + $actionNo, 1);
     }
 
     public function sfssc(&$actionNo, &$actionTime, $time = null)
     {
         $this->setTimeNo($actionTime, $time);
-        $actionNo = date('18md', $time) . substr(1000 + $actionNo, 1);
+        $actionNo = date('ymd', $time) . substr(1000 + $actionNo, 1);
     }
 
     //澳门PK10
@@ -469,13 +469,13 @@ class WebBase extends Object
             $time -= 24 * 3600;
         }
 
-        $actionNo = date('17md', $time) . substr(1000 + $actionNo, 1);
+        $actionNo = date('ymd', $time) . substr(1000 + $actionNo, 1);
     }
 
     //上海时时乐
     public function shsslno(&$actionNo, &$actionTime, $time = null)
     {
-        $actionNo = date('17md', $time) . substr(1000 + $actionNo, 1);
+        $actionNo = date('ymd', $time) . substr(1000 + $actionNo, 1);
     }
 
     //广东11选5
@@ -486,7 +486,7 @@ class WebBase extends Object
             $time -= 24 * 3600;
         }
 
-        $actionNo = date('17md', $time) . substr(100 + $actionNo, 1);
+        $actionNo = date('ymd', $time) . substr(100 + $actionNo, 1);
     }
 
     //江西11选5
@@ -508,14 +508,14 @@ class WebBase extends Object
             $time -= 24 * 3600;
         }
 
-        $actionNo = date('17md', $time) . substr(100 + $actionNo, 1);
+        $actionNo = date('ymd', $time) . substr(100 + $actionNo, 1);
     }
 
     //上海11选5
     public function sh11(&$actionNo, &$actionTime, $time = null)
     {
         $this->setTimeNo($actionTime, $time);
-        $actionNo = date('17md', $time) . substr(100 + $actionNo, 1);
+        $actionNo = date('ymd', $time) . substr(100 + $actionNo, 1);
     }
 
     //江苏快3
