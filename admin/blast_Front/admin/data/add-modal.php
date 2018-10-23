@@ -101,7 +101,7 @@ if ($para['type'] == 1) {
 		<tr>
 			<td class="title"> 中奖类型：</td>
 			<td>
-				<select name="win_type" id="win_type" onchange="win_change();">
+				<select name="win_type" class="id_win_type" onchange="win_change();">
 					<option value="0" selected="selected">请选择</option>
 					<option value="1">数字</option>
 					<option value="2">大小单双</option>
@@ -112,7 +112,7 @@ if ($para['type'] == 1) {
 		<tr>
 			<td class="title"> 值：</td>
 			<td>
-				<div id="win_type_val">
+				<div class="win_type_val">
 					<!-- <div style="cursor: pointer;margin-left:10px;float:left;text-align:center;width: 20px;height: 20px;border:0.5px solid red; border-radius: 10px;line-height: 20px;">1</div>
 					<div style="cursor: pointer;margin-left:10px;float:left;text-align:center;width: 20px;height: 20px;border:0.5px solid red; border-radius: 10px;line-height: 20px;">2</div>
 					<div style="cursor: pointer;margin-left:10px;float:left;text-align:center;width: 20px;height: 20px;border:0.5px solid red; border-radius: 10px;line-height: 20px;">3</div> -->
@@ -123,7 +123,7 @@ if ($para['type'] == 1) {
 
 		<tr>
 			<td class="title">开奖号码：</td>
-			<td><input type="text" name="data" id="input_data_v"/></td>
+			<td><input type="text" name="data" class="input_data_v"/></td>
 		</tr>
 
 

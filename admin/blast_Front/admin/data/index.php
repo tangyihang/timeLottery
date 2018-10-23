@@ -369,26 +369,26 @@ $this->display('inc/page.php', 0, $times['total'], $rel, 'dataPageAction');
 
 <script>
 
-$('#win_type').on('change', function(){
+$('.id_win_type').on('change', function(){
     console.log('tset');
     win_change();
 });
 
 function win_change(){
-	var win_type =  $("#win_type").find("option:selected").val();
+	var win_type =  $('.id_win_type').find("option:selected").val();
 	// console.log(win_type);
 	if (win_type == "1"){
-        $('#win_type_val').html('');
+        $('.win_type_val').html('');
 
         var t = "";
         for (var i=3; i <= 18; i++) {
             t += '<div onclick="win_selected_num(this);" style="margin-top:3px;cursor: pointer;margin-left:10px;float:left;text-align:center;width: 20px;height: 20px;border:0.5px solid red; border-radius: 10px;line-height: 20px;">'+
                 i+'</div>';
         }
-        $('#win_type_val').append(t);
+        $('.win_type_val').append(t);
 
 	} else if (win_type == "2"){
-		$('#win_type_val').html('');
+		$('.win_type_val').html('');
 		var list = ['大', '小', '单', '双'];
 
 		var t = "";
@@ -396,7 +396,7 @@ function win_change(){
             t += '<div onclick="win_selected_word(this);" style="margin-top:3px;cursor: pointer;margin-left:10px;float:left;text-align:center;width: 20px;height: 20px;border:0.5px solid red; border-radius: 10px;line-height: 20px;">'+
                 list[i]+'</div>';
         }
-		$('#win_type_val').append(t);
+		$('.win_type_val').append(t);
 	}
 }
 
@@ -434,12 +434,12 @@ function win_selected_num(obj){
     var num = parseInt(v);
 
     var r = rand_value(num);
-    $('#input_data_v').val(r);
+    $('.input_data_v').val(r);
 }
 
 
 function clear_win_selected_word(_word){
-   $('#win_type_val').children().each(function(i){
+   $('.win_type_val').children().each(function(i){
         var color = $(this).css('background-color');
         var word  = $(this).text();
         console.log(word, _word);
@@ -456,7 +456,7 @@ function win_selected_word(obj){
 
     var list = {};
 
-    $('#win_type_val').children().each(function(i){
+    $('.win_type_val').children().each(function(i){
         var color = $(this).css('background-color');
         var word  = $(this).text();
         if (color == 'rgb(255, 0, 0)') {
@@ -488,7 +488,7 @@ function win_selected_word(obj){
     //计算
     list = {};
 
-    $('#win_type_val').children().each(function(i){
+    $('.win_type_val').children().each(function(i){
         var color = $(this).css('background-color');
         var word  = $(this).text();
         if (color == 'rgb(255, 0, 0)') {
@@ -542,7 +542,7 @@ function win_selected_word(obj){
     }
 
     var r = rand_value(num);
-    $('#input_data_v').val(r);
+    $('.input_data_v').val(r);
 }
 
 
