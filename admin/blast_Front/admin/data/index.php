@@ -373,9 +373,9 @@ $('.id_win_type').on('change', function(){
     win_change();
 });
 
-function win_change(){
-	var win_type =  $('.id_win_type').find("option:selected").val();
-	console.log(win_type);
+function win_change(obj){
+	var win_type =  $(obj).find("option:selected").val();
+	// console.log(win_type);
 	if (win_type == "1"){
         $('.win_type_val').html('');
 
