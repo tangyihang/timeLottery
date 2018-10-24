@@ -519,6 +519,7 @@ function win_selected_word(obj){
     var num = parseInt(Math.round( Math.random()*15))+3;
     if ( list['大'] ==  'selected' ) {
         num = parseInt(Math.random()*8)+10;
+        console.log(number);
 
         if (list['单'] ==  'selected'){
             num = parseInt(Math.random()*8)+10;
