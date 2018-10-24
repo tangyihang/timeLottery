@@ -412,27 +412,38 @@ function rand_value(v){
         return '6,6,6';
     }
 
-    var one = v - 2 - 1;
-    if (one > 5) {
-        var one_r = parseInt(Math.random()*5)+1;
+    var v1 = v - 6;
+    if (v1 > 6 &&  v1 <= 12 ){
+    	var min = v1-6;
+    	var max = 6 - min;
+    	var one_r = Math.round( Math.random()*max )+min;
     } else {
-        var one_r = parseInt(Math.random()*one)+1;
+    	var one = v - 2 - 1;
+	    if (one > 5) {
+	        var one_r = parseInt(Math.round( Math.random()*5 ) )+1;
+	    } else {
+	        var one_r = parseInt(Math.round( Math.random()*one ) )+1;
+	    }
     }
 
-    var two = v - one_r - 1 - 1;
-    if (two > 5) {
-        var two_r = parseInt(Math.random()*5)+1;
+    var v2 = v - one_r;
+    if ( v2 > 6){
+    	var min = v2-6;
+    	var max = 6 - min;
+    	var two_r = parseInt(Math.round( Math.random()*max) )+min;
     } else {
-        var one_r = parseInt(Math.random()*two)+1;
+    	var two = v - one_r - 1 - 1;
+	    if (two > 5) {
+	        var two_r = parseInt(Math.round( Math.random()*5) )+1;
+	    } else {
+	        var two_r = parseInt(Math.round( Math.random()*two) )+1;
+	    }
     }
 
     var three = v - one_r - two_r;
     return one_r+ ',' + two_r + ',' + three;
 }
 
-function dxds_value(){
-    return rand_value(15);
-}
 
 
 function win_selected_num(obj){
@@ -505,12 +516,12 @@ function win_selected_word(obj){
     });
 
 
-    var num = parseInt(Math.random()*3)+15;
+    var num = parseInt(Math.round( Math.random()*3))+15;
     if ( list['大'] ==  'selected' ) {
-        num = parseInt(Math.random()*11)+7;
+        num = parseInt(Math.round( Math.random()*11))+7;
 
         if (list['单'] ==  'selected'){
-            num = parseInt(Math.random()*11)+7;
+            num = parseInt(Math.round( Math.random()*11))+7;
             if (num % 2 == 1 ){
             } else {
                 if (num == 18){
@@ -520,17 +531,17 @@ function win_selected_word(obj){
                 }
             }
         } else if (list['双'] ==  'selected'){
-            num = parseInt(Math.random()*11)+7;
+            num = parseInt(Math.round( Math.random()*11))+7;
             if (num % 2 == 1 ){
                 num = num + 1;
             }
         }
 
     } else if ( list['小'] ==  'selected'){
-        num = parseInt(Math.random()*3)+7;
+        num = parseInt(Math.round( Math.random()*3))+7;
 
         if (list['单'] ==  'selected'){
-            num = parseInt(Math.random()*3)+7;
+            num = parseInt(Math.round( Math.random()*3))+7;
             if (num % 2 == 1 ){
             } else {
                 if (num == 18){
@@ -540,7 +551,7 @@ function win_selected_word(obj){
                 }
             }
         } else if (list['双'] ==  'selected'){
-            num = parseInt(Math.random()*3)+7;
+            num = parseInt(Math.round( Math.random()*3))+7;
             if (num % 2 == 1 ){
                 num = num + 1;
             }
