@@ -231,7 +231,7 @@ function jumpWap() {
             $wap = 'http://m.' . implode('.', $h_array);
             header("location:" . $wap);exit;
         } else {
-            $wap = 'http://m.xyy8686.com';
+            $wap = 'http://m.xyy6868.com';
             header("location:" . $wap);exit;
         }
     }
