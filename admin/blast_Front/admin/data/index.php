@@ -557,6 +557,19 @@ function win_selected_word(obj){
                 num = num + 1;
             }
         }
+    } else if (list['双'] ==  'selected'){
+    	if (num % 2 == 1 ){
+               num = num + 1;
+        }
+    } else if (list['单'] ==  'selected'){
+    	if (num % 2 == 1 ){
+        } else {
+            if (num == 18){
+                num = num - 1;
+            } else {
+                num = num + 1;
+            }
+        }
     }
 
     var r = rand_value(num);
