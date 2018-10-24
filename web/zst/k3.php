@@ -229,7 +229,7 @@ $toTime = $_GET['toTime'];
         $return = $mydb->row_query($dataTimeSql);
 
         if ($return) {
-            $max_actionNo = $atime = date('Ymd-') . $return['0']['0'];
+            $max_time = strtotime(date('Y-m-d ') . $return['0']['1']);
         }
         $tableStr = $conf['db']['prename'] . "data";
         $tableStr2 = $conf['db']['prename'] . "data a";
@@ -248,9 +248,9 @@ $toTime = $_GET['toTime'];
         } elseif ($toTime) {
             $whereStr .= ' and time<' . $toTime;
             $whereStr2 .= ' and a.time<' . $toTime;
-        } else if ($max_actionNo) {
-            $whereStr .= " and number<='" . $max_actionNo . "'";
-            $whereStr2 .= " and a.number<='" . $max_actionNo . "'";
+        } else if ($max_time) {
+            $whereStr .= " and time<='" . $max_time . "'";
+            $whereStr2 .= " and a.time<='" . $max_time . "'";
         }
 
         $orderStr = " order by a.number desc";
