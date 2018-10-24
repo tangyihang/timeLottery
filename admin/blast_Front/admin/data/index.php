@@ -545,15 +545,11 @@ function win_selected_word(obj){
             num = parseInt(Math.round( Math.random()*7))+3;
             if (num % 2 == 1 ){
             } else {
-                if (num == 18){
-                    num = num - 1;
-                } else {
-                	if (num == 10){
-                		num = num - 1;
-                	} else {
-                		num = num + 1;
-                	}
-                }
+            	if (num == 10){
+            		num = num - 1;
+            	} else {
+            		num = num + 1;
+            	}
             }
         } else if (list['双'] ==  'selected'){
             num = parseInt(Math.round( Math.random()*7))+3;
