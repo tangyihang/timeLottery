@@ -191,6 +191,19 @@ function submitData(data, conf) {
     throw ('连接数据库失败');
   }
 
+  // 查看是否存在已开奖数据
+  client.query("select * from blast_data where number=?", [data.number], function (err, result) {
+    if (err) {
+      return ;
+    }
+    // 澳门快三检查
+    if (result[0].type === 63 && result.length) {
+      data = result[0];
+      // 获取开奖信息
+      setTimeout(calcJ, 500, data);
+    }
+  });
+
   data.time = Math.floor((new Date(data.time)).getTime() / 1000);
   client.query("insert into blast_data(type, time, number, data) values(?,?,?,?)", [data.type, data.time, data.number, data.data], function (err, result) {
     if (err) {
