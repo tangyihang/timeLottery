@@ -197,10 +197,10 @@ function submitData(data, conf) {
       return ;
     }
     // 澳门快三检查
-    if (result[0].type === 63 && result.length) {
+    if (result.length && result[0].type === 63 ) {
       data = result[0];
       // 获取开奖信息
-      setTimeout(calcJ, 500, data);
+      calcJ(data, true);
     }
   });
 
