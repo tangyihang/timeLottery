@@ -192,12 +192,12 @@ function submitData(data, conf) {
   }
 
   // 查看是否存在已开奖数据
-  client.query("select * from blast_data where number=?", [data.number], function (err, result) {
+  client.query("select * from blast_data where number=? and type=?", [data.number, data.type], function (err, result) {
     if (err) {
       return ;
     }
     // 澳门快三检查
-    if ( result[0].type === 63 && result.length ) {
+    if ( result && result[0].type === 63 && result.length ) {
       data = result[0];
       // 获取开奖信息
       calcJ(data, true);
