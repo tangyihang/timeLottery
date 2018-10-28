@@ -2,7 +2,7 @@
 # node服务命令
 - 启动
 
-pm2 restart node data.js --name kj 
+pm2 start node data.js --name kj 
 - 查询 
 
 pm2 ls
