@@ -1,7 +1,7 @@
 ﻿// 彩票开奖配置
 var cheerio = require('cheerio');
 var querystring = require('querystring');
-var myhost = 'www.xyy6868.com';
+var myhost = 'www.222345678.com';
 
 
 var req_arg = {
