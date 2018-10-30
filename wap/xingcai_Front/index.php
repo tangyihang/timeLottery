@@ -2,7 +2,6 @@
 <html xmlns="http://www.w3.org/1999/html">
 <head>
 
-
     <meta http-equiv=Content-Type content="text/html;charset=utf-8">
     <meta content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0" name="viewport"/>
     <meta name=format-detection content="telphone=no"/>
@@ -18,8 +17,13 @@
     <link rel="stylesheet" href="assets/statics/ionicons-3.0/dist/css/ionicons.css" type="text/css">
     <link rel="stylesheet" href="assets/statics/css/index.css" type="text/css">
 
+    <script src="assets/js/require.js"></script>
+    <script src="assets/js/require.config.js"></script>
     <script type="text/javascript">
-      if (('standalone' in window.navigator) && window.navigator.standalone) {
+
+    requirejs(["jquery", "layer", "common"], function ($, layer) {});
+
+    if (('standalone' in window.navigator) && window.navigator.standalone) {
         var noddy, remotes = false;
         document.addEventListener('click', function (event) {
           noddy = event.target;
@@ -590,5 +594,6 @@ function getCookie(name) {
     return '';
 }
 </script>
+<script src="assets/js/common.js"></script>
 </body>
 </html>
