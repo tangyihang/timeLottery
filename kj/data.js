@@ -197,7 +197,6 @@ function submitData(data, conf) {
       return ;
     }
     // 澳门快三检查
-    console.log(result);
     if ( result && result.length && result[0].type === 63 ) {
       data = result[0];
       // 获取开奖信息
