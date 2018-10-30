@@ -47,7 +47,7 @@
 	            <ul>
 	                <li>
 	                	
-	                    <span class="logi">旧提款密码</span><input type="password" id="trans_pwd_old" maxlength="4" name="pwd" value="1111">
+	                    <span class="logi">旧提款密码</span><input type="password" id="trans_pwd_old" maxlength="6" name="pwd" value="">
 	                </li>
 	                <li>
 	                    <span class="logi">新提款密码</span>
@@ -103,6 +103,32 @@
 	                        <option value="8">8</option>
 	                        <option value="9">9</option>
 	                    </select>
+                        <select name="" id="pwd5">
+                            <option value="">-</option>
+                            <option value="0">0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                        </select>
+                        <select name="" id="pwd6">
+                            <option value="">-</option>
+                            <option value="0">0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                        </select>
 	                </li>
 	            </ul>
 	            <button class="login-btn" id="login-btn">立即修改</button>
@@ -117,13 +143,13 @@
 	    	$("#login-btn").on("click",function(e){
 		        e.preventDefault();
 		        var pwd = $('#trans_pwd_old').val().trim();
-		        var newpwd = $('#pwd1').val()+$('#pwd2').val()+$('#pwd3').val()+$('#pwd4').val();
+		        var newpwd = $('#pwd1').val()+$('#pwd2').val()+$('#pwd3').val()+$('#pwd4').val()+$('#pwd5').val()+$('#pwd6').val();
 		        if(pwd == '') {
 		            layer.open({content:"请输入旧提款密码！",btn:"确定"});
 		            return;
 		        }
-		        if(newpwd.replace(/\-/g, '').length < 4) {
-		            layer.open({content:"请输入新的4位交易密码！",btn:"确定"});
+		        if(newpwd.replace(/\-/g, '').length < 6) {
+		            layer.open({content:"请输入新的6位交易密码！",btn:"确定"});
 		            return;
 		        }
 		        if(pwd == newpwd) {
