@@ -77,7 +77,8 @@ $flag = ($myBank['editEnable'] != 1) && ($myBank);
                     <span>开户银行支行名称：</span>
                     <input class="cash-int cash-nobor" id="province" value="<?= preg_replace('/^(\w{4}).*(\w{4})$/', '\1***\2', htmlspecialchars($myBank['countname'])) ?>"
                                                 style="width: 50%;" type="text" maxlength="20" placeholder="请输入开户银行支行名称"></li>
-                <li><span>设置提款密码：</span>
+                <li><span>设置提款密码：</span></li>
+                <li>
                     <select name="" id="pwd1">
                         <option value="">-</option>
                         <option value="0">0</option>
