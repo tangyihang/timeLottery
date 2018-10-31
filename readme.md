@@ -2,7 +2,9 @@
 # node服务命令
 - 启动
 
-pm2 start node data.js --name kj 
+pm2 start node /www/wwwroot/timeLottery/kj/data.js --name kj
+pm2 save  
+pm2 startup // 加入开机启动
 - 查询 
 
 pm2 ls
