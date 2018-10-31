@@ -17,7 +17,7 @@
         <div class="content">
             <div class="fl logo">
                 <a href="/index.php" title="返回首页">
-                    <img src="/images/nsc/logo.png?v=1.16.11.5" />
+                    <img src="/images/logo.png" />
                 </a>
             </div>
             <div class="fr t_menu" id="user_baseinfo">
