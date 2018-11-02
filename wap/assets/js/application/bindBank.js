@@ -53,9 +53,9 @@
         if($('#password') != null && $('#password').length > 0) {
         	pwd = $('#password').val();
         } else {
-        	pwd = $('#pwd1').val()+$('#pwd2').val()+$('#pwd3').val()+$('#pwd4').val();
+        	pwd = $('#pwd1').val()+$('#pwd2').val()+$('#pwd3').val()+$('#pwd4').val()+$('#pwd5').val()+$('#pwd6').val();
         }
-        if(pwd == null || pwd.length < 4 || !/^[0-9]{4}$/g.test(pwd)) {
+        if(pwd == null || pwd.length < 6 || !/^[0-9]{6}$/g.test(pwd)) {
         	layer.open({content:"请选输入正确的提款密码！",btn:"确定"});
             return;
         }

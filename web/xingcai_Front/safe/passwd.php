@@ -88,7 +88,7 @@
 						<td class="tdz3_left">确认新资金密码：</td>
                 			<td class="tdz3_right">
 							<input type="password" name="newpassword" class="password"  />
-							<span class="text_hint text_hint-c">由字母和数字组成6-16个字符<br />提款密码不能与登录密码相同</span></td>
+							<span class="text_hint text_hint-c">由0-9的数字组成的6个字符<br />提款密码不能与登录密码相同</span></td>
               		</tr>
               			<tr>
                 			<td class="tdz3_left">确认新资金密码：</td>
