@@ -43,7 +43,7 @@
         } else if (!/^[0-9]{10,20}$/g.test($('#bankNum').val())) {
         	layer.open({content:"请填写正确的银行卡号！",btn:"确定"});
             return;
-        }x'w
+        }
         var name = $('#name').val();
         if ($('#name').val() == '') {
         	layer.open({content:"请填写开户人姓名！",btn:"确定"});
