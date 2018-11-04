@@ -97,7 +97,7 @@
                         <input id="money" class="cash-int" type="text" placeholder="最小提款金额为<?=$this->settings['cashMin']?>元">
                     </li>
                     <li><span>提款密码：</span>
-                    	<input id="password" style="padding-left: 10px;border: 1px solid #ddd;width: 150px;height: 28px;line-height: 28px;" type="password" placeholder="密码为6位纯数字">
+                    	<input id="password" style="padding-left: 10px;border: 1px solid #ddd;width: 150px;height: 28px;line-height: 28px;" type="password" maxlength="6" placeholder="密码为6位纯数字">
                     </li>
                 </ul>
             </div>
