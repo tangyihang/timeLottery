@@ -60,7 +60,7 @@
                                                          placeholder="请再次输入新提款密码">
                 </li>
             </ul>
-            <button class="login-btn" id="login-btn">立即修改</button>
+            <button class="login-btn" id="login-btn">确认设置</button>
         </div>
     </div>
 </div>
