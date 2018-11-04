@@ -24,7 +24,7 @@ requirejs.config({ //配置
         HKSIX:'../plugins/game/HKSIX',
         gameInfo:'../plugins/game/gameInfo'
     },
-    urlArgs: "v=2.10",
+    urlArgs: "v=2.20",
     shim:{
         common:["jquery"],
         layer:{

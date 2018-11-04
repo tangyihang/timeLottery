@@ -108,7 +108,7 @@
     </div>
     
     <script src="/assets/js/require.js" data-main="/assets/js/application/withdraw"></script>
-    <script src="/assets/js/require.config.js"></script>
+    <script src="/assets/js/require.config.js?v=1.0"></script>
 </body>
 
 </html>
