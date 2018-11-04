@@ -33,7 +33,7 @@ requirejs(["jquery","layer","common"], function($,layer) {
             return;
         }
         var pwd = $('#password').val();//+$('#pwd2').val()+$('#pwd3').val()+$('#pwd4').val();
-        if (pwd == null || pwd.length < 4 || !/^[0-9]{4}$/g.test(pwd)) {
+        if (pwd == null || pwd.length != 6 || !/^[0-9]{6}$/g.test(pwd)) {
         	layer.open({content:"请正确填写提款密码！",btn:"确定"});
             return;
         }

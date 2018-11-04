@@ -70,7 +70,7 @@ class Safe extends WebLoginBase{
 	public final function setCoinPwd(){
 		$opwd=$_POST['password'];
 		if(!$npwd=$_POST['newpassword']) return ('提款密码不能为空');
-		if(strlen($npwd)<4) return ('提款密码至少4位');
+		if(strlen($npwd)<6) return ('提款密码至少6位');
 		
 		$sql="select password, coinPassword,username from {$this->prename}members where uid=?";
 		$pwd=$this->getRow($sql, $this->user['uid']);
