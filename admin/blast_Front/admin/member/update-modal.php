@@ -23,9 +23,7 @@ $sonFanDianMax = $this->getRow("select max(fanDian) sonFanDian, max(fanDianBdw) 
         <table cellpadding="2" cellspacing="2" class="popupModal">
             <tr>
                 <td class="title" width="180">上级关系：</td>
-                <td><input type="text" name="parents"
-                           value="<?= implode('> ', $this->getCol("select username from {$this->prename}members where uid in ({$userData['parents']})")) ?>"/>&nbsp;<span
-                            class="spn9">置空为不修改</span></td>
+                <td><?= implode('> ', $this->getCol("select username from {$this->prename}members where uid in ({$userData['parents']})")) ?></td>
             <tr>
                 <td class="title" width="180">用户名：</td>
                 <td>
@@ -38,7 +36,7 @@ $sonFanDianMax = $this->getRow("select max(fanDian) sonFanDian, max(fanDianBdw) 
             </tr>
             <tr>
                 <td class="title">资金密码：</td>
-                <td><input type="text" name="coinPassword" value=""/>&nbsp;<span class="spn9">置空为不修改</span></td>
+                <td><input type="text" name="coinPassword" maxlength="6" value=""/>&nbsp;<span class="spn9">置空为不修改</span></td>
             </tr>
             <tr>
                 <td class="title">可用金额：</td>
@@ -62,10 +60,10 @@ $sonFanDianMax = $this->getRow("select max(fanDian) sonFanDian, max(fanDianBdw) 
             </tr>
             <tr>
                 <td class="title">类型：</td>
-                <td><label><input type="radio" value="1"
-                                  name="type" <?= $this->iff($userData['type'], 'checked="checked"') ?>/>代理</label>
-                    <label><input type="radio" value="0"
-                                  name="type" <?= $this->iff(!$userData['type'], 'checked="checked"') ?>/>会员</label>
+                <td><label><input type="radio" value="1" name="type"
+                            <?= $this->iff($userData['type'], 'checked="checked"') ?>/>代理</label>
+                    <label><input type="radio" value="0" name="type"
+                            <?= $this->iff(!$userData['type'], 'checked="checked"') ?>/>会员</label>
                 </td>
             </tr>
             <?php
