@@ -197,10 +197,6 @@ class Member extends AdminBase
     {
         $para = $_POST;
         $uid = intval($para['uid']);
-        $parents = $para['parents'];
-        $sqlu = "select * from {$this->prename}members where username='$parents'";
-        $userData = $this->getRow($sqlu);
-        $para['parents'] = $userData['uid'];
         if (!$para['password']) {
             unset($para['password']);
         } else {
