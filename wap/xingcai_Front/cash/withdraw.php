@@ -81,12 +81,6 @@
                 <ul>
                         <input type="hidden" id="min_amount" value="<?=$this->settings['cashMin']?>" />
                         <input type="hidden" id="max_amount" value="<?=$this->settings['cashMax']?>" />
-                    <!-- <li>
-                        <input type="hidden" id="isCanDraw" value="0" />
-                        <input type="hidden" id="fee_rate" value="0" />
-                        <input type="hidden" id="fee_amount" value="0" />
-                        <span>是否可以提款：</span>否
-                    </li> -->
                     <?php if($this->settings['cashMinAmount']){?>
                     <li><span>消费比例：</span>您的消费<?=$cashAmout?><span><?=$text?></span></li>
                     <?php }?>
@@ -102,61 +96,8 @@
                     <li><span>提款金额：</span>
                         <input id="money" class="cash-int" type="text" placeholder="最小提款金额为<?=$this->settings['cashMin']?>元">
                     </li>
-                    
                     <li><span>提款密码：</span>
-                    	<input id="password" style="padding-left: 10px;border: 1px solid #ddd;width: 150px;height: 28px;line-height: 28px;" type="password" placeholder="密码为4位纯数字">
-                        <!-- <select name="" id="pwd1">
-                            <option value="">-</option>
-                            <option value="0">0</option>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                            <option value="6">6</option>
-                            <option value="7">7</option>
-                            <option value="8">8</option>
-                            <option value="9">9</option>
-                        </select>
-                        <select name="" id="pwd2">
-                            <option value="">-</option>
-                            <option value="0">0</option>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                            <option value="6">6</option>
-                            <option value="7">7</option>
-                            <option value="8">8</option>
-                            <option value="9">9</option>
-                        </select>
-                        <select name="" id="pwd3">
-                            <option value="">-</option>
-                            <option value="0">0</option>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                            <option value="6">6</option>
-                            <option value="7">7</option>
-                            <option value="8">8</option>
-                            <option value="9">9</option>
-                        </select>
-                        <select name="" id="pwd4">
-                            <option value="">-</option>
-                            <option value="0">0</option>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                            <option value="6">6</option>
-                            <option value="7">7</option>
-                            <option value="8">8</option>
-                            <option value="9">9</option>
-                        </select> -->
+                    	<input id="password" style="padding-left: 10px;border: 1px solid #ddd;width: 150px;height: 28px;line-height: 28px;" type="password" placeholder="密码为6位纯数字">
                     </li>
                 </ul>
             </div>
