@@ -157,6 +157,7 @@ if ($info['uid'] == '100000') {
     <h3>数据统计<a>＋</a></h3>
     <ul class="toggle" style="display:none;">
         <li><a href="countData/index" class="s_b_1 bq current">统计概况</a></li>
+        <li><a href="countData/allDate" class="s_b_2 bq">整站统计</a></li>
         <li><a href="countData/betDate" class="s_b_2 bq">综合统计</a></li>
         <li><a href="kjdatas/tests" class="s_b_2 bq">开奖检测</a></li>
     </ul>
