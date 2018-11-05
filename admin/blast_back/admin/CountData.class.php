@@ -15,6 +15,12 @@ class CountData extends AdminBase{
 	public final function betDate(){
 		$this->display('count/date.php');
 	}
+    public final function allDate(){
+        $this->display('count/alldate.php');
+    }
+    public final function allDateSearch(){
+        $this->display('count/alldate-list.php');
+    }
 	public final function betDateSearch(){
 		$this->display('count/date-list.php');
 	}

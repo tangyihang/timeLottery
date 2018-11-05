@@ -55,7 +55,7 @@ input[type=submit].btn_post_message{background:#D0D1D4 url(images/post_message.p
 input[type=submit].btn_post_message:hover{background-position:0 -24px;}
 input[type=text],input[type=password],input[type=date],input[type=time]{border:1px solid #bbb;height:20px;}
 textarea{border:1px solid #bbb;}
-input[type=date]{width:80px;}
+input[type=date]{width: 135px;}
 a.alt_btn2{background:#D0D1D4 url(images/btn_submit_2.png) repeat-x;border:1px solid#30B0C8;font-weight:bold;height:22px;padding:0 10px;color:#003E49;text-shadow:0 1px 0 #6CDCF9;cursor:pointer;}
 
 .post_message{text-align:left;padding:5px 0;}
