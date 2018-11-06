@@ -166,6 +166,15 @@ class Index extends WebLoginBase
         }
     }
 
+    public final function help()
+    {
+        $sql = "select * from {$this->prename}content where enable=1 and nodeId=1";
+        $sql .= ' order by id desc';
+        $info = $this->getPage($sql, $this->page, $this->pageSize);
+        $this->action = 'notice';
+        $this->display('help.php', 0, $info);
+    }
+
     // 加载玩法介绍信息
     public final function playTips($playedId)
     {

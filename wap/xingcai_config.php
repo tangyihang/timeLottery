@@ -6,8 +6,8 @@ $conf['debug']['level']=5;
 $conf['db']['dsn']='mysql:host=127.0.0.1;dbname=timelottery;charset=utf8';
 $dbname='timelottery';
 $dbhost='127.0.0.1';
-$conf['db']['user']='timelottery';
-$conf['db']['password']='NSxehHCGPNRSFzFk';
+$conf['db']['user']='root';
+$conf['db']['password']='tyh456852';
 $conf['db']['charset']='utf8';
 $conf['db']['prename']='blast_';
 
