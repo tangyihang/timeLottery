@@ -1134,7 +1134,7 @@ exports.dsQ2 = function (bet, kj) {
 
 // 前三大小单双
 exports.dsQ3 = function (bet, kj) {
-  return dxds(bet, kj.substr(0, 5));
+  return dxds3(bet, kj.substr(0, 5));
 }
 
 // 后二大小单双
@@ -1143,7 +1143,7 @@ exports.dsH2 = function (bet, kj) {
 }
 // 后三大小单双
 exports.dsH3 = function (bet, kj) {
-  return dxds(bet, kj.substr(4, 5));
+  return dxds3(bet, kj.substr(4, 5));
 }
 
 // 任选二大小单双
@@ -3340,6 +3340,34 @@ function dxds(bet, data) {
       };
       //throw(v[0]);
       return o[v[0]].indexOf(data[0]) != -1 && o[v[1]].indexOf(data[1]) != -1
+    })
+    .length;
+}
+
+/**
+ * 大小单双
+ *
+ * @params bet    投注列表：大,单,单;小,单,双
+ * @params data    开奖所需的那三位号码：4,5,6
+ *
+ * @return      返回中奖注数
+ */
+function dxds3(bet, data) {
+
+  data = data.split(',');
+  return DescartesAlgorithm.apply(null, bet.split(',').map(function (v) {
+    return v.split('')
+  }))
+    .filter(function (v) {
+      //console.log(v);
+      var o = {
+        '大': '56789',
+        '小': '01234',
+        '单': '13579',
+        '双': '02468'
+      };
+      //throw(v[0]);
+      return o[v[0]].indexOf(data[0]) != -1 && o[v[1]].indexOf(data[1]) != -1 && o[v[2]].indexOf(data[2]) != -1
     })
     .length;
 }
