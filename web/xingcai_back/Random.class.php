@@ -432,10 +432,9 @@ class Random extends WebBase
         $dxds = array('大', '小', '单', '双');
         $count = 0;
         while ($count < $row) {
-            $return[] = iconv('gbk', 'utf-8', $dxds[mt_rand(0, 3)]);
+            $return[] = $dxds[mt_rand(0, 3)];
             $count = count($return);
         }
-
         return $return;
     }
 
@@ -510,7 +509,7 @@ class Random extends WebBase
         $wr = rand(0, 3);
         $wq = rand(0, 3);
 
-        return iconv('gbk', 'utf-8', $w[$wr]) . ',' . iconv('gbk', 'utf-8', $q[$wq]);
+        return $w[$wr] . ',' . $q[$wq];
     }
 
     /**
@@ -532,7 +531,7 @@ class Random extends WebBase
         $wq = rand(0, 3);
         $wg = rand(0, 3);
 
-        return iconv('gbk', 'utf-8', $w[$wr]) . ',' . iconv('gbk', 'utf-8', $q[$wq]) . ',' . iconv('gbk', 'utf-8', $g[$wg]);
+        return $w[$wr] . ',' . $q[$wq] . ',' . $g[$wg];
     }
 
     public function getRandom72()
@@ -544,7 +543,7 @@ class Random extends WebBase
         $wr = rand(0, 3);
         $wq = rand(0, 3);
 
-        return iconv('gbk', 'utf-8', $w[$wr]) . ',' . iconv('gbk', 'utf-8', $q[$wq]);
+        return $w[$wr] . ',' . $q[$wq];
     }
 
     /**
@@ -588,7 +587,7 @@ class Random extends WebBase
         $w = array('豹子', '顺子', '对子');
         $wr = rand(0, 3);
         $actionNum = 1;
-        return array('number' => iconv('gbk', 'utf-8', $w[$wr]), 'actionNum' => $actionNum);
+        return array('number' => $w[$wr], 'actionNum' => $actionNum);
     }
 
     public function getRandom328()
@@ -683,7 +682,7 @@ class Random extends WebBase
         $wr = rand(0, 1);
         $wq = rand(0, 1);
 
-        return iconv('gbk', 'utf-8', $w[$wr]) . iconv('gbk', 'utf-8', $q[$wq]);
+        return $w[$wr] . $q[$wq];
     }
 
     public function getRandom237()
@@ -692,7 +691,7 @@ class Random extends WebBase
 
         $wr = rand(0, 1);
 
-        return iconv('gbk', 'utf-8', $w[$wr]);
+        return $w[$wr];
     }
 
     public function getRandom301()
