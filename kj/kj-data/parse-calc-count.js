@@ -2124,6 +2124,63 @@ exports.k3hz = function (bet, kj) {
   return count;
 }
 
+// 时时彩：龙虎和
+exports.ssc_lhh_l = function (bet, kj) {
+  kj = kj.split(',');
+  bet = bet.split('');
+  return ssc_lhh(bet, kj, '龙');
+}
+
+exports.ssc_lhh_h = function (bet, kj) {
+  kj = kj.split(',');
+  bet = bet.split('');
+  return ssc_lhh(bet, kj, '虎');
+}
+
+exports.ssc_lhh_he = function (bet, kj) {
+  kj = kj.split(',');
+  bet = bet.split('');
+  return ssc_lhh(bet, kj, '和');
+}
+
+// 时时彩：龙虎和
+function ssc_lhh(bet, kj, data) {
+  var val1 = null;
+  var val2 = null;
+  if (bet[0] === '万') {
+    val1 = kj[4];
+  } else if (bet[0] === '千') {
+    val1 = kj[3];
+  } else if (bet[0] === '百') {
+    val1 = kj[2];
+  } else if (bet[0] === '十') {
+    val1 = kj[1];
+  }
+  if (bet[1] === '千') {
+    val2 = kj[3];
+  } else if (bet[1] === '百') {
+    val2 = kj[2];
+  } else if (bet[1] === '十') {
+    val2 = kj[1];
+  } else if (bet[1] === '个') {
+    val2 = kj[0];
+  }
+  count = 0;
+  console.log(val1, val2, val1 > val2, val1 < val2, val1 === val2 , data);
+  if (val1 > val2 && data === '龙') {
+    console.log('====龙=====');
+    count = 1;
+  } else if (val1 < val2 && data === '虎') {
+    console.log('====虎=====');
+    console.log(data, data == '虎', data === '虎');
+    count = 1;
+  } else if (val1 === val2 && data === '和') {
+    console.log('====和=====');
+    count = 1;
+  }
+  return count;
+}
+
 // 三同号通选
 exports.k33tx = function (bet, kj) {
   kj = kj.replace(/\,/g, "");
