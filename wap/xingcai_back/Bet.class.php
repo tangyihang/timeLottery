@@ -1516,6 +1516,19 @@ class Bet
         return count($bet1);
     }
 
+    // 时时彩龙虎和
+    public static function ssc_lhh($bet)
+    {
+        $check = array('万千', '万百', '万十', '万个', '千百', '千十', '千个', '百十', '百个', '十个');
+        $bet1 = explode(' ', $bet);
+        $a = array_unique($bet1);
+        if (count($bet1) != count($a) || count($bet1) > 10 || count($bet1) < 1) return 0;
+        foreach ($bet1 as $bets) {
+            if (!in_array($bets, $check)) return 0;
+        }
+        return count($bet1);
+    }
+
     // K3三通号单选
     public static function k33tdx($bet)
     {

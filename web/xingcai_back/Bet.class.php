@@ -1569,9 +1569,8 @@ class Bet
     }
 
     // K3三不同号
-    public static function k33bt($bet, $num)
+    public static function k33bt($bet)
     {
-        return $num;
         $check = array('1', '2', '3', '4', '5', '6');
         $bet1 = explode(' ', $bet);
         $a = array_unique($bet1);
@@ -1583,9 +1582,8 @@ class Bet
     }
 
     // K3二不同号
-    public static function k32bt($bet, $num)
+    public static function k32bt($bet)
     {
-        return $num;
         $check = array('1', '2', '3', '4', '5', '6');
         $bet1 = explode(' ', $bet);
         $a = array_unique($bet1);
