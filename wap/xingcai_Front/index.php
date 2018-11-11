@@ -438,7 +438,7 @@ echo $seting['webGG'];
                     </a>
                 </li>
                 <li>
-                    <a href="/index.php/index/game/1/2/12">
+                    <a href="/index.php/index/game/1">
                         <div class="hot-icon icon_idx_0"><img class="" src="assets/statics/images/icon/5.png"></div>
                         <div class="hot-text text_idx_0"><span>重庆时时彩</span>
                             <p>全天120期</p></div>

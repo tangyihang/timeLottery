@@ -1,4 +1,4 @@
-<div class="tz_xz">
+<div class="tz_xz" id="tz_xz">
     <?php
     $sql = "select groupName from {$this->prename}played_group where id=?";
     $groupName = $this->getValue($sql, $this->groupId);
@@ -27,7 +27,6 @@
         }
     ?>
 </div>
-
 
 <div class="ball_list">
     <div class="num-table" id="num-select">
