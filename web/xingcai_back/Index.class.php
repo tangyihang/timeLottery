@@ -312,7 +312,7 @@ class Index extends WebLoginBase
     public final function getNextPeriod()
     {
         $items = array();
-        $allID = array(86, 1, 20, 83, 34, 79, 87, 60, 63, 12, 81, 82, 7, 15, 16, 6, 9, 10);
+        $allID = array(86, 85, 1, 20, 83, 34, 79, 87, 60, 63, 12, 81, 82, 7, 15, 16, 6, 9, 10);
         foreach ($allID as $id) {
 
             $r = $this->getLastKjData($id);

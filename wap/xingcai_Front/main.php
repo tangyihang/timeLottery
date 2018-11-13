@@ -167,7 +167,11 @@
                     <li class="louhao" id="m_recen_v"><a href="javascript:;">近期开奖</a></li>
                     <li class="louhao" id="m_recen_v"><a href="/index.php/index/yxjl" button="关闭:defaultModalCloase"
                                                          width="100%" target="modal">投注记录</a></li>
-                    <li class="louhao" id="m_recen_v"><a href="/zst/zst.php?typeid=<?= $this->type ?>&g=1">走势图</a></li>
+                    <?php if ($this->type == 1) {?>
+                        <li class="louhao" id="m_recen_v"><a href="/zst/ssc_lhhzst.php?typeid=<?= $this->type ?>&g=1">走势图</a></li>
+                    <?php } else {?>
+                        <li class="louhao" id="m_recen_v"><a href="/zst/zst.php?typeid=<?= $this->type ?>&g=1">走势图</a></li>
+                    <?php } ?>
                 </ul>
             </div>
         </div>

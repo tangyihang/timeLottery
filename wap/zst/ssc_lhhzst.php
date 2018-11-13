@@ -343,9 +343,7 @@ $typeid = intval($_REQUEST['typeid']);
               headHtml = '<tr class="trend-bg-1">' +
                 '<th>期数</th>' +
                 '<th>开奖</th>' +
-                '<th>和值</th>' +
-                '<th>大小</th>' +
-                '<th>单双</th>' +
+                '<th>万千</th>' +
                 '</tr>';
               headHtml += '</tr>';
               for (var i = 0; i < data.length; i++) {
@@ -366,15 +364,13 @@ $typeid = intval($_REQUEST['typeid']);
                   txtOpen = '';
                   continue;
                 } else {
-                  var num1 = parseInt(numArr[0]);
-                  var num5 = parseInt(numArr[4]);
-                  var bigString = '<span style="background:#a7c503;-moz-border-radius:3px; -webkit-border-radius:3px; font-size: 18px; border-radius:5px; border:1px solid #a7c503;color:#fff;">大</span>';
-                  var smallString = '<span style="background:#597d36;-moz-border-radius:3px; -webkit-border-radius:3px; font-size: 18px; border-radius:5px; border:1px solid #597d36;color:#fff;">小</span>';
-                  var doubleString = '<span style="background:#b49458;-moz-border-radius:3px; -webkit-border-radius:3px; font-size: 18px; border-radius:5px; border:1px solid #b49458;color:#fff;">双</span>';
-                  var singleString = '<span style="background:#87c95f;-moz-border-radius:3px; -webkit-border-radius:3px; font-size: 18px; border-radius:5px; border:1px solid #87c95f;color:#fff;">单</span>';
-                  tmpHtml += '<td>' + total + '</td>';
-                  tmpHtml += '<td>' + (total > 10 ? bigString : smallString) + '</td>';
-                  tmpHtml += '<td>' + (total % 2 == 0 ? doubleString : singleString) + '</td>';
+                  if (numArr[0] > numArr[1]) {
+                    tmpHtml += '<td>龙</td>';
+                  } else if (numArr[0] < numArr[1]) {
+                    tmpHtml += '<td>虎</td>';
+                  } else if (numArr[0] = numArr[1]) {
+                    tmpHtml += '<td>和</td>';
+                  }
                 }
                 txtHtml += '<tr class="trend-bg-'+(i % 2 == 0 ? '1' : '2')+'">' + tmpHtml + '</tr>';
               }
