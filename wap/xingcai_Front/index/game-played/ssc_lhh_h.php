@@ -16,7 +16,7 @@
         <div class="wei"><?= $var ?></div>
         &nbsp;
         <ul class="nList" style="display:inline;float:left;">
-            <input type="button" value="万千 " class="code reset2"/>
+            <input type="button" value="万千 " class="code reset2 checked"/>
             <!--	<input type="button" value="万百 " class="code reset2" />-->
             <!--	<input type="button" value="万十 " class="code reset2" />-->
             <!--	<input type="button" value="万个 " class="code reset2" />-->
@@ -38,6 +38,11 @@ $maxPl = $this->getPl($this->type, $this->played);
 <script type="text/javascript">
   $(function () {
     gameSetPl(<?=json_encode($maxPl)?>);
+    $('#lt_sel_insert').on('click', function () {
+      setTimeout(function () {
+        $('.num-table :button').addClass('checked');
+      }, 1000);
+    });
       <?php if ($this->type == 1) { ?>
     $('#tz_xz1 a[href]').live('click', function () {
       var $this = $(this);

@@ -454,6 +454,13 @@ echo $seting['webGG'];
 
                     </a>
                 </li>
+                <li>
+                    <a href="/index.php/index/game/85">
+                        <div class="hot-icon icon_idx_0"><img class="" src="assets/statics/images/icon/9.png"></div>
+                        <div class="hot-text text_idx_0"><span>三分PK10</span>
+                            <p>3分钟一期</p></div>
+                    </a>
+                </li>
 
                 <!-- <li>
                     <a href="/index.php/index/game/83">
