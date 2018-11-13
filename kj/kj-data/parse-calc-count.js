@@ -2149,22 +2149,22 @@ function ssc_lhh(bet, kj, data) {
     var val2 = null;
     var onebet = bet[i].split('');
     if (onebet[0] === '万') {
-      val1 = kj[4];
+      val1 = kj[0];
     } else if (onebet[0] === '千') {
-      val1 = kj[3];
+      val1 = kj[1];
     } else if (onebet[0] === '百') {
       val1 = kj[2];
     } else if (onebet[0] === '十') {
-      val1 = kj[1];
+      val1 = kj[3];
     }
     if (onebet[1] === '千') {
-      val2 = kj[3];
+      val2 = kj[1];
     } else if (onebet[1] === '百') {
       val2 = kj[2];
     } else if (onebet[1] === '十') {
-      val2 = kj[1];
+      val2 = kj[3];
     } else if (onebet[1] === '个') {
-      val2 = kj[0];
+      val2 = kj[4];
     }
     if (val1 > val2 && data === '龙') {
       count += 1;
