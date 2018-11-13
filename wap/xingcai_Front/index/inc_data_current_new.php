@@ -375,11 +375,11 @@ if ($this->type == 86) {//北京28
                             <th>号码</th>
                             <th>万千</th>
                         </tr>
-                        <?php $this->display('index/inc_data_history_k3.php', 0, 7); ?>
+                        <?php $this->display('index/inc_data_history_ssc_lhh.php', 0, 7); ?>
                     </table>
                 </ul>
             </div>
-            <a id="m_more_lott_list" href="/zst/hzst.php?typeid=<?= $this->type ?>">查看更多</a>
+            <a id="m_more_lott_list" href="/zst/ssc_lhhzst.php?typeid=<?= $this->type ?>">查看更多</a>
             <a class="m_jqkj_close" href="#">关闭</a>
         </div>
     </div>

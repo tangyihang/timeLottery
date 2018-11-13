@@ -169,7 +169,7 @@ $typeid = intval($_REQUEST['typeid']);
 }?>" data-gid="86" data-enable="0"><a href="/zst/zst.php?typeid=86&g=1">三分时时彩</a></li>
             <li class="game_li_1 <?php if ($typeid == 1) {
     echo 'trend-on';
-}?>" data-gid="1" data-enable="0"><a href="/zst/zst.php?typeid=1&g=1">重庆时时彩</a></li>
+}?>" data-gid="1" data-enable="0"><a href="/zst/ssc_lhhzst.php?typeid=1&g=1">重庆时时彩</a></li>
             <!--<li class="game_li_12 <?php if ($typeid == 12) {
     echo 'trend-on';
 }?>" data-gid="12" data-enable="0">新疆时时彩</li>
@@ -457,6 +457,9 @@ $typeid = intval($_REQUEST['typeid']);
       console.log(trendGid);
       if (trendGid === '63') {
         location.href = '/zst/hzst.php?typeid=63&g=1';
+      }
+      if (trendGid === '1') {
+        location.href = '/zst/ssc_lhhzst.php?typeid=1&g=1';
       }
       function getTrendData() {
         if (trendGid == null || trendGid == undefined || trendGid == '') {
