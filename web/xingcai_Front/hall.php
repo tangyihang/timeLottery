@@ -103,7 +103,7 @@
                             <p class="last-time" data-gid="83" data-time=""><span class="time_show_2_"></span></p>
                         </a>
                     </li>
-                    
+                    <!--
                 	<li class="game_category_2">
                         <a href="/index.php/index/game/34">
                             <div class="hot-icon"><img class="" src="assets/statics/images/icon/18.png"></div>
@@ -111,7 +111,7 @@
                             <p class="last-time" data-gid="34" data-time=""><span class="time_show_2_"></span></p>
                         </a>
                     </li>
-                    <!--
+
                 	<li class="game_category_1">
                         <a href="/index.php/index/game/78">
                             <div class="hot-icon"><img class="" src="assets/statics/images/icon/34.png"></div>
@@ -307,7 +307,7 @@
                             </div>
                         </a>
                     </li>
-                    
+                    <!--
                 	<li class="game_category_2">
                         <a href="/index.php/index/game/34">
                             <div class="hot-icon"><img class="" src="assets/statics/images/icon/18.png"></div>
@@ -324,7 +324,7 @@
                         </a>
                     </li>
                     
-					<!--
+
                 	<li class="game_category_1">
                         <a href="/index.php/index/game/78">
                             <div class="hot-icon"><img class="" src="assets/statics/images/icon/34.png"></div>
