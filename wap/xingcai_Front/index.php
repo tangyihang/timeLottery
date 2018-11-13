@@ -313,16 +313,16 @@
 </style>
 
 <body>
-<div id="website_notice" class="_notice">
-    <div class="_notice-wrapper">
-        <div class="title">平台公告<span class="close">×</span></div>
-        <ul class="_notice-list">
-            <li>
-
-            </li>
-        </ul>
-    </div>
-</div>
+<!--<div id="website_notice" class="_notice">-->
+<!--    <div class="_notice-wrapper">-->
+<!--        <div class="title">平台公告<span class="close">×</span></div>-->
+<!--        <ul class="_notice-list">-->
+<!--            <li>-->
+<!---->
+<!--            </li>-->
+<!--        </ul>-->
+<!--    </div>-->
+<!--</div>-->
 
 <div id="website_kf" class="_notice2" style="display: none;">
     <div class="_notice-wrapper2">
