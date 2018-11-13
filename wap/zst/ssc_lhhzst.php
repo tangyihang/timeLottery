@@ -354,10 +354,16 @@ $typeid = intval($_REQUEST['typeid']);
                 var total = 0;
                 tmpHtml += '<td>' + data[i].number + '</td>';
                 tmpHtml += '<td>';
+                var numStr = '';
                 for (var j = 0; j < numArr.length; j++) {
-                  total += parseInt(numArr[j]);
-                  tmpHtml += '<i>' + numArr[j] + '</i>';
+                  if (j == 0 || j == 1) {
+                    console.log(numArr[j]);
+                    numStr += '<span style="color:#a7c503;">'+numArr[j]+'</span>';
+                  } else {
+                    numStr += numArr[j];
+                  }
                 }
+                tmpHtml += numStr;
                 tmpHtml += '</td>'
                 if (tmpHtml == '') {
                   tmpHtml = txtOpen + '<br>';
@@ -365,11 +371,11 @@ $typeid = intval($_REQUEST['typeid']);
                   continue;
                 } else {
                   if (numArr[0] > numArr[1]) {
-                    tmpHtml += '<td>龙</td>';
+                    tmpHtml += '<td><span style="background:#a7c503;-moz-border-radius:3px; -webkit-border-radius:3px; font-size: 18px; border-radius:5px; border:1px solid #a7c503;color:#fff;">龙</span></td>';
                   } else if (numArr[0] < numArr[1]) {
-                    tmpHtml += '<td>虎</td>';
+                    tmpHtml += '<td><span style="background:#597d36;-moz-border-radius:3px; -webkit-border-radius:3px; font-size: 18px; border-radius:5px; border:1px solid #59aD4A;color:#fff;">虎</span></td>';
                   } else if (numArr[0] = numArr[1]) {
-                    tmpHtml += '<td>和</td>';
+                    tmpHtml += '<td><span style="background:#b49458;-moz-border-radius:3px; -webkit-border-radius:3px; font-size: 18px; border-radius:5px; border:1px solid #b49458;color:#fff;">和</span></td>';
                   }
                 }
                 txtHtml += '<tr class="trend-bg-'+(i % 2 == 0 ? '1' : '2')+'">' + tmpHtml + '</tr>';
