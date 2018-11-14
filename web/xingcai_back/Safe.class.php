@@ -90,6 +90,10 @@ class Safe extends WebLoginBase {
             throw new Exception('资金密码至少6位');
         }
 
+        if(!preg_match("/^[\d]{6}$/",$npwd)){
+            throw new Exception('资金密码为6位整数');
+        }
+
         $sql = "select password, coinPassword from {$this->prename}members where uid=?";
         $pwd = $this->getRow($sql, $this->user['uid']);
         if (!$pwd['coinPassword']) {
@@ -135,6 +139,10 @@ class Safe extends WebLoginBase {
 
         if (strlen($npwd) < 6) {
             throw new Exception('资金密码至少6位');
+        }
+
+        if(!preg_match("/^[\d]{6}$/",$npwd)){
+            throw new Exception('资金密码为6位整数');
         }
 
         $sql = "select password, coinPassword from {$this->prename}members where uid=?";

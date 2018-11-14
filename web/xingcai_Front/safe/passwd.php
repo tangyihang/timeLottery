@@ -87,12 +87,12 @@
 			  		<tr>
 						<td class="tdz3_left">确认新资金密码：</td>
                 			<td class="tdz3_right">
-							<input type="password" name="newpassword" class="password"  />
+							<input type="password" name="newpassword" maxlength="6" class="password"  />
 							<span class="text_hint text_hint-c">由0-9的数字组成的6个字符<br />提款密码不能与登录密码相同</span></td>
               		</tr>
               			<tr>
                 			<td class="tdz3_left">确认新资金密码：</td>
-                			<td class="tdz3_right"><input type="password" name="qrpassword" class="password confirm"/></td>
+                			<td class="tdz3_right"><input type="password" maxlength="6" name="qrpassword" class="password confirm"/></td>
               			</tr>
             		</table>
                     <div class="list_page"><span class="font_red">备注：请妥善保管好您的提款密码，如遗忘请联系在线客服处理。</span></div>
@@ -108,12 +108,12 @@
 			  		<tr>
 						<td class="tdz3_left">设置资金密码：</td>
                 			<td class="tdz3_right">
-							<input type="password" name="newpassword" class="password"/>
-							<span class="text_hint text_hint-c">由字母和数字组成6-16个字符<br />资金密码不能与登录密码相同</span></td>
+							<input type="password" maxlength="6" name="newpassword" class="password"/>
+							<span class="text_hint text_hint-c">由0-9的数字组成的6个字符<br />资金密码不能与登录密码相同</span></td>
               		</tr>
               			<tr>
                 			<td class="tdz3_left">确认资金密码：</td>
-                			<td class="tdz3_right"><input type="password" class="password confirm"/></td>
+                			<td class="tdz3_right"><input type="password" maxlength="6" class="password confirm"/></td>
               			</tr>
             		</table>
                     <div class="list_page"><span class="font_red">备注：请妥善保管好您的资金密码，如遗忘请联系在线客服处理。</span></div>

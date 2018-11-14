@@ -48,7 +48,7 @@
                 <li>
 
                     <span class="logi">旧提款密码</span>
-                    <input type="password" id="trans_pwd_old" maxlength="6" name="pwd"
+                    <input type="password" id="trans_pwd_old" name="pwd"
                            placeholder="未设置提款密码时，输入登录密码" value="" style="width: 70%;">
                 </li>
                 <li>
