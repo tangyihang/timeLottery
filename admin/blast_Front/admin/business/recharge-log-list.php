@@ -81,6 +81,7 @@ foreach ($data['data'] as $dk => $dv) {
         <th>充值编号</th>
         <th>充值银行</th>
         <th>二维码ID</th>
+        <th>用户付款账号</th>
         <th>到账账户</th>
         <th>状态</th>
         <th>备注</th>
@@ -104,6 +105,7 @@ foreach ($data['data'] as $dk => $dv) {
 <!--        <td><a href="--><?//=$bank[$var['mBankId']]['home']?><!--" title="银行帐号：--><?//=$bank[$var['mBankId']]['account']?><!--，开户名：--><?//=$bank[$var['mBankId']]['username']?><!--" target="_blank">--><?//=$bank[$var['mBankId']]['name']?><!--</a></td>-->
 		<td><?=$bank[$var['mBankId']]?></td>
         <td><?=$var['payId']?></td>
+        <td><?=$var['pay_account_name']?></td>
         <td><?=$var['account']?></td>
 
         <td><?=$this->iff($var['state'], '充值成功', '正在充值')?></td>

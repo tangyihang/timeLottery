@@ -1,48 +1,61 @@
 <?php
 @session_start();
-class Cash extends WebLoginBase {
 
-    public $pageSize          = 20;
+class Cash extends WebLoginBase
+{
+
+    public $pageSize = 20;
     private $vcodeSessionName = 'blast_vcode_session_name';
 
-    public final function toCash() {
+    public final function toCash()
+    {
         $this->display('cash/to-cash.php');
     }
 
-    public final function toCashLog() {
+    public final function toCashLog()
+    {
         $this->display('cash/tocash.php');
     }
 
-    public final function toCashResult() {
+    public final function toCashResult()
+    {
         $this->display('cash/cash-result.php');
     }
 
-    public final function recharge() {
+    public final function recharge()
+    {
         $this->display('cash/recharge.php');
     }
 
-    public final function detail($id) {
+    public final function detail($id)
+    {
         $this->getTypes();
         $this->getPlayeds();
         $this->display('cash/detail.php', 0, $id);
     }
-    public final function todetail($id) {
+
+    public final function todetail($id)
+    {
         $this->getTypes();
         $this->getPlayeds();
         $this->display('cash/todetail.php', 0, $id);
     }
-    public final function getListToCash() {
+
+    public final function getListToCash()
+    {
         $sql = "select c.*, b.name bankName from {$this->prename}member_cash c, {$this->prename}bank_list b where c.bankId=b.id and uid={$this->user['uid']} and b.isDelete=0 and c.isDelete=0";
         if ($_POST['type'] || $_POST['type'] === 0) {
             $sql .= " and state = " . $_POST['type'];
         }
         $sql .= ' order by c.id desc';
-        $list        = $this->getPage($sql, $_POST['pageIndex'], $this->pageSize);
-        $d['data']   = $list;
+        $list = $this->getPage($sql, $_POST['pageIndex'], $this->pageSize);
+        $d['data'] = $list;
         $d['status'] = 200;
         return $d;
     }
-    public final function getList() {
+
+    public final function getList()
+    {
         $sql = "select a.rechargeId,a.id,a.amount,a.rechargeAmount,a.info,a.state,a.actionTime,b.name as bankName from {$this->prename}member_recharge a left join {$this->prename}bank_list b on b.id=a.bankId where a.isDelete=0 and a.uid={$this->user['uid']}";
         if ($_POST['type']) {
             if (intval($_POST['type']) == 1) {
@@ -53,13 +66,15 @@ class Cash extends WebLoginBase {
         }
 
         $sql .= ' order by a.id desc';
-        $list        = $this->getPage($sql, $_POST['pageIndex'], 10);
-        $d['data']   = $list;
+        $list = $this->getPage($sql, $_POST['pageIndex'], 10);
+        $d['data'] = $list;
         $d['status'] = 200;
         return $d;
 
     }
-    public final function withdraw() {
+
+    public final function withdraw()
+    {
         $bank = $this->getRow("select m.*,b.logo logo, b.name bankName from {$this->prename}member_bank m, {$this->prename}bank_list b where b.isDelete=0 and m.bankId=b.id and m.uid=? limit 1", $this->user['uid']);
         if (!$bank) {
             header('location: /index.php/safe/info');
@@ -67,29 +82,38 @@ class Cash extends WebLoginBase {
             $this->display('cash/withdraw.php');
         }
     }
-    public final function rechargeLog() {
+
+    public final function rechargeLog()
+    {
         $this->display('cash/recharge-log.php');
     }
-    public final function rechargelist() {
+
+    public final function rechargelist()
+    {
         $this->display('cash/recharge-list.php');
     }
 
-    public final function toCashlist() {
+    public final function toCashlist()
+    {
         $this->display('cash/to-cash-list.php');
     }
+
     /**
      * 点卡充值
      */
-    public final function card() {
+    public final function card()
+    {
         $this->display('cash/card.php');
     }
-    public final function yanzheng() {
+
+    public final function yanzheng()
+    {
         if (!$_POST['amount']) {
             throw new Exception('提交数据出错，请重新操作!');
         }
 
         //检查卡密是否正确
-        $sql     = "select * from {$this->prename}card where card_str=?";
+        $sql = "select * from {$this->prename}card where card_str=?";
         $isRight = $this->getRow($sql, $_POST['amount']);
         if (!$isRight) {
             throw new Exception('卡密不存在');
@@ -99,30 +123,32 @@ class Cash extends WebLoginBase {
             throw new Exception('卡密已使用');
         }
 
-        $update['id']       = $isRight['id'];
-        $update['uid']      = $this->user['uid'];
+        $update['id'] = $isRight['id'];
+        $update['uid'] = $this->user['uid'];
         $update['useranme'] = $this->user['useranme'];
         $update['use_time'] = time();
-        $update['status']   = 1;
-        $sql                = "update {$this->prename}card set uid={$this->user['uid']}, username='{$this->user['username']}', use_time={$update['use_time']}, status={$update['status']} where id={$isRight['id']}";
-        $cardResult         = $this->update($sql);
+        $update['status'] = 1;
+        $sql = "update {$this->prename}card set uid={$this->user['uid']}, username='{$this->user['username']}', use_time={$update['use_time']}, status={$update['status']} where id={$isRight['id']}";
+        $cardResult = $this->update($sql);
 
         $coinResult = $this->addCoin(array(
             //'uid'=>$this->user['uid'],
-            'coin'      => intval($isRight['price']),
-            'liqType'   => 111,
+            'coin' => intval($isRight['price']),
+            'liqType' => 111,
             'extfield0' => 0,
             'extfield1' => 0,
-            'info'      => "卡密充值-{$_POST['amount']}",
+            'info' => "卡密充值-{$_POST['amount']}",
         ));
 
         return '充值成功';
 
     }
+
     /**
      * 提现申请
      */
-    public final function ajaxToCash() {
+    public final function ajaxToCash()
+    {
         if (!$_POST) {
             return ('参数出错');
         }
@@ -131,12 +157,12 @@ class Cash extends WebLoginBase {
         if ($this->user['parentId'] == 312) {
             throw new Exception('测试帐户不能提款');
         }
-        $para['amount']   = $_POST['amount'];
-        $para['coinpwd']  = $_POST['coinpwd'];
-        $bank             = $this->getRow("select username,account,bankId from {$this->prename}member_bank where uid=? limit 1", $this->user['uid']);
+        $para['amount'] = $_POST['amount'];
+        $para['coinpwd'] = $_POST['coinpwd'];
+        $bank = $this->getRow("select username,account,bankId from {$this->prename}member_bank where uid=? limit 1", $this->user['uid']);
         $para['username'] = $bank['username'];
-        $para['account']  = $bank['account'];
-        $para['bankId']   = $bank['bankId'];
+        $para['account'] = $bank['account'];
+        $para['bankId'] = $bank['bankId'];
         if (!ctype_digit($para['amount'])) {
             return ('提现金额包含非法字符');
         }
@@ -156,7 +182,7 @@ class Cash extends WebLoginBase {
         //提示时间检查
         $baseTime = strtotime(date('Y-m-d ', $this->time) . '06:00');
         $fromTime = strtotime(date('Y-m-d ', $this->time) . $this->settings['cashFromTime'] . ':00');
-        $toTime   = strtotime(date('Y-m-d ', $this->time) . $this->settings['cashToTime'] . ':00');
+        $toTime = strtotime(date('Y-m-d ', $this->time) . $this->settings['cashToTime'] . ':00');
         if ($toTime < $baseTime) {
             $toTime += 24 * 3600;
         }
@@ -170,12 +196,12 @@ class Cash extends WebLoginBase {
         }
 
         //消费判断
-        $cashAmout      = 0;
+        $cashAmout = 0;
         $rechargeAmount = 0;
-        $rechargeTime   = strtotime('00:00');
+        $rechargeTime = strtotime('00:00');
         if ($this->settings['cashMinAmount']) {
             $cashMinAmount = $this->settings['cashMinAmount'] / 100;
-            $gRs           = $this->getRow("select sum(case when rechargeAmount>0 then rechargeAmount else amount end) as rechargeAmount from {$this->prename}member_recharge where  uid={$this->user['uid']} and state in (1,2,9) and isDelete=0 and rechargeTime>=" . $rechargeTime);
+            $gRs = $this->getRow("select sum(case when rechargeAmount>0 then rechargeAmount else amount end) as rechargeAmount from {$this->prename}member_recharge where  uid={$this->user['uid']} and state in (1,2,9) and isDelete=0 and rechargeTime>=" . $rechargeTime);
             if ($gRs) {
                 $rechargeAmount = $gRs["rechargeAmount"] * $cashMinAmount;
             }
@@ -213,7 +239,7 @@ class Cash extends WebLoginBase {
 
             // 插入提现请求表
             $para['actionTime'] = $this->time;
-            $para['uid']        = $this->user['uid'];
+            $para['uid'] = $this->user['uid'];
             if (!$this->insertRow($this->prename . 'member_cash', $para)) {
                 return ('提交提现请求出错');
             }
@@ -222,11 +248,11 @@ class Cash extends WebLoginBase {
 
             // 流动资金
             $this->addCoin(array(
-                'coin'      => 0 - $para['amount'],
-                'fcoin'     => $para['amount'],
-                'uid'       => $para['uid'],
-                'liqType'   => 106,
-                'info'      => "提现[$id]资金冻结",
+                'coin' => 0 - $para['amount'],
+                'fcoin' => $para['amount'],
+                'uid' => $para['uid'],
+                'liqType' => 106,
+                'info' => "提现[$id]资金冻结",
                 'extfield0' => $id,
             ));
 
@@ -243,7 +269,8 @@ class Cash extends WebLoginBase {
     /**
      * 确认提现到帐
      */
-    public final function toCashSure($id) {
+    public final function toCashSure($id)
+    {
         if (!$id = intval($id)) {
             throw new Exception('参数出错');
         }
@@ -261,31 +288,31 @@ class Cash extends WebLoginBase {
             }
 
             switch ($cash['state']) {
-            case 0:
-                throw new Exception('提现已经确认过了');
-                break;
-            case 1:
-                throw new Exception("提现请求正在处理中...");
-                break;
-            case 2:
-                throw new Exception("该提现请求已经取消，冻结资金已经解除冻结\r\n如需要提现请重新申请");
-                break;
-            case 3:
+                case 0:
+                    throw new Exception('提现已经确认过了');
+                    break;
+                case 1:
+                    throw new Exception("提现请求正在处理中...");
+                    break;
+                case 2:
+                    throw new Exception("该提现请求已经取消，冻结资金已经解除冻结\r\n如需要提现请重新申请");
+                    break;
+                case 3:
 
-                break;
-            case 4:
-                throw new Exception("该提现请求已经失败，冻结资金已经解除冻结\r\n如需要提现请重新申请");
-                break;
-            default:
-                throw new Exception('系统出错');
-                break;
+                    break;
+                case 4:
+                    throw new Exception("该提现请求已经失败，冻结资金已经解除冻结\r\n如需要提现请重新申请");
+                    break;
+                default:
+                    throw new Exception('系统出错');
+                    break;
             }
 
             if ($this->update("update {$this->prename}member_cash set state=0 where id=$id")) {
                 $this->addCoin(array(
-                    'liqType'   => 12,
-                    'uid'       => $this->user['uid'],
-                    'info'      => "提现[$id]资金确认",
+                    'liqType' => 12,
+                    'uid' => $this->user['uid'],
+                    'info' => "提现[$id]资金确认",
                     'extfield0' => $id,
                 ));
             }
@@ -297,19 +324,19 @@ class Cash extends WebLoginBase {
     }
 
     /* 进入充值，生产充值订单 */
-    public final function inRecharge() {
+    public final function inRecharge()
+    {
 
         if (!$_POST) {
             return array('msg' => '参数出错', code => '0');
         }
 
         $para['mBankId'] = intval($_POST['mBankId']);
-        $para['amount']  = floatval($_POST['amount']);
+        $para['amount'] = floatval($_POST['amount']);
 
         if ($para['amount'] <= 0) {
             return array('msg' => '充值金额错误，请重新操作', code => '0');
         }
-
         /*if($id=$this->getValue("select bankId from {$this->prename}sysadmin_bank where id=?",$para['mBankId'])){
         if($id==2 || $id==20){
         if($para['amount']<$this->settings['rechargeMin1'] || $para['amount']>$this->settings['rechargeMax1']) throw new Exception('支付宝/微信充值最低'.$this->settings['rechargeMin1'].'元，最高'.$this->settings['rechargeMax1'].'元');
@@ -325,22 +352,22 @@ class Cash extends WebLoginBase {
         unset($para['coinpwd']);
         $para['rechargeId'] = $this->getRechId();
         $para['actionTime'] = $this->time;
-        $para['uid']        = $this->user['uid'];
-        $para['username']   = $this->user['username'];
-        $para['actionIP']   = $this->ip(true);
-        $para['info']       = '用户充值';
-        $para['bankId']     = 2;
+        $para['uid'] = $this->user['uid'];
+        $para['username'] = $this->user['username'];
+        $para['actionIP'] = $this->ip(true);
+        $para['info'] = '用户充值';
+        $para['bankId'] = 2;
 
         if ($this->insertRow($this->prename . 'member_recharge', $para)) {
             //$this->display('cash/recharge-copy.php',0,$para);
-            $data                = array();
-            $data['partner']     = $this->settings['partner_id']; #商户号
-            $data['banktype']    = $banktype; #选择微信
-            $data['paymoney']    = $para['amount']; #金额 单位元
+            $data = array();
+            $data['partner'] = $this->settings['partner_id']; #商户号
+            $data['banktype'] = $banktype; #选择微信
+            $data['paymoney'] = $para['amount']; #金额 单位元
             $data['ordernumber'] = $para['rechargeId']; #订单号
             $data['callbackurl'] = 'http://' . $_SERVER['HTTP_HOST'] . '/index.php/cash/notify'; #通知
-            $data['attach']      = '11111'; #备注信息   不参与签名
-            $data['sign']        = $this->array_to_sign($data);
+            $data['attach'] = '11111'; #备注信息   不参与签名
+            $data['sign'] = $this->array_to_sign($data);
             // $data['payurl']='http://wgtj.gaotongpay.com/PayBank.aspx';http_build_query($data)
             //echo $pay_url;
             //return array('msg'=> $data['partner'] ,'code'=>0);
@@ -353,15 +380,17 @@ class Cash extends WebLoginBase {
         //清空验证码session
 
     }
+
     /* 进入多得宝充值 */
-    public final function DDBRecharge() {
+    public final function DDBRecharge()
+    {
         if (!$_POST) {
             throw new Exception('参数出错');
         }
 
-        $uid             = intval($_POST['uid']);
+        $uid = intval($_POST['uid']);
         $para['mBankId'] = intval($_POST['mBankId']);
-        $para['amount']  = floatval($_POST['amount']);
+        $para['amount'] = floatval($_POST['amount']);
 
         $username = $this->getValue("select username from {$this->prename}members where uid=$uid");
         if ($username == '' || $uid <= 0) {
@@ -386,34 +415,34 @@ class Cash extends WebLoginBase {
         unset($para['coinpwd']);
         $para['rechargeId'] = $this->getRechId();
         $para['actionTime'] = $this->time;
-        $para['uid']        = $uid;
-        $para['username']   = $username;
-        $para['actionIP']   = $this->ip(true);
-        $para['info']       = '用户充值';
-        $para['bankId']     = $id;
+        $para['uid'] = $uid;
+        $para['username'] = $username;
+        $para['actionIP'] = $this->ip(true);
+        $para['info'] = '用户充值';
+        $para['bankId'] = $id;
         if ($this->insertRow($this->prename . 'member_recharge', $para)) {
             //$this->display('cash/recharge-copy.php',0,$para);
             $data = array();
 
             $data['merchant_private_key'] = $this->settings['merchant_private_key'];
-            $data['merchant_code']        = $this->settings['duodebao_id']; #商户号
-            $data['banktype']             = $banktype; #选择微信
-            $data['order_amount']         = $para['amount']; #金额 单位元
-            $data['order_no']             = $para['rechargeId']; #订单号
-            $data['notify_url']           = 'https://' . $_SERVER['HTTP_HOST'] . '/index.php/cash/notifyddb'; #通知//
-            $data['product_name']         = '11111'; #备注信息   不参与签名
+            $data['merchant_code'] = $this->settings['duodebao_id']; #商户号
+            $data['banktype'] = $banktype; #选择微信
+            $data['order_amount'] = $para['amount']; #金额 单位元
+            $data['order_no'] = $para['rechargeId']; #订单号
+            $data['notify_url'] = 'https://' . $_SERVER['HTTP_HOST'] . '/index.php/cash/notifyddb'; #通知//
+            $data['product_name'] = '11111'; #备注信息   不参与签名
             // $data['payurl']='http://wgtj.gaotongpay.com/PayBank.aspx';http_build_query($data)
 
             //$this->display('cash/ddb/bank_pay.php',0,$data);
-            $url     = "https://pay.ddbill.com/gateway?input_charset=UTF-8";
+            $url = "https://pay.ddbill.com/gateway?input_charset=UTF-8";
             $reqData = array(
-                'partner'     => $data['partner'],
-                'banktype'    => $data['banktype'],
-                'paymoney'    => $data['paymoney'],
+                'partner' => $data['partner'],
+                'banktype' => $data['banktype'],
+                'paymoney' => $data['paymoney'],
                 'ordernumber' => $data['ordernumber'],
                 'callbackurl' => $data['callbackurl'],
-                'attach'      => $data['attach'],
-                'sign'        => $data['sign'],
+                'attach' => $data['attach'],
+                'sign' => $data['sign'],
             );
             $result = $this->httpPost($url, $reqData);
             var_dump($result);
@@ -424,15 +453,17 @@ class Cash extends WebLoginBase {
     }
 
     /* 进入多得宝充值 */
-    public final function xmRecharge() {
+    public final function xmRecharge()
+    {
 
         if (!$_POST) {
             throw new Exception('参数出错');
         }
 
-        $uid             = intval($_POST['uid']);
+        $uid = intval($_POST['uid']);
         $para['mBankId'] = intval($_POST['mBankId']);
-        $para['amount']  = floatval($_POST['amount']);
+        $para['amount'] = floatval($_POST['amount']);
+        $para['pay_account_name'] = trim($_POST['pay_account_name']);
 
         $username = $this->getValue("select username from {$this->prename}members where uid=$uid");
         if ($username == '' || $uid <= 0) {
@@ -440,6 +471,10 @@ class Cash extends WebLoginBase {
         }
         if ($para['amount'] <= 0) {
             throw new Exception('充值金额错误，请重新操作');
+        }
+
+        if (empty($para['pay_account_name'])) {
+            return array('msg' => '请输入付款账号名称', code => '0');
         }
 
         $id = $para['mBankId'];
@@ -473,16 +508,16 @@ class Cash extends WebLoginBase {
         unset($para['coinpwd']);
         $para['rechargeId'] = $this->getRechId();
         $para['actionTime'] = $this->time;
-        $para['uid']        = $uid;
-        $para['username']   = $username;
-        $para['actionIP']   = $this->ip(true);
-        $para['info']       = '用户充值';
-        $para['bankId']     = $id;
+        $para['uid'] = $uid;
+        $para['username'] = $username;
+        $para['actionIP'] = $this->ip(true);
+        $para['info'] = '用户充值';
+        $para['bankId'] = $id;
         if ($this->insertRow($this->prename . 'member_recharge', $para)) {
 
-            $data['pay_type']   = $banktype;
-            $data['bankId']     = $id;
-            $data['amount']     = $para['amount'];
+            $data['pay_type'] = $banktype;
+            $data['bankId'] = $id;
+            $data['amount'] = $para['amount'];
             $data['rechargeId'] = $para['rechargeId'];
 
             $this->display('cash/xinma/qrcodePayAction.php', 0, $data);
@@ -492,7 +527,8 @@ class Cash extends WebLoginBase {
     }
 
     //回调
-    public final function notifyxm() {
+    public final function notifyxm()
+    {
         $data = json_decode($GLOBALS['HTTP_RAW_POST_DATA']);
 
         $appKey = $this->settings['xinma_key']; //注意，Key是根据商户密钥去做调整, 跟DEMO下单页面填写的是一样的
@@ -515,7 +551,7 @@ class Cash extends WebLoginBase {
                 echo '签名验证失败';
             } else {
                 //echo '订单通知支付成功';
-                $responseToServer            = array();
+                $responseToServer = array();
                 $responseToServer['resDesc'] = 'SUCCESS';
                 $responseToServer['resCode'] = '00';
                 if ($this->getValue("select count(*) from {$this->prename}member_recharge where state=0 and rechargeId=" . $resultToSign['out_trade_no']) == 0) {
@@ -523,10 +559,10 @@ class Cash extends WebLoginBase {
                 } else {
 
                     $this->addCoin(array(
-                        'liqType'   => 1,
-                        'uid'       => $this->getValue("select uid from {$this->prename}member_recharge where state=0 and rechargeId=" . $resultToSign['out_trade_no']),
-                        'coin'      => intval($resultToSign['total_fee']) / 100,
-                        'info'      => "新码充值-" . intval($resultToSign['total_fee']) / 100,
+                        'liqType' => 1,
+                        'uid' => $this->getValue("select uid from {$this->prename}member_recharge where state=0 and rechargeId=" . $resultToSign['out_trade_no']),
+                        'coin' => intval($resultToSign['total_fee']) / 100,
+                        'info' => "新码充值-" . intval($resultToSign['total_fee']) / 100,
                         'extfield0' => 0,
                     ));
                     $this->update("update {$this->prename}member_recharge set state=1 where rechargeId=" . $resultToSign['out_trade_no']);
@@ -542,7 +578,8 @@ class Cash extends WebLoginBase {
         }
     }
 
-    function formatBizQueryParaMap($map, $urlencode = false) {
+    function formatBizQueryParaMap($map, $urlencode = false)
+    {
 
         ksort($map);
         $result = array();
@@ -565,14 +602,17 @@ class Cash extends WebLoginBase {
 
     }
 
-    function sign($req, $signKey = '') {
+    function sign($req, $signKey = '')
+    {
 
-        $str         = formatBizQueryParaMap($req);
+        $str = formatBizQueryParaMap($req);
         $req['sign'] = strtoupper(md5($str . "&key=" . $signKey));
         return $req;
 
     }
-    public function array_to_sign($array) {
+
+    public function array_to_sign($array)
+    {
         foreach ($array as $key => $v) {
             if ($key !== 'hrefbackurl' and $key !== 'attach') {
                 #hrefbackurl 不参与签名
@@ -583,7 +623,8 @@ class Cash extends WebLoginBase {
         return md5($url);
     }
 
-    public final function getRechId() {
+    public final function getRechId()
+    {
         $rechargeId = mt_rand(100000, 999999);
         if ($this->getRow("select id from {$this->prename}member_recharge where rechargeId=$rechargeId")) {
             getRechId();
@@ -592,25 +633,29 @@ class Cash extends WebLoginBase {
         }
     }
 
-    public final function cashModal($id) {
+    public final function cashModal($id)
+    {
         $this->getTypes();
         $this->getPlayeds();
         $this->display('cash/cash-modal.php', 0, $id);
     }
 
     //充值演示
-    public final function paydemo($id) {
+    public final function paydemo($id)
+    {
         $this->display('cash/paydemo.php', 0, $id);
     }
+
     //回调
-    public final function notify() {
-        $partner     = isset($_GET['partner']) ? $_GET['partner'] : '';
+    public final function notify()
+    {
+        $partner = isset($_GET['partner']) ? $_GET['partner'] : '';
         $ordernumber = isset($_GET['ordernumber']) ? $_GET['ordernumber'] : '';
         $orderstatus = isset($_GET['orderstatus']) ? $_GET['orderstatus'] : '';
-        $paymoney    = isset($_GET['paymoney']) ? $_GET['paymoney'] : '';
-        $sysnumber   = isset($_GET['sysnumber']) ? $_GET['sysnumber'] : '';
-        $attach      = isset($_GET['attach']) ? $_GET['attach'] : '';
-        $sign        = isset($_GET['sign']) ? $_GET['sign'] : '';
+        $paymoney = isset($_GET['paymoney']) ? $_GET['paymoney'] : '';
+        $sysnumber = isset($_GET['sysnumber']) ? $_GET['sysnumber'] : '';
+        $attach = isset($_GET['attach']) ? $_GET['attach'] : '';
+        $sign = isset($_GET['sign']) ? $_GET['sign'] : '';
 
         $sign_str = 'partner=' . $partner . '&ordernumber=' . $ordernumber . '&orderstatus=' . $orderstatus . '&paymoney=' . $paymoney . $this->settings['gaotong_key'];
 
@@ -620,10 +665,10 @@ class Cash extends WebLoginBase {
             } else {
 
                 $this->addCoin(array(
-                    'liqType'   => 1,
-                    'uid'       => $this->getValue("select uid from {$this->prename}member_recharge where state=0 and rechargeId=$ordernumber"),
-                    'coin'      => $paymoney,
-                    'info'      => "高通充值-$paymoney",
+                    'liqType' => 1,
+                    'uid' => $this->getValue("select uid from {$this->prename}member_recharge where state=0 and rechargeId=$ordernumber"),
+                    'coin' => $paymoney,
+                    'info' => "高通充值-$paymoney",
                     'extfield0' => 0,
                 ));
                 $this->update("update {$this->prename}member_recharge set state=1 where rechargeId=$ordernumber");

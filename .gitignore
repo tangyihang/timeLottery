@@ -13,3 +13,6 @@ web/upload/uploads/files/*/*.jpg
 web/qrcode.png
 web/_xingcai_buffer/*
 web/qrcode.png
+admin/upload/*
+web/upload/*
+
