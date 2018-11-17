@@ -81,7 +81,7 @@
 .wechat-top{min-height:120px;margin-bottom:8px;background:#E5E5E5;border-radius:4px;}
 .wechat-one{min-height:120px;font-size:12px;margin:0px 20px;}
 .wechat-tit{color:#E84E05;font-size:15px;padding-top:10px;font-weight:600;}
-.wechat-recharge{margin:15px 0 0 50px;float:left;width:350px;}.wechat-recharge>span{padding:1px 9px;}
+.wechat-recharge{margin:15px 0 0 50px;float:left;}.wechat-recharge>span{padding:1px 9px;}
 .wechat-one .btn{height:30px;width:82px;line-height:30px;}
 .we-or-left{background:url(/common/statics/img/userCenter/wechat-orders.png) no-repeat;width:51px;height:42px;float:left;margin:34px 0 0 80px;}
 .we-or-tit{float:left;margin:30px 0 0 10px;}
