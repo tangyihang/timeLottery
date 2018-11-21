@@ -50,36 +50,38 @@ $flag = ($myBank['editEnable'] != 1) && ($myBank);
 ?>
 <div id="wrapper_1" class="scorllmain-content scorll-order top_bar nobottom_bar">
     <div class="sub_ScorllCont">
-        <p style="text-align: left;padding-top:5px;"><span style="font-size: 14px;">请确实填写您的出款银行资料，以免有心人士窃取</span></p>
+        <?php if (!$flag) { ?>
+            <p style="text-align: left;padding-top:5px;"><span style="font-size: 14px;">请确实填写您的出款银行资料，以免有心人士窃取</span></p>
+        <?php } else { ?>
+            <p style="text-align: left;padding-top:5px;"><span style="font-size: 14px;">如需修改出款银行资料，请联系客服处理</span></p>
+        <?php } ?>
         <div class="cash-list" style="margin-top: 0px;">
             <h3 class="choose-tit">卡号信息</h3>
             <ul>
                 <li id="li_bank_name"><span>开户银行：</span>
-                    <select class="choose-sel" style="width: 120px;" id="bank">
+                    <select class="choose-sel" style="width: 120px;" <?= $this->iff($flag, 'readonly') ?> id="bank">
                         <option value="">选择银行</option>
                         <?php foreach ($banks as $bank) { ?>
                             <option value="<?= $bank['id'] ?>" <?= $this->iff($myBank['bankId'] == $bank['id'], 'selected') ?>><?= $bank['name'] ?></option>
                         <?php } ?>
                     </select>
-                    <span class="grey" style="margin-left: 70px;">
-                        <input class="cash-int cash-nobor" style="display: none;" id="bank_other" value="" maxlength="30" placeholder="请输入其他银行"/>
-                    </span>
                 </li>
                 <li>
                     <span>银行账号：</span>
-                    <input class="cash-int cash-nobor" maxlength="20" id="bankNum" value="<?= preg_replace('/^(\w{4}).*(\w{4})$/', '\1***********\2', htmlspecialchars($myBank['account'])) ?>"
+                    <input class="cash-int cash-nobor" maxlength="20" id="bankNum" <?= $this->iff($flag, 'readonly') ?> value="<?= preg_replace('/^(\w{4}).*(\w{4})$/', '\1***********\2', htmlspecialchars($myBank['account'])) ?>"
                                              placeholder="请输入银行帐号"/></li>
                 <li>
                     <span>开户人姓名：</span>
-                    <input class="cash-int cash-nobor" id="name" value="<?= $this->iff($myBank['username'], mb_substr(htmlspecialchars($myBank['username']), 0, 1, 'utf-8') . '**') ?>"
+                    <input class="cash-int cash-nobor" id="name" <?= $this->iff($flag, 'readonly') ?> value="<?= $this->iff($myBank['username'], mb_substr(htmlspecialchars($myBank['username']), 0, 1, 'utf-8') . '**') ?>"
                                               type="text" maxlength="15" placeholder="请输入开户人姓名"></li>
                 <li>
                     <span>开户银行支行名称：</span>
-                    <input class="cash-int cash-nobor" id="province" value="<?= preg_replace('/^(\w{4}).*(\w{4})$/', '\1***\2', htmlspecialchars($myBank['countname'])) ?>"
+                    <input class="cash-int cash-nobor" <?= $this->iff($flag, 'readonly') ?> id="province" value="<?= preg_replace('/^(\w{4}).*(\w{4})$/', '\1***\2', htmlspecialchars($myBank['countname'])) ?>"
                                                 style="width: 50%;" type="text" maxlength="20" placeholder="请输入开户银行支行名称"></li>
+                <?php if (!$flag) { ?>
                 <li><span>设置提款密码：</span></li>
                 <li>
-                    <select name="" id="pwd1">
+                    <select name="" id="pwd1" <?= $this->iff($flag, 'readonly') ?> >
                         <option value="">-</option>
                         <option value="0">0</option>
                         <option value="1">1</option>
@@ -92,7 +94,7 @@ $flag = ($myBank['editEnable'] != 1) && ($myBank);
                         <option value="8">8</option>
                         <option value="9">9</option>
                     </select>
-                    <select name="" id="pwd2">
+                    <select name="" id="pwd2" <?= $this->iff($flag, 'readonly') ?> >
                         <option value="">-</option>
                         <option value="0">0</option>
                         <option value="1">1</option>
@@ -105,7 +107,7 @@ $flag = ($myBank['editEnable'] != 1) && ($myBank);
                         <option value="8">8</option>
                         <option value="9">9</option>
                     </select>
-                    <select name="" id="pwd3">
+                    <select name="" id="pwd3" <?= $this->iff($flag, 'readonly') ?> >
                         <option value="">-</option>
                         <option value="0">0</option>
                         <option value="1">1</option>
@@ -118,7 +120,7 @@ $flag = ($myBank['editEnable'] != 1) && ($myBank);
                         <option value="8">8</option>
                         <option value="9">9</option>
                     </select>
-                    <select name="" id="pwd4">
+                    <select name="" id="pwd4" <?= $this->iff($flag, 'readonly') ?> >
                         <option value="">-</option>
                         <option value="0">0</option>
                         <option value="1">1</option>
@@ -131,7 +133,7 @@ $flag = ($myBank['editEnable'] != 1) && ($myBank);
                         <option value="8">8</option>
                         <option value="9">9</option>
                     </select>
-                    <select name="" id="pwd5">
+                    <select name="" id="pwd5" <?= $this->iff($flag, 'readonly') ?> >
                         <option value="">-</option>
                         <option value="0">0</option>
                         <option value="1">1</option>
@@ -144,7 +146,7 @@ $flag = ($myBank['editEnable'] != 1) && ($myBank);
                         <option value="8">8</option>
                         <option value="9">9</option>
                     </select>
-                    <select name="" id="pwd6">
+                    <select name="" id="pwd6" <?= $this->iff($flag, 'readonly') ?> >
                         <option value="">-</option>
                         <option value="0">0</option>
                         <option value="1">1</option>
@@ -157,13 +159,16 @@ $flag = ($myBank['editEnable'] != 1) && ($myBank);
                         <option value="8">8</option>
                         <option value="9">9</option>
                     </select>
-
                 </li>
+                <?php } ?>
             </ul>
         </div>
 
 
-        <button class="charge-btn" id="charge-btn">确认信息</button>
+        <?php if (!$flag) { ?>
+            <button class="charge-btn" id="charge-btn">确认信息</button>
+        <?php } ?>
+
     </div>
 </div>
 

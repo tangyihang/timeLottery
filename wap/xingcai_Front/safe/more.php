@@ -78,7 +78,7 @@
                             <span style="float:right;margin-right: 18px;font-size: 80%;"><?=$answer?></span>
                         </a>
                     </li>
-                    <li>
+                    <!--<li>
                         <a id="wpassword_set" href="/index.php/safe/passwd" data-question=0>
                             <img src="/assets/statics/images/shezhi_03.png" alt="">提款密码
                             <?php if($this->user['coinPassword']){  ?>
@@ -87,7 +87,7 @@
                             <span style="float:right;margin-right: 18px;font-size: 80%;">未设置</span>
                             <?php }?>
                         </a>
-                    </li>
+                    </li>-->
                     <li>
                         <a id="bind_bank_set" href="/index.php/safe/info" data-question=0>
                             <img src="/assets/statics/images/shezhi_04.png" alt="">我的银行卡
