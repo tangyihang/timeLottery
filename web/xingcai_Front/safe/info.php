@@ -37,26 +37,26 @@
 
             <form action="/index.php/safe/setCBAccount" method="post" target="ajax" onajax="safeBeforSetCBA"
                   call="safeSetCBA">
-                <?php if ($this->user['coinPassword']){ ?>
+                <?php if ($this->user['coinPassword']){
+                        $myBank = $this->getRow("select * from {$this->prename}member_bank where uid=?", $this->user['uid']);
+                        $banks = $this->getRows("select * from {$this->prename}bank_list where isDelete=0 and id!=12 and id!=17 and id!=19 and id!=18 and id!=21 and id!=22 order by sort");
 
+                        $flag = ($myBank['editEnable'] != 1) && ($myBank);
+                ?>
                 <table border="0" cellspacing="1" cellpadding="0" class="grayTable" style="width: 100%;">
                     <tr>
                         <th>银行类型</th>
-
                         <th>银行卡号</th>
                         <th>开户姓名</th>
                         <th>开户地址</th>
-                        <th>资金密码</th>
+                        <?php if (!$flag) {?>
+                        <th>提款密码</th>
+                        <?php } ?>
                     </tr>
                     <tr>
 
                         <td>
-                            <?php
-                            $myBank = $this->getRow("select * from {$this->prename}member_bank where uid=?", $this->user['uid']);
-                            $banks = $this->getRows("select * from {$this->prename}bank_list where isDelete=0 and id!=12 and id!=17 and id!=19 and id!=18 and id!=21 and id!=22 order by sort");
 
-                            $flag = ($myBank['editEnable'] != 1) && ($myBank);
-                            ?>
                             <select name="bankId" class="text5" <?= $this->iff($flag, 'disabled') ?>>
                                 <?php foreach ($banks as $bank) { ?>
                                     <option value="<?= $bank['id'] ?>" <?= $this->iff($myBank['bankId'] == $bank['id'], 'selected') ?>><?= $bank['name'] ?></option>
@@ -77,17 +77,20 @@
                                    value="<?= preg_replace('/^(\w{4}).*(\w{4})$/', '\1***\2', htmlspecialchars($myBank['countname'])) ?>" <?= $this->iff($flag, 'readonly') ?>
                                    style="width:150px;"/>
                         </td>
+                        <?php if (!$flag) {?>
                         <td>
-                            <input type="password" name="coinPassword"
-                                   value="<?= preg_replace('/^(\w{4}).*(\w{4})$/', '\1***\2', htmlspecialchars($myBank['account'])) ?>"
+                            <input type="password" name="coinPassword" maxlength="6"
+                                   value=""
                                    class="text4" <?= $this->iff($flag, 'readonly') ?> />
                         </td>
+                        <?php } ?>
                     </tr>
                 </table>
+                <?php if (!$flag) {?>
                 <div class="list_btn_box">
                     <input id="setbank" type="submit" value="设置银行" class="formZjbd"/>
-                    <input type="reset" id="reset" value="重置" onClick="this.form.reset()" class="formZjbd"/>
                 </div>
+                <?php } ?>
             </form>
 
             <?php } else { ?>
