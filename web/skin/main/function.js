@@ -824,7 +824,6 @@ function safeSetCBA(err, data) {
   if (err) {
     xingcai(err);
   } else {
-    this.reset(); //重置表单
     layer.open({
       content: '<div style="text-align: center;padding: 20px 0px;font-size: 20px;">' + data + '</div>',
       area: ['450px', '200px'],
