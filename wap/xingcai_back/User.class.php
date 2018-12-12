@@ -355,6 +355,7 @@ class User extends WebBase
         if (strlen($user) < 5 || strlen($user) > 15) die(json_encode(array('description' => '帐号为5-15位,请重新输入')));
         if (!ctype_alnum($user)) die(json_encode(array('description' => '帐号包含非法字符')));
         if (strlen($password) < 6) die(json_encode(array('description' => '密码至少6位')));
+        if (strlen(trim($tj) == 0)) die(json_encode(array('description' => '推荐码不能为空')));
 
         if (strtolower($vcode) != $_SESSION[$this->vcodeSessionName]) {
             die(json_encode(array('description' => '验证码不正确')));
