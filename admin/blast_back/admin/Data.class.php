@@ -22,7 +22,14 @@ class Data extends AdminBase
             'actionNo' => $actionNo,
             'actionTime' => $actionTime
         );
-        $this->display('data/add-modal.php', 0, $para);
+        if ($type == 63) {
+            $this->display('data/add-k3-modal.php', 0, $para);
+        } else if ($type == 86) {
+            $this->display('data/add-ssc-modal.php', 0, $para);
+        } else {
+            $this->display('data/add-modal.php', 0, $para);
+        }
+
     }
 
     public final function updatedata($type, $actionNo, $actionTime)

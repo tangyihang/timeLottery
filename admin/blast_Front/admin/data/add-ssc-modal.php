@@ -98,25 +98,25 @@ if ($para['type'] == 1) {
                 <td class="title">开奖时间：</td>
                 <td><input type="text" name="time" value="<?= $para['actionTime'] ?>"/></td>
             </tr>
-
-            <tr>
-                <td class="title"> 中奖类型：</td>
-                <td>
-                    <select name="win_type" class="id_win_type" onchange="win_change(this);">
-                        <option value="0" selected="selected">请选择</option>
-                        <option value="1">数字</option>
-                        <option value="2">大小单双</option>
-                    </select>
-                </td>
-            </tr>
-
             <tr>
                 <td class="title"> 值：</td>
                 <td>
                     <div class="win_type_val">
-                        <!-- <div style="cursor: pointer;margin-left:10px;float:left;text-align:center;width: 20px;height: 20px;border:0.5px solid red; border-radius: 10px;line-height: 20px;">1</div>
-                        <div style="cursor: pointer;margin-left:10px;float:left;text-align:center;width: 20px;height: 20px;border:0.5px solid red; border-radius: 10px;line-height: 20px;">2</div>
-                        <div style="cursor: pointer;margin-left:10px;float:left;text-align:center;width: 20px;height: 20px;border:0.5px solid red; border-radius: 10px;line-height: 20px;">3</div> -->
+                        <style>
+                            .win_type_val_nmu {
+                                margin-top:3px;cursor: pointer;margin-left:10px;float:left;text-align:center;width: 20px;height: 20px;border:0.5px solid red; border-radius: 10px;line-height: 20px;
+                            }
+                        </style>
+                        <div onclick="ssc_selected_num(this);" class="win_type_val_nmu">0</div>
+                        <div onclick="ssc_selected_num(this);" class="win_type_val_nmu">1</div>
+                        <div onclick="ssc_selected_num(this);" class="win_type_val_nmu">2</div>
+                        <div onclick="ssc_selected_num(this);" class="win_type_val_nmu">3</div>
+                        <div onclick="ssc_selected_num(this);" class="win_type_val_nmu">4</div>
+                        <div onclick="ssc_selected_num(this);" class="win_type_val_nmu">5</div>
+                        <div onclick="ssc_selected_num(this);" class="win_type_val_nmu">6</div>
+                        <div onclick="ssc_selected_num(this);" class="win_type_val_nmu">7</div>
+                        <div onclick="ssc_selected_num(this);" class="win_type_val_nmu">8</div>
+                        <div onclick="ssc_selected_num(this);" class="win_type_val_nmu">9</div>
                     </div>
 
                 </td>
@@ -124,7 +124,10 @@ if ($para['type'] == 1) {
 
             <tr>
                 <td class="title">开奖号码：</td>
-                <td><input type="text" name="data" class="input_data_v"/></td>
+                <td>
+                    <input type="text" name="data" class="input_data_v" value=""/>
+                    <span onclick="clear_input_data();">重置</span>
+                </td>
             </tr>
 
 
@@ -133,9 +136,6 @@ if ($para['type'] == 1) {
                 <td><span class="spn4">请确认【期号】和【开奖号码】正确<br/>号码格式如: 1,2,3,4,5</span></td>
             </tr>
         </table>
-
-
     </form>
 </div>
-
 
