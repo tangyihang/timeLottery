@@ -328,7 +328,7 @@
     <div class="_notice-wrapper2">
         <div class="title2">在线客服<span class="close2">×</span></div>
         <ul class="_notice-list2">
-            <li>在线客服QQ:1163408818</li>
+            <li>在线客服QQ:2210221040</li>
         </ul>
     </div>
 </div>
@@ -405,7 +405,7 @@ echo $seting['webGG'];
                         <p>优惠活动</p></a>
                 </li>
                 <li>
-                    <!-- <a href="http://wpa.qq.com/msgrd?v=3&uin=1163408818&site=qq&menu=yes"
+                    <!-- <a href="http://wpa.qq.com/msgrd?v=3&uin=2210221040&site=qq&menu=yes"
                        target="_blank"><img src="assets/statics/img/menu4.png">
                         <p>在线客服</p></a> -->
                     <script type="text/javascript">

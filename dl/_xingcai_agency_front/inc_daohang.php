@@ -53,7 +53,7 @@
                 </a>
                 <a href="javascript:void(0);" onclick="czpay();" class="t_btn">充值</a>
                 <a href="javascript:void(0);" onclick="topay();" class="t_btn">提款</a>
-                <a href="http://wpa.qq.com/msgrd?v=3&uin=1163408818&site=qq&menu=yes" target="_blank" title="在线客服" class="t_kefu">
+                <a href="http://wpa.qq.com/msgrd?v=3&uin=2210221040&site=qq&menu=yes" target="_blank" title="在线客服" class="t_kefu">
                     <i class="ic-kefu"></i><span>客服</span></a>
                 <a href="javascript:void(0)" title="更换背景" class="t_skin"><i class="ic-skin"></i><span>背景</span></a>
             </div>
