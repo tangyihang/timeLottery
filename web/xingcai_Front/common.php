@@ -552,7 +552,7 @@
                                                 class="icon-7"></i>会员中心</a></li>
                                 <li onclick="__openWin('user_center','/index.php/record/search')"><a><i
                                                 class="icon-3"></i>下注记录</a></li>
-                                <li><a href="http://wpa.qq.com/msgrd?v=3&uin=1163408818&site=qq&menu=yes"
+                                <li><a href="http://wpa.qq.com/msgrd?v=3&uin=2210221040&site=qq&menu=yes"
                                        target="_blank" target="_blank"><i class="icon-4"></i>在线客服</a></li>
                                 <li onclick="__openWin('user_center','/index.php/box/receive')"><a><i
                                                 class="icon-Shape-47"></i>消息中心</a></li>

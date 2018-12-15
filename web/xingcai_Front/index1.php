@@ -58,7 +58,7 @@
                     <a href="javascript:void(0);" onclick="topay();" class="t_btn logins">提款</a>
                 </div>
                
-                <a href="http://wpa.qq.com/msgrd?v=3&uin=1163408818&site=qq&menu=yes" target="_blank" title="在线客服" class="t_kefu">
+                <a href="http://wpa.qq.com/msgrd?v=3&uin=2210221040&site=qq&menu=yes" target="_blank" title="在线客服" class="t_kefu">
                     <i class="ic-kefu"></i><span>客服</span></a>
                 <a href="javascript:void(0)" title="更换背景" class="t_skin">
                     <i class="ic-skin"></i><span>背景</span>
@@ -394,7 +394,7 @@
 <!--侧边栏-->
 <div class="sidebar" id="sidebar">
 	<a href="/index.php" class="sidebar-div home"><i class="ic-home"></i>回到首页</a>
-	<a href="http://wpa.qq.com/msgrd?v=3&uin=1163408818&site=qq&menu=yes" target="_blank" class="sidebar-div"><i class="ic-online"></i>在线客服</a>
+	<a href="http://wpa.qq.com/msgrd?v=3&uin=2210221040&site=qq&menu=yes" target="_blank" class="sidebar-div"><i class="ic-online"></i>在线客服</a>
 	<a datatype="json" call="indexSign" target="ajax"  onclick="Xgo(this)" attr-href="/index.php/display/sign" class="sidebar-div"><i class="iconfont">&#xe64d;</i>天天签到</a>
 	<a href="javascript:void(0);"  onclick="Xgo(this)" attr-href="/index.php/liaotian/chat"  url="/index.php/liaotian/chat" class="sidebar-div chongzhi"><i class="iconfont">&#xe60b;</i>多人聊天</a>
 	<a href="javascript:voiceKJ();" class="sidebar-div"><i class="ic-sound soundClickEvent"></i>声音控制</a>

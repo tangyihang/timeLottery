@@ -234,7 +234,7 @@
 							<li><a class="right-border " href="/index.php/index/mfsw/">免费试玩</a></li>
 							<li><a class="right-border" href="/index.php/index/help?page=default">玩法</a></li>
 							<li id="wdtg"><a class="right-border " href="/index.php/safe/tuiguang"   >推荐好友获收益<img style="margin-left: 2px;margin-bottom: 10px;" src="/assets/statics/images/hot_new.gif"></a></li>
-							<li><a href="http://wpa.qq.com/msgrd?v=3&uin=1163408818&site=qq&menu=yes" target="_blank">在线客服</a></li>
+							<li><a href="http://wpa.qq.com/msgrd?v=3&uin=2210221040&site=qq&menu=yes" target="_blank">在线客服</a></li>
 						</ul>
 					</div>
 					
@@ -838,7 +838,7 @@
     </div>
     <div class="foot_box">
         <div class="about_box">
-            <p>2018-2028©<span>喜羊羊彩 | </span> 客服邮箱：1163408818@qq.com 客服QQ：1163408818
+            <p>2018-2028©<span>喜羊羊彩 | </span> 客服邮箱：2210221040@qq.com 客服QQ：2210221040
             <br><span class="c-grey">喜羊羊彩郑重提示：彩票有风险，投注需谨慎！ 不向未满18周岁的青少年出售彩票</span></p>
             <ul class="foot_info">
                 <li class="foot_wljc"></li>
