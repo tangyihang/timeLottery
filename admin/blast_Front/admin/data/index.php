@@ -66,7 +66,7 @@ $all = $this->getRow($sqlAmount);
             <th>开奖数据</th>
             <th>状态</th>
             <th>开奖时间</th>
-            <?php if ($this->type != 63) {?>
+            <?php if (!in_array($this->type, array(63, 86))) { ?>
                 <th>方案总数</th>
                 <th>参与人数</th>
             <?php } ?>
@@ -308,6 +308,15 @@ $all = $this->getRow($sqlAmount);
                 $bets_sql = "select actionData, SUM(amount) as total_amount from {$this->prename}bets 
                   where type={$this->type} and actionNo='$number' group by actionData order by actionData asc";
                 $bets_data = $this->getRows($bets_sql);
+            } elseif ($this->type == 86) {
+                $number = 1000 + $var['actionNo'];
+                $number = date('Ymd-', $date) . substr($number, 1);
+                $bets_sql = "select b.playedId, p.name, b.actionData, SUM(b.amount) as total_amount from 
+                    {$this->prename}bets as b left join {$this->prename}played as p on b.playedId = p.id
+                    where b.type = {$this->type} and b.actionNo = '$number'
+                    group by b.actionData, b.playedId
+                    order by b.actionData desc";
+                $bets_data = $this->getRows($bets_sql);
             }
             $count['betAmount'] += $amountData['betAmount'];
             $count['zjAmount'] += $amountData['zjAmount'];
@@ -321,18 +330,30 @@ $all = $this->getRow($sqlAmount);
                 <td><?= $this->ifs($data['data'], '--') ?></td>
                 <td><?= $this->iff($data['data'], '已开奖', '未开奖') ?></td>
                 <td><?= $dateString . $var['actionTime'] ?></td>
-                <?php if ($this->type != 63) {?>
-                <td><?= $this->ifs($amountData['facount'], '0') ?></td>
-                <td><?= $this->ifs($amountData['useracount'], '0') ?></td>
+                <?php if (!in_array($this->type, array(63, 86))) { ?>
+                    <td><?= $this->ifs($amountData['facount'], '0') ?></td>
+                    <td><?= $this->ifs($amountData['useracount'], '0') ?></td>
                 <?php } ?>
-                <td style="width:100px;">
+                <td style="width:200px;">
                     <?php
-                    if ($bets_data) {
-                        foreach ($bets_data as $bet_key => $bet_value) {
-                            echo $bet_value['actionData'] . '&nbsp;&nbsp;:&nbsp;&nbsp;' . $bet_value['total_amount'] . '元<br />';
+                    if ($this->type == 63) {
+                        if ($bets_data) {
+                            foreach ($bets_data as $bet_key => $bet_value) {
+                                echo $bet_value['actionData'] . '&nbsp;&nbsp;:&nbsp;&nbsp;' . $bet_value['total_amount'] . '元<br />';
+                            }
+                        } else {
+                            echo '--';
+                        }
+                    } else if ($this->type == 86) {
+                        if ($bets_data) {
+                            foreach ($bets_data as $bet_key => $bet_value) {
+                                echo $bet_value['name'] . '&nbsp;&nbsp;:&nbsp;&nbsp;' . $bet_value['actionData'] . '&nbsp;&nbsp;:&nbsp;&nbsp;' . $bet_value['total_amount'] . '元<br />';
+                            }
+                        } else {
+                            echo '--';
                         }
                     } else {
-                        echo '--';
+                        $this->ifs($all['betAmount'], '--');
                     }
                     ?>
                 </td>
@@ -349,7 +370,7 @@ $all = $this->getRow($sqlAmount);
                     <? } else { ?>
                         <a href="/index.php/data/add/<?= $this->type ?>/<?= $var['actionNo'] ?>/<?= $dateString . $var['actionTime'] ?>"
                            target="modal" width="450" title="添加开奖号码" modal="true"
-                           button="确定:dataAddCode|取消:defaultCloseModal">添加</a>
+                           button="确定:dataAddCode|取消:defaultCloseModal" onclick="clear_input_data()">添加</a>
                     <? } ?>
 
                 </td>
@@ -363,9 +384,9 @@ $all = $this->getRow($sqlAmount);
             <td>--</td>
             <td>--</td>
             <td>--</td>
-            <?php if ($this->type != 63) {?>
-            <td>--</td>
-            <td>--</td>
+            <?php if (!in_array($this->type, array(63, 86))) { ?>
+                <td>--</td>
+                <td>--</td>
             <?php } ?>
             <td><?= $this->ifs($count['betAmount'], '--') ?></td>
             <td><?= $this->ifs($count['zjAmount'], '--') ?></td>
@@ -380,9 +401,9 @@ $all = $this->getRow($sqlAmount);
             <td>--</td>
             <td>--</td>
             <td>--</td>
-            <?php if ($this->type != 63) {?>
-            <td>--</td>
-            <td>--</td>
+            <?php if (!in_array($this->type, array(63, 86))) { ?>
+                <td>--</td>
+                <td>--</td>
             <?php } ?>
             <td><?= $this->ifs($all['betAmount'], '--') ?></td>
             <td><?= $this->ifs($all['zjAmount'], '--') ?></td>
@@ -489,6 +510,22 @@ $all = $this->getRow($sqlAmount);
     $('.input_data_v').val(r);
   }
 
+  function ssc_selected_num(obj) {
+    var v = $(obj).text();
+    var num = parseInt(v);
+    var input_data = $('.input_data_v').val();
+
+    if (input_data.length == 0) {
+      $('.input_data_v').val(num);
+    } else {
+      if (input_data.length < 9) {
+        $('.input_data_v').val(input_data + ',' + num);
+      } else {
+        $('.input_data_v').val(input_data);
+      }
+    }
+  }
+
 
   function clear_win_selected_word(_word) {
     $('.win_type_val').children().each(function (i) {
@@ -501,6 +538,9 @@ $all = $this->getRow($sqlAmount);
     });
   }
 
+  function clear_input_data() {
+    $('.input_data_v').val('');
+  }
 
   function win_selected_word(obj) {
     var v = $(obj).text();
