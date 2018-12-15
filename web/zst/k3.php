@@ -248,10 +248,10 @@ $toTime = $_GET['toTime'];
         } elseif ($toTime) {
             $whereStr .= ' and time<' . $toTime;
             $whereStr2 .= ' and a.time<' . $toTime;
-        } else if ($max_time) {
-            $whereStr .= " and time<='" . $max_time . "'";
-            $whereStr2 .= " and a.time<='" . $max_time . "'";
         }
+        $whereStr .= " and time<='" . $max_time . "'";
+        $whereStr2 .= " and a.time<='" . $max_time . "'";
+
 
         $orderStr = " order by a.number desc";
 
