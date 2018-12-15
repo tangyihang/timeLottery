@@ -362,6 +362,26 @@ if ($this->type == 86) {//北京28
     </div>
 <?php } ?>
 
+<?php if ($this->type == 86) { ?><!--三分时时彩-->
+    <div id="m_vi_recLott" style="display:none">
+        <div class="recentBox">
+            <h3><span>近期开奖</span></h3>
+            <div class="recentCon">
+                <ul>
+                    <table border='0' cellspacing='0' cellpadding='0' width=100%>
+                        <tr>
+                            <th>期号</a></th>
+                            <th>号码</th>
+                        </tr>
+                        <?php $this->display('index/inc_data_history_ssc_sf.php', 0, 7); ?>
+                    </table>
+                </ul>
+            </div>
+            <a id="m_more_lott_list" href="/zst/zst.php?typeid=<?= $this->type ?>">查看更多</a>
+            <a class="m_jqkj_close" href="#">关闭</a>
+        </div>
+    </div>
+<?php } ?>
 
 <?php if ($this->type == 1) { ?><!--龙虎和-->
     <div id="m_vi_recLott" style="display:none">
