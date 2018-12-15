@@ -8,8 +8,13 @@ class Zst extends WebLoginBase
         if($typeid == 34){//六合彩
             $this->lhclist($typeid,$g);
         }
+        $lastNo=$this->getGameLastNo($typeid);
+        $nowtime = strtotime($lastNo['actionTime']);
+
         $info = $this->getRow('SELECT t.`id`,t.`codeList`,t.`title` FROM blast_type t WHERE t.`id`='.$typeid);
-        $list_data = $this->getRows('SELECT t.`number`,t.`data` FROM blast_data t WHERE t.`type` = '.$typeid.' ORDER BY t.`number` DESC limit 20');
+        $list_data = $this->getRows('SELECT t.`number`,t.`data` FROM blast_data t 
+          WHERE t.`type` = '.$typeid.' and t.time <= '.$nowtime.'
+          ORDER BY t.`time` DESC limit 20');
 
         if(empty($info['codeList'])){
             return null;
