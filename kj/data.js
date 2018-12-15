@@ -197,7 +197,7 @@ function submitData(data, conf) {
       return ;
     }
     // 澳门快三检查
-    if ( result && result.length && result[0].type === 63 ) {
+    if ( result && result.length && (result[0].type === 63 || result[0].type === 86) ) {
       data = result[0];
       // 获取开奖信息
       calcJ(data, true);
