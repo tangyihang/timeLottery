@@ -139,12 +139,10 @@
         <?php
 
 $info = unserialize($_SESSION['ASN']);
-if ($info['uid'] == '100000') {
     foreach ($this->getRows("select id,title from {$this->prename}type where enable=1 and isDelete=0 order by sort") as $type) {
         ?>
             <li><a href="data/index/<?=$type['id']?>" class="k_b_1 bq"><?=$type['title']?></a></li>
         <?php
-}
 }
 ?>
     </ul>
