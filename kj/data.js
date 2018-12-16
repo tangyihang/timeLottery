@@ -152,7 +152,11 @@ function run(conf) {
 
           } else {
 
-            submitData(data, conf);
+            if((new Date()).getSeconds() > 25) {
+              submitData(data, conf);
+            } else {
+              restartTask(conf, config.errorSleepTime);
+            }
           }
         } catch (res) {
 
